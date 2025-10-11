@@ -94,12 +94,15 @@ nav a:hover::after {
 .welcome {
     text-align: center;
     margin-bottom: 5rem;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    overflow: hidden;
 }
 
 .welcome-logo {
     width: 200px;
     height: 200px;
+    max-width: 90vw;
+    max-height: 200px;
     margin-bottom: 2rem;
     animation: fadeInDown 1s ease, float 3s ease-in-out infinite;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
@@ -283,14 +286,23 @@ nav a:hover::after {
 }
 
 @media (max-width: 480px) {
+    .welcome {
+        padding: 1.5rem 0.5rem;
+    }
+    
     .welcome-logo {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 1.5rem;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
     }
     
     .welcome h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .welcome p {
+        font-size: 1rem;
     }
     
     nav ul {
