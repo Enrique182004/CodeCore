@@ -99,8 +99,8 @@ nav a:hover::after {
 }
 
 .logo-container {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto 2rem;
     display: flex;
     align-items: center;
@@ -259,9 +259,10 @@ nav a:hover::after {
         gap: 2rem;
     }
     
-    .welcome-logo {
-        width: 100px;
-        height: 100px;
+    .logo-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
     }
     
     .welcome h1 { 
@@ -299,9 +300,9 @@ nav a:hover::after {
         padding: 1.5rem 0.5rem;
     }
     
-    .welcome-logo {
-        width: 70px;
-        height: 70px;
+    .logo-container {
+        width: 80px;
+        height: 80px;
         margin-bottom: 1rem;
     }
     
