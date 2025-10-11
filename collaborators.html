@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCore - Collaborators</title>
     <link rel="stylesheet" href="css/collaborators.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="icon" href="CodeCore_Logo.jpg" type="image/jpeg">
 </head>
 <body>
@@ -13,6 +14,14 @@
             <div class="logo">
                 <span>CodeCore</span>
             </div>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -124,5 +133,11 @@
             </div>
         </section>
     </div>
+    
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+    
+    <!-- Mobile Menu Script -->
+    <script src="js/mobile-menu.js"></script>
 </body>
 </html>

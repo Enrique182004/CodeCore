@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCore - Our Officers</title>
     <link rel="stylesheet" href="css/officers.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="icon" href="CodeCore_Logo.jpg" type="image/jpeg">
 </head>
 <body>
@@ -12,7 +13,15 @@
         <div class="header-content">
             <div class="logo">
                 <span>CodeCore</span>
-            </div>            
+            </div>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,6 +33,7 @@
             </nav>
         </div>
     </header>
+    
     <div class="officers-container">
         <h1>Our Officers</h1>
         <p class="officers-subtitle">Meet the dedicated team leading CodeCore</p>
@@ -150,7 +160,7 @@
             <div class="polaroid-container">
                 <div class="polaroid" tabindex="0">
                     <div class="polaroid-front">
-                        <div class="photo-frame" aria-label="Historian profile picture">📔</div>
+                        <div class="photo-frame" aria-label="Historian profile picture">📓</div>
                         <div class="polaroid-caption">
                             <h3>Open Position</h3>
                             <p>Historian</p>
@@ -203,7 +213,7 @@
                     <div class="polaroid-front">
                         <div class="photo-frame" aria-label="Technical Officer profile picture">💻</div>
                         <div class="polaroid-caption">
-                            <h3>Open Position</h3>
+                            <h3>Open Positions</h3>
                             <p>Technical Officer/Mentor</p>
                         </div>
                     </div>
@@ -217,20 +227,11 @@
             </div>
         </div>
     </div>
-    <script>
-    // Flip card on click or keyboard
-    document.querySelectorAll('.polaroid').forEach(card => {
-        card.addEventListener('click', () => card.classList.toggle('flipped'));
-        card.addEventListener('keypress', e => {
-            if(e.key==="Enter"||e.key===" ") card.classList.toggle('flipped');
-        });
-    });
-    // Fade-in animation on page load
-    window.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.polaroid-container').forEach((el, i) => {
-            setTimeout(() => el.classList.add('show'), 100 + i*120);
-        });
-    });
-    </script>
+    
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+    
+    <!-- Mobile Menu Script -->
+    <script src="js/mobile-menu.js"></script>
 </body>
 </html>

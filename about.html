@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCore - About</title>
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="icon" href="CodeCore_Logo.jpg" type="image/jpeg">
 </head>
 <body>
@@ -13,6 +14,14 @@
             <div class="logo">
                 <span>CodeCore</span>
             </div>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -97,6 +106,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Meeting Info -->
         <section class="meeting-info">
             <h2>Meeting Information</h2>
@@ -106,7 +116,7 @@
                     <p>CodeCore holds weekly meetings during the academic year</p>
                 </div>
                 <div class="info-card">
-                    <h3>✍️ Sign-Up Required</h3>
+                    <h3>✏️ Sign-Up Required</h3>
                     <p>Due to limited space, members must sign up in advance for meetings</p>
                 </div>
             </div>
@@ -135,5 +145,11 @@
             </div>
         </section>
     </div>
+    
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+    
+    <!-- Mobile Menu Script -->
+    <script src="js/mobile-menu.js"></script>
 </body>
 </html>

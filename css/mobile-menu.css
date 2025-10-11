@@ -1,0 +1,202 @@
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg, #1e4a7a, #2b7a9e);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle:hover span {
+    background: linear-gradient(135deg, #2b7a9e, #7cb342);
+}
+
+/* Animated hamburger to X */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 98;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(230, 242, 255, 0.98));
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        padding: 5rem 2rem 2rem;
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        z-index: 99;
+        overflow-y: auto;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(43, 122, 158, 0.1);
+    }
+
+    nav li:last-child {
+        border-bottom: none;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    nav a:hover,
+    nav a.active {
+        background: linear-gradient(135deg, rgba(43, 122, 158, 0.15), rgba(124, 179, 66, 0.1));
+        color: #2b7a9e;
+        transform: translateX(5px);
+    }
+
+    /* Ensure header accommodates mobile menu */
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    .header-content {
+        position: relative;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+    nav {
+        width: 60%;
+        max-width: 350px;
+    }
+
+    nav a {
+        font-size: 1.15rem;
+        padding: 1.2rem 1.5rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    nav {
+        width: 80%;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+
+    .mobile-menu-toggle {
+        width: 28px;
+        height: 23px;
+    }
+
+    .mobile-menu-toggle span {
+        height: 2.5px;
+    }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Accessibility improvements */
+.mobile-menu-toggle:focus {
+    outline: 2px solid #2b7a9e;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+nav:focus-within {
+    outline: none;
+}
+
+/* Smooth transitions for all screen size changes */
+@media (min-width: 769px) {
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        overflow: visible;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    .nav-overlay {
+        display: none !important;
+    }
+}
