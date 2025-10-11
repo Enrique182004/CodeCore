@@ -97,6 +97,23 @@ nav a:hover::after {
     padding: 2rem;
 }
 
+.welcome-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease, float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 .welcome h1 {
     font-size: 3.5rem;
     background: linear-gradient(135deg, #1e4a7a 0%, #2b7a9e 50%, #7cb342 100%);
@@ -104,7 +121,7 @@ nav a:hover::after {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1.5rem;
-    animation: fadeInDown 1s ease;
+    animation: fadeInDown 1s ease 0.2s both;
     font-weight: 800;
     letter-spacing: -1px;
 }
@@ -125,7 +142,7 @@ nav a:hover::after {
     color: #4a5568;
     max-width: 800px;
     margin: 0 auto;
-    animation: fadeIn 1s ease 0.3s both;
+    animation: fadeIn 1s ease 0.5s both;
 }
 
 @keyframes fadeIn {
@@ -187,11 +204,11 @@ nav a:hover::after {
 }
 
 .card:nth-child(1) {
-    animation-delay: 0.2s;
+    animation-delay: 0.4s;
 }
 
 .card:nth-child(2) {
-    animation-delay: 0.4s;
+    animation-delay: 0.6s;
 }
 
 .card h2 {
@@ -230,6 +247,11 @@ nav a:hover::after {
         gap: 2rem;
     }
     
+    .welcome-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
     .welcome h1 { 
         font-size: 2.5rem;
     }
@@ -261,6 +283,12 @@ nav a:hover::after {
 }
 
 @media (max-width: 480px) {
+    .welcome-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1.5rem;
+    }
+    
     .welcome h1 {
         font-size: 2rem;
     }
