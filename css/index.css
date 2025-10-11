@@ -99,11 +99,11 @@ nav a:hover::after {
 }
 
 .welcome-logo {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     max-width: 90vw;
-    max-height: 200px;
-    margin-bottom: 2rem;
+    max-height: 120px;
+    margin-bottom: 1.5rem;
     animation: fadeInDown 1s ease, float 3s ease-in-out infinite;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
 }
@@ -251,8 +251,8 @@ nav a:hover::after {
     }
     
     .welcome-logo {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .welcome h1 { 
@@ -291,8 +291,8 @@ nav a:hover::after {
     }
     
     .welcome-logo {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         margin-bottom: 1rem;
     }
     
