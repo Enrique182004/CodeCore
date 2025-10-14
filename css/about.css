@@ -455,6 +455,35 @@ section h2 {
         justify-content: center;
     }
 
+            /* Visible Email Styling */
+        .visible-email {
+            font-size: 1.15rem;
+            color: #1e4a7a;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .email-link {
+            color: #2b7a9e;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(43, 122, 158, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(43, 122, 158, 0.2);
+        }
+
+        .email-link:hover {
+            background: rgba(43, 122, 158, 0.2);
+            color: #1e4a7a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(43, 122, 158, 0.2);
+        }
+        
     .mission-card, .vision-card, .what-is {
         padding: 2rem;
     }
