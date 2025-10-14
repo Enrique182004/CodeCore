@@ -361,6 +361,8 @@ section h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 2px solid rgba(43, 122, 158, 0.2);
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .option-card:hover {
@@ -380,6 +382,14 @@ section h2 {
     font-size: 1.05rem;
     margin-bottom: 2rem;
     line-height: 1.6;
+}
+
+.option-card p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.option-card .cta-button {
+    margin-top: auto;
 }
 
 .cta-button {
