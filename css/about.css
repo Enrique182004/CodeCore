@@ -406,7 +406,6 @@ section h2 {
 /* Visible Email Styling */
 .visible-email {
     font-size: 1.15rem;
-    color: #2b7a9e;
     margin: 1.5rem 0;
     font-weight: 600;
     display: flex;
@@ -416,21 +415,22 @@ section h2 {
 }
 
 .email-link {
-    color: #2b7a9e;
-    text-decoration: underline;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #7cb342;
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    background: rgba(124, 179, 66, 0.1);
     transition: all 0.3s ease;
-    border: none;
+    border: 1px solid rgba(124, 179, 66, 0.2);
 }
 
 .email-link:hover {
-    background: transparent;
-    color: #1e4a7a;
-    transform: none;
-    box-shadow: none;
-    text-decoration: underline;
+    background: rgba(124, 179, 66, 0.2);
+    color: #6da32e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(124, 179, 66, 0.2);
 }
 
 /* Responsive Design */
