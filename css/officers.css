@@ -40,12 +40,12 @@ header {
 }
 
 .logo-text {
-    font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, #1e4a7a 0%, #2b7a9e 50%, #7cb342 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    background: linear-gradient(135deg, #1e4a7a 0%, #2b7a9e 50%, #7cb342 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
 
 .logo-icon {
