@@ -180,6 +180,21 @@ nav:focus-within {
     outline: none;
 }
 
+@media (max-width: 768px) {
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        gap: 0.5rem;
+    }
+}
+
 /* Smooth transitions for all screen size changes */
 @media (min-width: 769px) {
     nav {

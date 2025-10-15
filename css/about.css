@@ -33,14 +33,26 @@ header {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-text {
     font-size: 2rem;
     font-weight: bold;
     background: linear-gradient(135deg, #1e4a7a 0%, #2b7a9e 50%, #7cb342 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .logo:hover {
