@@ -363,6 +363,19 @@ nav a:hover::after {
         height: 390px;
     }
     
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        gap: 0.5rem;
+    }
+    
     nav ul {
         gap: 1rem;
     }
@@ -407,6 +420,15 @@ nav a:hover::after {
     .officer-email {
         font-size: 0.85rem;
         padding: 0.25rem 0.6rem;
+    }
+    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
     }
     
     nav ul {
