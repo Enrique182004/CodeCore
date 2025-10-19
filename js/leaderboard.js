@@ -1,21 +1,3 @@
-// ============================================
-// 📝 MANUAL SCORE UPDATE SECTION
-// ============================================
-// To add or update participants, simply edit this array below
-// Each participant needs: name, email, score, photo, and status
-// 
-// Photo options:
-//   - Use a relative path: "../images/participants/john.jpg"
-//   - Or leave empty "" to show placeholder initials
-//   - Recommended size: 200x200px square images
-//
-// Status options: "active" (green badge) or "new" (blue badge)
-//
-// Example of adding a new participant:
-// { name: "John Doe", email: "jdoe@miners.utep.edu", score: 500, photo: "../images/participants/john.jpg", status: "new" },
-//
-// ============================================
-
 const participants = [
     { name: "Johana Hermosillo", email: "smt@miners.utep.edu", score: 850, photo: "../images/officers/johana.jpeg", status: "active" },
     { name: "Enrique Calleros", email: "smt@miners.utep.edu", score: 820, photo: "../images/officers/enrique.png", status: "active" },
@@ -24,16 +6,6 @@ const participants = [
     { name: "Victoria", email: "smt@miners.utep.edu", score: 765, photo: "", status: "active" },
     { name: "Alexa", email: "smt@miners.utep.edu", score: 740, photo: "", status: "active" }
 ];
-
-// ============================================
-// 📊 SCORING GUIDE (for your reference)
-// ============================================
-// Workshop Attendance: +50-100 points
-// Challenge Completion: +100-200 points  
-// Helping Others: +25-50 points
-// Project Submission: +150-300 points
-// Monthly Bonus (consistency): +50 points
-// ============================================
 
 let filteredParticipants = [...participants];
 let currentSort = 'score'; // Track current sort mode
