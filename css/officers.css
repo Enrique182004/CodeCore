@@ -138,12 +138,48 @@ nav a:hover::after {
     to { opacity: 1; }
 }
 
+/* Committee Section Styles */
+.committee-section {
+    margin-bottom: 5rem;
+}
+
+.committee-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #2b7a9e;
+    position: relative;
+    animation: fadeIn 0.8s ease;
+}
+
+.committee-title::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #7cb342, transparent);
+    animation: slideIn 0.8s ease;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
 /* Officers Grid Layout */
 .officers-wall {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .polaroid-container {
@@ -342,6 +378,10 @@ nav a:hover::after {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 2rem;
     }
+    
+    .committee-section {
+        margin-bottom: 4rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -383,6 +423,15 @@ nav a:hover::after {
     nav a {
         padding: 0.4rem 0.8rem;
         font-size: 0.95rem;
+    }
+    
+    .committee-section {
+        margin-bottom: 3rem;
+    }
+    
+    .committee-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -435,5 +484,18 @@ nav a:hover::after {
         flex-wrap: wrap;
         gap: 0.5rem;
         justify-content: center;
+    }
+    
+    .committee-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .committee-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .committee-title::after {
+        width: 60px;
     }
 }
