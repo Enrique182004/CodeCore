@@ -500,3 +500,50 @@ nav a.cta::after {
         font-size: 1.3rem;
     }
 }
+/* Seats Info Styling */
+.seats-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(135deg, rgba(124, 179, 66, 0.1), rgba(45, 127, 165, 0.1));
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(45, 127, 165, 0.2);
+}
+
+.seats-icon {
+    font-size: 1.3rem;
+}
+
+.seats-text {
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.seats-count {
+    color: #2d7fa5;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.seats-count.low {
+    color: #ff6b6b;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Seats info for closed workshops */
+.form-card .form-status.closed ~ .seats-info {
+    opacity: 0.6;
+}
