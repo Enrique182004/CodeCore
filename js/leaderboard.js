@@ -1,24 +1,68 @@
 const participants = [
-    { name: "Johana Hermosillo", email: "smt@miners.utep.edu", score: 850, photo: "../images/officers/johana.jpeg", status: "active" },
-    { name: "Enrique Calleros", email: "smt@miners.utep.edu", score: 820, photo: "../images/officers/enrique.png", status: "active" },
-    { name: "Alejandra Acevedo", email: "smt@miners.utep.edu", score: 795, photo: "../images/officers/Alejandra.jpeg", status: "active" },
-    { name: "Danilo Romero", email: "smt@miners.utep.edu", score: 780, photo: "", status: "new" },
-    { name: "Victoria", email: "smt@miners.utep.edu", score: 765, photo: "", status: "active" },
-    { name: "Alexa", email: "smt@miners.utep.edu", score: 740, photo: "", status: "active" }
+    { name: "Johana Hermosillo", email: "smt@miners.utep.edu", score: 850, photo: "../images/officers/johana.jpeg", status: "active", classStanding: "senior" },
+    { name: "Enrique Calleros", email: "smt@miners.utep.edu", score: 820, photo: "../images/officers/enrique.png", status: "active", classStanding: "junior" },
+    { name: "Alejandra Acevedo", email: "smt@miners.utep.edu", score: 795, photo: "../images/officers/Alejandra.jpeg", status: "active", classStanding: "sophomore" },
+    { name: "Danilo Romero", email: "smt@miners.utep.edu", score: 780, photo: "", status: "new", classStanding: "freshman" },
+    { name: "Victoria", email: "smt@miners.utep.edu", score: 765, photo: "", status: "active", classStanding: "senior" },
+    { name: "Alexa", email: "smt@miners.utep.edu", score: 740, photo: "", status: "active", classStanding: "junior" }
 ];
 
 let filteredParticipants = [...participants];
 let currentSort = 'score'; // Track current sort mode
+let currentFilter = 'all'; // Track current class filter
 
 // Function to get initials from name
 function getInitials(name) {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();
 }
 
+// Function to get class standing emoji
+function getClassEmoji(classStanding) {
+    const emojiMap = {
+        'freshman': '🎓',
+        'sophomore': '📚',
+        'junior': '💼',
+        'senior': '🎯'
+    };
+    return emojiMap[classStanding] || '👤';
+}
+
 function updateStats() {
-    document.getElementById('totalParticipants').textContent = participants.length;
-    const avgScore = Math.round(participants.reduce((sum, p) => sum + p.score, 0) / participants.length);
+    document.getElementById('totalParticipants').textContent = filteredParticipants.length;
+    const avgScore = filteredParticipants.length > 0 
+        ? Math.round(filteredParticipants.reduce((sum, p) => sum + p.score, 0) / filteredParticipants.length)
+        : 0;
     document.getElementById('avgScore').textContent = avgScore;
+}
+
+function applyFilters() {
+    let filtered = [...participants];
+    
+    // Apply class standing filter
+    if (currentFilter !== 'all') {
+        filtered = filtered.filter(p => p.classStanding === currentFilter);
+    }
+    
+    // Apply search filter
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    if (searchValue) {
+        filtered = filtered.filter(p => 
+            p.name.toLowerCase().includes(searchValue) || 
+            p.email.toLowerCase().includes(searchValue)
+        );
+    }
+    
+    // Apply sort
+    if (currentSort === 'name') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (currentSort === 'score') {
+        filtered.sort((a, b) => b.score - a.score);
+    }
+    
+    filteredParticipants = filtered;
+    updateStats();
+    renderPodium();
+    renderLeaderboard();
 }
 
 function renderPodium() {
@@ -63,6 +107,30 @@ function renderPodium() {
 
 function renderLeaderboard() {
     const tbody = document.getElementById('leaderboardBody');
+    const tableHeader = document.querySelector('.table-header');
+    
+    // Show class column only for "All Participants" view
+    const showClassColumn = currentFilter === 'all';
+    
+    // Update table header
+    if (showClassColumn) {
+        tableHeader.classList.add('with-class');
+        tableHeader.innerHTML = `
+            <div>Rank</div>
+            <div>Participant</div>
+            <div>Score</div>
+            <div>Class</div>
+            <div>Status</div>
+        `;
+    } else {
+        tableHeader.classList.remove('with-class');
+        tableHeader.innerHTML = `
+            <div>Rank</div>
+            <div>Participant</div>
+            <div>Score</div>
+            <div>Status</div>
+        `;
+    }
     
     // When sorted by score and 3+ participants, skip top 3 (they're in podium)
     // Otherwise, show all participants starting from rank 1
@@ -70,19 +138,27 @@ function renderLeaderboard() {
     const startFrom = showInPodium ? 3 : 0;
     const displayParticipants = filteredParticipants.slice(startFrom);
     
-    // Create a score-sorted list once for rank lookup
-    const scoreSortedList = [...participants].sort((a, b) => b.score - a.score);
+    // Create a score-sorted list for the current filter for rank lookup
+    const scoreSortedList = [...filteredParticipants].sort((a, b) => b.score - a.score);
     
     tbody.innerHTML = displayParticipants.map((participant, index) => {
-        // ALWAYS find the participant's rank based on score (their true position)
+        // ALWAYS find the participant's rank based on score within the current filter
         const rank = scoreSortedList.findIndex(p => p.name === participant.name && p.email === participant.email) + 1;
         
         const avatarContent = participant.photo 
             ? `<img src="${participant.photo}" alt="${participant.name}">`
             : getInitials(participant.name);
         
+        const classColumnHTML = showClassColumn 
+            ? `<div class="participant-badge">
+                   <span class="participant-class ${participant.classStanding}">
+                       ${getClassEmoji(participant.classStanding)} ${participant.classStanding}
+                   </span>
+               </div>`
+            : '';
+        
         return `
-            <div class="participant-row">
+            <div class="participant-row ${showClassColumn ? 'with-class' : ''}">
                 <div class="participant-rank">#${rank}</div>
                 <div class="participant-info">
                     <div class="participant-avatar">${avatarContent}</div>
@@ -92,6 +168,7 @@ function renderLeaderboard() {
                     </div>
                 </div>
                 <div class="participant-score">${participant.score} pts</div>
+                ${classColumnHTML}
                 <div class="participant-badge">
                     <span class="badge ${participant.status}">${participant.status === 'new' ? 'New' : 'Active'}</span>
                 </div>
@@ -104,7 +181,7 @@ function renderLeaderboard() {
         if (filteredParticipants.length === 0) {
             tbody.innerHTML = `
                 <div style="padding: 2rem; text-align: center; color: #718096;">
-                    <p style="font-size: 1.2rem;">No participants found matching your search.</p>
+                    <p style="font-size: 1.2rem;">No participants found matching your criteria.</p>
                 </div>
             `;
         } else if (showInPodium) {
@@ -118,38 +195,35 @@ function renderLeaderboard() {
     }
 }
 
+// Tab button functionality
+document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Update current filter
+        currentFilter = this.dataset.filter;
+        
+        // Apply all filters and re-render
+        applyFilters();
+    });
+});
+
 // Search functionality
 document.getElementById('searchInput').addEventListener('input', (e) => {
-    const search = e.target.value.toLowerCase();
-    filteredParticipants = participants.filter(p => 
-        p.name.toLowerCase().includes(search) || 
-        p.email.toLowerCase().includes(search)
-    );
-    // Re-sort by score after filtering to maintain correct ranking
-    filteredParticipants.sort((a, b) => b.score - a.score);
-    updateStats();
-    renderPodium();
-    renderLeaderboard();
+    applyFilters();
 });
 
 // Sort functionality
 document.getElementById('sortSelect').addEventListener('change', (e) => {
-    const sortBy = e.target.value;
-    currentSort = sortBy; // Update current sort mode
-    
-    if (sortBy === 'name') {
-        filteredParticipants.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortBy === 'score') {
-        filteredParticipants.sort((a, b) => b.score - a.score);
-    }
-    updateStats();
-    renderPodium();
-    renderLeaderboard();
+    currentSort = e.target.value;
+    applyFilters();
 });
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    updateStats();
-    renderPodium();
-    renderLeaderboard();
+    applyFilters();
 });
