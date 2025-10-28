@@ -48,7 +48,7 @@
             <h2>Faculty Advisors</h2>
             <div class="collaborators-grid">
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/akbar.jpg" alt="Dr. Monika Akbar">
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/ceberio.jpg" alt="Dr. Martine Ceberio">
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/frias.jpg" alt="Dr. Marcelo Frias">
@@ -119,7 +119,7 @@
             <div class="collaborators-grid">
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/aggarwal.jpg" alt="Dr. Palvi Aggarwal">
@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/gurijala.jpg" alt="Dr. Bhanukiran Gurijala">
@@ -159,7 +159,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/kotal.jpg" alt="Dr. Anantaa Kotal">
@@ -179,7 +179,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/lauter.jpg" alt="Dr. Christoph Lauter">
@@ -199,7 +199,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/longpre.jpg" alt="Dr. Luc Longpre">
@@ -219,7 +219,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/mejia.jpg" alt="Dr. Daniel Mejia">
@@ -239,7 +239,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/mondragon.jpg" alt="Dr. Oscar Mondragon">
@@ -259,7 +259,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/salamah.jpg" alt="Dr. Salamah Salamah">
@@ -277,6 +277,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -286,7 +287,7 @@
             <div class="collaborators-grid">
 
                                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/bianca.jpg" alt="Bianca Alvarez">
@@ -307,7 +308,7 @@
                 </div>
 
                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/maly.jpg" alt="Maly Fong">
@@ -328,7 +329,7 @@
                 </div>
 
                                 <div class="collaborator-card-container">
-                    <div class="collaborator-card">
+                    <div class="collaborator-card" tabindex="0">
                         <div class="collaborator-front">
                             <div class="collaborator-photo">
                                 <img src="../images/faculty/margot.jpg" alt="Margot Moran">
@@ -415,8 +416,17 @@
             const cards = document.querySelectorAll('.collaborator-card');
             
             cards.forEach(card => {
+                // Click handler
                 card.addEventListener('click', function() {
                     this.classList.toggle('flipped');
+                });
+                
+                // Keyboard handler (Enter or Space key)
+                card.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.classList.toggle('flipped');
+                    }
                 });
             });
         });
