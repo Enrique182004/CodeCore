@@ -555,3 +555,185 @@
         font-size: 1.6rem;
     }
 }
+
+/* Points Legend Section */
+.points-legend {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(230, 242, 255, 0.95));
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(43, 122, 158, 0.2);
+}
+
+.points-legend h2 {
+    font-size: 2.5rem;
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.legend-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.points-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(43, 122, 158, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.points-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(43, 122, 158, 0.3);
+}
+
+.points-section h3 {
+    font-size: 1.5rem;
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.points-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.points-section li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(43, 122, 158, 0.1);
+    font-size: 1rem;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.points-section li:last-child {
+    border-bottom: none;
+}
+
+.place-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.place-badge.gold {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1e3a5f;
+}
+
+.place-badge.silver {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    color: #1e3a5f;
+}
+
+.place-badge.bronze {
+    background: linear-gradient(135deg, #CD7F32, #B87333);
+    color: white;
+}
+
+.homework-desc {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.note {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #FFC107;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #1e3a5f;
+    font-weight: 600;
+}
+
+.legend-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.important-note {
+    background: linear-gradient(135deg, rgba(124, 179, 66, 0.15), rgba(43, 122, 158, 0.15));
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(43, 122, 158, 0.2);
+}
+
+.important-note h3 {
+    font-size: 1.3rem;
+    color: #1e3a5f;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.important-note p {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Responsive for Points Legend */
+@media (max-width: 768px) {
+    .points-legend {
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .points-legend h2 {
+        font-size: 2rem;
+    }
+
+    .legend-intro {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .points-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .points-section {
+        padding: 1.5rem;
+    }
+
+    .points-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .legend-footer {
+        grid-template-columns: 1fr;
+    }
+}

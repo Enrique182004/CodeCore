@@ -4,49 +4,49 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeCalendarPage() {
-    // ACTUAL CODECORE WORKSHOPS - Only the 4 General CS Topics
+    // ACTUAL CODECORE WORKSHOPS - Only the 4 open workshops from forms page
     const workshopEvents = [
         {
-            id: 'cs-topics-1',
-            title: 'General Computer Science Topics I',
+            id: 'loops-arrays-conditionals',
+            title: 'The Big Three: Loops, Arrays, Conditionals',
             date: '2025-11-10',
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0102',
-            description: 'Explore fundamental CS concepts, theory, and practical applications',
-            formLink: 'forms.html#cs-topics-1',
+            description: 'Topics: Loops, Arrays & Conditionals',
+            formLink: 'https://forms.gle/mYNqMCtT8riUXptL8',
             seats: '35/35',
             status: 'open'
         },
         {
-            id: 'cs-topics-2',
-            title: 'General Computer Science Topics II',
+            id: 'if-else-everything',
+            title: 'If, Else, and Everything In Between',
             date: '2025-11-12',
             time: '1:00 PM - 2:30 PM',
             location: 'CCSB 1.0102',
-            description: 'Explore fundamental CS concepts, theory, and practical applications',
-            formLink: 'forms.html#cs-topics-2',
+            description: 'Topics: Methods/Functions, Backtracking & Conditionals',
+            formLink: 'https://forms.gle/8bGWtmEraDgM1J2P8',
             seats: '35/35',
             status: 'open'
         },
         {
-            id: 'cs-topics-3',
-            title: 'General Computer Science Topics III',
+            id: 'recur-conquer',
+            title: 'Recur & Conquer',
             date: '2025-11-12',
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0102',
-            description: 'Explore fundamental CS concepts, theory, and practical applications',
-            formLink: 'forms.html#cs-topics-3',
+            description: 'Topics: Functions/Methods, Recursion & Conditionals',
+            formLink: 'https://forms.gle/hXeqkjwzPtjHhUDB8',
             seats: '35/35',
             status: 'open'
         },
         {
-            id: 'cs-topics-4',
-            title: 'General Computer Science Topics IV',
+            id: 'divide-locate',
+            title: 'Mission: Divide & Locate',
             date: '2025-11-14',
             time: '12:00 PM - 1:30 PM',
             location: 'CCSB 1.0102',
-            description: 'Explore fundamental CS concepts, theory, and practical applications',
-            formLink: 'forms.html#cs-topics-4',
+            description: 'Topics: Binary Search',
+            formLink: 'https://forms.gle/6nBFSQtjwh5GkDso6',
             seats: '35/35',
             status: 'open'
         }

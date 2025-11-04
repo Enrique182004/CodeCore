@@ -33,6 +33,7 @@
                     <li><a href="collaborators.html">Collaborators</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="forms.html">Forms</a></li>
                 </ul>
             </nav>
@@ -65,10 +66,8 @@
 
         <div class="leaderboard-tabs">
             <button class="tab-button active" data-filter="all">🏆 All Participants</button>
-            <button class="tab-button" data-filter="freshman">🎓 Freshmen</button>
-            <button class="tab-button" data-filter="sophomore">📚 Sophomores</button>
-            <button class="tab-button" data-filter="junior">💼 Juniors</button>
-            <button class="tab-button" data-filter="senior">🎯 Seniors</button>
+            <button class="tab-button" data-filter="underclassmen">🎓 Freshmen & Sophomore</button>
+            <button class="tab-button" data-filter="upperclassmen">💼 Junior & Senior</button>
         </div>
 
         <div class="filter-controls">
@@ -90,6 +89,79 @@
                 <div>Status</div>
             </div>
             <div id="leaderboardBody"></div>
+        </div>
+
+        <!-- Point System Legend -->
+        <div class="points-legend">
+            <h2>📊 How Points Work</h2>
+            <p class="legend-intro">Earn points by participating in workshops, completing challenges, and engaging with the CodeCore community!</p>
+            
+            <div class="points-grid">
+                <!-- Kahoot Section -->
+                <div class="points-section">
+                    <h3>🎮 Kahoot (15 min)</h3>
+                    <ul>
+                        <li><span class="place-badge gold">1st Place</span> = <strong>15 points</strong></li>
+                        <li><span class="place-badge silver">2nd Place</span> = <strong>10 points</strong></li>
+                        <li><span class="place-badge bronze">3rd Place</span> = <strong>5 points</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Activity Section -->
+                <div class="points-section">
+                    <h3>🎯 Activity (45 min)</h3>
+                    <ul>
+                        <li><span class="place-badge gold">1st Place</span> = <strong>15 points</strong></li>
+                        <li><span class="place-badge silver">2nd Place</span> = <strong>10 points</strong></li>
+                        <li><span class="place-badge bronze">3rd Place</span> = <strong>5 points</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Coding/Q&A Section -->
+                <div class="points-section">
+                    <h3>💻 Coding / Q&A (30 min)</h3>
+                    <ul>
+                        <li><span class="place-badge gold">1st Place</span> = <strong>15 points</strong></li>
+                        <li><span class="place-badge silver">2nd Place</span> = <strong>10 points</strong></li>
+                        <li><span class="place-badge bronze">3rd Place</span> = <strong>5 points</strong></li>
+                    </ul>
+                    <p class="note">⚠️ Only the first 3 participants who answer correctly get points</p>
+                </div>
+
+                <!-- Homework Section -->
+                <div class="points-section">
+                    <h3>📝 Homework</h3>
+                    <p class="homework-desc">Complete problems and explain in person to an officer</p>
+                    <ul>
+                        <li>1 problem = <strong>5 points</strong></li>
+                        <li>2 problems = <strong>10 points</strong></li>
+                        <li>3 problems = <strong>15 points</strong></li>
+                    </ul>
+                </div>
+
+                <!-- General Points Section -->
+                <div class="points-section">
+                    <h3>⭐ General Points</h3>
+                    <ul>
+                        <li>Attendance = <strong>5 points</strong></li>
+                        <li>Bring a friend (referral) = <strong>5 points</strong></li>
+                        <li>Participation = <strong>10 points</strong></li>
+                        <li>Correct answers = <strong>10 points</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="legend-footer">
+                <div class="important-note">
+                    <h3>🔄 Leaderboard Resets</h3>
+                    <p>The leaderboard will reset at mid-semester and end of semester. This gives everyone a fresh chance to compete!</p>
+                </div>
+                <div class="important-note">
+                    <h3>🎁 Prizes</h3>
+                    <p>Prizes will be awarded per category at the end of each period. Keep climbing the ranks!</p>
+                </div>
+            </div>
         </div>
     </div>
     

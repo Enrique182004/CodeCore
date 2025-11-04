@@ -1,11 +1,4 @@
-const participants = [
-    { name: "Johana Hermosillo", email: "smt@miners.utep.edu", score: 850, photo: "../images/officers/johana.jpeg", status: "active", classStanding: "senior" },
-    { name: "Enrique Calleros", email: "smt@miners.utep.edu", score: 820, photo: "../images/officers/enrique.png", status: "active", classStanding: "junior" },
-    { name: "Alejandra Acevedo", email: "smt@miners.utep.edu", score: 795, photo: "../images/officers/Alejandra.jpeg", status: "active", classStanding: "sophomore" },
-    { name: "Danilo Romero", email: "smt@miners.utep.edu", score: 780, photo: "", status: "new", classStanding: "freshman" },
-    { name: "Victoria", email: "smt@miners.utep.edu", score: 765, photo: "", status: "active", classStanding: "senior" },
-    { name: "Alexa", email: "smt@miners.utep.edu", score: 740, photo: "", status: "active", classStanding: "junior" }
-];
+const participants = [];
 
 let filteredParticipants = [...participants];
 let currentSort = 'score'; // Track current sort mode
@@ -39,7 +32,11 @@ function applyFilters() {
     let filtered = [...participants];
     
     // Apply class standing filter
-    if (currentFilter !== 'all') {
+    if (currentFilter === 'underclassmen') {
+        filtered = filtered.filter(p => p.classStanding === 'freshman' || p.classStanding === 'sophomore');
+    } else if (currentFilter === 'upperclassmen') {
+        filtered = filtered.filter(p => p.classStanding === 'junior' || p.classStanding === 'senior');
+    } else if (currentFilter !== 'all') {
         filtered = filtered.filter(p => p.classStanding === currentFilter);
     }
     
