@@ -113,9 +113,10 @@ function initializeCalendarPage() {
             const dayCell = document.createElement('div');
             dayCell.className = 'calendar-day-cell';
             
+            // Create date string directly to avoid timezone issues
+            const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             const currentDayDate = new Date(year, month, day);
             currentDayDate.setHours(0, 0, 0, 0);
-            const dateString = formatDate(currentDayDate);
             
             // Get events for this day
             const dayEvents = workshopEvents.filter(event => event.date === dateString);
@@ -178,18 +179,29 @@ function initializeCalendarPage() {
 
         // Apply filter
         if (filter === 'upcoming') {
-            filteredEvents = workshopEvents.filter(event => new Date(event.date) >= today);
+            filteredEvents = workshopEvents.filter(event => {
+                const [year, month, day] = event.date.split('-').map(Number);
+                const eventDate = new Date(year, month - 1, day);
+                return eventDate >= today;
+            });
         } else if (filter === 'this-month') {
             const currentMonth = currentDate.getMonth();
             const currentYear = currentDate.getFullYear();
             filteredEvents = workshopEvents.filter(event => {
-                const eventDate = new Date(event.date);
+                const [year, month, day] = event.date.split('-').map(Number);
+                const eventDate = new Date(year, month - 1, day);
                 return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
             });
         }
 
         // Sort by date
-        filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+        filteredEvents.sort((a, b) => {
+            const [yearA, monthA, dayA] = a.date.split('-').map(Number);
+            const [yearB, monthB, dayB] = b.date.split('-').map(Number);
+            const dateA = new Date(yearA, monthA - 1, dayA);
+            const dateB = new Date(yearB, monthB - 1, dayB);
+            return dateA - dateB;
+        });
 
         if (filteredEvents.length === 0) {
             eventsContainer.innerHTML = '<div class="no-events-message">No workshops found for this filter.</div>';
@@ -197,7 +209,9 @@ function initializeCalendarPage() {
         }
 
         eventsContainer.innerHTML = filteredEvents.map(event => {
-            const eventDate = new Date(event.date);
+            // Parse date correctly to avoid timezone issues
+            const [year, month, day] = event.date.split('-').map(Number);
+            const eventDate = new Date(year, month - 1, day);
             const formattedDate = eventDate.toLocaleDateString('en-US', { 
                 weekday: 'long', 
                 year: 'numeric', 
@@ -273,7 +287,8 @@ function initializeCalendarPage() {
         today.setHours(0, 0, 0, 0);
         
         const upcomingCount = workshopEvents.filter(event => {
-            const eventDate = new Date(event.date);
+            const [year, month, day] = event.date.split('-').map(Number);
+            const eventDate = new Date(year, month - 1, day);
             return eventDate >= today && event.status === 'open';
         }).length;
         

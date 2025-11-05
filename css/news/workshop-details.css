@@ -1,0 +1,219 @@
+/* Workshop Details Page Styles */
+/* This file contains styles specific to workshop detail pages in the news section */
+
+.workshop-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.workshop-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(43, 122, 158, 0.1), rgba(124, 179, 66, 0.1));
+    border-radius: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.workshop-header h1 {
+    font-size: 2.8rem;
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.workshop-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.section-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(230, 242, 255, 0.95));
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(43, 122, 158, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.section-card h2 {
+    color: #1e3a5f;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    border-bottom: 3px solid #7cb342;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.section-card h3 {
+    color: #2b7a9e;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.section-card p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.section-card ul {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-card li {
+    margin-bottom: 0.8rem;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, rgba(43, 122, 158, 0.08), rgba(124, 179, 66, 0.08));
+    border-left: 4px solid #2b7a9e;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+}
+
+.highlight-box h4 {
+    color: #1e3a5f;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.highlight-box ul {
+    margin-bottom: 0;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.activity-card {
+    background: rgba(43, 122, 158, 0.05);
+    border: 2px solid rgba(43, 122, 158, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(43, 122, 158, 0.15);
+    border-color: rgba(43, 122, 158, 0.4);
+}
+
+.activity-card h4 {
+    color: #1e3a5f;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.activity-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #2b7a9e, #1e4a7a);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(43, 122, 158, 0.3);
+}
+
+.back-button:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(43, 122, 158, 0.4);
+}
+
+.presenter-info {
+    background: rgba(124, 179, 66, 0.08);
+    border-left: 4px solid #7cb342;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .workshop-detail-container {
+        padding: 3rem 1.5rem;
+    }
+
+    .workshop-header h1 {
+        font-size: 2rem;
+    }
+
+    .workshop-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .section-card {
+        padding: 2rem;
+    }
+
+    .section-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .workshop-detail-container {
+        padding: 2rem 1rem;
+    }
+
+    .workshop-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-card {
+        padding: 1.5rem;
+    }
+
+    .section-card h2 {
+        font-size: 1.4rem;
+    }
+}
