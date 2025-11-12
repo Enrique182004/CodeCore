@@ -33,8 +33,9 @@
                     <li><a href="officers.html">Our Officers</a></li>                    
                     <li><a href="collaborators.html">Collaborators</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="news.html">News</a></li>
                     <li><a href="leaderboard.html">Leaderboard</a></li>
-                    <li><a href="calendar.html">Calendar</a></li>
+                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="forms.html">Forms</a></li>
                 </ul>
             </nav>
@@ -45,6 +46,7 @@
         <section class="forms-header">
             <h1>Forms & Workshops</h1>
             <p>Register for technical workshops and access learning resources</p>
+            <a href="#past-workshops" class="jump-to-past">📚 Jump to Past Workshops</a>
         </section>
 
         <!-- Current Forms Section -->
@@ -81,34 +83,18 @@
                     <h3>Feedback Survey</h3>
                     <p>Share your thoughts and help us improve CodeCore events and activities</p>
                     <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">Currently Unavailable</span>
+                        <span class="form-status open">Open</span>
+                        <span class="form-date">Available</span>
                     </div>
-                    <a href="#" class="form-button disabled">Submit Feedback</a>
+                    <a href="https://forms.gle/fmSPHNjGiNKoXc3h7" class="form-button" target="_blank">Submit Feedback</a>
                 </div>
             </div>
         </section>
 
         <!-- Upcoming Workshops Section -->
-        <section class="forms-section">
+        <section class="forms-section" id="upcoming-workshops">
             <h2 class="section-title">🚀 Upcoming Workshops</h2>
             <div class="forms-grid">
-
-                <!-- Workshop: General CS Topics -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">💻</div>
-                    <h3>The Big Three: Loops, Arrays, Conditionals</h3>
-                    <p><b>Topics: </b> Loops, Arrays & Conditionals</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="general-seats-1">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status open">Open</span>
-                        <span class="form-date">11/10, 4:30 PM – 6 PM</span>
-                    </div>
-                    <a href="https://forms.gle/mYNqMCtT8riUXptL8" class="form-button" target="_blank">Register</a>
-                </div>
 
                 <div class="form-card workshop-card">
                     <div class="form-icon">💻</div>
@@ -768,19 +754,19 @@
         </section>
 
         <!-- Past Workshops Section -->
-        <section class="forms-section">
+        <section class="forms-section" id="past-workshops">
             <h2 class="section-title">📚 Past Workshops</h2>
             <div class="forms-grid">
-                <!-- Placeholder for past workshops -->
-                <div class="form-card past-workshop placeholder">
-                    <div class="form-icon">📖</div>
-                    <h3>Workshop Archive</h3>
-                    <p>Completed workshop materials and resources will appear here</p>
+                <!-- Past Workshop: The Big Three -->
+                <div class="form-card past-workshop">
+                    <div class="form-icon">💻</div>
+                    <h3>The Big Three: Loops, Arrays, Conditionals</h3>
+                    <p><b>Topics: </b> Loops, Arrays & Conditionals</p>
                     <div class="form-meta">
                         <span class="form-status past">Archive</span>
-                        <span class="form-date">Coming Soon</span>
+                        <span class="form-date">11/10, 4:30 PM – 6 PM</span>
                     </div>
-                    <a href="#" class="form-button disabled">No Materials Yet</a>
+                    <a href="https://drive.google.com/drive/folders/11LpZ1Go9K0r8cmaJ1s6PkjtBWZ7VIqmp?usp=sharing" class="form-button" target="_blank">Get Items</a>
                 </div>
             </div>
         </section>
@@ -792,6 +778,22 @@
                 <p>If you have questions about workshops, forms, or need assistance, feel free to reach out to us at <a href="mailto:codecore@utep.edu">codecore@utep.edu</a></p>
             </div>
         </section>
+    </div>
+    
+    <!-- Floating Navigation Menu -->
+    <div class="floating-nav">
+        <button class="nav-dot" data-target="top" title="Back to Top">
+            <span class="nav-icon">🔝</span>
+            <span class="nav-label">Top</span>
+        </button>
+        <button class="nav-dot" data-target="upcoming-workshops" title="Upcoming Workshops">
+            <span class="nav-icon">🚀</span>
+            <span class="nav-label">Upcoming</span>
+        </button>
+        <button class="nav-dot" data-target="past-workshops" title="Past Workshops">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Past</span>
+        </button>
     </div>
     
     <!-- Nav Overlay -->
@@ -823,11 +825,79 @@
 </footer>
     
     <!-- Mobile Menu Script -->
-    <script src="../js/mobile-menu.js"></script>
-    <!-- Google Analytics -->
-    <script src="../js/analytics.js"></script>
-    <!-- Workshop Seats Counter Script -->
-    <script src="../js/workshop-counter.js"></script>
-
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/mobile-menu.js"></script>
+    <!-- Floating Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingNav = document.querySelector('.floating-nav');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            // Scroll event for visual feedback and active state
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                
+                // Dim temporarily while scrolling
+                floatingNav.classList.add('scrolling');
+                scrollTimeout = setTimeout(function() {
+                    floatingNav.classList.remove('scrolling');
+                }, 150);
+                
+                // Update active dot based on scroll position
+                updateActiveDot();
+            });
+            
+            // Click handlers for navigation dots
+            navDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    if (target === 'top') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        const section = document.getElementById(target);
+                        if (section) {
+                            section.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                    
+                    // Add click animation
+                    this.classList.add('clicked');
+                    setTimeout(() => {
+                        this.classList.remove('clicked');
+                    }, 300);
+                });
+            });
+            
+            // Update active dot based on scroll position
+            function updateActiveDot() {
+                const upcomingSection = document.getElementById('upcoming-workshops');
+                const pastSection = document.getElementById('past-workshops');
+                
+                if (!upcomingSection || !pastSection) return;
+                
+                const scrollPosition = window.scrollY + window.innerHeight / 3;
+                
+                navDots.forEach(dot => dot.classList.remove('active'));
+                
+                if (scrollPosition < upcomingSection.offsetTop) {
+                    navDots[0].classList.add('active'); // Top
+                } else if (scrollPosition < pastSection.offsetTop) {
+                    navDots[1].classList.add('active'); // Upcoming
+                } else {
+                    navDots[2].classList.add('active'); // Past
+                }
+            }
+            
+            // Initial check
+            updateActiveDot();
+        });
+    </script>
 </body>
 </html>
