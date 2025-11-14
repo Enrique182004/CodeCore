@@ -1,21 +1,56 @@
-// Calendar Page JavaScript - CodeCore Workshops (Corrected)
+// Calendar Page JavaScript - CodeCore Workshops (Updated)
 document.addEventListener('DOMContentLoaded', function() {
     initializeCalendarPage();
 });
 
 function initializeCalendarPage() {
-    // ACTUAL CODECORE WORKSHOPS - Only the 4 open workshops from forms page
+    // ACTUAL CODECORE WORKSHOPS - Updated from forms page
     const workshopEvents = [
+        // Upcoming Workshops (Open)
         {
-            id: 'loops-arrays-conditionals',
+            id: 'divide-locate',
+            title: 'Mission: Divide & Locate',
+            date: '2025-11-14',
+            time: '12:00 PM - 1:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Binary Search',
+            formLink: 'https://forms.gle/zbheexWcLa95WNjx5',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'link-it-up',
+            title: 'Link It Up!',
+            date: '2025-11-17',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Linked Lists',
+            formLink: 'https://forms.gle/cVqsvPtpjAjyDFeM9',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'recursive-realm',
+            title: 'The Recursive Realm',
+            date: '2025-11-19',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Recursion',
+            formLink: 'https://forms.gle/CthvNV7bMm2ruSPSA',
+            seats: '35/35',
+            status: 'open'
+        },
+        // Past Workshops (Archive)
+        {
+            id: 'big-three',
             title: 'The Big Three: Loops, Arrays, Conditionals',
             date: '2025-11-10',
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: Loops, Arrays & Conditionals',
-            formLink: 'https://forms.gle/mYNqMCtT8riUXptL8',
-            seats: '15/35',
-            status: 'open'
+            formLink: 'https://drive.google.com/drive/folders/11LpZ1Go9K0r8cmaJ1s6PkjtBWZ7VIqmp?usp=sharing',
+            seats: 'Full',
+            status: 'past'
         },
         {
             id: 'if-else-everything',
@@ -25,8 +60,8 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: Methods/Functions, Backtracking & Conditionals',
             formLink: 'https://forms.gle/8bGWtmEraDgM1J2P8',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
         {
             id: 'recur-conquer',
@@ -35,20 +70,9 @@ function initializeCalendarPage() {
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: Functions/Methods, Recursion & Conditionals',
-            formLink: 'https://forms.gle/hXeqkjwzPtjHhUDB8',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'divide-locate',
-            title: 'Mission: Divide & Locate',
-            date: '2025-11-14',
-            time: '12:00 PM - 1:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Binary Search',
-            formLink: 'https://forms.gle/6nBFSQtjwh5GkDso6',
-            seats: '35/35',
-            status: 'open'
+            formLink: 'https://drive.google.com/drive/folders/1uPEJtCS_AcPpp3860xgLH024Wuv-OSVE?usp=sharing',
+            seats: 'Full',
+            status: 'past'
         }
     ];
 
@@ -175,40 +199,48 @@ function initializeCalendarPage() {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        let filteredEvents = workshopEvents;
+        // Filter out past workshops - only show upcoming/open workshops
+        let filteredEvents = workshopEvents.filter(event => event.status !== 'past');
 
-        // Apply filter
+        // Apply additional filter
         if (filter === 'upcoming') {
-            filteredEvents = workshopEvents.filter(event => {
+            filteredEvents = filteredEvents.filter(event => {
                 const [year, month, day] = event.date.split('-').map(Number);
                 const eventDate = new Date(year, month - 1, day);
-                return eventDate >= today;
+                return eventDate >= today && event.status !== 'past';
             });
         } else if (filter === 'this-month') {
             const currentMonth = currentDate.getMonth();
             const currentYear = currentDate.getFullYear();
-            filteredEvents = workshopEvents.filter(event => {
+            filteredEvents = filteredEvents.filter(event => {
                 const [year, month, day] = event.date.split('-').map(Number);
                 const eventDate = new Date(year, month - 1, day);
-                return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
+                return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear && event.status !== 'past';
             });
         }
 
-        // Sort by date
+        // Sort: Upcoming events by date
+        const todayForSort = new Date();
+        todayForSort.setHours(0, 0, 0, 0);
+        
         filteredEvents.sort((a, b) => {
             const [yearA, monthA, dayA] = a.date.split('-').map(Number);
             const [yearB, monthB, dayB] = b.date.split('-').map(Number);
             const dateA = new Date(yearA, monthA - 1, dayA);
             const dateB = new Date(yearB, monthB - 1, dayB);
+            
             return dateA - dateB;
         });
+        
+        // Debug: Log the sorted order
+        console.log('Sorted events:', filteredEvents.map(e => `${e.title} (${e.date}) - ${e.status}`));
 
         if (filteredEvents.length === 0) {
             eventsContainer.innerHTML = '<div class="no-events-message">No workshops found for this filter.</div>';
             return;
         }
 
-        eventsContainer.innerHTML = filteredEvents.map(event => {
+        eventsContainer.innerHTML = filteredEvents.map((event, index) => {
             // Parse date correctly to avoid timezone issues
             const [year, month, day] = event.date.split('-').map(Number);
             const eventDate = new Date(year, month - 1, day);
@@ -219,10 +251,10 @@ function initializeCalendarPage() {
                 day: 'numeric' 
             });
 
-            const isPast = eventDate < today;
+            const isPast = event.status === 'past' || eventDate < today;
             const isToday = eventDate.getTime() === today.getTime();
             const isClosed = event.status === 'closed';
-
+            
             // Status badge
             let statusBadge = '';
             if (isPast) {
@@ -231,6 +263,21 @@ function initializeCalendarPage() {
                 statusBadge = '<span class="status-badge closed">Closed</span>';
             } else {
                 statusBadge = '<span class="status-badge open">Open</span>';
+            }
+
+            // Button text and link
+            let buttonHTML = '';
+            if (isPast) {
+                // For past events, link to materials if available
+                if (event.formLink.includes('drive.google.com')) {
+                    buttonHTML = `<a href="${event.formLink}" class="event-register-btn">View Materials →</a>`;
+                } else {
+                    buttonHTML = `<a href="${event.formLink}" class="event-register-btn">Get Items →</a>`;
+                }
+            } else if (isClosed) {
+                buttonHTML = `<div class="event-register-btn disabled">Registration Closed</div>`;
+            } else {
+                buttonHTML = `<a href="${event.formLink}" class="event-register-btn">Register Now →</a>`;
             }
 
             return `
@@ -251,10 +298,7 @@ function initializeCalendarPage() {
                     </div>
                     <p class="event-description">${event.description}</p>
                     ${statusBadge}
-                    ${(!isPast && !isClosed) ? 
-                        `<a href="${event.formLink}" class="event-register-btn">Register Now →</a>` : 
-                        `<div class="event-register-btn disabled">${isPast ? 'Past Event' : 'Registration Closed'}</div>`
-                    }
+                    ${buttonHTML}
                 </div>
             `;
         }).join('');
