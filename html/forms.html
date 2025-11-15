@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Commentarios y mejoraciones para el futuro-->
+    <!-- 1: Con PhP programar un sistema que capta el dia del "workshop" y le pone o en los activos o en los pasadaos basado en los dias-->
+    <!-- 2: Pagina admin para poder recoger datos sin tener que usar Google Forms, porque asi esta todo en un lugar -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCore - Forms</title>
@@ -17,9 +21,8 @@
         <div class="header-content">
             <div class="logo">
             <img src="../images/logos/C.png" alt="CodeCore Logo" class="logo-icon">
-             <span class="logo-text">CodeCore</span>
+            <span class="logo-text">CodeCore</span>
         </div>
-            
             <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
@@ -35,7 +38,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="leaderboard.html">Leaderboard</a></li>
-                     <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="forms.html">Forms</a></li>
                 </ul>
             </nav>
@@ -94,21 +97,6 @@
         <section class="forms-section" id="upcoming-workshops">
             <h2 class="section-title">🚀 Upcoming Workshops</h2>
             <div class="forms-grid">
-
-                <div class="form-card workshop-card">
-                    <div class="form-icon">💻</div>
-                    <h3>Mission: Divide & Locate</h3>
-                    <p><b>Topics: </b>Binary Search</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="general-seats-4">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status open">Open</span>
-                        <span class="form-date">11/14, 12 PM – 1:30 PM</span>
-                    </div>
-                    <a href="https://forms.gle/zbheexWcLa95WNjx5" class="form-button" target="_blank">Register</a>
-                </div>
 
                 <!-- Workshop: Linked Lists -->
                 <div class="form-card workshop-card">
@@ -759,6 +747,18 @@
                     </div>
                     <a href="https://drive.google.com/drive/folders/1uPEJtCS_AcPpp3860xgLH024Wuv-OSVE?usp=sharing" class="form-button" target="_blank">Get Items</a>
                 </div>
+
+                <!-- Past Workshop: Mission: Divide & Locate -->
+                <div class="form-card workshop-card">
+                    <div class="form-icon">💻</div>
+                    <h3>Mission: Divide & Locate</h3>
+                    <p><b>Topics: </b>Binary Search</p>
+                    <div class="form-meta">
+                        <span class="form-status past">Archive</span>
+                        <span class="form-date">11/14, 12 PM – 1:30 PM</span>
+                    </div>
+                    <a href="https://forms.gle/zbheexWcLa95WNjx5" class="form-button" target="_blank">Get Items</a>
+                </div>
             </div>
         </section>
 
@@ -766,7 +766,7 @@
         <section class="forms-info">
             <div class="info-box">
                 <h3>📧 Need Help?</h3>
-                <p>If you have questions about workshops, forms, or need assistance, feel free to reach out to us at <a href="mailto:codecore@utep.edu">codecore@utep.edu</a></p>
+                <p>If you have questions about workshops, forms, or need assistance, feel free to reach out to us at <a href="/cdn-cgi/l/email-protection#75161a1110161a071035000110055b101100"><span class="__cf_email__" data-cfemail="53303c3736303c213613262736237d363726">[email&#160;protected]</span></a></p>
             </div>
         </section>
     </div>
@@ -796,7 +796,7 @@
         <h3>Connect With Us</h3>
         <p>Follow CodeCore on social media to stay updated on events and workshops</p>
         <div class="footer-social">
-            <a href="mailto:codecore@utep.edu" aria-label="Email us" title="Email">
+            <a href="/cdn-cgi/l/email-protection#b1d2ded5d4d2dec3d4f1c4c5d4c19fd4d5c4" aria-label="Email us" title="Email">
                 <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
@@ -816,7 +816,7 @@
 </footer>
     
     <!-- Mobile Menu Script -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/mobile-menu.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/mobile-menu.js"></script>
     <!-- Floating Navigation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -886,9 +886,11 @@
                 }
             }
             
-            // Initial check
-            updateActiveDot();
+            window.addEventListener('scroll', updateActiveDot);
+            updateActiveDot(); // Initialize on load
         });
     </script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>

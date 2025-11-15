@@ -1,23 +1,21 @@
-// Calendar Page JavaScript - CodeCore Workshops (Updated)
+// Calendar Page JavaScript - CodeCore Workshops (Updated with Auto-Archive)
 document.addEventListener('DOMContentLoaded', function() {
     initializeCalendarPage();
+    
+    // Listen for workshop archive events
+    document.addEventListener('workshopArchived', function(e) {
+        console.log('Workshop archived event received:', e.detail.workshopId);
+        // Re-render to reflect archive status
+        renderEvents(currentFilter);
+        updateStats();
+        renderCalendar();
+    });
 });
 
 function initializeCalendarPage() {
     // ACTUAL CODECORE WORKSHOPS - Updated from forms page
     const workshopEvents = [
         // Upcoming Workshops (Open)
-        {
-            id: 'divide-locate',
-            title: 'Mission: Divide & Locate',
-            date: '2025-11-14',
-            time: '12:00 PM - 1:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Binary Search',
-            formLink: 'https://forms.gle/zbheexWcLa95WNjx5',
-            seats: '35/35',
-            status: 'open'
-        },
         {
             id: 'link-it-up',
             title: 'Link It Up!',
@@ -73,12 +71,34 @@ function initializeCalendarPage() {
             formLink: 'https://drive.google.com/drive/folders/1uPEJtCS_AcPpp3860xgLH024Wuv-OSVE?usp=sharing',
             seats: 'Full',
             status: 'past'
+        },
+        {
+            id: 'divide-locate',
+            title: 'Mission: Divide & Locate',
+            date: '2025-11-14',
+            time: '12:00 PM - 1:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Binary Search',
+            formLink: 'https://forms.gle/zbheexWcLa95WNjx5',
+            seats: 'Full',
+            status: 'past'
         }
     ];
+
+    // Initialize the workshop archiver with our workshops
+    if (window.workshopArchiver) {
+        window.workshopArchiver.init(workshopEvents);
+    }
 
     let currentDate = new Date();
     let selectedDate = null;
     let currentFilter = 'all';
+
+    // Make these available to event listeners
+    window.renderEvents = renderEvents;
+    window.updateStats = updateStats;
+    window.renderCalendar = renderCalendar;
+    window.currentFilter = currentFilter;
 
     // Initialize
     renderCalendar();
@@ -102,6 +122,7 @@ function initializeCalendarPage() {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentFilter = this.getAttribute('data-filter');
+            window.currentFilter = currentFilter;
             renderEvents(currentFilter);
         });
     });
@@ -142,7 +163,7 @@ function initializeCalendarPage() {
             const currentDayDate = new Date(year, month, day);
             currentDayDate.setHours(0, 0, 0, 0);
             
-            // Get events for this day
+            // Get events for this day - SHOW ALL EVENTS INCLUDING PAST on calendar
             const dayEvents = workshopEvents.filter(event => event.date === dateString);
             
             // Check if this is today
@@ -199,7 +220,7 @@ function initializeCalendarPage() {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        // Filter out past workshops - only show upcoming/open workshops
+        // Filter out past workshops from EVENT LIST (but they still show on calendar)
         let filteredEvents = workshopEvents.filter(event => event.status !== 'past');
 
         // Apply additional filter
@@ -220,9 +241,6 @@ function initializeCalendarPage() {
         }
 
         // Sort: Upcoming events by date
-        const todayForSort = new Date();
-        todayForSort.setHours(0, 0, 0, 0);
-        
         filteredEvents.sort((a, b) => {
             const [yearA, monthA, dayA] = a.date.split('-').map(Number);
             const [yearB, monthB, dayB] = b.date.split('-').map(Number);
@@ -231,9 +249,6 @@ function initializeCalendarPage() {
             
             return dateA - dateB;
         });
-        
-        // Debug: Log the sorted order
-        console.log('Sorted events:', filteredEvents.map(e => `${e.title} (${e.date}) - ${e.status}`));
 
         if (filteredEvents.length === 0) {
             eventsContainer.innerHTML = '<div class="no-events-message">No workshops found for this filter.</div>';
@@ -337,13 +352,6 @@ function initializeCalendarPage() {
         }).length;
         
         document.getElementById('total-workshops').textContent = upcomingCount;
-    }
-
-    function formatDate(date) {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
     }
 
     function truncateText(text, maxLength) {
