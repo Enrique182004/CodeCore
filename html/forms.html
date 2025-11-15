@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Commentarios y mejoraciones para el futuro-->
-    <!-- 1: Con PhP programar un sistema que capta el dia del "workshop" y le pone o en los activos o en los pasadaos basado en los dias-->
-    <!-- 2: Pagina admin para poder recoger datos sin tener que usar Google Forms, porque asi esta todo en un lugar -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCore - Forms</title>
@@ -17,12 +13,12 @@
 </head>
 <body>
     <header>
-
         <div class="header-content">
             <div class="logo">
-            <img src="../images/logos/C.png" alt="CodeCore Logo" class="logo-icon">
-            <span class="logo-text">CodeCore</span>
-        </div>
+                <img src="../images/logos/C.png" alt="CodeCore Logo" class="logo-icon">
+                <span class="logo-text">CodeCore</span>
+            </div>
+            
             <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
@@ -51,7 +47,7 @@
             <p>Register for technical workshops and access learning resources</p>
         </section>
 
-        <!-- Current Forms Section -->
+        <!-- General Forms Section -->
         <section class="forms-section">
             <h2 class="section-title">📋 General Forms</h2>
             <div class="forms-grid">
@@ -93,20 +89,16 @@
             </div>
         </section>
 
-        <!-- Upcoming Workshops Section -->
+        <!-- Upcoming Workshops Section - ONLY 2 CURRENT WORKSHOPS -->
         <section class="forms-section" id="upcoming-workshops">
             <h2 class="section-title">🚀 Upcoming Workshops</h2>
             <div class="forms-grid">
 
-                <!-- Workshop: Linked Lists -->
+                <!-- Workshop 1: Link It Up! -->
                 <div class="form-card workshop-card">
                     <div class="form-icon">🔗</div>
                     <h3>Link It Up!</h3>
                     <p><b>Topics: </b>Linked Lists</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="linkedlists-seats" class="seats-count">35</strong>/35</span>
-                    </div>
                     <div class="form-meta">
                         <span class="form-status open">Open</span>
                         <span class="form-date">11/17, 4:30 PM – 6:00 PM</span>
@@ -114,15 +106,11 @@
                     <a href="https://forms.gle/cVqsvPtpjAjyDFeM9" class="form-button" target="_blank">Register</a>
                 </div>
 
-                <!-- Workshop: Recursion -->
+                <!-- Workshop 2: The Recursive Realm -->
                 <div class="form-card workshop-card">
-                    <div class="form-icon">🔁</div>
+                    <div class="form-icon">🔄</div>
                     <h3>The Recursive Realm</h3>
                     <p><b>Topics: </b>Recursion</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="recursion-seats" class="seats-count">35</strong>/35</span>
-                    </div>
                     <div class="form-meta">
                         <span class="form-status open">Open</span>
                         <span class="form-date">11/19, 4:30 PM – 6:00 PM</span>
@@ -130,603 +118,30 @@
                     <a href="https://forms.gle/CthvNV7bMm2ruSPSA" class="form-button" target="_blank">Register</a>
                 </div>
 
-                <!-- Workshop: Arrays -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">📊</div>
-                    <h3>Arrays</h3>
-                    <p>Master array manipulation, traversal, and common array operations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="arrays-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Backtracking -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">↩️</div>
-                    <h3>Backtracking</h3>
-                    <p>Learn backtracking techniques for solving constraint satisfaction problems</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="backtracking-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Binary Search -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔍</div>
-                    <h3>Binary Search</h3>
-                    <p>Master binary search algorithms and their applications</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="binarysearch-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Binary Trees & BST -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🌳</div>
-                    <h3>Binary Trees & Binary Search Trees</h3>
-                    <p>Learn tree structures, traversals, and binary search trees</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="binarytrees-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: BFS -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🌊</div>
-                    <h3>Breadth First Search (BFS)</h3>
-                    <p>Explore level-order traversal and BFS algorithms</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="bfs-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Bubble Sort -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🫧</div>
-                    <h3>Bubble Sort</h3>
-                    <p>Understand bubble sort algorithm and its implementation</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="bubblesort-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Classes/Objects -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🎯</div>
-                    <h3>Classes/Objects</h3>
-                    <p>Learn object-oriented programming fundamentals with classes and objects</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="classes-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Conditionals -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔀</div>
-                    <h3>Conditionals (if/else/switch)</h3>
-                    <p>Master control flow with conditional statements</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="conditionals-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: DFS -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🏔️</div>
-                    <h3>Depth First Search (DFS)</h3>
-                    <p>Explore deep traversal techniques and DFS algorithms</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="dfs-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Dijkstra's Algorithm -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🛣️</div>
-                    <h3>Dijkstra's Algorithm</h3>
-                    <p>Learn shortest path algorithms and graph optimization</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="dijkstra-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Divide and Conquer -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">✂️</div>
-                    <h3>Divide and Conquer</h3>
-                    <p>Master problem-solving using divide and conquer strategy</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="divideconquer-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Dynamic Programming -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">⚡</div>
-                    <h3>Dynamic Programming</h3>
-                    <p>Master DP concepts and optimize complex problem solutions</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="dp-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Encapsulation -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">📦</div>
-                    <h3>Encapsulation</h3>
-                    <p>Learn data hiding and encapsulation principles in OOP</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="encapsulation-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Functions/Methods -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">⚙️</div>
-                    <h3>Functions/Methods</h3>
-                    <p>Master parameter passing, return values, and function design</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="functions-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Graphs -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🕸️</div>
-                    <h3>Graphs</h3>
-                    <p>Explore graph theory, representation, and traversal techniques</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="graphs-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Greedy Algorithms -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🤑</div>
-                    <h3>Greedy Algorithms</h3>
-                    <p>Learn greedy approach for optimization problems</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="greedy-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Hash Tables -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🗂️</div>
-                    <h3>Hash Tables / Hash Maps</h3>
-                    <p>Master hashing techniques and hash table implementations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="hashtables-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Heaps -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">⛰️</div>
-                    <h3>Heaps</h3>
-                    <p>Learn heap data structure and priority queue implementations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="heaps-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Heap Sort -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">📈</div>
-                    <h3>Heap Sort</h3>
-                    <p>Master heap sort algorithm and its applications</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="heapsort-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Lists, Sets, Tuples, Dictionaries -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">📚</div>
-                    <h3>Lists, Sets, Tuples, Dictionaries</h3>
-                    <p>Master Python data structures and their operations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="datastructures-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Loops -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔄</div>
-                    <h3>Loops</h3>
-                    <p>Master for loops, while loops, and iteration techniques</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="loops-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Master Theorem -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🎓</div>
-                    <h3>Master Theorem</h3>
-                    <p>Learn to analyze divide and conquer algorithm complexity</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="mastertheorem-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Merge Sort -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔀</div>
-                    <h3>Merge Sort</h3>
-                    <p>Master merge sort algorithm and divide-and-conquer sorting</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="mergesort-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Minimum Spanning Trees -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🌲</div>
-                    <h3>Minimum Spanning Trees</h3>
-                    <p>Learn Kruskal's and Prim's algorithms for MST</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="mst-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Object-Oriented Programming -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🏗️</div>
-                    <h3>Object-Oriented Programming (OOP)</h3>
-                    <p>Master OOP principles: inheritance, polymorphism, and abstraction</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="oop-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Pass by Value & Reference -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔄</div>
-                    <h3>Pass by Value & Pass by Reference</h3>
-                    <p>Understand parameter passing mechanisms in programming</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="passing-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Pointers & References -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">👉</div>
-                    <h3>Pointers & References</h3>
-                    <p>Master pointer operations and memory management</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="pointers-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Queues -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🚶</div>
-                    <h3>Queues</h3>
-                    <p>Learn queue data structure and FIFO operations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="queues-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Quick Sort -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">⚡</div>
-                    <h3>Quick Sort</h3>
-                    <p>Master quicksort algorithm and partitioning techniques</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="quicksort-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Searching Algorithms -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔎</div>
-                    <h3>Searching Algorithms</h3>
-                    <p>Learn linear search, binary search, and other search techniques</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="searching-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Sorting Algorithms -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">📊</div>
-                    <h3>Sorting Algorithms</h3>
-                    <p>Comprehensive overview of sorting algorithms and their trade-offs</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="sorting-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Stacks -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">📚</div>
-                    <h3>Stacks</h3>
-                    <p>Learn stack data structure and LIFO operations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="stacks-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Time Complexity -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">⏱️</div>
-                    <h3>Time Complexity</h3>
-                    <p>Understand Big O notation and algorithm efficiency analysis</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="complexity-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Topological Sorting -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🗺️</div>
-                    <h3>Topological Sorting</h3>
-                    <p>Learn topological sort for directed acyclic graphs</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="topological-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Trees -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🌴</div>
-                    <h3>Trees (AVL, Red-Black, etc.)</h3>
-                    <p>Explore balanced trees and advanced tree structures</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="trees-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
-                <!-- Workshop: Variable Types -->
-                <div class="form-card workshop-card">
-                    <div class="form-icon">🔤</div>
-                    <h3>Variable Types</h3>
-                    <p>Understand data types, type systems, and variable declarations</p>
-                    <div class="seats-info">
-                        <span class="seats-icon">🪑</span>
-                        <span class="seats-text">Seats Remaining: <strong id="variables-seats" class="seats-count">35</strong>/35</span>
-                    </div>
-                    <div class="form-meta">
-                        <span class="form-status closed">Closed</span>
-                        <span class="form-date">TBA</span>
-                    </div>
-                    <a href="#" class="form-button disabled">Register</a>
-                </div>
-
             </div>
         </section>
 
-        <!-- Past Workshops Section -->
+        <!-- Past Workshops Section - ONLY 4 ARCHIVE WORKSHOPS -->
         <section class="forms-section" id="past-workshops">
-            <h2 class="section-title">📚 Past Workshops</h2>
+            <h2 class="section-title">📚 Past Workshops (Archive)</h2>
+            <p style="text-align: center; color: #718096; margin-bottom: 2rem;">Access materials and resources from previous workshops</p>
             <div class="forms-grid">
-                <!-- Past Workshop: The Big Three -->
-                <div class="form-card past-workshop">
+                
+                <!-- Past Workshop 1: The Big Three -->
+                <div class="form-card workshop-card">
                     <div class="form-icon">💻</div>
                     <h3>The Big Three: Loops, Arrays, Conditionals</h3>
-                    <p><b>Topics: </b> Loops, Arrays & Conditionals</p>
+                    <p><b>Topics: </b>Loops, Arrays & Conditionals</p>
                     <div class="form-meta">
                         <span class="form-status past">Archive</span>
                         <span class="form-date">11/10, 4:30 PM – 6 PM</span>
                     </div>
-                    <a href="https://drive.google.com/drive/folders/11LpZ1Go9K0r8cmaJ1s6PkjtBWZ7VIqmp?usp=sharing" class="form-button" target="_blank">Get Items</a>
+                    <a href="https://drive.google.com/drive/folders/11LpZ1Go9K0r8cmaJ1s6PkjtBWZ7VIqmp?usp=sharing" class="form-button" target="_blank">View Materials</a>
                 </div>
-                <!-- Past Workshop: If, Else, and Everything In Between -->
+
+                <!-- Past Workshop 2: If, Else, and Everything In Between -->
                 <div class="form-card workshop-card">
-                    <div class="form-icon">💻</div>
+                    <div class="form-icon">🔀</div>
                     <h3>If, Else, and Everything In Between</h3>
                     <p><b>Topics: </b>Methods/Functions, Backtracking & Conditionals</p>
                     <div class="form-meta">
@@ -736,19 +151,19 @@
                     <a href="https://forms.gle/8bGWtmEraDgM1J2P8" class="form-button" target="_blank">Get Items</a>
                 </div>
 
-                <!-- Past Workshop: Recur & Conquer -->
+                <!-- Past Workshop 3: Recur & Conquer -->
                 <div class="form-card workshop-card">
-                    <div class="form-icon">💻</div>
+                    <div class="form-icon">🎯</div>
                     <h3>Recur & Conquer</h3>
                     <p><b>Topics: </b>Functions/Methods, Recursion & Conditionals</p>
                     <div class="form-meta">
                         <span class="form-status past">Archive</span>
                         <span class="form-date">11/12, 4:30 PM – 6 PM</span>
                     </div>
-                    <a href="https://drive.google.com/drive/folders/1uPEJtCS_AcPpp3860xgLH024Wuv-OSVE?usp=sharing" class="form-button" target="_blank">Get Items</a>
+                    <a href="https://drive.google.com/drive/folders/1uPEJtCS_AcPpp3860xgLH024Wuv-OSVE?usp=sharing" class="form-button" target="_blank">View Materials</a>
                 </div>
 
-                <!-- Past Workshop: Mission: Divide & Locate -->
+                <!-- Past Workshop 4: Mission: Divide & Locate -->
                 <div class="form-card workshop-card">
                     <div class="form-icon">💻</div>
                     <h3>Mission: Divide & Locate</h3>
@@ -759,6 +174,7 @@
                     </div>
                     <a href="https://forms.gle/zbheexWcLa95WNjx5" class="form-button" target="_blank">Get Items</a>
                 </div>
+
             </div>
         </section>
 
@@ -766,7 +182,7 @@
         <section class="forms-info">
             <div class="info-box">
                 <h3>📧 Need Help?</h3>
-                <p>If you have questions about workshops, forms, or need assistance, feel free to reach out to us at <a href="/cdn-cgi/l/email-protection#75161a1110161a071035000110055b101100"><span class="__cf_email__" data-cfemail="53303c3736303c213613262736237d363726">[email&#160;protected]</span></a></p>
+                <p>If you have questions about workshops, forms, or need assistance, feel free to reach out to us at <a href="mailto:codecore@utep.edu">codecore@utep.edu</a></p>
             </div>
         </section>
     </div>
@@ -791,106 +207,85 @@
     <div class="nav-overlay" aria-hidden="true"></div>
 
     <!-- Footer with Social Links -->
-<footer class="footer-social-section">
-    <div class="footer-content">
-        <h3>Connect With Us</h3>
-        <p>Follow CodeCore on social media to stay updated on events and workshops</p>
-        <div class="footer-social">
-            <a href="/cdn-cgi/l/email-protection#b1d2ded5d4d2dec3d4f1c4c5d4c19fd4d5c4" aria-label="Email us" title="Email">
-                <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </a>
-            <a href="https://www.instagram.com/codecoreutep?igsh=Y2tnd2s3NWViMDA1" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" title="Instagram">
-                <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/code-core-9a720138a" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" title="LinkedIn">
-                <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-            </a>
+    <footer class="footer-social-section">
+        <div class="footer-content">
+            <h3>Connect With Us</h3>
+            <p>Follow CodeCore on social media to stay updated on events and workshops</p>
+            <div class="footer-social">
+                <a href="mailto:codecore@utep.edu" aria-label="Email us" title="Email">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/codecoreutep?igsh=Y2tnd2s3NWViMDA1" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" title="Instagram">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/code-core-9a720138a" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" title="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
     
-    <!-- Mobile Menu Script -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/mobile-menu.js"></script>
+    <!-- ⭐ SCRIPTS - AUTO-ARCHIVE SYSTEM -->
+    <script src="../js/mobile-menu.js"></script>
+    <script src="../js/workshop-archiver.js"></script>
+    <script src="../js/forms-auto-archive.js"></script>
+    
     <!-- Floating Navigation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const floatingNav = document.querySelector('.floating-nav');
             const navDots = document.querySelectorAll('.nav-dot');
             
-            // Scroll event for visual feedback and active state
             let scrollTimeout;
             window.addEventListener('scroll', function() {
                 clearTimeout(scrollTimeout);
-                
-                // Dim temporarily while scrolling
                 floatingNav.classList.add('scrolling');
                 scrollTimeout = setTimeout(function() {
                     floatingNav.classList.remove('scrolling');
                 }, 150);
-                
-                // Update active dot based on scroll position
                 updateActiveDot();
             });
             
-            // Click handlers for navigation dots
             navDots.forEach(dot => {
                 dot.addEventListener('click', function() {
                     const target = this.getAttribute('data-target');
-                    
                     if (target === 'top') {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                     } else {
                         const section = document.getElementById(target);
                         if (section) {
-                            section.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     }
-                    
-                    // Add click animation
                     this.classList.add('clicked');
-                    setTimeout(() => {
-                        this.classList.remove('clicked');
-                    }, 300);
+                    setTimeout(() => this.classList.remove('clicked'), 300);
                 });
             });
             
-            // Update active dot based on scroll position
             function updateActiveDot() {
                 const upcomingSection = document.getElementById('upcoming-workshops');
                 const pastSection = document.getElementById('past-workshops');
-                
                 if (!upcomingSection || !pastSection) return;
-                
                 const scrollPosition = window.scrollY + window.innerHeight / 3;
-                
                 navDots.forEach(dot => dot.classList.remove('active'));
-                
                 if (scrollPosition < upcomingSection.offsetTop) {
-                    navDots[0].classList.add('active'); // Top
+                    navDots[0].classList.add('active');
                 } else if (scrollPosition < pastSection.offsetTop) {
-                    navDots[1].classList.add('active'); // Upcoming
+                    navDots[1].classList.add('active');
                 } else {
-                    navDots[2].classList.add('active'); // Past
+                    navDots[2].classList.add('active');
                 }
             }
             
             window.addEventListener('scroll', updateActiveDot);
-            updateActiveDot(); // Initialize on load
+            updateActiveDot();
         });
     </script>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>
