@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCore Workshop Admin Panel - LIVE</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 { color: #667eea; font-size: 2.5em; margin-bottom: 10px; }
+        .header p { color: #666; font-size: 1.1em; }
+        .live-badge {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .connection-status {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status-connected {
+            background: #c6f6d5;
+            color: #22543d;
+            border-left: 4px solid #48bb78;
+        }
+        .status-error {
+            background: #fed7d7;
+            color: #742a2a;
+            border-left: 4px solid #f56565;
+        }
+        .status-loading {
+            background: #bee3f8;
+            color: #2c5282;
+            border-left: 4px solid #4299e1;
+        }
+        .config-panel {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .config-panel label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+        .config-panel input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 1200px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
+        .panel {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .panel h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        .btn-success {
+            background: #48bb78;
+            color: white;
+        }
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+        .btn-secondary {
+            background: #718096;
+            color: white;
+        }
+        .workshop-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .workshop-item {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .workshop-item.archived {
+            border-left-color: #718096;
+            opacity: 0.8;
+        }
+        .workshop-item h3 {
+            color: #2d3748;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .workshop-item p {
+            color: #4a5568;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        .workshop-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .workshop-actions button {
+            padding: 6px 15px;
+            font-size: 0.85em;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .status-open {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+        .status-past {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+        .emoji-picker {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .emoji-option {
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .emoji-option:hover {
+            background: #e0e0e0;
+        }
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .alert-success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-card h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎛️ CodeCore Workshop Admin Panel <span class="live-badge">● LIVE</span></h1>
+            <p>Auto-updates your website instantly!</p>
+        </div>
+
+        <!-- API Configuration -->
+        <div class="panel">
+            <h2>⚙️ API Configuration</h2>
+            <div class="config-panel">
+                <label>API Endpoint URL:</label>
+                <input type="text" id="api-url" value="/php/workshop-api.php" placeholder="e.g., /php/workshop-api.php or https://yoursite.com/php/workshop-api.php">
+                <p style="margin-top: 10px; font-size: 0.9em; color: #718096;">
+                    💡 Update this if your API is at a different location
+                </p>
+            </div>
+            <div class="connection-status status-loading" id="connection-status">
+                <span class="loading-spinner"></span>
+                <span>Connecting to server...</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="stat-total">0</h3>
+                <p>Total Workshops</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="stat-upcoming">0</h3>
+                <p>Upcoming</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="stat-archived">0</h3>
+                <p>Archived</p>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div class="panel">
+                <h2 id="form-title">➕ Add New Workshop</h2>
+                
+                <form id="workshop-form">
+                    <input type="hidden" id="edit-index" value="">
+                    
+                    <div class="form-group">
+                        <label>Workshop Icon</label>
+                        <input type="text" id="icon" value="📚" readonly style="font-size: 2em; text-align: center; cursor: pointer;">
+                        <div class="emoji-picker" id="emoji-picker" style="display: none;"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Workshop Title *</label>
+                        <input type="text" id="title" placeholder="e.g., Binary Trees Workshop" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Topics/Description *</label>
+                        <input type="text" id="description" placeholder="e.g., Binary Trees & BST" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date *</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Status *</label>
+                            <select id="status" required>
+                                <option value="open">Open</option>
+                                <option value="closed">Closed</option>
+                                <option value="past">Archived</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Start Time *</label>
+                            <input type="time" id="start-time" value="16:30" required>
+                        </div>
+                        <div class="form-group">
+                            <label>End Time *</label>
+                            <input type="time" id="end-time" value="18:00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" id="location" value="CCSB 1.0410" placeholder="e.g., CCSB 1.0410">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Registration/Materials Link *</label>
+                        <input type="url" id="formLink" placeholder="https://forms.gle/xxxxx" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            <span class="btn-text">➕ Add Workshop</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="panel">
+                <h2>📋 Your Workshops (<span id="workshop-count">0</span>)</h2>
+                <div class="workshop-list" id="workshop-list">
+                    <p style="text-align: center; color: #999; padding: 40px;">Loading workshops...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emojis = ['📚', '🔗', '🔄', '💻', '🔀', '🎯', '🌳', '🔍', '🌊', '🫧', '↩️', '⚡', '🔎', '📊', '⏱️', '🗺️', '🌴', '🔤', '🎓'];
+        let workshops = [];
+        let editingIndex = -1;
+        let apiUrl = '';
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            apiUrl = document.getElementById('api-url').value;
+            populateEmojiPicker();
+            loadWorkshopsFromServer();
+            
+            // Save API URL when changed
+            document.getElementById('api-url').addEventListener('change', function() {
+                apiUrl = this.value;
+                localStorage.setItem('codecore_api_url', apiUrl);
+                loadWorkshopsFromServer();
+            });
+            
+            // Load saved API URL
+            const savedApiUrl = localStorage.getItem('codecore_api_url');
+            if (savedApiUrl) {
+                apiUrl = savedApiUrl;
+                document.getElementById('api-url').value = savedApiUrl;
+            }
+        });
+
+        // Populate emoji picker
+        function populateEmojiPicker() {
+            const picker = document.getElementById('emoji-picker');
+            emojis.forEach(emoji => {
+                const span = document.createElement('span');
+                span.className = 'emoji-option';
+                span.textContent = emoji;
+                span.onclick = () => selectEmoji(emoji);
+                picker.appendChild(span);
+            });
+        }
+
+        document.getElementById('icon').addEventListener('click', function() {
+            const picker = document.getElementById('emoji-picker');
+            picker.style.display = picker.style.display === 'none' ? 'grid' : 'none';
+        });
+
+        function selectEmoji(emoji) {
+            document.getElementById('icon').value = emoji;
+            document.getElementById('emoji-picker').style.display = 'none';
+        }
+
+        // Form submission
+        document.getElementById('workshop-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const originalText = btnText.textContent;
+            
+            submitBtn.disabled = true;
+            btnText.innerHTML = '<span class="loading-spinner"></span> Saving...';
+            
+            const workshop = {
+                id: generateId(document.getElementById('title').value),
+                icon: document.getElementById('icon').value,
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                date: document.getElementById('date').value,
+                startTime: document.getElementById('start-time').value,
+                endTime: document.getElementById('end-time').value,
+                location: document.getElementById('location').value,
+                formLink: document.getElementById('formLink').value,
+                status: document.getElementById('status').value
+            };
+
+            try {
+                if (editingIndex === -1) {
+                    // Add new workshop
+                    workshops.push(workshop);
+                } else {
+                    // Update existing workshop
+                    workshops[editingIndex] = workshop;
+                }
+                
+                // Save to server
+                await saveAllWorkshopsToServer();
+                
+                showAlert('✅ Workshop saved to server!', 'success');
+                
+                if (editingIndex !== -1) {
+                    editingIndex = -1;
+                    document.getElementById('cancel-btn').style.display = 'none';
+                    document.getElementById('form-title').textContent = '➕ Add New Workshop';
+                    btnText.textContent = '➕ Add Workshop';
+                }
+                
+                this.reset();
+                document.getElementById('icon').value = '📚';
+                
+            } catch (error) {
+                showAlert('❌ Error: ' + error.message, 'error');
+                console.error('Save error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = originalText;
+            }
+        });
+
+        // Cancel edit
+        document.getElementById('cancel-btn').addEventListener('click', function() {
+            editingIndex = -1;
+            document.getElementById('workshop-form').reset();
+            document.getElementById('icon').value = '📚';
+            this.style.display = 'none';
+            document.getElementById('form-title').textContent = '➕ Add New Workshop';
+            document.getElementById('submit-btn').querySelector('.btn-text').textContent = '➕ Add Workshop';
+        });
+
+        function generateId(title) {
+            return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        }
+
+        function editWorkshop(index) {
+            const workshop = workshops[index];
+            editingIndex = index;
+
+            document.getElementById('icon').value = workshop.icon;
+            document.getElementById('title').value = workshop.title;
+            document.getElementById('description').value = workshop.description;
+            document.getElementById('date').value = workshop.date;
+            document.getElementById('start-time').value = workshop.startTime;
+            document.getElementById('end-time').value = workshop.endTime;
+            document.getElementById('location').value = workshop.location;
+            document.getElementById('formLink').value = workshop.formLink;
+            document.getElementById('status').value = workshop.status;
+
+            document.getElementById('form-title').textContent = '✏️ Edit Workshop';
+            document.getElementById('submit-btn').querySelector('.btn-text').textContent = '💾 Update Workshop';
+            document.getElementById('cancel-btn').style.display = 'inline-block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        async function deleteWorkshop(index) {
+            if (!confirm('Delete this workshop? This will update your live website!')) return;
+            
+            try {
+                workshops.splice(index, 1);
+                await saveAllWorkshopsToServer();
+                showAlert('🗑️ Workshop deleted from server!', 'success');
+            } catch (error) {
+                showAlert('❌ Error: ' + error.message, 'error');
+            }
+        }
+
+        function renderWorkshopList() {
+            const list = document.getElementById('workshop-list');
+            list.innerHTML = '';
+
+            if (workshops.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #999; padding: 40px;">No workshops yet!</p>';
+                updateStats();
+                return;
+            }
+
+            const sorted = [...workshops].sort((a, b) => {
+                if (a.status === 'past' && b.status !== 'past') return 1;
+                if (a.status !== 'past' && b.status === 'past') return -1;
+                return new Date(a.date) - new Date(b.date);
+            });
+
+            sorted.forEach((workshop) => {
+                const actualIndex = workshops.indexOf(workshop);
+                const div = document.createElement('div');
+                div.className = 'workshop-item' + (workshop.status === 'past' ? ' archived' : '');
+                div.innerHTML = '<h3><span>' + workshop.icon + '</span>' + workshop.title +
+                    '<span class="status-badge status-' + workshop.status + '">' + workshop.status.toUpperCase() + '</span></h3>' +
+                    '<p><strong>Topics:</strong> ' + workshop.description + '</p>' +
+                    '<p><strong>Date:</strong> ' + formatDateDisplay(workshop.date) + ' | ' +
+                    formatTime(workshop.startTime) + ' - ' + formatTime(workshop.endTime) + '</p>' +
+                    '<p><strong>Location:</strong> ' + workshop.location + '</p>' +
+                    '<div class="workshop-actions">' +
+                    '<button class="btn btn-primary" onclick="editWorkshop(' + actualIndex + ')">✏️ Edit</button>' +
+                    '<button class="btn btn-danger" onclick="deleteWorkshop(' + actualIndex + ')">🗑️ Delete</button>' +
+                    '</div>';
+                list.appendChild(div);
+            });
+
+            document.getElementById('workshop-count').textContent = workshops.length;
+            updateStats();
+        }
+
+        function updateStats() {
+            const total = workshops.length;
+            const upcoming = workshops.filter(w => w.status === 'open' || w.status === 'closed').length;
+            const archived = workshops.filter(w => w.status === 'past').length;
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-upcoming').textContent = upcoming;
+            document.getElementById('stat-archived').textContent = archived;
+        }
+
+        // API Functions
+        async function loadWorkshopsFromServer() {
+            const statusDiv = document.getElementById('connection-status');
+            statusDiv.className = 'connection-status status-loading';
+            statusDiv.innerHTML = '<span class="loading-spinner"></span><span>Connecting to server...</span>';
+            
+            try {
+                const response = await fetch(apiUrl + '?action=all');
+                
+                if (!response.ok) {
+                    throw new Error('Server returned error: ' + response.status);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    workshops = data.data;
+                    renderWorkshopList();
+                    statusDiv.className = 'connection-status status-connected';
+                    statusDiv.innerHTML = '✅ <span>Connected to server! Changes will update your website instantly.</span>';
+                } else {
+                    throw new Error(data.message || 'Failed to load workshops');
+                }
+            } catch (error) {
+                console.error('Load error:', error);
+                statusDiv.className = 'connection-status status-error';
+                statusDiv.innerHTML = '❌ <span>Connection failed: ' + error.message + ' - Check API URL and server configuration</span>';
+                
+                // Show empty state
+                document.getElementById('workshop-list').innerHTML = '<p style="text-align: center; color: #f56565; padding: 40px;">Failed to load workshops. Check connection.</p>';
+            }
+        }
+
+        async function saveAllWorkshopsToServer() {
+            const response = await fetch(apiUrl + '?action=update-all', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    workshops: workshops
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Server error: ' + response.status);
+            }
+            
+            const data = await response.json();
+            
+            if (!data.success) {
+                throw new Error(data.message || 'Failed to save workshops');
+            }
+            
+            renderWorkshopList();
+            return data;
+        }
+
+        function formatTime(time) {
+            const [hours, minutes] = time.split(':');
+            const h = parseInt(hours);
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            const displayHour = h % 12 || 12;
+            return displayHour + ':' + minutes + ' ' + ampm;
+        }
+
+        function formatDateDisplay(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            return (date.getMonth() + 1) + '/' + date.getDate();
+        }
+
+        function showAlert(message, type) {
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-' + type;
+            alert.textContent = message;
+            document.querySelector('.panel').insertBefore(alert, document.querySelector('.panel').firstChild);
+            setTimeout(() => alert.remove(), 4000);
+        }
+    </script>
+</body>
+</html>
