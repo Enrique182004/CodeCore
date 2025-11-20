@@ -22,6 +22,56 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'all';
 $workshops = [
     // UPCOMING WORKSHOPS - Add new workshops here
     [
+        'id' => 'cs1-fundamentals-refresh',
+        'icon' => '📚',
+        'title' => 'CS1 Fundamentals Refresh',
+        'description' => 'Review Session',
+        'date' => '2025-11-24',
+        'startTime' => '16:30',
+        'endTime' => '18:00',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'friendsgiving-fun-night',
+        'icon' => '🦃',
+        'title' => 'Friendsgiving Fun Night',
+        'description' => 'CS1 & CS2 Review',
+        'date' => '2025-11-26',
+        'startTime' => '16:30',
+        'endTime' => '18:00',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'cs2-mastery-workshop',
+        'icon' => '🎯',
+        'title' => 'CS2 Mastery Workshop',
+        'description' => 'Review Session',
+        'date' => '2025-12-01',
+        'startTime' => '16:30',
+        'endTime' => '18:00',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'christmas-coding-party',
+        'icon' => '🎄',
+        'title' => 'Christmas Coding Party',
+        'description' => 'CS1 & CS2 Review',
+        'date' => '2025-12-03',
+        'startTime' => '16:30',
+        'endTime' => '18:00',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'status' => 'open'
+    ],
+    
+    // ARCHIVED WORKSHOPS
+    [
         'id' => 'link-it-up',
         'icon' => '🔗',
         'title' => 'Link It Up!',
@@ -31,7 +81,7 @@ $workshops = [
         'endTime' => '18:00',
         'location' => 'CCSB 1.0410',
         'formLink' => 'https://forms.gle/cVqsvPtpjAjyDFeM9',
-        'status' => 'open'
+        'status' => 'past'
     ],
     [
         'id' => 'recursive-realm',
@@ -43,10 +93,8 @@ $workshops = [
         'endTime' => '18:00',
         'location' => 'CCSB 1.0410',
         'formLink' => 'https://forms.gle/CthvNV7bMm2ruSPSA',
-        'status' => 'open'
+        'status' => 'past'
     ],
-    
-    // ARCHIVED WORKSHOPS
     [
         'id' => 'big-three',
         'icon' => '💻',

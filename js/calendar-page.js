@@ -17,6 +17,51 @@ function initializeCalendarPage() {
     const workshopEvents = [
         // Upcoming Workshops (Open)
         {
+            id: 'cs1-fundamentals-refresh',
+            title: 'CS1 Fundamentals Refresh',
+            date: '2025-11-24',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Review Session',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'friendsgiving-fun-night',
+            title: 'Friendsgiving Fun Night',
+            date: '2025-11-26',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: CS1 & CS2 Review',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'cs2-mastery-workshop',
+            title: 'CS2 Mastery Workshop',
+            date: '2025-12-01',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Review Session',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'christmas-coding-party',
+            title: 'Christmas Coding Party',
+            date: '2025-12-03',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: CS1 & CS2 Review',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            seats: '35/35',
+            status: 'open'
+        },
+        // Past Workshops (Archive)
+        {
             id: 'link-it-up',
             title: 'Link It Up!',
             date: '2025-11-17',
@@ -24,8 +69,8 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: Linked Lists',
             formLink: 'https://forms.gle/cVqsvPtpjAjyDFeM9',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
         {
             id: 'recursive-realm',
@@ -35,8 +80,8 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: Recursion',
             formLink: 'https://forms.gle/CthvNV7bMm2ruSPSA',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
         // Past Workshops (Archive)
         {

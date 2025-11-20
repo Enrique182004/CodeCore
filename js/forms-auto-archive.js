@@ -2,11 +2,57 @@
 // When workshops pass their end time, they automatically move from upcoming to archive
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎯 Forms Auto-Archive System: Managing 6 workshops');
+    console.log('🎯 Forms Auto-Archive System: Managing workshops');
     
-    // Define your 6 workshops
+    // Define your workshops
     const workshopEvents = [
-        // UPCOMING WORKSHOPS (2)
+        // UPCOMING WORKSHOPS
+        {
+            id: 'cs1-fundamentals-refresh',
+            title: 'CS1 Fundamentals Refresh',
+            date: '2025-11-24',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Review Session',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            status: 'open',
+            icon: '📚'
+        },
+        {
+            id: 'friendsgiving-fun-night',
+            title: 'Friendsgiving Fun Night',
+            date: '2025-11-26',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: CS1 & CS2 Review',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            status: 'open',
+            icon: '🦃'
+        },
+        {
+            id: 'cs2-mastery-workshop',
+            title: 'CS2 Mastery Workshop',
+            date: '2025-12-01',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Review Session',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            status: 'open',
+            icon: '🎯'
+        },
+        {
+            id: 'christmas-coding-party',
+            title: 'Christmas Coding Party',
+            date: '2025-12-03',
+            time: '4:30 PM - 6:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: CS1 & CS2 Review',
+            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            status: 'open',
+            icon: '🎄'
+        },
+        
+        // ARCHIVE WORKSHOPS
         {
             id: 'link-it-up',
             title: 'Link It Up!',
@@ -15,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             location: 'CCSB 1.0410',
             description: 'Topics: Linked Lists',
             formLink: 'https://forms.gle/cVqsvPtpjAjyDFeM9',
-            status: 'open',
+            status: 'past',
             icon: '🔗'
         },
         {
@@ -26,11 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
             location: 'CCSB 1.0410',
             description: 'Topics: Recursion',
             formLink: 'https://forms.gle/CthvNV7bMm2ruSPSA',
-            status: 'open',
+            status: 'past',
             icon: '🔄'
         },
-        
-        // ARCHIVE WORKSHOPS (4)
         {
             id: 'big-three',
             title: 'The Big Three: Loops, Arrays, Conditionals',
@@ -80,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the workshop archiver
     if (window.workshopArchiver) {
         window.workshopArchiver.init(workshopEvents);
-        console.log('✅ Workshop archiver initialized with 6 workshops');
+        console.log('✅ Workshop archiver initialized with workshops');
     } else {
         console.error('❌ Workshop archiver not found! Make sure workshop-archiver.js is loaded first.');
     }
