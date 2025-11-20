@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'CS1 Fundamentals Refresh',
             description: 'Review Session',
             date: '2025-11-24',
-            startTime: '16:30',
-            endTime: '18:00',
+            startTime: '16:00',
+            endTime: '19:00',
             location: 'CCSB 1.0410',
             formLink: 'https://forms.gle/Ne2zp3jH5UHG7qRh6',
             status: 'open'
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'CS1 & CS2 Review',
             date: '2025-11-26',
             startTime: '16:30',
-            endTime: '18:00',
+            endTime: '19:00',
             location: 'CCSB 1.0410',
             formLink: 'https://forms.gle/CF5g5f3KPJrMn3wR7',
             status: 'open'
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'CS2 Mastery Workshop',
             description: 'Review Session',
             date: '2025-12-01',
-            startTime: '16:30',
-            endTime: '18:00',
+            startTime: '16:00',
+            endTime: '19:00',
             location: 'CCSB 1.0410',
             formLink: 'https://forms.gle/pXTGH5kjxXdhg3kE9',
             status: 'open'
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'CS1 & CS2 Review',
             date: '2025-12-03',
             startTime: '16:30',
-            endTime: '18:00',
+            endTime: '19:00',
             location: 'CCSB 1.0410',
             formLink: 'https://forms.gle/AqYgqdAWo74T9LVF8',
             status: 'open'
@@ -248,9 +248,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const statusClass = isArchived ? 'past' : (workshop.status === 'open' ? 'open' : 'closed');
         const statusText = isArchived ? 'Archive' : (workshop.status === 'open' ? 'Open' : 'Closed');
         
-        let buttonText = 'Register';
+        let buttonHTML = '';
         if (isArchived) {
-            buttonText = workshop.formLink.includes('drive.google.com') ? 'View Materials' : 'Get Items';
+            // Disabled button for archived workshops
+            buttonHTML = `<button class="form-button disabled" disabled style="cursor: not-allowed; opacity: 0.6; background-color: #999;">Content Coming Soon</button>`;
+        } else {
+            // Active button for upcoming workshops
+            buttonHTML = `<a href="${workshop.formLink}" class="form-button" target="_blank">Register</a>`;
         }
         
         const dateDisplay = formatDateDisplay(workshop.date);
@@ -265,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="form-status ${statusClass}">${statusText}</span>
                 <span class="form-date">${dateDisplay}, ${timeDisplay}</span>
             </div>
-            <a href="${workshop.formLink}" class="form-button" target="_blank">${buttonText}</a>
+            ${buttonHTML}
         `;
         
         return card;

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 'cs1-fundamentals-refresh',
             title: 'CS1 Fundamentals Refresh',
             date: '2025-11-24',
-            time: '4:30 PM - 6:00 PM',
+            time: '4:00 PM - 7:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: Review Session',
             formLink: 'https://forms.gle/Ne2zp3jH5UHG7qRh6',
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 'friendsgiving-fun-night',
             title: 'Friendsgiving Fun Night',
             date: '2025-11-26',
-            time: '4:30 PM - 6:00 PM',
+            time: '4:30 PM - 7:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: CS1 & CS2 Review',
             formLink: 'https://forms.gle/CF5g5f3KPJrMn3wR7',
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 'cs2-mastery-workshop',
             title: 'CS2 Mastery Workshop',
             date: '2025-12-01',
-            time: '4:30 PM - 6:00 PM',
+            time: '4:00 PM - 7:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: Review Session',
             formLink: 'https://forms.gle/pXTGH5kjxXdhg3kE9',
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 'christmas-coding-party',
             title: 'Christmas Coding Party',
             date: '2025-12-03',
-            time: '4:30 PM - 6:00 PM',
+            time: '4:30 PM - 7:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: CS1 & CS2 Review',
             formLink: 'https://forms.gle/AqYgqdAWo74T9LVF8',
@@ -184,10 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Format time with em dash
         const timeDisplay = workshop.time.replace(' - ', ' – ');
         
-        // Determine button text
-        const buttonText = workshop.formLink.includes('drive.google.com') ? 'View Materials' : 'Get Items';
-        
-        // Generate in YOUR EXACT FORMAT
+        // Generate in YOUR EXACT FORMAT with disabled button
         return `
                 <!-- Past Workshop: ${workshop.title} -->
                 <div class="form-card workshop-card">
@@ -198,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="form-status past">Archive</span>
                         <span class="form-date">${formattedDate}, ${timeDisplay}</span>
                     </div>
-                    <a href="${workshop.formLink}" class="form-button" target="_blank">${buttonText}</a>
+                    <button class="form-button disabled" disabled style="cursor: not-allowed; opacity: 0.6; background-color: #999;">Content Coming Soon</button>
                 </div>
 `;
     }
