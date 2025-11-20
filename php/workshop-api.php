@@ -30,7 +30,7 @@ $workshops = [
         'startTime' => '16:30',
         'endTime' => '18:00',
         'location' => 'CCSB 1.0410',
-        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'formLink' => 'https://forms.gle/Ne2zp3jH5UHG7qRh6',
         'status' => 'open'
     ],
     [
@@ -42,7 +42,7 @@ $workshops = [
         'startTime' => '16:30',
         'endTime' => '18:00',
         'location' => 'CCSB 1.0410',
-        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'formLink' => 'https://forms.gle/CF5g5f3KPJrMn3wR7',
         'status' => 'open'
     ],
     [
@@ -54,7 +54,7 @@ $workshops = [
         'startTime' => '16:30',
         'endTime' => '18:00',
         'location' => 'CCSB 1.0410',
-        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'formLink' => 'https://forms.gle/pXTGH5kjxXdhg3kE9',
         'status' => 'open'
     ],
     [
@@ -66,7 +66,7 @@ $workshops = [
         'startTime' => '16:30',
         'endTime' => '18:00',
         'location' => 'CCSB 1.0410',
-        'formLink' => 'https://forms.gle/YOUR_FORM_LINK_HERE',
+        'formLink' => 'https://forms.gle/AqYgqdAWo74T9LVF8',
         'status' => 'open'
     ],
     

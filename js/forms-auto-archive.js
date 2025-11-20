@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: Review Session',
-            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            formLink: 'https://forms.gle/Ne2zp3jH5UHG7qRh6',
             status: 'open',
             icon: '📚'
         },
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: CS1 & CS2 Review',
-            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            formLink: 'https://forms.gle/CF5g5f3KPJrMn3wR7',
             status: 'open',
             icon: '🦃'
         },
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: Review Session',
-            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            formLink: 'https://forms.gle/pXTGH5kjxXdhg3kE9',
             status: 'open',
             icon: '🎯'
         },
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             time: '4:30 PM - 6:00 PM',
             location: 'CCSB 1.0410',
             description: 'Topics: CS1 & CS2 Review',
-            formLink: 'https://forms.gle/YOUR_FORM_LINK_HERE',
+            formLink: 'https://forms.gle/AqYgqdAWo74T9LVF8',
             status: 'open',
             icon: '🎄'
         },
