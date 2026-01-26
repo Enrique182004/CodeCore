@@ -17,6 +17,28 @@ function initializeCalendarPage() {
     const workshopEvents = [
         // Upcoming Workshops (Open)
         {
+    id: 'kick-off-meeting',
+    title: 'Kick Off Meeting',
+    date: '2026-01-27',
+    time: '5:00 PM - 6:30 PM',
+    location: 'CCSB 1.0410',
+    description: 'Topics: Orientation and Semester Planning',
+    formLink: 'https://forms.gle/your-link-here',
+    seats: '35/35',
+    status: 'open'
+},
+{
+    id: 'intro-session',
+    title: 'Intro Session',
+    date: '2026-01-28',
+    time: '5:00 PM - 6:30 PM',
+    location: 'CCSB 1.0410',
+    description: 'Topics: Introduction to CodeCore',
+    formLink: 'https://forms.gle/your-link-here',
+    seats: '35/35',
+    status: 'open'
+},
+        {
             id: 'cs1-fundamentals-refresh',
             title: 'CS1 Fundamentals Refresh',
             date: '2025-11-24',

@@ -7,6 +7,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Define your workshops
     const workshopEvents = [
         // UPCOMING WORKSHOPS
+{
+    id: 'kick-off-meeting',
+    icon: '🚀',
+    title: 'Kick Off Meeting',
+    description: 'Orientation and Semester Planning',
+    date: '2026-01-27',
+    startTime: '17:00',
+    endTime: '18:30',
+    location: 'CCSB 1.0410',
+    formLink: 'https://forms.gle/your-link-here',
+    status: 'open'
+},
+{
+    id: 'intro-session',
+    icon: '👋',
+    title: 'Intro Session',
+    description: 'Introduction to CodeCore',
+    date: '2026-01-28',
+    startTime: '17:00',
+    endTime: '18:30',
+    location: 'CCSB 1.0410',
+    formLink: 'https://forms.gle/your-link-here',
+    status: 'open'
+},
         {
             id: 'cs1-fundamentals-refresh',
             title: 'CS1 Fundamentals Refresh',
@@ -204,4 +228,4 @@ document.addEventListener('DOMContentLoaded', function() {
     workshopEvents.forEach(w => {
         console.log(`  ${w.status === 'open' ? '🟢' : '📦'} ${w.title} (${w.date}) - ${w.status}`);
     });
-});
+});``
