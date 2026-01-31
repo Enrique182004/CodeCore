@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCore | Valentine's Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --romance-red: #e74c3c;
+            --code-teal: #1cb5ad;
+            --code-green: #90d34b;
+        }
+
+        /* Prevent scrolling beyond content */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* background uses the flyer image */
+            background: url('codecore/events/valentines/valentines.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .overlay {
+            background: rgba(255, 250, 240, 0.88);
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            color: var(--romance-red);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tagline {
+            font-weight: 600; 
+            color: var(--code-teal);
+            margin-top: 5px;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .countdown {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+            border: 2px solid var(--romance-red);
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-title {
+            font-size: 0.9rem;
+            color: var(--code-teal);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .countdown-timer {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .time-unit {
+            text-align: center;
+        }
+
+        .time-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--romance-red);
+            font-family: 'Dancing Script', cursive;
+            display: block;
+        }
+
+        .time-label {
+            font-size: 0.7rem;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .instruction-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 2px solid var(--code-green);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step h3 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--romance-red);
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .step p {
+            font-size: 0.85rem;
+            margin: 0;
+            color: #555;
+        }
+
+        .cta-section {
+            margin-top: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--code-teal), var(--code-green));
+            padding: 35px;
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(28, 181, 173, 0.2);
+        }
+
+        .cta-section h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--code-teal);
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: var(--romance-red);
+            color: white;
+        }
+
+        .floating-rose {
+            position: fixed;
+            font-size: 4rem;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <!-- More floating roses with larger size -->
+        <div class="floating-rose" style="top: 5%; left: 5%;">🌹</div>
+        <div class="floating-rose" style="top: 15%; right: 5%; animation-delay: 2s;">🌹</div>
+        <div class="floating-rose" style="bottom: 10%; left: 10%; animation-delay: 4s;">🌹</div>
+        <div class="floating-rose" style="top: 40%; left: 2%; animation-delay: 1s;">🌹</div>
+        <div class="floating-rose" style="top: 60%; right: 3%; animation-delay: 3s;">🌹</div>
+        <div class="floating-rose" style="bottom: 25%; right: 8%; animation-delay: 5s;">🌹</div>
+        <div class="floating-rose" style="top: 25%; left: 15%; animation-delay: 2.5s;">🌹</div>
+        <div class="floating-rose" style="bottom: 40%; left: 5%; animation-delay: 3.5s;">🌹</div>
+        <div class="floating-rose" style="top: 70%; right: 12%; animation-delay: 1.5s;">🌹</div>
+        <div class="floating-rose" style="top: 50%; left: 90%; animation-delay: 4.5s;">🌹</div>
+        <div class="floating-rose" style="bottom: 5%; right: 20%; animation-delay: 0.5s;">🌹</div>
+        <div class="floating-rose" style="top: 10%; left: 50%; animation-delay: 3.8s;">🌹</div>
+        <div class="floating-rose" style="top: 30%; right: 15%; animation-delay: 2.2s;">🌹</div>
+        <div class="floating-rose" style="bottom: 35%; left: 25%; animation-delay: 4.2s;">🌹</div>
+        <div class="floating-rose" style="top: 55%; left: 8%; animation-delay: 1.8s;">🌹</div>
+        <div class="floating-rose" style="bottom: 50%; right: 25%; animation-delay: 3.2s;">🌹</div>
+        <div class="floating-rose" style="top: 20%; left: 35%; animation-delay: 5.2s;">🌹</div>
+        <div class="floating-rose" style="bottom: 15%; right: 35%; animation-delay: 0.8s;">🌹</div>
+        <div class="floating-rose" style="top: 45%; right: 40%; animation-delay: 2.8s;">🌹</div>
+        <div class="floating-rose" style="bottom: 60%; left: 40%; animation-delay: 4.8s;">🌹</div>
+        <div class="floating-rose" style="top: 8%; right: 30%; animation-delay: 1.2s;">🌹</div>
+        <div class="floating-rose" style="bottom: 20%; left: 50%; animation-delay: 3.6s;">🌹</div>
+        <div class="floating-rose" style="top: 65%; right: 5%; animation-delay: 5.5s;">🌹</div>
+        <div class="floating-rose" style="bottom: 45%; right: 50%; animation-delay: 2.4s;">🌹</div>
+        <div class="floating-rose" style="top: 35%; left: 60%; animation-delay: 4.4s;">🌹</div>
+        <div class="floating-rose" style="bottom: 30%; right: 60%; animation-delay: 1.6s;">🌹</div>
+        <div class="floating-rose" style="top: 12%; left: 70%; animation-delay: 3.4s;">🌹</div>
+        <div class="floating-rose" style="bottom: 55%; left: 70%; animation-delay: 5.8s;">🌹</div>
+        <div class="floating-rose" style="top: 75%; right: 70%; animation-delay: 0.3s;">🌹</div>
+        <div class="floating-rose" style="top: 22%; right: 80%; animation-delay: 2.6s;">🌹</div>
+
+        <header>
+            <h1>CodeCore Rose Sale</h1>
+            <p class="tagline">SOWING LOVE, ONE BYTE AT A TIME</p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown">
+                <div class="countdown-title">Pre-orders close in:</div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="time-unit">
+                        <span class="time-value" id="days">0</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="hours">0</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="minutes">0</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="seconds">0</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="instruction-card">
+                <div class="step">
+                    <h3>Step 1</h3>
+                    <p>Select your favorite rose color and quantity.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2</h3>
+                    <p>Write a message for your custom heart tag!</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3</h3>
+                    <p>We deliver to their desk on February 13th!</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to send a flower?</h2>
+                <p>Pre-orders close February 10th. Don't wait!</p>
+                <a href="#" class="btn">Order Your Roses</a>
+            </div>
+        </div>
+        
+        <footer style="margin-top: 20px; color: #999; font-size: 0.75rem;">
+            &copy; 2026 CodeCore Club
+        </footer>
+    </div>
+
+    <script>
+        // Countdown to February 10, 2026 at midnight
+        const countdownDate = new Date('February 10, 2026 23:59:59').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div style="font-size: 1.5rem; color: var(--romance-red);">Pre-orders are closed!</div>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
