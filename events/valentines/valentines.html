@@ -10,6 +10,7 @@
             --romance-red: #e74c3c;
             --code-teal: #1cb5ad;
             --code-green: #90d34b;
+            --soft-white: #ffffff;
         }
 
         html, body {
@@ -35,7 +36,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 15px; /* Reduced padding for mobile */
+            padding: 40px 15px;
             box-sizing: border-box;
             position: relative;
             z-index: 1;
@@ -62,7 +63,7 @@
             text-transform: uppercase;
         }
 
-        /* Timer - Responsive Layout */
+        /* Timer */
         .countdown {
             margin: 20px auto;
             width: 90%;
@@ -102,7 +103,7 @@
             z-index: 2;
         }
 
-        /* Steps - Responsive Flex */
+        /* Instruction Steps */
         .instruction-card {
             background: white;
             padding: 30px;
@@ -110,17 +111,16 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.05);
             border: 2px solid var(--code-green);
             display: flex;
-            flex-direction: column; /* Vertical on mobile */
+            flex-direction: column;
             gap: 30px;
             margin-bottom: 50px;
         }
 
         @media (min-width: 768px) {
-            .instruction-card { flex-direction: row; } /* Horizontal on desktop */
+            .instruction-card { flex-direction: row; }
         }
 
         .step { flex: 1; text-align: center; }
-
         .step h3 {
             font-family: 'Dancing Script', cursive;
             color: var(--romance-red);
@@ -128,25 +128,64 @@
             margin: 0 0 10px 0;
         }
 
-        /* Catalog Section */
+        /* IMPROVED CATALOG SECTION */
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller cards for mobile */
+            grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
             gap: 15px;
+            margin-top: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .catalog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Better spacing on desktop */
+                gap: 25px;
+            }
         }
 
         .catalog-item {
-            background: white;
-            padding: 15px;
-            border-radius: 20px;
+            background: var(--soft-white);
+            padding: 25px 15px;
+            border-radius: 25px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(231, 76, 60, 0.1);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Mobile Adjustments for catalog fonts */
-        @media (max-width: 480px) {
-            .item-placeholder { font-size: 2.5rem; }
-            .item-name { font-size: 1rem; }
+        .catalog-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(231, 76, 60, 0.12);
+            border-color: var(--romance-red);
+        }
+
+        .item-placeholder {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            display: block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #2d3436;
+            margin: 10px 0;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            line-height: 1.2;
+        }
+
+        .item-price {
+            color: var(--romance-red);
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: rgba(231, 76, 60, 0.05);
+            padding: 4px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: auto;
         }
 
         /* Form Button & Wrapper */
@@ -156,6 +195,7 @@
             padding: 40px 20px;
             border-radius: 30px;
             color: white;
+            margin-top: 20px;
         }
 
         .btn {
@@ -168,9 +208,12 @@
             font-size: 1.1rem;
             border: none;
             cursor: pointer;
-            width: 80%; /* Wider button on mobile */
+            width: 90%;
             max-width: 300px;
+            transition: transform 0.2s;
         }
+
+        .btn:active { transform: scale(0.95); }
 
         #form-wrapper {
             display: none;
@@ -182,12 +225,11 @@
 
         iframe { 
             width: 100%; 
-            height: 1500px; /* Increased for mobile scroll comfort */
+            height: 800px; 
             border: none; 
             border-radius: 15px; 
         }
 
-        /* Decorations */
         .floating-decoration {
             position: fixed;
             opacity: 0.25;
@@ -237,13 +279,66 @@
             </div>
 
             <div class="catalog-section" style="margin-bottom: 50px;">
-                <h2 style="text-align: center; font-family: 'Dancing Script', cursive; color: var(--romance-red); font-size: 2.8rem; margin-bottom: 25px;">Our Catalog</h2>
+                <h2 style="text-align: center; font-family: 'Dancing Script', cursive; color: var(--romance-red); font-size: 3rem; margin-bottom: 10px;">Our Catalog</h2>
+                
                 <div class="catalog-grid">
-                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🌹</span><p class="item-name">Item 1</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🍫</span><p class="item-name">Item 2</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🧸</span><p class="item-name">Item 3</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">💌</span><p class="item-name">Item 4</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🎁</span><p class="item-name">Item 5</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">🌹</span>
+                        <p class="item-name">Single Wrapped Rose</p>
+                        <p class="item-price">$4.00</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">🍪</span>
+                        <p class="item-name">Cookies</p>
+                        <p class="item-price">$3.50</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">😘</span>
+                        <p class="item-name">Kiss Chocolate</p>
+                        <p class="item-price">$4.00</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">💐</span>
+                        <p class="item-name">3-Rose Bouquet</p>
+                        <p class="item-price">$9.00</p>
+                    </div>
+
+                    <div class="catalog-item">
+                        <span class="item-placeholder">🌹🍪</span>
+                        <p class="item-name">Rose + Cookies</p>
+                        <p class="item-price">$7.00</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">🌹🍫</span>
+                        <p class="item-name">Rose + Chocolate</p>
+                        <p class="item-price">$7.50</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">🍪🍫</span>
+                        <p class="item-name">Cookies + Chocolate</p>
+                        <p class="item-price">$7.00</p>
+                    </div>
+
+                    <div class="catalog-item">
+                        <span class="item-placeholder">✨</span>
+                        <p class="item-name">Rose + Cookies + Chocolate</p>
+                        <p class="item-price">$10.00</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">💐🍪</span>
+                        <p class="item-name">3 Roses + Cookies</p>
+                        <p class="item-price">$12.00</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">💐🍫</span>
+                        <p class="item-name">3 Roses + Chocolate</p>
+                        <p class="item-price">$12.50</p>
+                    </div>
+                    <div class="catalog-item">
+                        <span class="item-placeholder">💝</span>
+                        <p class="item-name">3 Roses + Cookies + Chocolate</p>
+                        <p class="item-price">$15.00</p>
+                    </div>
                 </div>
             </div>
 
@@ -262,10 +357,10 @@
     </div>
 
     <script>
-        // Generate even more background decorations
+        // Background decorations
         const decoContainer = document.getElementById('deco-container');
         const emojis = ['🌹', '❤️', '💖', '💝', '✨', '🌷'];
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 40; i++) {
             const span = document.createElement('span');
             span.className = 'floating-decoration';
             span.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
