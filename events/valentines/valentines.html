@@ -12,17 +12,16 @@
             --code-green: #90d34b;
         }
 
-        /* Prevent scrolling beyond content */
         html, body {
-            height: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            height: auto; 
+            min-height: 100%;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            /* background uses the flyer image */
             background: url('codecore/events/valentines/valentines.jpeg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
@@ -30,14 +29,13 @@
         }
 
         .overlay {
-            background: rgba(255, 250, 240, 0.88);
+            background: rgba(255, 250, 240, 0.92);
             width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            padding: 60px 20px;
             box-sizing: border-box;
             position: relative;
             z-index: 1;
@@ -45,212 +43,200 @@
 
         header {
             text-align: center;
-            margin-bottom: 25px;
-            position: relative;
+            margin-bottom: 40px;
             z-index: 2;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             color: var(--romance-red);
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         .tagline {
             font-weight: 600; 
             color: var(--code-teal);
-            margin-top: 5px;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
         }
 
+        /* Fixed Timer Format */
         .countdown {
+            margin: 30px auto;
+            max-width: 500px;
+            padding: 20px;
             background: white;
-            padding: 20px 30px;
-            border-radius: 15px;
-            margin: 15px 0;
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+            border-radius: 20px;
             border: 2px solid var(--romance-red);
-            position: relative;
-            z-index: 2;
-        }
-
-        .countdown-title {
-            font-size: 0.9rem;
-            color: var(--code-teal);
-            margin-bottom: 10px;
-            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.15);
         }
 
         .countdown-timer {
             display: flex;
-            gap: 15px;
+            gap: 25px;
             justify-content: center;
+            align-items: baseline;
         }
 
-        .time-unit {
-            text-align: center;
-        }
+        .time-unit { text-align: center; }
 
         .time-value {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: bold;
             color: var(--romance-red);
             font-family: 'Dancing Script', cursive;
-            display: block;
+            line-height: 1;
         }
 
         .time-label {
-            font-size: 0.7rem;
-            color: #555;
-            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: #333;
+            display: block;
+            margin-top: 5px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             width: 100%;
-            position: relative;
             z-index: 2;
         }
 
+        /* Fixed Steps Format */
         .instruction-card {
             background: white;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
             border: 2px solid var(--code-green);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
         .step {
-            text-align: center;
+            flex: 1;
+            min-width: 250px;
         }
 
         .step h3 {
             font-family: 'Dancing Script', cursive;
             color: var(--romance-red);
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+            margin: 0 0 15px 0;
         }
 
         .step p {
-            font-size: 0.85rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
             margin: 0;
-            color: #555;
         }
 
+        /* Catalog Section */
+        .catalog-section { margin-bottom: 60px; }
+        .section-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: var(--romance-red);
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .catalog-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .catalog-item:hover { transform: translateY(-10px); }
+
+        .item-placeholder {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .item-name { font-weight: 600; font-size: 1.2rem; margin-bottom: 5px; }
+        .item-price { color: var(--code-teal); font-weight: bold; font-size: 1.1rem; }
+
+        /* Order Button & Form */
         .cta-section {
-            margin-top: 30px;
             text-align: center;
             background: linear-gradient(135deg, var(--code-teal), var(--code-green));
-            padding: 35px;
-            border-radius: 25px;
+            padding: 50px;
+            border-radius: 35px;
             color: white;
-            box-shadow: 0 10px 20px rgba(28, 181, 173, 0.2);
-        }
-
-        .cta-section h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.5rem;
         }
 
         .btn {
             display: inline-block;
             background: white;
             color: var(--code-teal);
-            padding: 14px 40px;
-            border-radius: 50px;
+            padding: 18px 50px;
+            border-radius: 60px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
             transition: 0.3s;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            background: var(--romance-red);
-            color: white;
+        .btn:hover { background: var(--romance-red); color: white; transform: scale(1.05); }
+
+        #form-wrapper {
+            display: none;
+            margin-top: 40px;
+            background: white;
+            border-radius: 25px;
+            padding: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         }
 
-        .floating-rose {
+        iframe { width: 100%; height: 1400px; border: none; border-radius: 15px; }
+
+        /* Background Decorations */
+        .floating-decoration {
             position: fixed;
-            font-size: 4rem;
-            opacity: 0.4;
+            opacity: 0.3;
             z-index: 0;
             pointer-events: none;
-            animation: float 6s infinite ease-in-out;
+            animation: floatAnim 8s infinite ease-in-out;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-40px) rotate(15deg); }
         }
     </style>
 </head>
 <body>
 
-    <div class="overlay">
-        <!-- More floating roses with larger size -->
-        <div class="floating-rose" style="top: 5%; left: 5%;">🌹</div>
-        <div class="floating-rose" style="top: 15%; right: 5%; animation-delay: 2s;">🌹</div>
-        <div class="floating-rose" style="bottom: 10%; left: 10%; animation-delay: 4s;">🌹</div>
-        <div class="floating-rose" style="top: 40%; left: 2%; animation-delay: 1s;">🌹</div>
-        <div class="floating-rose" style="top: 60%; right: 3%; animation-delay: 3s;">🌹</div>
-        <div class="floating-rose" style="bottom: 25%; right: 8%; animation-delay: 5s;">🌹</div>
-        <div class="floating-rose" style="top: 25%; left: 15%; animation-delay: 2.5s;">🌹</div>
-        <div class="floating-rose" style="bottom: 40%; left: 5%; animation-delay: 3.5s;">🌹</div>
-        <div class="floating-rose" style="top: 70%; right: 12%; animation-delay: 1.5s;">🌹</div>
-        <div class="floating-rose" style="top: 50%; left: 90%; animation-delay: 4.5s;">🌹</div>
-        <div class="floating-rose" style="bottom: 5%; right: 20%; animation-delay: 0.5s;">🌹</div>
-        <div class="floating-rose" style="top: 10%; left: 50%; animation-delay: 3.8s;">🌹</div>
-        <div class="floating-rose" style="top: 30%; right: 15%; animation-delay: 2.2s;">🌹</div>
-        <div class="floating-rose" style="bottom: 35%; left: 25%; animation-delay: 4.2s;">🌹</div>
-        <div class="floating-rose" style="top: 55%; left: 8%; animation-delay: 1.8s;">🌹</div>
-        <div class="floating-rose" style="bottom: 50%; right: 25%; animation-delay: 3.2s;">🌹</div>
-        <div class="floating-rose" style="top: 20%; left: 35%; animation-delay: 5.2s;">🌹</div>
-        <div class="floating-rose" style="bottom: 15%; right: 35%; animation-delay: 0.8s;">🌹</div>
-        <div class="floating-rose" style="top: 45%; right: 40%; animation-delay: 2.8s;">🌹</div>
-        <div class="floating-rose" style="bottom: 60%; left: 40%; animation-delay: 4.8s;">🌹</div>
-        <div class="floating-rose" style="top: 8%; right: 30%; animation-delay: 1.2s;">🌹</div>
-        <div class="floating-rose" style="bottom: 20%; left: 50%; animation-delay: 3.6s;">🌹</div>
-        <div class="floating-rose" style="top: 65%; right: 5%; animation-delay: 5.5s;">🌹</div>
-        <div class="floating-rose" style="bottom: 45%; right: 50%; animation-delay: 2.4s;">🌹</div>
-        <div class="floating-rose" style="top: 35%; left: 60%; animation-delay: 4.4s;">🌹</div>
-        <div class="floating-rose" style="bottom: 30%; right: 60%; animation-delay: 1.6s;">🌹</div>
-        <div class="floating-rose" style="top: 12%; left: 70%; animation-delay: 3.4s;">🌹</div>
-        <div class="floating-rose" style="bottom: 55%; left: 70%; animation-delay: 5.8s;">🌹</div>
-        <div class="floating-rose" style="top: 75%; right: 70%; animation-delay: 0.3s;">🌹</div>
-        <div class="floating-rose" style="top: 22%; right: 80%; animation-delay: 2.6s;">🌹</div>
-
+    <div class="overlay" id="deco-container">
         <header>
-            <h1>CodeCore Rose Sale</h1>
-            <p class="tagline">SOWING LOVE, ONE BYTE AT A TIME</p>
+            <h1>CodeCore Valentine Shop</h1>
+            <p class="tagline">GIFTS, SWEETS, AND SINCERE BYTES</p>
             
-            <!-- Countdown Timer -->
             <div class="countdown">
-                <div class="countdown-title">Pre-orders close in:</div>
                 <div class="countdown-timer" id="countdown">
-                    <div class="time-unit">
-                        <span class="time-value" id="days">0</span>
-                        <span class="time-label">Days</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-value" id="hours">0</span>
-                        <span class="time-label">Hours</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-value" id="minutes">0</span>
-                        <span class="time-label">Minutes</span>
-                    </div>
-                    <div class="time-unit">
-                        <span class="time-value" id="seconds">0</span>
-                        <span class="time-label">Seconds</span>
-                    </div>
+                    <div class="time-unit"><span class="time-value" id="days">0</span><span class="time-label">Days</span></div>
+                    <div class="time-unit"><span class="time-value" id="hours">0</span><span class="time-label">Hours</span></div>
+                    <div class="time-unit"><span class="time-value" id="minutes">0</span><span class="time-label">Mins</span></div>
+                    <div class="time-unit"><span class="time-value" id="seconds">0</span><span class="time-label">Secs</span></div>
                 </div>
             </div>
         </header>
@@ -259,58 +245,81 @@
             <div class="instruction-card">
                 <div class="step">
                     <h3>Step 1</h3>
-                    <p>Select your favorite rose color and quantity.</p>
+                    <p>Browse our catalog and pick your favorites.</p>
                 </div>
                 <div class="step">
                     <h3>Step 2</h3>
-                    <p>Write a message for your custom heart tag!</p>
+                    <p>Fill out the form with your custom tags.</p>
                 </div>
                 <div class="step">
                     <h3>Step 3</h3>
-                    <p>We deliver to their desk on February 13th!</p>
+                    <p>We deliver to their desk on Feb 13th!</p>
+                </div>
+            </div>
+
+            <div class="catalog-section">
+                <h2 class="section-title">Our Catalog</h2>
+                <div class="catalog-grid">
+                    <div class="catalog-item"><span class="item-placeholder">🌹</span><p class="item-name">Item 1</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder">🍫</span><p class="item-name">Item 2</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder">🧸</span><p class="item-name">Item 3</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder">💌</span><p class="item-name">Item 4</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder">🎁</span><p class="item-name">Item 5</p><p class="item-price">$0.00</p></div>
                 </div>
             </div>
 
             <div class="cta-section">
-                <h2>Ready to send a flower?</h2>
-                <p>Pre-orders close February 10th. Don't wait!</p>
-                <a href="#" class="btn">Order Your Roses</a>
+                <h2>Ready to send a gift?</h2>
+                <button onclick="toggleForm()" class="btn" id="orderBtn">Open Order Form</button>
+                <div id="form-wrapper">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd6JD8C0XhnIL5OESSZbli1AvhdrKvjq2cAFuxBUoUY0Ar1RA/viewform?embedded=true">Loading…</iframe>
+                </div>
             </div>
         </div>
         
-        <footer style="margin-top: 20px; color: #999; font-size: 0.75rem;">
+        <footer style="margin-top: 60px; padding-bottom: 30px; color: #888; font-size: 0.9rem;">
             &copy; 2026 CodeCore Club
         </footer>
     </div>
 
     <script>
-        // Countdown to February 10, 2026 at midnight
-        const countdownDate = new Date('February 10, 2026 23:59:59').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<div style="font-size: 1.5rem; color: var(--romance-red);">Pre-orders are closed!</div>';
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
+        // Generate 50+ background items dynamically
+        const decoContainer = document.getElementById('deco-container');
+        const emojis = ['🌹', '❤️', '💖', '💝', '✨', '🌷'];
+        for (let i = 0; i < 50; i++) {
+            const span = document.createElement('span');
+            span.className = 'floating-decoration';
+            span.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            span.style.left = Math.random() * 100 + 'vw';
+            span.style.top = Math.random() * 100 + 'vh';
+            span.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+            span.style.animationDelay = Math.random() * 5 + 's';
+            span.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            decoContainer.appendChild(span);
         }
 
-        // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    </script>
+        // Timer Logic
+        const countdownDate = new Date('February 10, 2026 23:59:59').getTime();
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            if (distance < 0) return;
+            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
 
+        function toggleForm() {
+            const wrapper = document.getElementById('form-wrapper');
+            const btn = document.getElementById('orderBtn');
+            const isOpen = wrapper.style.display === 'block';
+            wrapper.style.display = isOpen ? 'none' : 'block';
+            btn.textContent = isOpen ? 'Open Order Form' : 'Close Order Form';
+            if(!isOpen) setTimeout(() => wrapper.scrollIntoView({ behavior: 'smooth' }), 100);
+        }
+    </script>
 </body>
 </html>
