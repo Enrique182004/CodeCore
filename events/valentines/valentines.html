@@ -128,17 +128,48 @@
             margin: 0 0 10px 0;
         }
 
-        /* IMPROVED CATALOG SECTION */
+        /* FEATURED PRODUCT GALLERY */
+        .product-preview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .preview-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid var(--code-green);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .preview-img:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .product-preview { 
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+            .preview-img { height: 220px; }
+        }
+
+        /* CATALOG SECTION */
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-top: 25px;
         }
 
         @media (min-width: 768px) {
             .catalog-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Better spacing on desktop */
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 25px;
             }
         }
@@ -276,6 +307,12 @@
                     <h3>Step 3</h3>
                     <p>We deliver to their desk on Feb 13th!</p>
                 </div>
+            </div>
+
+            <div class="product-preview">
+                <img src="cookie1.jpeg" alt="Valentine Cookies" class="preview-img">
+                <img src="cookie2.jpeg" alt="Valentine Roses" class="preview-img">
+                <img src="cookie3.jpeg" alt="Valentine Chocolates" class="preview-img">
             </div>
 
             <div class="catalog-section" style="margin-bottom: 50px;">

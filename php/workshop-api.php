@@ -20,7 +20,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'all';
 // 🎯 MASTER WORKSHOP LIST - EDIT HERE
 // ========================================
 $workshops = [
-    // UPCOMING WORKSHOPS - Add new workshops here
+    // UPCOMING WORKSHOPS - Add new workshops here[
     [
     'id' => 'kick-off-meeting',
     'icon' => '🚀',
