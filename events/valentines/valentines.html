@@ -29,13 +29,13 @@
         }
 
         .overlay {
-            background: rgba(255, 250, 240, 0.92);
+            background: rgba(255, 250, 240, 0.94);
             width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 20px;
+            padding: 40px 15px; /* Reduced padding for mobile */
             box-sizing: border-box;
             position: relative;
             z-index: 1;
@@ -43,13 +43,13 @@
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             z-index: 2;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 10vw, 5rem);
             color: var(--romance-red);
             margin: 0;
         }
@@ -57,17 +57,17 @@
         .tagline {
             font-weight: 600; 
             color: var(--code-teal);
-            font-size: 1rem;
+            font-size: clamp(0.7rem, 3vw, 1rem);
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-top: 10px;
         }
 
-        /* Fixed Timer Format */
+        /* Timer - Responsive Layout */
         .countdown {
-            margin: 30px auto;
+            margin: 20px auto;
+            width: 90%;
             max-width: 500px;
-            padding: 20px;
+            padding: 15px;
             background: white;
             border-radius: 20px;
             border: 2px solid var(--romance-red);
@@ -76,15 +76,13 @@
 
         .countdown-timer {
             display: flex;
-            gap: 25px;
+            gap: clamp(10px, 4vw, 25px);
             justify-content: center;
             align-items: baseline;
         }
 
-        .time-unit { text-align: center; }
-
         .time-value {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 8vw, 3rem);
             font-weight: bold;
             color: var(--romance-red);
             font-family: 'Dancing Script', cursive;
@@ -92,7 +90,7 @@
         }
 
         .time-label {
-            font-size: 0.9rem;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
             color: #333;
             display: block;
             margin-top: 5px;
@@ -104,81 +102,59 @@
             z-index: 2;
         }
 
-        /* Fixed Steps Format */
+        /* Steps - Responsive Flex */
         .instruction-card {
             background: white;
-            padding: 40px;
+            padding: 30px;
             border-radius: 30px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.05);
             border: 2px solid var(--code-green);
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            flex-direction: column; /* Vertical on mobile */
             gap: 30px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
-        .step {
-            flex: 1;
-            min-width: 250px;
+        @media (min-width: 768px) {
+            .instruction-card { flex-direction: row; } /* Horizontal on desktop */
         }
+
+        .step { flex: 1; text-align: center; }
 
         .step h3 {
             font-family: 'Dancing Script', cursive;
             color: var(--romance-red);
-            font-size: 2.5rem;
-            margin: 0 0 15px 0;
-        }
-
-        .step p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
         }
 
         /* Catalog Section */
-        .catalog-section { margin-bottom: 60px; }
-        .section-title {
-            text-align: center;
-            font-family: 'Dancing Script', cursive;
-            color: var(--romance-red);
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
-
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Smaller cards for mobile */
+            gap: 15px;
         }
 
         .catalog-item {
             background: white;
-            padding: 25px;
+            padding: 15px;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            transition: 0.3s;
         }
 
-        .catalog-item:hover { transform: translateY(-10px); }
-
-        .item-placeholder {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            display: block;
+        /* Mobile Adjustments for catalog fonts */
+        @media (max-width: 480px) {
+            .item-placeholder { font-size: 2.5rem; }
+            .item-name { font-size: 1rem; }
         }
 
-        .item-name { font-weight: 600; font-size: 1.2rem; margin-bottom: 5px; }
-        .item-price { color: var(--code-teal); font-weight: bold; font-size: 1.1rem; }
-
-        /* Order Button & Form */
+        /* Form Button & Wrapper */
         .cta-section {
             text-align: center;
             background: linear-gradient(135deg, var(--code-teal), var(--code-green));
-            padding: 50px;
-            border-radius: 35px;
+            padding: 40px 20px;
+            border-radius: 30px;
             color: white;
         }
 
@@ -186,33 +162,35 @@
             display: inline-block;
             background: white;
             color: var(--code-teal);
-            padding: 18px 50px;
+            padding: 15px 35px;
             border-radius: 60px;
-            text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-            cursor: pointer;
+            font-size: 1.1rem;
             border: none;
-            transition: 0.3s;
+            cursor: pointer;
+            width: 80%; /* Wider button on mobile */
+            max-width: 300px;
         }
-
-        .btn:hover { background: var(--romance-red); color: white; transform: scale(1.05); }
 
         #form-wrapper {
             display: none;
-            margin-top: 40px;
+            margin-top: 30px;
             background: white;
-            border-radius: 25px;
-            padding: 10px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 5px;
         }
 
-        iframe { width: 100%; height: 1400px; border: none; border-radius: 15px; }
+        iframe { 
+            width: 100%; 
+            height: 1500px; /* Increased for mobile scroll comfort */
+            border: none; 
+            border-radius: 15px; 
+        }
 
-        /* Background Decorations */
+        /* Decorations */
         .floating-decoration {
             position: fixed;
-            opacity: 0.3;
+            opacity: 0.25;
             z-index: 0;
             pointer-events: none;
             animation: floatAnim 8s infinite ease-in-out;
@@ -220,13 +198,14 @@
 
         @keyframes floatAnim {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-40px) rotate(15deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
         }
     </style>
 </head>
 <body>
 
     <div class="overlay" id="deco-container">
+        
         <header>
             <h1>CodeCore Valentine Shop</h1>
             <p class="tagline">GIFTS, SWEETS, AND SINCERE BYTES</p>
@@ -257,14 +236,14 @@
                 </div>
             </div>
 
-            <div class="catalog-section">
-                <h2 class="section-title">Our Catalog</h2>
+            <div class="catalog-section" style="margin-bottom: 50px;">
+                <h2 style="text-align: center; font-family: 'Dancing Script', cursive; color: var(--romance-red); font-size: 2.8rem; margin-bottom: 25px;">Our Catalog</h2>
                 <div class="catalog-grid">
-                    <div class="catalog-item"><span class="item-placeholder">🌹</span><p class="item-name">Item 1</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder">🍫</span><p class="item-name">Item 2</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder">🧸</span><p class="item-name">Item 3</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder">💌</span><p class="item-name">Item 4</p><p class="item-price">$0.00</p></div>
-                    <div class="catalog-item"><span class="item-placeholder">🎁</span><p class="item-name">Item 5</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🌹</span><p class="item-name">Item 1</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🍫</span><p class="item-name">Item 2</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🧸</span><p class="item-name">Item 3</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">💌</span><p class="item-name">Item 4</p><p class="item-price">$0.00</p></div>
+                    <div class="catalog-item"><span class="item-placeholder" style="font-size:3rem;">🎁</span><p class="item-name">Item 5</p><p class="item-price">$0.00</p></div>
                 </div>
             </div>
 
@@ -277,28 +256,26 @@
             </div>
         </div>
         
-        <footer style="margin-top: 60px; padding-bottom: 30px; color: #888; font-size: 0.9rem;">
+        <footer style="margin-top: 50px; padding-bottom: 30px; color: #888; font-size: 0.8rem; text-align: center;">
             &copy; 2026 CodeCore Club
         </footer>
     </div>
 
     <script>
-        // Generate 50+ background items dynamically
+        // Generate even more background decorations
         const decoContainer = document.getElementById('deco-container');
         const emojis = ['🌹', '❤️', '💖', '💝', '✨', '🌷'];
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             const span = document.createElement('span');
             span.className = 'floating-decoration';
             span.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
             span.style.left = Math.random() * 100 + 'vw';
             span.style.top = Math.random() * 100 + 'vh';
-            span.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+            span.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
             span.style.animationDelay = Math.random() * 5 + 's';
-            span.style.animationDuration = (Math.random() * 4 + 6) + 's';
             decoContainer.appendChild(span);
         }
 
-        // Timer Logic
         const countdownDate = new Date('February 10, 2026 23:59:59').getTime();
         function updateTimer() {
             const now = new Date().getTime();
@@ -318,7 +295,11 @@
             const isOpen = wrapper.style.display === 'block';
             wrapper.style.display = isOpen ? 'none' : 'block';
             btn.textContent = isOpen ? 'Open Order Form' : 'Close Order Form';
-            if(!isOpen) setTimeout(() => wrapper.scrollIntoView({ behavior: 'smooth' }), 100);
+            if(!isOpen) {
+                setTimeout(() => {
+                    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
     </script>
 </body>
