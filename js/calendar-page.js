@@ -13,31 +13,297 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeCalendarPage() {
-    // ACTUAL CODECORE WORKSHOPS - Updated from forms page
+    // ACTUAL CODECORE WORKSHOPS - Updated for Spring 2026
     const workshopEvents = [
         // Upcoming Workshops (Open)
         {
-    id: 'kick-off-meeting',
-    title: 'Kick Off Meeting',
-    date: '2026-01-27',
-    time: '5:00 PM - 6:30 PM',
-    location: 'CCSB 1.0410',
-    description: 'Topics: Orientation and Semester Planning',
-    formLink: 'https://forms.gle/your-link-here',
-    seats: '35/35',
-    status: 'open'
-},
-{
-    id: 'intro-session',
-    title: 'Intro Session',
-    date: '2026-01-28',
-    time: '5:00 PM - 6:30 PM',
-    location: 'CCSB 1.0410',
-    description: 'Topics: Introduction to CodeCore',
-    formLink: 'https://forms.gle/your-link-here',
-    seats: '35/35',
-    status: 'open'
-},
+            id: 'kick-off-meeting',
+            title: 'Kick Off Meeting',
+            date: '2026-01-27',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Orientation and Semester Planning',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'intro-session',
+            title: 'Intro Session',
+            date: '2026-01-28',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Introduction to CodeCore',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'breaking-the-loop',
+            title: 'Breaking the Loop: for, while, do-while',
+            date: '2026-02-10',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Loop Structures and Control Flow',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'object-oriented-thinking',
+            title: 'Object-Oriented Thinking',
+            date: '2026-02-11',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Introduction to OOP Concepts',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-exam-1-feb17',
+            title: 'Review Exam 1',
+            date: '2026-02-17',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Exam 1 Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'dynamic-data-linked-lists',
+            title: 'Dynamic Data with Linked Lists',
+            date: '2026-02-18',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Understanding Linked Data Structures',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'clean-methods-correct-results',
+            title: 'Clean Methods, Correct Results',
+            date: '2026-02-24',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Writing Effective Methods',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-exam-1-feb25',
+            title: 'Review Exam 1',
+            date: '2026-02-25',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Exam 1 Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'mastering-recursion',
+            title: 'Think Smaller: Mastering Recursion',
+            date: '2026-03-03',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Recursive Problem Solving',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'recursion-revisited',
+            title: 'Recursion Revisited',
+            date: '2026-03-04',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Advanced Recursion Techniques',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'iterating-strings-arrays',
+            title: 'Iterating in Strings and Arrays',
+            date: '2026-03-10',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: String and Array Manipulation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'searching-sorting',
+            title: 'Searching and Sorting: The Core Algorithms',
+            date: '2026-03-11',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Fundamental Algorithms',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-exam-2-mar24',
+            title: 'Review Exam 2',
+            date: '2026-03-24',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Exam 2 Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-exam-2-mar25',
+            title: 'Review Exam 2',
+            date: '2026-03-25',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Exam 2 Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'primitive-to-objects',
+            title: 'From Primitive to Objects',
+            date: '2026-03-31',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Understanding Data Types',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'primitive-vs-non-primitive',
+            title: 'Primitive vs non-primitive data types',
+            date: '2026-04-01',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Data Type Comparisons',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'think-in-grids',
+            title: 'Think in Grids: 2D Arrays',
+            date: '2026-04-07',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Multi-dimensional Arrays',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'lifo-vs-fifo',
+            title: 'LIFO vs FIFO/Classic Structures: Real uses',
+            date: '2026-04-08',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Stacks and Queues',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'nodes-links-dynamic-data',
+            title: 'Nodes, Links and Dynamic Data',
+            date: '2026-04-14',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Advanced Linked Structures',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'thinking-in-trees',
+            title: 'Thinking in Trees: Binary Structures',
+            date: '2026-04-15',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Binary Trees and BST',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-exam-3-apr21',
+            title: 'Review Exam 3',
+            date: '2026-04-21',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Exam 3 Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-exam-3-apr22',
+            title: 'Review Exam 3',
+            date: '2026-04-22',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Exam 3 Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-final-apr28',
+            title: 'Review Final',
+            date: '2026-04-28',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Final Exam Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'review-final-apr29',
+            title: 'Review Final',
+            date: '2026-04-29',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Final Exam Preparation',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'practice-final-may05',
+            title: 'Practice Final Exam',
+            date: '2026-05-05',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Final Exam Practice',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        {
+            id: 'practice-final-may06',
+            title: 'Practice Final Exam',
+            date: '2026-05-06',
+            time: '5:00 PM - 6:30 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Final Exam Practice',
+            formLink: 'https://forms.gle/your-link-here',
+            seats: '35/35',
+            status: 'open'
+        },
+        
+        // Past Workshops (Archive)
         {
             id: 'cs1-fundamentals-refresh',
             title: 'CS1 Fundamentals Refresh',
@@ -46,8 +312,8 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: Review Session',
             formLink: 'https://forms.gle/Ne2zp3jH5UHG7qRh6',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
         {
             id: 'friendsgiving-fun-night',
@@ -57,8 +323,8 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: CS1 & CS2 Review',
             formLink: 'https://forms.gle/CF5g5f3KPJrMn3wR7',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
         {
             id: 'cs2-mastery-workshop',
@@ -68,8 +334,8 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: Review Session',
             formLink: 'https://forms.gle/pXTGH5kjxXdhg3kE9',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
         {
             id: 'christmas-coding-party',
@@ -79,10 +345,9 @@ function initializeCalendarPage() {
             location: 'CCSB 1.0410',
             description: 'Topics: CS1 & CS2 Review',
             formLink: 'https://forms.gle/AqYgqdAWo74T9LVF8',
-            seats: '35/35',
-            status: 'open'
+            seats: 'Full',
+            status: 'past'
         },
-        // Past Workshops (Archive)
         {
             id: 'link-it-up',
             title: 'Link It Up!',
@@ -105,7 +370,6 @@ function initializeCalendarPage() {
             seats: 'Full',
             status: 'past'
         },
-        // Past Workshops (Archive)
         {
             id: 'big-three',
             title: 'The Big Three: Loops, Arrays, Conditionals',
@@ -206,14 +470,15 @@ function initializeCalendarPage() {
         // Get calendar info
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        // Get today's date for comparison
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        // Clear calendar grid
         const calendarGrid = document.getElementById('calendar-grid');
         calendarGrid.innerHTML = '';
 
-        // Add empty cells for days before month starts
+        // Add empty cells for days before the first of the month
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement('div');
             emptyCell.className = 'calendar-day-cell empty';

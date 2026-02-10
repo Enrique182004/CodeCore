@@ -20,31 +20,321 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'all';
 // 🎯 MASTER WORKSHOP LIST - EDIT HERE
 // ========================================
 $workshops = [
-    // UPCOMING WORKSHOPS - Add new workshops here[
+    // UPCOMING WORKSHOPS - Add new workshops here
     [
-    'id' => 'kick-off-meeting',
-    'icon' => '🚀',
-    'title' => 'Kick Off Meeting',
-    'description' => 'Orientation and Semester Planning',
-    'date' => '2026-01-27',
-    'startTime' => '17:00',
-    'endTime' => '18:30',
-    'location' => 'CCSB 1.0410',
-    'formLink' => 'https://forms.gle/your-link-here',
-    'status' => 'open'
-],
-[
-    'id' => 'intro-session',
-    'icon' => '👋',
-    'title' => 'Intro Session',
-    'description' => 'Introduction to CodeCore',
-    'date' => '2026-01-28',
-    'startTime' => '17:00',
-    'endTime' => '18:30',
-    'location' => 'CCSB 1.0410',
-    'formLink' => 'https://forms.gle/your-link-here',
-    'status' => 'open'
-],
+        'id' => 'kick-off-meeting',
+        'icon' => '🚀',
+        'title' => 'Kick Off Meeting',
+        'description' => 'Orientation and Semester Planning',
+        'date' => '2026-01-27',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/nzsLpAJ15jxhYy3Q9',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'intro-session',
+        'icon' => '👋',
+        'title' => 'Intro Session',
+        'description' => 'Introduction to CodeCore',
+        'date' => '2026-01-28',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/AmkXPLsLXDS7xmpW8',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'breaking-the-loop',
+        'icon' => '🔄',
+        'title' => 'Breaking the Loop: for, while, do-while',
+        'description' => 'Loop Structures and Control Flow',
+        'date' => '2026-02-10',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/Vrez5Q4ecLLWPXZeA',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'object-oriented-thinking',
+        'icon' => '🎯',
+        'title' => 'Object-Oriented Thinking',
+        'description' => 'Introduction to OOP Concepts',
+        'date' => '2026-02-11',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/Ce5UJNo8jnjUwjZ17',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-exam-1-feb17',
+        'icon' => '📝',
+        'title' => 'Review Exam 1',
+        'description' => 'Exam 1 Preparation',
+        'date' => '2026-02-17',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/3KfNaYnvnThigC9q9',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'dynamic-data-linked-lists',
+        'icon' => '🔗',
+        'title' => 'Dynamic Data with Linked Lists',
+        'description' => 'Understanding Linked Data Structures',
+        'date' => '2026-02-18',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/KnTCGfTQNf5jMk4t7',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'clean-methods-correct-results',
+        'icon' => '✨',
+        'title' => 'Clean Methods, Correct Results',
+        'description' => 'Writing Effective Methods',
+        'date' => '2026-02-24',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/ii5fX6YoZ6RuPuqh6',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-exam-1-feb25',
+        'icon' => '📝',
+        'title' => 'Review Exam 1',
+        'description' => 'Exam 1 Preparation',
+        'date' => '2026-02-25',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/oLyCkSKT4BVo88kC9',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'mastering-recursion',
+        'icon' => '🔄',
+        'title' => 'Think Smaller: Mastering Recursion',
+        'description' => 'Recursive Problem Solving',
+        'date' => '2026-03-03',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/9QacjbNvzkRvCA3B6',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'recursion-revisited',
+        'icon' => '🔁',
+        'title' => 'Recursion Revisited',
+        'description' => 'Advanced Recursion Techniques',
+        'date' => '2026-03-04',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/xFDQR2T6uVb6kBiw9',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'iterating-strings-arrays',
+        'icon' => '🔤',
+        'title' => 'Iterating in Strings and Arrays',
+        'description' => 'String and Array Manipulation',
+        'date' => '2026-03-10',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/49njhPnzUSCcRyws5',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'searching-sorting',
+        'icon' => '🔍',
+        'title' => 'Searching and Sorting: The Core Algorithms',
+        'description' => 'Fundamental Algorithms',
+        'date' => '2026-03-11',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/EGA6671SJW8Qxcnf8',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-exam-2-mar24',
+        'icon' => '📝',
+        'title' => 'Review Exam 2',
+        'description' => 'Exam 2 Preparation',
+        'date' => '2026-03-24',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-exam-2-mar25',
+        'icon' => '📝',
+        'title' => 'Review Exam 2',
+        'description' => 'Exam 2 Preparation',
+        'date' => '2026-03-25',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'primitive-to-objects',
+        'icon' => '🎁',
+        'title' => 'From Primitive to Objects',
+        'description' => 'Understanding Data Types',
+        'date' => '2026-03-31',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'primitive-vs-non-primitive',
+        'icon' => '⚖️',
+        'title' => 'Primitive vs non-primitive data types',
+        'description' => 'Data Type Comparisons',
+        'date' => '2026-04-01',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'think-in-grids',
+        'icon' => '🔲',
+        'title' => 'Think in Grids: 2D Arrays',
+        'description' => 'Multi-dimensional Arrays',
+        'date' => '2026-04-07',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'lifo-vs-fifo',
+        'icon' => '📚',
+        'title' => 'LIFO vs FIFO/Classic Structures: Real uses',
+        'description' => 'Stacks and Queues',
+        'date' => '2026-04-08',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'nodes-links-dynamic-data',
+        'icon' => '🔗',
+        'title' => 'Nodes, Links and Dynamic Data',
+        'description' => 'Advanced Linked Structures',
+        'date' => '2026-04-14',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'thinking-in-trees',
+        'icon' => '🌳',
+        'title' => 'Thinking in Trees: Binary Structures',
+        'description' => 'Binary Trees and BST',
+        'date' => '2026-04-15',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-exam-3-apr21',
+        'icon' => '📝',
+        'title' => 'Review Exam 3',
+        'description' => 'Exam 3 Preparation',
+        'date' => '2026-04-21',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-exam-3-apr22',
+        'icon' => '📝',
+        'title' => 'Review Exam 3',
+        'description' => 'Exam 3 Preparation',
+        'date' => '2026-04-22',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-final-apr28',
+        'icon' => '🎓',
+        'title' => 'Review Final',
+        'description' => 'Final Exam Preparation',
+        'date' => '2026-04-28',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'review-final-apr29',
+        'icon' => '🎓',
+        'title' => 'Review Final',
+        'description' => 'Final Exam Preparation',
+        'date' => '2026-04-29',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'practice-final-may05',
+        'icon' => '📝',
+        'title' => 'Practice Final Exam',
+        'description' => 'Final Exam Practice',
+        'date' => '2026-05-05',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    [
+        'id' => 'practice-final-may06',
+        'icon' => '📝',
+        'title' => 'Practice Final Exam',
+        'description' => 'Final Exam Practice',
+        'date' => '2026-05-06',
+        'startTime' => '17:00',
+        'endTime' => '18:30',
+        'location' => 'CCSB 1.0410',
+        'formLink' => 'https://forms.gle/your-link-here',
+        'status' => 'open'
+    ],
+    
+    // ARCHIVED WORKSHOPS
     [
         'id' => 'cs1-fundamentals-refresh',
         'icon' => '📚',
@@ -55,7 +345,7 @@ $workshops = [
         'endTime' => '19:00',
         'location' => 'CCSB 1.0410',
         'formLink' => 'https://forms.gle/Ne2zp3jH5UHG7qRh6',
-        'status' => 'open'
+        'status' => 'past'
     ],
     [
         'id' => 'friendsgiving-fun-night',
@@ -67,7 +357,7 @@ $workshops = [
         'endTime' => '19:00',
         'location' => 'CCSB 1.0410',
         'formLink' => 'https://forms.gle/CF5g5f3KPJrMn3wR7',
-        'status' => 'open'
+        'status' => 'past'
     ],
     [
         'id' => 'cs2-mastery-workshop',
@@ -79,7 +369,7 @@ $workshops = [
         'endTime' => '19:00',
         'location' => 'CCSB 1.0410',
         'formLink' => 'https://forms.gle/pXTGH5kjxXdhg3kE9',
-        'status' => 'open'
+        'status' => 'past'
     ],
     [
         'id' => 'christmas-coding-party',
@@ -91,10 +381,8 @@ $workshops = [
         'endTime' => '19:00',
         'location' => 'CCSB 1.0410',
         'formLink' => 'https://forms.gle/AqYgqdAWo74T9LVF8',
-        'status' => 'open'
+        'status' => 'past'
     ],
-    
-    // ARCHIVED WORKSHOPS
     [
         'id' => 'link-it-up',
         'icon' => '🔗',
