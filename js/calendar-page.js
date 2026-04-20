@@ -17,293 +17,42 @@ function initializeCalendarPage() {
     const workshopEvents = [
         // Upcoming Workshops (Open)
         {
-            id: 'kick-off-meeting',
-            title: 'Kick Off Meeting',
-            date: '2026-01-27',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Orientation and Semester Planning',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'intro-session',
-            title: 'Intro Session',
-            date: '2026-01-28',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Introduction to CodeCore',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'breaking-the-loop',
-            title: 'Breaking the Loop: for, while, do-while',
-            date: '2026-02-10',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Loop Structures and Control Flow',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'object-oriented-thinking',
-            title: 'Object-Oriented Thinking',
-            date: '2026-02-11',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Introduction to OOP Concepts',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-1-feb17',
-            title: 'Review Exam 1',
-            date: '2026-02-17',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Exam 1 Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'dynamic-data-linked-lists',
-            title: 'Dynamic Data with Linked Lists',
-            date: '2026-02-18',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Understanding Linked Data Structures',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'clean-methods-correct-results',
-            title: 'Clean Methods, Correct Results',
-            date: '2026-02-24',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Writing Effective Methods',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-1-feb25',
-            title: 'Review Exam 1',
-            date: '2026-02-25',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Exam 1 Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'mastering-recursion',
-            title: 'Think Smaller: Mastering Recursion',
-            date: '2026-03-03',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Recursive Problem Solving',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'recursion-revisited',
-            title: 'Recursion Revisited',
-            date: '2026-03-04',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Advanced Recursion Techniques',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'iterating-strings-arrays',
-            title: 'Iterating in Strings and Arrays',
-            date: '2026-03-10',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: String and Array Manipulation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'searching-sorting',
-            title: 'Searching and Sorting: The Core Algorithms',
-            date: '2026-03-11',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Fundamental Algorithms',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-2-mar24',
-            title: 'Review Exam 2',
-            date: '2026-03-24',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Exam 2 Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-2-mar25',
-            title: 'Review Exam 2',
-            date: '2026-03-25',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Exam 2 Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'primitive-to-objects',
-            title: 'From Primitive to Objects',
-            date: '2026-03-31',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Understanding Data Types',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'primitive-vs-non-primitive',
-            title: 'Primitive vs non-primitive data types',
+            id: 'cs2-review',
+            title: 'CS2 Review',
             date: '2026-04-01',
             time: '5:00 PM - 6:30 PM',
             location: 'CCSB 1.0410',
-            description: 'Topics: Data Type Comparisons',
-            formLink: 'https://forms.gle/your-link-here',
+            description: 'Topics: Singly Linked Lists',
+            formLink: '',
             seats: '35/35',
-            status: 'open'
+            status: 'open',
+            downloadFile: '../files/SinglyLinkedList.java'
         },
+
         {
-            id: 'think-in-grids',
-            title: 'Think in Grids: 2D Arrays',
-            date: '2026-04-07',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Multi-dimensional Arrays',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'lifo-vs-fifo',
-            title: 'LIFO vs FIFO/Classic Structures: Real uses',
-            date: '2026-04-08',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Stacks and Queues',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'nodes-links-dynamic-data',
-            title: 'Nodes, Links and Dynamic Data',
-            date: '2026-04-14',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Advanced Linked Structures',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'thinking-in-trees',
-            title: 'Thinking in Trees: Binary Structures',
-            date: '2026-04-15',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Binary Trees and BST',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-3-apr21',
-            title: 'Review Exam 3',
-            date: '2026-04-21',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Exam 3 Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-3-apr22',
-            title: 'Review Exam 3',
+            id: 'women-empowerment',
+            title: 'Women Empowerment Panel',
             date: '2026-04-22',
-            time: '5:00 PM - 6:30 PM',
+            time: '11:30 AM - 1:00 PM',
             location: 'CCSB 1.0410',
-            description: 'Topics: Exam 3 Preparation',
-            formLink: 'https://forms.gle/your-link-here',
+            description: 'Topics: Panel Event',
+            formLink: '',
             seats: '35/35',
             status: 'open'
         },
-        {
-            id: 'review-final-apr28',
-            title: 'Review Final',
-            date: '2026-04-28',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Final Exam Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'review-final-apr29',
-            title: 'Review Final',
-            date: '2026-04-29',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Final Exam Preparation',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'practice-final-may05',
-            title: 'Practice Final Exam',
-            date: '2026-05-05',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Final Exam Practice',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        {
-            id: 'practice-final-may06',
-            title: 'Practice Final Exam',
-            date: '2026-05-06',
-            time: '5:00 PM - 6:30 PM',
-            location: 'CCSB 1.0410',
-            description: 'Topics: Final Exam Practice',
-            formLink: 'https://forms.gle/your-link-here',
-            seats: '35/35',
-            status: 'open'
-        },
-        
+
         // Past Workshops (Archive)
+        {
+            id: 'explore-your-path',
+            title: 'Explore Your Path: Faculty Panel',
+            date: '2026-04-08',
+            time: '12:00 PM - 1:00 PM',
+            location: 'CCSB 1.0410',
+            description: 'Topics: Faculty Panel',
+            formLink: '',
+            seats: 'Full',
+            status: 'past'
+        },
         {
             id: 'cs1-fundamentals-refresh',
             title: 'CS1 Fundamentals Refresh',
@@ -614,7 +363,10 @@ function initializeCalendarPage() {
 
             // Button text and link
             let buttonHTML = '';
-            if (isPast) {
+            if (event.downloadFile) {
+                const safeTitle = event.title.replace(/'/g, "\\'");
+                buttonHTML = `<button type="button" class="event-register-btn" onclick="event.preventDefault();event.stopPropagation();downloadWithPassword('${safeTitle}')">Download Materials →</button>`;
+            } else if (isPast) {
                 // For past events, link to materials if available
                 if (event.formLink.includes('drive.google.com')) {
                     buttonHTML = `<a href="${event.formLink}" class="event-register-btn">View Materials →</a>`;
@@ -691,3 +443,144 @@ function initializeCalendarPage() {
         return text.substring(0, maxLength) + '...';
     }
 }
+
+const CS2_REVIEW_PASSWORD = 'codecore2026';
+
+const CS2_REVIEW_FILE = `import java.util.Scanner;
+
+public class SinglyLinkedList {
+    // -------- Node --------
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    // Returns the Head Node of a LinkedList.
+    public Node getHead() {
+        return head;
+    }
+
+    private Node head;
+
+    // Display LinkedList:
+    public void printList() {
+        Node curr = head; // Node that will iterate through the LinkedList.
+
+        while (curr != null) {
+            System.out.print(curr.data + " -> "); // Print Node's data.
+            curr = curr.next; // Point to the next Node.
+        }
+        System.out.println("null"); // Default final value.
+    }
+
+    // Helper method to create a LinkedList according to a size input.
+    public SinglyLinkedList create(int size) {
+        SinglyLinkedList ll = new SinglyLinkedList();
+        ll.head = new Node(1);
+
+        for (int i = 2; i <= size; i++) {
+            ll.append(i);
+        }
+
+        return ll;
+    }
+
+    // Helper: Use prepend method.
+    public SinglyLinkedList createprepend(int size) {
+        SinglyLinkedList ll = new SinglyLinkedList();
+
+        for (int i = 1; i <= size; i++) {
+            ll.prepend(i);
+        }
+
+        return ll;
+    }
+
+    // Inserts a new Node at the end of the LinkedList.
+    public void append(int value) {
+        Node newNode = new Node(value);
+
+        // If LinkedList empty, new newNode is the head.
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node curr = head; // Node to iterate through the LinkedList.
+        while (curr.next != null) {
+            curr = curr.next; // Point to the next Node.
+        }
+        curr.next = newNode; // Make newNode be pointed by the last Node in the LinkedList.
+    }
+
+    // TODO: Make a method that inserts a new Node at the beggining of the LinkedList.
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        // Write your code here
+    }
+
+
+    // Public method, gives the parameter to the helper.
+    public int findMax() {
+        return findMaxHelper(head, head.data);
+    }
+
+    // TODO: Complete the helper method that finds the max value in the LinkedList.
+    private int findMaxHelper(Node curr, int max) {
+        // Write your code here
+        return -1;
+    }
+
+    public static void main(String [] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 1;
+
+        System.out.println("CODE RUNS!");
+
+        while (!(num < 1)) {
+            System.out.print("Enter a positive integer: ");
+            num = scan.nextInt();
+
+            if (num < 1) System.out.println("Enter a positive number\\n");
+        }
+
+        SinglyLinkedList LList = new SinglyLinkedList();
+        LList = LList.create(num);
+
+        System.out.println("===== YOUR LINKED LIST: =====");
+        LList.printList();
+
+        LList = LList.createprepend(num);
+        System.out.println("=== LINKED LIST (PREPEND): ===");
+        LList.printList();
+
+        int max = LList.findMax();
+        System.out.print("Max value in your Linked List: " + max);
+    }
+}`;
+
+window.downloadWithPassword = function(workshopTitle) {
+    const input = prompt('Enter the password to download materials for "' + workshopTitle + '":');
+    if (input === null) return;
+    if (input === CS2_REVIEW_PASSWORD) {
+        const blob = new Blob([CS2_REVIEW_FILE], { type: 'text/plain' });
+        const objectUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = objectUrl;
+        a.download = 'SinglyLinkedList.java';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(objectUrl);
+        }, 100);
+    } else {
+        alert('Incorrect password. Please try again.');
+    }
+};

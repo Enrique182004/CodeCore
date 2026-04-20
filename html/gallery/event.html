@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCore - Event Gallery</title>
+    <link rel="stylesheet" href="../../css/gallery.css">
+    <link rel="stylesheet" href="../../css/mobile-menu.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="icon" href="../../images/logos/CodeCore.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo" onclick="window.location.href='../../index.html'">
+                <img src="../../images/logos/C.png" alt="CodeCore Logo" class="logo-icon">
+                <span class="logo-text">CodeCore</span>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../officers.html">Our Officers</a></li>
+                    <li><a href="../collaborators.html">Advisors</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../calendar.html">Calendar</a></li>
+                    <li><a href="../forms.html">Forms</a></li>
+                    <li><a href="../gallery.html" class="active">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="event-gallery-container">
+        <a href="../gallery.html" class="back-link">← Back to Gallery</a>
+
+        <!-- Event hero — filled by JS -->
+        <div class="event-hero" id="event-hero">
+            <div class="event-hero-icon" id="hero-icon">📷</div>
+            <div class="event-hero-info">
+                <h1 id="hero-title">Loading...</h1>
+                <div class="meta" id="hero-meta"></div>
+            </div>
+        </div>
+
+        <p class="photos-summary" id="photos-summary"></p>
+
+        <!-- Photo grid — filled by JS -->
+        <div class="photo-grid" id="photo-grid">
+            <div class="no-photos">
+                <span>⏳</span>
+                <p>Loading photos...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+        <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Previous photo">‹</button>
+        <div class="lightbox-content">
+            <img id="lb-img" src="" alt="Gallery photo">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Next photo">›</button>
+        <div class="lightbox-counter" id="lb-counter">1 / 1</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-social-section">
+        <div class="footer-content">
+            <h3>Connect With Us</h3>
+            <p>Follow CodeCore on social media to stay updated on events and workshops</p>
+            <div class="footer-social">
+                <a href="mailto:codecore@utep.edu" aria-label="Email us" title="Email">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/codecoreutep?igsh=Y2tnd2s3NWViMDA1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/code-core-9a720138a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="../../js/gallery-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Read ?id= from URL
+            const params  = new URLSearchParams(window.location.search);
+            const eventId = params.get('id');
+
+            const event = eventId ? getEventById(eventId) : null;
+
+            if (!event) {
+                document.getElementById('hero-title').textContent = 'Event Not Found';
+                document.getElementById('photo-grid').innerHTML = `
+                    <div class="no-photos">
+                        <span>🔍</span>
+                        <p>We couldn't find this event.</p>
+                        <small><a href="../gallery.html" style="color:#2d7fa5;">← Return to Gallery</a></small>
+                    </div>`;
+                return;
+            }
+
+            // Update page title
+            document.title = `CodeCore – ${event.title}`;
+
+            // Hero
+            document.getElementById('hero-icon').textContent  = event.icon;
+            document.getElementById('hero-title').textContent = event.title;
+            document.getElementById('hero-meta').innerHTML = `
+                <span>📅 ${event.date}</span>
+                <span>⏰ ${event.time}</span>
+                <span>📍 ${event.location}</span>`;
+
+            const photos = event.photos || [];
+            const grid   = document.getElementById('photo-grid');
+            const summary = document.getElementById('photos-summary');
+
+            if (photos.length === 0) {
+                summary.textContent = '';
+                grid.innerHTML = `
+                    <div class="no-photos">
+                        <span>📷</span>
+                        <p>No photos yet for this event.</p>
+                        <small>Photos will be added after the event — check back soon!</small>
+                    </div>`;
+                return;
+            }
+
+            summary.textContent = `${photos.length} photo${photos.length !== 1 ? 's' : ''}`;
+
+            // Build photo grid
+            grid.innerHTML = photos.map((filename, i) => {
+                const src = getPhotoPath(event.id, filename);
+                return `
+                    <div class="photo-item" data-index="${i}" tabindex="0" role="button" aria-label="Open photo ${i + 1}">
+                        <img src="${src}" alt="${event.title} photo ${i + 1}" loading="lazy">
+                        <div class="photo-overlay">
+                            <span class="zoom-icon">🔍</span>
+                        </div>
+                    </div>`;
+            }).join('');
+
+            // ─── Lightbox logic ───
+            const lightbox  = document.getElementById('lightbox');
+            const lbImg     = document.getElementById('lb-img');
+            const lbCounter = document.getElementById('lb-counter');
+            let currentIndex = 0;
+
+            function openLightbox(index) {
+                currentIndex = index;
+                const src = getPhotoPath(event.id, photos[currentIndex]);
+                lbImg.src = src;
+                lbImg.alt = `${event.title} photo ${currentIndex + 1}`;
+                lbCounter.textContent = `${currentIndex + 1} / ${photos.length}`;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+                lbImg.src = '';
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+                openLightbox(currentIndex);
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % photos.length;
+                openLightbox(currentIndex);
+            }
+
+            // Click on photo
+            grid.addEventListener('click', function (e) {
+                const item = e.target.closest('.photo-item');
+                if (item) openLightbox(parseInt(item.dataset.index));
+            });
+            grid.addEventListener('keydown', function (e) {
+                const item = e.target.closest('.photo-item');
+                if (item && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    openLightbox(parseInt(item.dataset.index));
+                }
+            });
+
+            document.getElementById('lb-close').addEventListener('click', closeLightbox);
+            document.getElementById('lb-prev').addEventListener('click', showPrev);
+            document.getElementById('lb-next').addEventListener('click', showNext);
+
+            // Click backdrop to close
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape')      closeLightbox();
+                if (e.key === 'ArrowLeft')   showPrev();
+                if (e.key === 'ArrowRight')  showNext();
+            });
+        });
+    </script>
+</body>
+</html>

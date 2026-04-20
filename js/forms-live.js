@@ -6,323 +6,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const API_URL = '/php/workshop-api.php';
     
+    // Password for CS2 Review download
+    const CS2_REVIEW_PASSWORD = 'codecore2026';
+
     // Fallback workshop data (same as in API)
     const FALLBACK_WORKSHOPS = [
-        // UPCOMING WORKSHOPS
         {
-            id: 'kick-off-meeting',
-            icon: '🚀',
-            title: 'Kick Off Meeting',
-            description: 'Orientation and Semester Planning',
-            date: '2026-01-27',
-            startTime: '17:00',
-            endTime: '18:30',
+            id: 'women-empowerment',
+            icon: '💜',
+            title: 'Women Empowerment Panel',
+            description: 'Panel Event',
+            date: '2026-04-22',
+            startTime: '11:30',
+            endTime: '13:00',
             location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
+            formLink: '',
             status: 'open'
         },
+        // ARCHIVED WORKSHOPS
         {
-            id: 'intro-session',
-            icon: '👋',
-            title: 'Intro Session',
-            description: 'Introduction to CodeCore',
-            date: '2026-01-28',
-            startTime: '17:00',
-            endTime: '18:30',
+            id: 'explore-your-path',
+            icon: '🎓',
+            title: 'Explore Your Path: Faculty Panel',
+            description: 'Faculty Panel',
+            date: '2026-04-08',
+            startTime: '12:00',
+            endTime: '13:00',
             location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
+            formLink: '',
+            status: 'past'
         },
         {
-            id: 'breaking-the-loop',
-            icon: '🔄',
-            title: 'Breaking the Loop: for, while, do-while',
-            description: 'Loop Structures and Control Flow',
-            date: '2026-02-10',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/Vrez5Q4ecLLWPXZeA',
-            status: 'open'
-        },
-        {
-            id: 'object-oriented-thinking',
-            icon: '🎯',
-            title: 'Object-Oriented Thinking',
-            description: 'Introduction to OOP Concepts',
-            date: '2026-02-11',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-1-feb17',
-            icon: '📝',
-            title: 'Review Exam 1',
-            description: 'Exam 1 Preparation',
-            date: '2026-02-17',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'dynamic-data-linked-lists',
+            id: 'cs2-review',
             icon: '🔗',
-            title: 'Dynamic Data with Linked Lists',
-            description: 'Understanding Linked Data Structures',
-            date: '2026-02-18',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'clean-methods-correct-results',
-            icon: '✨',
-            title: 'Clean Methods, Correct Results',
-            description: 'Writing Effective Methods',
-            date: '2026-02-24',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-1-feb25',
-            icon: '📝',
-            title: 'Review Exam 1',
-            description: 'Exam 1 Preparation',
-            date: '2026-02-25',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'mastering-recursion',
-            icon: '🔄',
-            title: 'Think Smaller: Mastering Recursion',
-            description: 'Recursive Problem Solving',
-            date: '2026-03-03',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'recursion-revisited',
-            icon: '🔁',
-            title: 'Recursion Revisited',
-            description: 'Advanced Recursion Techniques',
-            date: '2026-03-04',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'iterating-strings-arrays',
-            icon: '🔤',
-            title: 'Iterating in Strings and Arrays',
-            description: 'String and Array Manipulation',
-            date: '2026-03-10',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'searching-sorting',
-            icon: '🔍',
-            title: 'Searching and Sorting: The Core Algorithms',
-            description: 'Fundamental Algorithms',
-            date: '2026-03-11',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-2-mar24',
-            icon: '📝',
-            title: 'Review Exam 2',
-            description: 'Exam 2 Preparation',
-            date: '2026-03-24',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-2-mar25',
-            icon: '📝',
-            title: 'Review Exam 2',
-            description: 'Exam 2 Preparation',
-            date: '2026-03-25',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'primitive-to-objects',
-            icon: '🎁',
-            title: 'From Primitive to Objects',
-            description: 'Understanding Data Types',
-            date: '2026-03-31',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'primitive-vs-non-primitive',
-            icon: '⚖️',
-            title: 'Primitive vs non-primitive data types',
-            description: 'Data Type Comparisons',
+            title: 'CS2 Review',
+            description: 'Singly Linked Lists',
             date: '2026-04-01',
             startTime: '17:00',
             endTime: '18:30',
             location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
+            formLink: '',
+            status: 'open',
+            downloadFile: '../codeProblems/CS2/SinglyLinkedList.java'
         },
-        {
-            id: 'think-in-grids',
-            icon: '🔲',
-            title: 'Think in Grids: 2D Arrays',
-            description: 'Multi-dimensional Arrays',
-            date: '2026-04-07',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'lifo-vs-fifo',
-            icon: '📚',
-            title: 'LIFO vs FIFO/Classic Structures: Real uses',
-            description: 'Stacks and Queues',
-            date: '2026-04-08',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'nodes-links-dynamic-data',
-            icon: '🔗',
-            title: 'Nodes, Links and Dynamic Data',
-            description: 'Advanced Linked Structures',
-            date: '2026-04-14',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'thinking-in-trees',
-            icon: '🌳',
-            title: 'Thinking in Trees: Binary Structures',
-            description: 'Binary Trees and BST',
-            date: '2026-04-15',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-3-apr21',
-            icon: '📝',
-            title: 'Review Exam 3',
-            description: 'Exam 3 Preparation',
-            date: '2026-04-21',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-exam-3-apr22',
-            icon: '📝',
-            title: 'Review Exam 3',
-            description: 'Exam 3 Preparation',
-            date: '2026-04-22',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-final-apr28',
-            icon: '🎓',
-            title: 'Review Final',
-            description: 'Final Exam Preparation',
-            date: '2026-04-28',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'review-final-apr29',
-            icon: '🎓',
-            title: 'Review Final',
-            description: 'Final Exam Preparation',
-            date: '2026-04-29',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'practice-final-may05',
-            icon: '📝',
-            title: 'Practice Final Exam',
-            description: 'Final Exam Practice',
-            date: '2026-05-05',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        {
-            id: 'practice-final-may06',
-            icon: '📝',
-            title: 'Practice Final Exam',
-            description: 'Final Exam Practice',
-            date: '2026-05-06',
-            startTime: '17:00',
-            endTime: '18:30',
-            location: 'CCSB 1.0410',
-            formLink: 'https://forms.gle/your-link-here',
-            status: 'open'
-        },
-        
-        // ARCHIVED WORKSHOPS
         {
             id: 'cs1-fundamentals-refresh',
             icon: '📚',
@@ -564,8 +290,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const statusText = isArchived ? 'Archive' : (workshop.status === 'open' ? 'Open' : 'Closed');
         
         let buttonHTML = '';
-        if (isArchived) {
-            // Disabled button for archived workshops
+        if (workshop.downloadFile) {
+            // Password-protected download button (upcoming or archived)
+            const safeTitle = workshop.title.replace(/'/g, "\\'");
+            const safeFile = workshop.downloadFile.replace(/'/g, "\\'");
+            buttonHTML = `<button class="form-button" onclick="downloadWithPassword('${safeFile}', '${safeTitle}')">Download Materials</button>`;
+        } else if (isArchived) {
+            // Disabled button for archived workshops with no file
             buttonHTML = `<button class="form-button disabled" disabled style="cursor: not-allowed; opacity: 0.6; background-color: #999;">Content Coming Soon</button>`;
         } else {
             // Active button for upcoming workshops
@@ -602,4 +333,140 @@ document.addEventListener('DOMContentLoaded', function() {
         const [year, month, day] = dateStr.split('-').map(Number);
         return month + '/' + day;
     }
+
+    const CS2_REVIEW_FILE = `import java.util.Scanner;
+
+public class SinglyLinkedList {
+    // -------- Node --------
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    // Returns the Head Node of a LinkedList.
+    public Node getHead() {
+        return head;
+    }
+
+    private Node head;
+
+    // Display LinkedList:
+    public void printList() {
+        Node curr = head; // Node that will iterate through the LinkedList.
+
+        while (curr != null) {
+            System.out.print(curr.data + " -> "); // Print Node's data.
+            curr = curr.next; // Point to the next Node.
+        }
+        System.out.println("null"); // Default final value.
+    }
+
+    // Helper method to create a LinkedList according to a size input.
+    public SinglyLinkedList create(int size) {
+        SinglyLinkedList ll = new SinglyLinkedList();
+        ll.head = new Node(1);
+
+        for (int i = 2; i <= size; i++) {
+            ll.append(i);
+        }
+
+        return ll;
+    }
+
+    // Helper: Use prepend method.
+    public SinglyLinkedList createprepend(int size) {
+        SinglyLinkedList ll = new SinglyLinkedList();
+
+        for (int i = 1; i <= size; i++) {
+            ll.prepend(i);
+        }
+
+        return ll;
+    }
+
+    // Inserts a new Node at the end of the LinkedList.
+    public void append(int value) {
+        Node newNode = new Node(value);
+
+        // If LinkedList empty, new newNode is the head.
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node curr = head; // Node to iterate through the LinkedList.
+        while (curr.next != null) {
+            curr = curr.next; // Point to the next Node.
+        }
+        curr.next = newNode; // Make newNode be pointed by the last Node in the LinkedList.
+    }
+
+    // TODO: Make a method that inserts a new Node at the beggining of the LinkedList.
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        // Write your code here
+    }
+
+
+    // Public method, gives the parameter to the helper.
+    public int findMax() {
+        return findMaxHelper(head, head.data);
+    }
+
+    // TODO: Complete the helper method that finds the max value in the LinkedList.
+    private int findMaxHelper(Node curr, int max) {
+        // Write your code here
+        return -1;
+    }
+
+    public static void main(String [] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 1;
+
+        System.out.println("CODE RUNS!");
+
+        while (!(num < 1)) {
+            System.out.print("Enter a positive integer: ");
+            num = scan.nextInt();
+
+            if (num < 1) System.out.println("Enter a positive number\\n");
+        }
+
+        SinglyLinkedList LList = new SinglyLinkedList();
+        LList = LList.create(num);
+
+        System.out.println("===== YOUR LINKED LIST: =====");
+        LList.printList();
+
+        LList = LList.createprepend(num);
+        System.out.println("=== LINKED LIST (PREPEND): ===");
+        LList.printList();
+
+        int max = LList.findMax();
+        System.out.print("Max value in your Linked List: " + max);
+    }
+}`;
+
+    window.downloadWithPassword = function(fileUrl, workshopTitle) {
+        const input = prompt('Enter the password to download materials for "' + workshopTitle + '":');
+        if (input === null) return;
+        if (input === CS2_REVIEW_PASSWORD) {
+            const blob = new Blob([CS2_REVIEW_FILE], { type: 'text/plain' });
+            const objectUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = objectUrl;
+            a.download = 'SinglyLinkedList.java';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(objectUrl);
+        } else {
+            alert('Incorrect password. Please try again.');
+        }
+    };
 });
