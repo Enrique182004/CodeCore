@@ -100,8 +100,13 @@
     <div class="nav-overlay" aria-hidden="true"></div>
 
     <script src="../../js/mobile-menu.js"></script>
-    <script src="../../js/gallery-data.js"></script>
+    <script src="../../js/gallery-data.js?v=2"></script>
     <script>
+        // Override path resolver — event.html is two levels deep (html/gallery/)
+        function getPhotoPath(eventId, filename) {
+            return `../../images/gallery/${eventId}/${filename}`;
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             // Read ?id= from URL
             const params  = new URLSearchParams(window.location.search);
