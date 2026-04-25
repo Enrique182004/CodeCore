@@ -172,6 +172,17 @@ section h2 {
     gap: 3rem;
 }
 
+/* Faculty advisors: always 4 columns on wide screens */
+.faculty-section .collaborators-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1200px) {
+    .faculty-section .collaborators-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Card Container for flip effect */
 .collaborator-card-container {
     perspective: 1000px;
