@@ -19,10 +19,22 @@ const GALLERY_EVENTS = [
         date: 'April 22, 2026',
         location: 'CCSB 1.0410',
         time: '11:30 AM – 1:00 PM',
-        status: 'upcoming',
-        photos: []
-        // Example once you add photos:
-        // photos: ['photo1.jpg', 'photo2.jpg', 'group.jpg']
+        status: 'past',
+        photos: [
+            'WhatsApp Image 2026-04-22 at 5.54.17 PM.jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.18 PM.jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.21 PM.jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.24 PM.jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.26 PM.jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.26 PM (1).jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.26 PM (2).jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.26 PM (3).jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.26 PM (4).jpeg',
+            'WhatsApp Image 2026-04-22 at 5.54.26 PM (5).jpeg',
+            'WhatsApp Video 2026-04-22 at 5.54.20 PM.mp4',
+            'WhatsApp Video 2026-04-22 at 5.54.23 PM.mp4',
+            'WhatsApp Video 2026-04-22 at 5.54.25 PM.mp4'
+        ]
     },
     {
         id: 'explore-your-path',
