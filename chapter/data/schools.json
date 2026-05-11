@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Beall Elementary School",
+    "level": "Elementary",
+    "description": "Our flagship chapter — active since Spring 2026 with 20 students participating weekly in Scratch and Python fundamentals.",
+    "lat": 31.7562,
+    "lng": -106.485
+  },
+  {
+    "name": "Guillen Middle School",
+    "level": "Middle School",
+    "description": "Launched Fall 2025. Students explore Python basics, web fundamentals, and introductory algorithms.",
+    "lat": 31.7689,
+    "lng": -106.4731
+  },
+  {
+    "name": "Zavala Elementary School",
+    "level": "Elementary",
+    "description": "New chapter starting Spring 2026. Focus on Scratch, block-based programming, and computational thinking.",
+    "lat": 31.782,
+    "lng": -106.5012
+  }
+]

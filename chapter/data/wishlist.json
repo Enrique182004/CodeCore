@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Chromebooks",
+    "description": "Needed for students who don't have access to personal devices during chapter meetings. Each Chromebook directly enables one more student to participate.",
+    "quantity": 10,
+    "priority": "High"
+  },
+  {
+    "name": "USB-C Charging Hubs",
+    "description": "Centralized charging solutions to keep devices powered throughout our sessions without hunting for individual outlets.",
+    "quantity": 3,
+    "priority": "Medium"
+  },
+  {
+    "name": "Printed Coding Workbooks",
+    "description": "Age-appropriate coding activity books for take-home practice between chapter meetings, reinforcing concepts learned in class.",
+    "quantity": 50,
+    "priority": "Low"
+  }
+]

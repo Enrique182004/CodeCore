@@ -1,0 +1,17 @@
+[
+  {
+    "name": "UTEP College of Engineering",
+    "logo": "../images/sponsors/utep-engineering.png",
+    "url": "https://www.utep.edu/engineering/"
+  },
+  {
+    "name": "El Paso Tech Alliance",
+    "logo": "../images/sponsors/elpaso-tech.png",
+    "url": ""
+  },
+  {
+    "name": "Your Organization Here",
+    "logo": "../images/sponsors/placeholder.png",
+    "url": ""
+  }
+]
