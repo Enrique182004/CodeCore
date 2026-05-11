@@ -1,20 +1,38 @@
 [
   {
     "name": "Chromebooks",
-    "description": "Needed for students who don't have access to personal devices during chapter meetings. Each Chromebook directly enables one more student to participate.",
-    "quantity": 10,
+    "description": "Many students at our chapter schools don't have personal devices at home or school. Each Chromebook lets one more student participate hands-on instead of sharing.",
+    "quantity": 12,
+    "priority": "High"
+  },
+  {
+    "name": "Wireless Mice & Keyboards",
+    "description": "Borrowed school lab keyboards are often missing keys or unresponsive. A reliable set per student makes a huge difference in how quickly they can practice.",
+    "quantity": 20,
     "priority": "High"
   },
   {
     "name": "USB-C Charging Hubs",
-    "description": "Centralized charging solutions to keep devices powered throughout our sessions without hunting for individual outlets.",
-    "quantity": 3,
+    "description": "School classrooms rarely have enough outlets. Multi-port hubs keep all devices charged through a full 90-minute session without interruption.",
+    "quantity": 4,
     "priority": "Medium"
   },
   {
+    "name": "Raspberry Pi Kits",
+    "description": "Tiny computers that let middle schoolers build physical projects — blinking lights, temperature sensors, small robots. Perfect for hands-on engineering lessons.",
+    "quantity": 10,
+    "priority": "Medium"
+  },
+  {
+    "name": "CS Unplugged Activity Cards",
+    "description": "Printable card sets for teaching algorithms, binary, and logic without a screen. Great for ice-breakers and for days when tech is unavailable.",
+    "quantity": 6,
+    "priority": "Low"
+  },
+  {
     "name": "Printed Coding Workbooks",
-    "description": "Age-appropriate coding activity books for take-home practice between chapter meetings, reinforcing concepts learned in class.",
-    "quantity": 50,
+    "description": "Take-home activity books (grades 3–8) so students can practice between sessions. Covers loops, conditionals, and basic Python exercises with step-by-step guidance.",
+    "quantity": 60,
     "priority": "Low"
   }
 ]

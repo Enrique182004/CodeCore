@@ -5,13 +5,18 @@
     "url": "https://www.utep.edu/engineering/"
   },
   {
-    "name": "El Paso Tech Alliance",
-    "logo": "../images/sponsors/elpaso-tech.png",
-    "url": ""
+    "name": "El Paso Electric",
+    "logo": "../images/sponsors/elpaso-electric.png",
+    "url": "https://www.epelectric.com/"
   },
   {
-    "name": "Your Organization Here",
+    "name": "Hunt Companies",
+    "logo": "../images/sponsors/hunt-companies.png",
+    "url": "https://www.huntcompanies.com/"
+  },
+  {
+    "name": "Become a Sponsor",
     "logo": "../images/sponsors/placeholder.png",
-    "url": ""
+    "url": "chapter/index.html#contact"
   }
 ]
