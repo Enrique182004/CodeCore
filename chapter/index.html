@@ -3,251 +3,225 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeCore - Chapters</title>
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/mobile-menu.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="css/chapter.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
+    <title>CodeCore Chapter — Bringing Coding to El Paso Schools</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/home.css" />
     <link rel="icon" href="../images/logos/CodeCore.png" type="image/png" />
   </head>
   <body>
-    <header>
-      <div class="header-content">
-        <div class="logo">
-          <img
-            src="../images/logos/C.png"
-            alt="CodeCore Logo"
-            class="logo-icon"
-          />
-          <span class="logo-text">CodeCore</span>
-        </div>
-        <button
-          class="mobile-menu-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../html/officers.html">Our Officers</a></li>
-            <li><a href="../html/collaborators.html">Advisors</a></li>
-            <li><a href="../html/about.html">About</a></li>
-            <li><a href="../html/calendar.html">Calendar</a></li>
-            <li><a href="../html/forms.html">Forms</a></li>
-            <li><a href="../html/gallery.html">Gallery</a></li>
-            <li><a href="index.html">Chapters</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div id="site-nav"></div>
 
-    <div class="chapter-container">
-      <!-- Hero -->
-      <section class="chapter-hero">
-        <h1>CodeCore Chapters</h1>
-        <p class="hero-subtitle">
-          Bringing coding education to El Paso elementary and middle schools
-        </p>
-        <p class="hero-description">
-          Through our Chapters program, UTEP CodeCore volunteers visit local K-8
-          schools to run hands-on coding sessions, igniting a passion for
-          technology in the next generation of El Paso students.
-        </p>
-      </section>
-
-      <!-- Active Schools -->
-      <section class="schools-section">
-        <h2>Active Schools</h2>
-        <div class="schools-grid" id="schools-grid">
-          <p class="loading-text">Loading schools...</p>
-        </div>
-      </section>
-
-      <!-- Map -->
-      <section class="map-section">
-        <h2>Our Locations</h2>
-        <div id="map"></div>
-      </section>
-
-      <!-- Wishlist -->
-      <section class="wishlist-section" id="wishlist">
-        <h2>How You Can Help</h2>
-        <p class="section-intro">
-          Our chapters rely on community support to give students the best
-          possible experience. Browse the items below and reach out if you would
-          like to contribute — every donation makes a direct impact on a
-          student's learning journey.
-        </p>
-        <div class="wishlist-grid" id="wishlist-grid">
-          <p class="loading-text">Loading wishlist...</p>
-        </div>
-      </section>
-
-      <!-- Sponsors -->
-      <section class="sponsors-section">
-        <h2>Our Sponsors</h2>
-        <p class="section-intro">
-          We are grateful to the organizations and individuals who make our
-          Chapters program possible. Their generosity directly funds devices,
-          materials, and experiences for El Paso students.
-        </p>
-        <div class="sponsors-grid" id="sponsors-grid">
-          <p class="loading-text">Loading sponsors...</p>
-        </div>
-      </section>
-
-      <!-- Contact / Get Involved -->
-      <section class="contact-section" id="contact">
-        <h2>Get Involved</h2>
-        <div class="cta-boxes">
-          <div class="cta-box">
-            <div class="cta-icon">&#127983;</div>
-            <h3>Start a Chapter at Your School</h3>
-            <p>
-              Are you a school administrator or teacher interested in bringing
-              CodeCore to your students? We would love to connect and set up a
-              chapter at your school.
+    <main>
+      <!-- 1. HERO -->
+      <section class="home-hero">
+        <div class="home-hero-inner">
+          <div class="home-hero-text">
+            <p class="home-hero-label">
+              CodeCore Chapter · El Paso Middle Schools
             </p>
-          </div>
-          <div class="cta-box">
-            <div class="cta-icon">&#129309;</div>
-            <h3>Sponsor or Donate Items</h3>
-            <p>
-              Looking to support our mission? Browse our
-              <a href="#wishlist" class="inline-link">wishlist above</a> or
-              reach out to discuss sponsorship opportunities and in-kind
-              donations.
+            <h1>
+              CODE TODAY.<br /><span class="accent">CHANGE TOMORROW.</span>
+            </h1>
+            <p class="home-hero-tagline">
+              Empowering El Paso middle school students through STEM, coding,
+              and responsible AI education.
             </p>
+            <div class="home-hero-btns">
+              <a href="contact.html" class="btn-primary">Start a Chapter</a>
+              <a href="sponsors.html" class="btn-secondary">Become a Sponsor</a>
+            </div>
           </div>
-        </div>
-
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name <span class="required">*</span></label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-input"
-              required
-              autocomplete="name"
+          <div class="home-hero-image" aria-hidden="true">
+            <img
+              src="ideas/g on computer v2.png"
+              alt="Student coding at a laptop"
             />
           </div>
-          <div class="form-group">
-            <label for="email"
-              >Email Address <span class="required">*</span></label
+        </div>
+      </section>
+
+      <!-- 2. PILLARS BAR -->
+      <section class="ch-section ch-section--light home-pillars">
+        <div class="ch-section-inner">
+          <div class="ch-grid-4">
+            <div class="pillar-card ch-card">
+              <div class="pillar-icon">&lt;/&gt;</div>
+              <h3>Learn</h3>
+              <p>Build real coding skills through fun, hands-on projects.</p>
+            </div>
+            <div class="pillar-card ch-card">
+              <div class="pillar-icon">⚙</div>
+              <h3>Build</h3>
+              <p>Create, innovate, and bring ideas to life through projects.</p>
+            </div>
+            <div class="pillar-card ch-card">
+              <div class="pillar-icon">🤖</div>
+              <h3>Explore AI</h3>
+              <p>
+                Discover AI responsibly and understand how to use it safely.
+              </p>
+            </div>
+            <div class="pillar-card ch-card">
+              <div class="pillar-icon">👥</div>
+              <h3>Belong</h3>
+              <p>Be part of a community that empowers you to achieve more.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. IMPACT STATS -->
+      <section class="home-stats ch-section ch-section--dark">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Our Impact Across El Paso</h2>
+          </div>
+          <div class="home-stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" id="stat-students">0</div>
+              <div class="stat-label">Students Impacted</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-schools">0</div>
+              <div class="stat-label">Schools Participating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-trainings">0</div>
+              <div class="stat-label">Saturday Trainings</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-volunteers">0</div>
+              <div class="stat-label">Volunteers &amp; Mentors</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. ACTIVITIES -->
+      <section class="ch-section home-activities">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Exciting Activities</h2>
+            <p>
+              Learn. Build. Play. Compete. Every session brings something new.
+            </p>
+          </div>
+          <div class="activities-grid">
+            <div class="activity-card ch-card">
+              <div class="activity-icon">🎮</div>
+              <h3>Coding &amp; Games</h3>
+              <p>
+                Create games, solve puzzles, and learn how to code by playing.
+              </p>
+            </div>
+            <div class="activity-card ch-card">
+              <div class="activity-icon">🦾</div>
+              <h3>Robotics</h3>
+              <p>Design, build, and program robots to solve real challenges.</p>
+            </div>
+            <div class="activity-card ch-card">
+              <div class="activity-icon">🧠</div>
+              <h3>AI Exploration</h3>
+              <p>
+                Understand AI and learn how to use it responsibly and safely.
+              </p>
+            </div>
+            <div class="activity-card ch-card">
+              <div class="activity-icon">🤝</div>
+              <h3>Team Projects</h3>
+              <p>
+                Collaborate, innovate, and create something amazing together.
+              </p>
+            </div>
+            <div class="activity-card ch-card">
+              <div class="activity-icon">🏆</div>
+              <h3>Competitions</h3>
+              <p>
+                Show your skills and win awards at STEM fairs across El Paso.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PHOTO MOSAIC -->
+      <section class="ch-section ch-section--light home-mosaic">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Students in Action</h2>
+            <p>Real students. Real coding. Real impact.</p>
+          </div>
+          <div class="mosaic-grid">
+            <div class="mosaic-item">
+              <img
+                src="ideas/group playing games v2.png"
+                alt="Students collaborating on STEM games"
+              />
+              <div class="mosaic-overlay"><span>STEM Games</span></div>
+            </div>
+            <div class="mosaic-item">
+              <img
+                src="ideas/k on computer v2.png"
+                alt="Students coding with a robot"
+              />
+              <div class="mosaic-overlay"><span>Robotics &amp; Code</span></div>
+            </div>
+            <div class="mosaic-item">
+              <img
+                src="ideas/teachers v2.png"
+                alt="Volunteers and teachers collaborating"
+              />
+              <div class="mosaic-overlay"><span>Expert Mentors</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SPONSOR STRIP -->
+      <section class="ch-section home-sponsors">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Powered by Community Support</h2>
+            <p>
+              Thank you to our sponsors and partners who make this possible for
+              students across El Paso.
+            </p>
+          </div>
+          <div class="sponsor-strip" id="sponsor-strip">
+            <p class="ch-loading">Loading sponsors…</p>
+          </div>
+          <div style="text-align: center; margin-top: 2rem">
+            <a href="sponsors.html" class="btn-outline-dark"
+              >Become a Sponsor</a
             >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-input"
-              required
-              autocomplete="email"
-            />
           </div>
-          <div class="form-group">
-            <label for="organization">Organization / School Name</label>
-            <input
-              type="text"
-              id="organization"
-              name="organization"
-              class="form-input"
-              autocomplete="organization"
-            />
-          </div>
-          <div class="form-group">
-            <label for="role">Role <span class="required">*</span></label>
-            <select id="role" name="role" class="form-select" required>
-              <option value="">Select your role...</option>
-              <option value="School Administrator">School Administrator</option>
-              <option value="Teacher">Teacher</option>
-              <option value="Potential Sponsor">Potential Sponsor</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea
-              id="message"
-              name="message"
-              class="form-textarea"
-              rows="6"
-              required
-            ></textarea>
-          </div>
-          <div
-            class="form-feedback"
-            id="form-feedback"
-            aria-live="polite"
-          ></div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </section>
-    </div>
-
-    <!-- Nav Overlay -->
-    <div class="nav-overlay" aria-hidden="true"></div>
-
-    <!-- Footer -->
-    <footer class="footer-social-section">
-      <div class="footer-content">
-        <h3>Connect With Us</h3>
-        <p>
-          Follow CodeCore on social media to stay updated on events and
-          workshops
-        </p>
-        <div class="footer-social">
-          <a
-            href="mailto:codecore@utep.edu"
-            aria-label="Email us"
-            title="Email"
-          >
-            <svg fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://www.instagram.com/codecoreutep?igsh=Y2tnd2s3NWViMDA1"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Follow us on Instagram"
-            title="Instagram"
-          >
-            <svg fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/code-core-9a720138a"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Connect on LinkedIn"
-            title="LinkedIn"
-          >
-            <svg fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-              />
-            </svg>
-          </a>
         </div>
-      </div>
-    </footer>
+      </section>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="../js/mobile-menu.js"></script>
-    <script src="js/chapter.js"></script>
+      <!-- 7. JOIN THE MOVEMENT -->
+      <section class="ch-section ch-section--dark home-join">
+        <div class="ch-section-inner home-join-inner">
+          <div>
+            <h2>
+              Building the Future<br /><span class="accent">in El Paso.</span>
+            </h2>
+            <p>
+              Join the movement. Whether you're a school, a sponsor, or a
+              volunteer — there's a place for you in CodeCore Chapter.
+            </p>
+          </div>
+          <div class="home-join-btns">
+            <a href="contact.html" class="btn-primary">Start a Chapter</a>
+            <a href="contact.html" class="btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
     <script src="../js/analytics.js"></script>
   </body>
 </html>

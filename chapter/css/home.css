@@ -1,0 +1,361 @@
+/* ============================================================
+   home.css — CodeCore Chapter home page styles
+   Depends on: css/main.css (variables + shared classes)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   HERO
+   ---------------------------------------------------------- */
+.home-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: white;
+  padding: 0 2rem;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-hero::before {
+  content: "01";
+  position: absolute;
+  left: -2rem;
+  bottom: -3rem;
+  font-size: 18rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: monospace;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.home-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.home-hero-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+.home-hero-text h1 {
+  font-size: var(--text-hero);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+.home-hero-text h1 .accent {
+  color: var(--green);
+}
+
+.home-hero-tagline {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.home-hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-hero-image img {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .home-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .home-hero-tagline {
+    max-width: 100%;
+  }
+
+  .home-hero-btns {
+    justify-content: center;
+  }
+
+  .home-hero-image {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------------------
+   PILLARS BAR
+   ---------------------------------------------------------- */
+.home-pillars {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.pillar-card {
+  text-align: center;
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-card p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------
+   IMPACT STATS BAND
+   ---------------------------------------------------------- */
+.home-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.home-stats .ch-section-header h2 {
+  color: white;
+}
+
+.home-stats .ch-section-header h2::after {
+  background: linear-gradient(90deg, var(--green), rgba(255, 255, 255, 0.4));
+}
+
+@media (max-width: 600px) {
+  .home-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ----------------------------------------------------------
+   ACTIVITIES
+   ---------------------------------------------------------- */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.activity-card {
+  text-align: center;
+}
+
+.activity-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.activity-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.activity-card p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .activities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .activities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ----------------------------------------------------------
+   PHOTO MOSAIC
+   ---------------------------------------------------------- */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.mosaic-item {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.mosaic-item:hover img {
+  transform: scale(1.05);
+}
+
+.mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 30, 49, 0.85) 0%,
+    transparent 60%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.mosaic-overlay span {
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------------------------------
+   SPONSOR STRIP
+   ---------------------------------------------------------- */
+.sponsor-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1.75rem;
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: var(--transition);
+  min-width: 140px;
+  text-align: center;
+}
+
+.sponsor-logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.sponsor-logo-card img {
+  width: 90px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.sponsor-logo-card span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+/* ----------------------------------------------------------
+   JOIN THE MOVEMENT
+   ---------------------------------------------------------- */
+.home-join-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.home-join-inner h2 {
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.home-join-inner h2 .accent {
+  color: var(--green);
+}
+
+.home-join-inner > div > p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.home-join-btns {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .home-join-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-join-btns {
+    justify-content: center;
+  }
+}
