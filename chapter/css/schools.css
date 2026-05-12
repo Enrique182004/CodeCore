@@ -1,0 +1,324 @@
+/* ============================================================
+   SCHOOLS PAGE — chapter/css/schools.css
+   ============================================================ */
+
+/* Steps */
+.schools-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.schools-step {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: var(--transition);
+}
+
+.schools-step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover, 0 16px 40px rgba(0, 0, 0, 0.14));
+}
+
+.step-num {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.schools-step h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.schools-step p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.schools-step-connector {
+  font-size: 2rem;
+  color: var(--green);
+  padding: 0 0.5rem;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .schools-steps {
+    flex-direction: column;
+  }
+
+  .schools-step-connector {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+}
+
+/* Requirements */
+.schools-req-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schools-req-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gray-100, #e8edf5);
+}
+
+.schools-req-list li:last-child {
+  border-bottom: none;
+}
+
+.req-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.req-free {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: var(--green);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.schools-req-list li div {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.schools-req-list li div strong {
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Training cards (on dark bg) */
+.schools-training-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+}
+
+.training-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.schools-training-card h3 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.schools-training-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.schools-training-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.schools-training-card ul li {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  padding: 0.3rem 0 0.3rem 1.5rem;
+  position: relative;
+}
+
+.schools-training-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.schools-training-link {
+  color: var(--green);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.schools-training-link:hover {
+  text-decoration: underline;
+}
+
+/* Timeline */
+.schools-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.schools-timeline::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gray-100, #e8edf5);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 0 2rem;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--teal);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timeline-dot--green {
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.timeline-week {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.timeline-item--green .timeline-week {
+  color: var(--green);
+}
+
+.timeline-item--green .timeline-content h3 {
+  color: var(--green);
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--gray-100, #e8edf5);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: left;
+  font-family: var(--font-primary, inherit);
+  gap: 1rem;
+}
+
+.faq-arrow {
+  font-size: 1.2rem;
+  color: var(--teal);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.faq-question[aria-expanded="true"] .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  padding-bottom: 1.25rem;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
