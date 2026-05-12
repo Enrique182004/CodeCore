@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Saturday Faculty Training",
+    "date": "2026-06-07",
+    "location": "UTEP College of Engineering, Room 201",
+    "description": "Monthly training session for new and returning chapter volunteers. Covers Scratch, Python basics, and classroom management strategies.",
+    "type": "Training"
+  },
+  {
+    "title": "Beall Elementary STEM Fair",
+    "date": "2026-06-14",
+    "location": "Beall Elementary School Gymnasium",
+    "description": "End-of-semester showcase where students present their coding projects to parents, teachers, and the community.",
+    "type": "STEM Fair"
+  },
+  {
+    "title": "Middle School Coding Challenge",
+    "date": "2026-06-21",
+    "location": "Guillen Middle School Computer Lab",
+    "description": "Friendly competition between Guillen and Henderson Middle School chapters. Students solve coding puzzles and present a mini-project.",
+    "type": "Competition"
+  },
+  {
+    "title": "AI Exploration Workshop",
+    "date": "2026-07-12",
+    "location": "UTEP Library, Room 208",
+    "description": "A half-day workshop introducing students to AI concepts, machine learning basics, and responsible AI use — no prior coding experience needed.",
+    "type": "Workshop"
+  },
+  {
+    "title": "Saturday Faculty Training",
+    "date": "2026-07-19",
+    "location": "UTEP College of Engineering, Room 201",
+    "description": "Summer session covering advanced topics: data science basics, robotics curriculum, and assessment strategies.",
+    "type": "Training"
+  },
+  {
+    "title": "Fall 2026 Chapter Launch Day",
+    "date": "2026-08-22",
+    "location": "Multiple El Paso Schools",
+    "description": "Kick-off day for all Fall 2026 chapters. CodeCore volunteers visit partner schools for a first-session icebreaker and intro to coding.",
+    "type": "Workshop"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Scratch Basics for Beginners",
+    "category": "Lesson Plans",
+    "type": "PDF",
+    "description": "Step-by-step guide to building your first Scratch project — sprites, loops, and simple animations.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Python Fundamentals Handbook",
+    "category": "Training",
+    "type": "PDF",
+    "description": "Core Python concepts for CodeCore volunteer instructors — variables, loops, functions, and debugging strategies.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "faculty"
+  },
+  {
+    "title": "Web Development Intro",
+    "category": "Lesson Plans",
+    "type": "PDF",
+    "description": "HTML & CSS basics — build your first webpage in a single session. Includes student activity sheets.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Algorithm Thinking Workshop",
+    "category": "Training",
+    "type": "Video",
+    "description": "Recording of the Fall 2025 Saturday training session covering sorting, searching, and algorithm design.",
+    "url": "#",
+    "level": "Intermediate",
+    "audience": "faculty"
+  },
+  {
+    "title": "Robotics Activity Pack",
+    "category": "Downloads",
+    "type": "PDF",
+    "description": "Printable activity sheets for Raspberry Pi and LEGO robotics sessions — wiring guides, code snippets, and project challenges.",
+    "url": "#",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "AI Ethics Discussion Guide",
+    "category": "Safety & AI",
+    "type": "PDF",
+    "description": "Classroom discussion prompts covering bias, privacy, and responsible AI. Designed for grades 5–8.",
+    "url": "#",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "CS Unplugged Activities",
+    "category": "Downloads",
+    "type": "PDF",
+    "description": "Screen-free card activities for binary numbers, sorting algorithms, and logic puzzles. No devices required.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "Chapter Facilitator Handbook",
+    "category": "Training",
+    "type": "PDF",
+    "description": "Everything a new volunteer needs to run their first session — lesson structure, classroom tips, and how to handle common challenges.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "faculty"
+  },
+  {
+    "title": "Scratch Game Design Challenge",
+    "category": "Lesson Plans",
+    "type": "Link",
+    "description": "Four-week project guide: design and share a fully playable Scratch game with levels, scoring, and original artwork.",
+    "url": "#",
+    "level": "Intermediate",
+    "audience": "student"
+  },
+  {
+    "title": "Intro to Data Science",
+    "category": "Lesson Plans",
+    "type": "PDF",
+    "description": "Using Python and simple datasets to spot real-world patterns. Includes a mini-project using El Paso weather data.",
+    "url": "#",
+    "level": "Advanced",
+    "audience": "student"
+  },
+  {
+    "title": "Parent & School Safety Guide",
+    "category": "Safety & AI",
+    "type": "PDF",
+    "description": "Overview of CodeCore's digital safety and responsible technology use policies — suitable to share with parents and administrators.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "Coding Competition Prep",
+    "category": "Training",
+    "type": "Video",
+    "description": "Practice problems and strategies for upcoming STEM fair competitions. Covers time management and presentation tips.",
+    "url": "#",
+    "level": "Advanced",
+    "audience": "both"
+  }
+]

@@ -1,38 +1,58 @@
 [
   {
     "name": "Chromebooks",
+    "category": "Technology",
     "description": "Many students at our chapter schools don't have personal devices at home or school. Each Chromebook lets one more student participate hands-on instead of sharing.",
     "quantity": 12,
     "priority": "High"
   },
   {
     "name": "Wireless Mice & Keyboards",
+    "category": "Technology",
     "description": "Borrowed school lab keyboards are often missing keys or unresponsive. A reliable set per student makes a huge difference in how quickly they can practice.",
     "quantity": 20,
     "priority": "High"
   },
   {
     "name": "USB-C Charging Hubs",
+    "category": "Technology",
     "description": "School classrooms rarely have enough outlets. Multi-port hubs keep all devices charged through a full 90-minute session without interruption.",
     "quantity": 4,
     "priority": "Medium"
   },
   {
     "name": "Raspberry Pi Kits",
+    "category": "Technology",
     "description": "Tiny computers that let middle schoolers build physical projects — blinking lights, temperature sensors, small robots. Perfect for hands-on engineering lessons.",
     "quantity": 10,
     "priority": "Medium"
   },
   {
+    "name": "Printed Coding Workbooks",
+    "category": "Student Support",
+    "description": "Take-home activity books (grades 3–8) so students can practice between sessions. Covers loops, conditionals, and basic Python exercises with step-by-step guidance.",
+    "quantity": 60,
+    "priority": "Low"
+  },
+  {
     "name": "CS Unplugged Activity Cards",
+    "category": "Student Support",
     "description": "Printable card sets for teaching algorithms, binary, and logic without a screen. Great for ice-breakers and for days when tech is unavailable.",
     "quantity": 6,
     "priority": "Low"
   },
   {
-    "name": "Printed Coding Workbooks",
-    "description": "Take-home activity books (grades 3–8) so students can practice between sessions. Covers loops, conditionals, and basic Python exercises with step-by-step guidance.",
-    "quantity": 60,
+    "name": "CodeCore Chapter T-Shirts",
+    "category": "Merchandise",
+    "description": "Students who wear the CodeCore shirt feel like part of something bigger. Shirts build community identity and pride in their coding journey.",
+    "quantity": 100,
+    "priority": "Medium"
+  },
+  {
+    "name": "STEM Notebooks & Pens",
+    "category": "Student Support",
+    "description": "Branded notebooks for students to sketch algorithms, write pseudocode, and track their project ideas — low-tech but surprisingly impactful.",
+    "quantity": 80,
     "priority": "Low"
   }
 ]
