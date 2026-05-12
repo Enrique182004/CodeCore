@@ -1,0 +1,168 @@
+:root {
+  --gray-100: #e8edf5;
+}
+
+/* Mission/Vision cards */
+.about-mv-card {
+  display: flex;
+  flex-direction: column;
+}
+.about-mv-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.about-mv-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+.about-mv-card p {
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* Why STEM section */
+.about-why-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-why-text h2 {
+  color: white;
+}
+.about-why-text p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+.about-why-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.about-why-stat span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 0.25rem;
+}
+.about-why-stat p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+}
+.about-why-image img {
+  width: 100%;
+  border-radius: var(--radius-card);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .about-why-inner {
+    grid-template-columns: 1fr;
+  }
+  .about-why-image {
+    display: none;
+  }
+  .about-why-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* AI cards */
+.about-ai-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+.about-ai-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.about-ai-card p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.about-ai-hero-img {
+  max-width: 500px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  margin: 0 auto;
+  display: block;
+}
+
+/* Community Impact (on navy-mid, white text) */
+.about-impact-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.about-impact-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.about-impact-card h3 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.about-impact-card p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* Team */
+.about-team-grid {
+  margin-top: 1rem;
+}
+.about-team-card {
+  text-align: center;
+}
+.about-team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+}
+.about-team-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.about-team-role {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.about-team-bio {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* CTA */
+.about-cta {
+  text-align: center;
+}
