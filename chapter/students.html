@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Hub — CodeCore Chapter</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/students.css" />
+    <link rel="icon" href="../images/logos/CodeCore.png" type="image/png" />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+
+    <main>
+      <!-- HERO -->
+      <section class="ch-page-hero students-hero">
+        <div class="ch-page-hero-inner students-hero-inner">
+          <div class="students-hero-text">
+            <p class="students-hero-label">🚀 Student Hub</p>
+            <h1>
+              Your Coding<br /><span class="accent">Adventure</span><br />Starts
+              Here.
+            </h1>
+            <p>
+              Games. Robots. AI. Competitions. Your chapter is where awesome
+              happens.
+            </p>
+            <a href="contact.html" class="btn-primary"
+              >Find a Chapter Near You</a
+            >
+          </div>
+          <div class="students-hero-image" aria-hidden="true">
+            <img
+              src="ideas/group playing games v2.png"
+              alt="Students playing STEM games"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVITY CARDS -->
+      <section class="ch-section">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>What Will YOU Build?</h2>
+            <p>
+              Every chapter session is packed with hands-on activities. Here's a
+              taste of what's waiting for you.
+            </p>
+          </div>
+          <div class="ch-grid-4 students-activities">
+            <div class="activity-big-card" style="--accent: #7cb342">
+              <div class="abig-icon">🎮</div>
+              <h3>Coding &amp; Games</h3>
+              <p>
+                Build your own games in Scratch, level up to Python, and learn
+                how your favorite apps are made.
+              </p>
+              <span class="abig-tag">Scratch · Python</span>
+            </div>
+            <div class="activity-big-card" style="--accent: #2b7a9e">
+              <div class="abig-icon">🦾</div>
+              <h3>Robotics</h3>
+              <p>
+                Program real robots, build with LEGO Mindstorms, and design
+                circuits on a Raspberry Pi.
+              </p>
+              <span class="abig-tag">Raspberry Pi · LEGO</span>
+            </div>
+            <div class="activity-big-card" style="--accent: #9c27b0">
+              <div class="abig-icon">🧠</div>
+              <h3>AI Projects</h3>
+              <p>
+                Train a machine learning model, explore computer vision, and
+                learn to use AI responsibly.
+              </p>
+              <span class="abig-tag">ML · AI Ethics</span>
+            </div>
+            <div class="activity-big-card" style="--accent: #e64a19">
+              <div class="abig-icon">🏆</div>
+              <h3>STEM Challenges</h3>
+              <p>
+                Tackle real-world problems with code. Compete in school-wide
+                challenges and city STEM fairs.
+              </p>
+              <span class="abig-tag">Competitions · Teamwork</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDEO SECTION -->
+      <section class="ch-section ch-section--light">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Watch &amp; Learn</h2>
+            <p>
+              Check out these coding tutorials and chapter highlights — then try
+              it yourself!
+            </p>
+          </div>
+          <div class="ch-grid-3 students-videos">
+            <div class="video-placeholder">
+              <div class="video-thumb">
+                <div class="video-play-btn" aria-label="Play video">▶</div>
+              </div>
+              <h3>Intro to Scratch</h3>
+              <p>
+                Build your first animation in 10 minutes — no coding experience
+                needed!
+              </p>
+            </div>
+            <div class="video-placeholder">
+              <div class="video-thumb video-thumb--blue">
+                <div class="video-play-btn" aria-label="Play video">▶</div>
+              </div>
+              <h3>Build a Robot</h3>
+              <p>
+                See how CodeCore students built and programmed a robot car from
+                scratch.
+              </p>
+            </div>
+            <div class="video-placeholder">
+              <div class="video-thumb video-thumb--purple">
+                <div class="video-play-btn" aria-label="Play video">▶</div>
+              </div>
+              <h3>AI Exploration</h3>
+              <p>
+                What is machine learning? Our students explain it better than
+                any textbook.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOADABLE RESOURCES -->
+      <section class="ch-section">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Projects &amp; Downloads</h2>
+            <p>
+              Take the fun home. These projects and guides are designed for you
+              to explore on your own.
+            </p>
+          </div>
+          <div class="ch-grid-3" id="student-resources">
+            <p class="ch-loading">Loading projects…</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENT BADGES (dark) -->
+      <section class="ch-section ch-section--dark">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Earn Your Badges</h2>
+            <p>
+              Show off your skills. Each badge represents a real milestone in
+              your coding journey.
+            </p>
+          </div>
+          <div class="badges-grid">
+            <div class="badge-hex">
+              <div class="badge-hex-inner">
+                <span class="badge-emoji">💻</span>
+                <span class="badge-label">First Code</span>
+              </div>
+            </div>
+            <div class="badge-hex">
+              <div class="badge-hex-inner">
+                <span class="badge-emoji">🐛</span>
+                <span class="badge-label">Bug Squasher</span>
+              </div>
+            </div>
+            <div class="badge-hex">
+              <div class="badge-hex-inner">
+                <span class="badge-emoji">🤖</span>
+                <span class="badge-label">Robot Builder</span>
+              </div>
+            </div>
+            <div class="badge-hex">
+              <div class="badge-hex-inner">
+                <span class="badge-emoji">🧠</span>
+                <span class="badge-label">AI Explorer</span>
+              </div>
+            </div>
+            <div class="badge-hex">
+              <div class="badge-hex-inner">
+                <span class="badge-emoji">🤝</span>
+                <span class="badge-label">Team Player</span>
+              </div>
+            </div>
+            <div class="badge-hex">
+              <div class="badge-hex-inner">
+                <span class="badge-emoji">🏆</span>
+                <span class="badge-label">Competitor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPETITIONS CALLOUT -->
+      <section class="ch-section ch-section--navy-mid">
+        <div class="ch-section-inner" style="text-align: center">
+          <div class="competitions-icon">🏆</div>
+          <h2
+            style="color: white; font-size: var(--text-h1); margin-bottom: 1rem"
+          >
+            Ready to Compete?
+          </h2>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.8);
+              max-width: 560px;
+              margin: 0 auto 2rem;
+              font-size: 1.1rem;
+              line-height: 1.7;
+            "
+          >
+            CodeCore chapters host school-wide challenges and send top students
+            to city-level STEM fairs. Show the world what you can build.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a href="events.html" class="btn-primary">See Upcoming Events</a>
+            <a href="contact.html" class="btn-secondary">Join a Chapter</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/students.js"></script>
+    <script src="../js/analytics.js"></script>
+  </body>
+</html>
