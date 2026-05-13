@@ -10,11 +10,5 @@
     "logo": "images/sponsors/chiquisBakery_logo.webp",
     "url": "https://www.chiquisbakery.com/",
     "tier": "Silver"
-  },
-  {
-    "name": "Become a Sponsor",
-    "logo": "images/sponsors/placeholder.png",
-    "url": "sponsors.html",
-    "tier": "Community"
   }
 ]

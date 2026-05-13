@@ -30,7 +30,7 @@ const FALLBACK_EVENTS = [
     date: "2026-07-12",
     location: "UTEP Library, Room 208",
     description:
-      "A half-day workshop on AI concepts, machine learning basics, and responsible AI use — no prior experience needed.",
+      "A workshop on AI concepts, machine learning basics, and responsible AI use — no prior experience needed.",
     type: "Workshop",
   },
   {

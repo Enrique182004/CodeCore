@@ -26,7 +26,7 @@ const FALLBACK_WISHLIST = [
     name: "Chromebooks",
     category: "Technology",
     description:
-      "Each Chromebook lets one more student participate hands-on in every session.",
+      "Many students at our chapter schools don't have personal devices. Each Chromebook lets one more student participate hands-on instead of sharing.",
     quantity: 60,
     priority: "High",
   },
@@ -34,7 +34,7 @@ const FALLBACK_WISHLIST = [
     name: "Wireless Mouse & Keyboard Sets",
     category: "Technology",
     description:
-      "Reliable input devices make a huge difference in how quickly students can practice.",
+      "Reliable input devices make a huge difference in how quickly students can practice. One set per student keeps sessions running smoothly.",
     quantity: 30,
     priority: "High",
   },
@@ -42,7 +42,7 @@ const FALLBACK_WISHLIST = [
     name: "Mobile Power Tower",
     category: "Technology",
     description:
-      "A rolling charging station that powers multiple devices at once — perfect for classroom sessions.",
+      "A rolling charging station that powers multiple devices at once — perfect for classrooms with limited outlets during 60–90 minute sessions.",
     quantity: 4,
     priority: "Medium",
   },
@@ -50,17 +50,49 @@ const FALLBACK_WISHLIST = [
     name: "CS Unplugged Activity Cards",
     category: "Student Support",
     description:
-      "Teach algorithms, binary, and logic without a screen — great for every skill level.",
+      "Card sets for teaching algorithms, binary, and logic without a screen. Great for ice-breakers and for days when technology is unavailable.",
     quantity: 20,
     priority: "Medium",
   },
   {
-    name: "CodeCore Chapter T-Shirts",
+    name: "CodeCore T-Shirts",
     category: "Merchandise",
     description:
-      "Build community identity and pride in students' coding journey.",
+      "Students who wear the CodeCore shirt feel part of something bigger. T-shirts build community identity and pride in their coding journey.",
     quantity: 200,
+    priority: "High",
+  },
+  {
+    name: "CodeCore Sweatshirts & Hoodies",
+    category: "Merchandise",
+    description:
+      "Cozy CodeCore hoodies for students and volunteers — perfect for early morning sessions and school events.",
+    quantity: 100,
     priority: "Medium",
+  },
+  {
+    name: "CodeCore Hats",
+    category: "Merchandise",
+    description:
+      "Branded caps that students can wear with pride at school, hackathons, and STEM fairs across El Paso.",
+    quantity: 100,
+    priority: "Medium",
+  },
+  {
+    name: "CodeCore Mugs",
+    category: "Merchandise",
+    description:
+      "A great thank-you gift for teachers, faculty points-of-contact, and volunteer mentors who make each chapter possible.",
+    quantity: 50,
+    priority: "Low",
+  },
+  {
+    name: "CodeCore Bracelets",
+    category: "Merchandise",
+    description:
+      "Fun wearable reminders that students are part of a coding community. Great as rewards and milestone gifts.",
+    quantity: 200,
+    priority: "Low",
   },
   {
     name: "CodeCore Notebooks & Pens",
@@ -68,7 +100,7 @@ const FALLBACK_WISHLIST = [
     description:
       "Branded notebooks for sketching algorithms, tracking project ideas, and taking notes.",
     quantity: 200,
-    priority: "Low",
+    priority: "Medium",
   },
 ];
 
