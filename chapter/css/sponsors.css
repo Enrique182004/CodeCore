@@ -1,0 +1,248 @@
+/* How it works */
+.sp-how-card {
+  text-align: center;
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+.sp-how-num {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-how-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sp-how-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.sp-how-card p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* Benefits table */
+.sp-table-wrap {
+  overflow-x: auto;
+}
+
+.sp-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 0.92rem;
+}
+
+.sp-table th,
+.sp-table td {
+  padding: 0.9rem 1.25rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sp-table th:first-child,
+.sp-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sp-table thead th {
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+}
+
+.sp-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sp-tier-badge {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.sp-gold {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #5a3e00;
+}
+
+.sp-silver {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sp-community {
+  background: rgba(124, 179, 66, 0.2);
+  color: var(--green);
+  border: 1px solid rgba(124, 179, 66, 0.3);
+}
+
+/* Sponsor showcase */
+.sp-tier-block {
+  margin-bottom: 3rem;
+}
+
+.sp-tier-label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-mid);
+  margin-bottom: 1.25rem;
+}
+
+.sp-tier-label--gold {
+  color: #b7840a;
+}
+
+.sp-tier-label--silver {
+  color: #6b7f8f;
+}
+
+.sp-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.sp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.75rem 2rem;
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: var(--transition);
+  min-width: 180px;
+  text-align: center;
+}
+
+.sp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.sp-card img {
+  width: 110px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.sp-card span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.sp-logo-grid--sm .sp-card img {
+  width: 80px;
+  height: 45px;
+}
+
+.sp-logo-grid--sm .sp-card {
+  min-width: 140px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Wishlist */
+.sp-wish-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.sp-wish-tab {
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #e8edf5;
+  border-radius: 30px;
+  background: white;
+  color: var(--text-mid);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-primary);
+}
+
+.sp-wish-tab:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.sp-wish-tab.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.sp-wish-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-wish-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.sp-wish-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.sp-wish-card p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 0.75rem;
+}
+
+.sp-wish-qty {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  margin-bottom: 0.75rem;
+}
+
+.sp-wish-card.hidden {
+  display: none;
+}
+
+/* Form */
+.sp-form {
+  max-width: 680px;
+  margin: 0 auto;
+  background: white;
+}
