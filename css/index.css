@@ -402,24 +402,18 @@ nav a:hover::after {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 2rem 2.5rem;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.98),
-    rgba(240, 249, 255, 0.98)
-  );
+  padding: 2.25rem 2.75rem;
+  background: linear-gradient(135deg, #1a2e4a 0%, #1e3d5c 100%);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(43, 122, 158, 0.2);
+  box-shadow: 0 10px 40px rgba(26, 46, 74, 0.35);
   text-decoration: none;
-  color: inherit;
+  color: white;
   transition: all 0.3s ease;
 }
 
 .chapter-backlink-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
-  border-color: rgba(124, 179, 66, 0.4);
+  box-shadow: 0 18px 50px rgba(26, 46, 74, 0.45);
 }
 
 .chapter-backlink-eyebrow {
@@ -427,28 +421,28 @@ nav a:hover::after {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #7cb342;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 
 .chapter-backlink-left h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: #1e4a7a;
+  color: white;
   margin-bottom: 0.4rem;
 }
 
 .chapter-backlink-left p {
   font-size: 0.95rem;
-  color: #4a5568;
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.6;
   margin: 0;
   max-width: 600px;
 }
 
 .chapter-backlink-arrow {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #7cb342;
   font-weight: 900;
   flex-shrink: 0;
@@ -456,20 +450,23 @@ nav a:hover::after {
 }
 
 .chapter-backlink-card:hover .chapter-backlink-arrow {
-  transform: translateX(6px);
+  transform: translateX(8px);
 }
 
 @media (max-width: 600px) {
   .chapter-backlink-card {
-    padding: 1.5rem;
+    padding: 1.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
   .chapter-backlink-left h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .chapter-backlink-arrow {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 }
 
