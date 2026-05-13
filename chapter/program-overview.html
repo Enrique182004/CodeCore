@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeCore Chapter — Program Overview</title>
+    <link rel="icon" href="../images/logos/CodeCore.png" type="image/png" />
+    <style>
+      /* ── Reset & base ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #1a2b4a;
+        --teal: #2b9ebe;
+        --green: #7cb342;
+        --light: #f4f7fb;
+        --mid: #5a6a7a;
+        --text: #1e2b3c;
+        --border: #dce4ef;
+        --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        font-family: var(--font);
+        color: var(--text);
+        background: white;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      /* ── Print button (screen only) ── */
+      .print-bar {
+        position: sticky;
+        top: 0;
+        background: var(--navy);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 2rem;
+        z-index: 100;
+        font-size: 0.85rem;
+        gap: 1rem;
+      }
+
+      .print-bar span {
+        opacity: 0.75;
+      }
+
+      .print-btn {
+        background: var(--green);
+        color: white;
+        border: none;
+        padding: 0.45rem 1.2rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: var(--font);
+        white-space: nowrap;
+      }
+
+      .print-btn:hover {
+        background: #669e33;
+      }
+
+      /* ── Document wrapper ── */
+      .doc {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 3rem 2.5rem 5rem;
+      }
+
+      /* ── Cover ── */
+      .cover {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        border-bottom: 3px solid var(--green);
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .cover-logo {
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
+      }
+
+      .cover-text h1 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--navy);
+        line-height: 1.15;
+      }
+
+      .cover-text h1 span {
+        color: var(--teal);
+      }
+
+      .cover-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        margin-top: 0.6rem;
+        font-size: 0.82rem;
+        color: var(--mid);
+      }
+
+      /* ── Sections ── */
+      .section {
+        margin-bottom: 2.75rem;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        border-left: 4px solid var(--teal);
+        padding-left: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title.green {
+        border-color: var(--green);
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin: 1.1rem 0 0.25rem;
+      }
+
+      p {
+        margin-bottom: 0.6rem;
+        color: var(--text);
+      }
+
+      ul,
+      ol {
+        padding-left: 1.4rem;
+        margin-bottom: 0.75rem;
+      }
+
+      li {
+        margin-bottom: 0.3rem;
+      }
+
+      /* ── Stat strip ── */
+      .stat-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 1rem 0;
+      }
+
+      .stat-cell {
+        background: white;
+        padding: 1rem 0.75rem;
+        text-align: center;
+      }
+
+      .stat-num {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--teal);
+        display: block;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+        color: var(--mid);
+        margin-top: 0.25rem;
+        line-height: 1.3;
+      }
+
+      /* ── Two-column grid ── */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+
+      /* ── Card ── */
+      .card {
+        background: var(--light);
+        border-radius: 10px;
+        padding: 1.1rem 1.25rem;
+        border: 1px solid var(--border);
+      }
+
+      .card h3 {
+        margin-top: 0;
+      }
+
+      /* ── Track cards ── */
+      .track-card {
+        border-radius: 10px;
+        padding: 1.1rem 1.25rem;
+        border: 1px solid var(--border);
+      }
+
+      .track-card.elem {
+        border-top: 4px solid var(--teal);
+      }
+      .track-card.mid {
+        border-top: 4px solid var(--navy);
+      }
+
+      .track-badge {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.2rem 0.65rem;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+      }
+
+      .track-badge.elem {
+        background: #e3f4fb;
+        color: var(--teal);
+      }
+      .track-badge.mid {
+        background: #e8edf5;
+        color: var(--navy);
+      }
+
+      /* ── Step list ── */
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .step {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--navy);
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* ── Table ── */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+        margin: 0.75rem 0;
+      }
+
+      th {
+        background: var(--navy);
+        color: white;
+        padding: 0.55rem 0.85rem;
+        text-align: left;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+      }
+
+      td {
+        padding: 0.5rem 0.85rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      tr:nth-child(even) td {
+        background: var(--light);
+      }
+
+      /* ── Pill badge ── */
+      .pill {
+        display: inline-block;
+        padding: 0.1rem 0.55rem;
+        border-radius: 20px;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .pill-high {
+        background: #fde8e8;
+        color: #c0392b;
+      }
+      .pill-medium {
+        background: #fef3e2;
+        color: #d35400;
+      }
+      .pill-low {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      /* ── Quote/callout ── */
+      .callout {
+        border-left: 4px solid var(--green);
+        background: #f0faf0;
+        padding: 0.9rem 1.1rem;
+        border-radius: 0 8px 8px 0;
+        margin: 1rem 0;
+        font-style: italic;
+        color: var(--mid);
+      }
+
+      /* ── Divider ── */
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 2.5rem 0;
+      }
+
+      /* ── Contact block ── */
+      .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 2rem;
+        font-size: 0.9rem;
+      }
+
+      .contact-row a {
+        color: var(--teal);
+        text-decoration: none;
+      }
+      .contact-row a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Print ── */
+      @media print {
+        .print-bar {
+          display: none;
+        }
+        .doc {
+          padding: 1.5rem 1rem 2rem;
+          max-width: 100%;
+        }
+        .cover {
+          padding-bottom: 1.25rem;
+          margin-bottom: 1.75rem;
+        }
+        .section {
+          page-break-inside: avoid;
+        }
+        .stat-strip {
+          break-inside: avoid;
+        }
+        table {
+          break-inside: avoid;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .stat-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .doc {
+          padding: 1.5rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Print bar -->
+    <div class="print-bar">
+      <span>CodeCore Chapter — Program Overview</span>
+      <button class="print-btn" onclick="window.print()">
+        ⬇ Save / Print PDF
+      </button>
+    </div>
+
+    <div class="doc">
+      <!-- ── COVER ── -->
+      <div class="cover">
+        <img
+          class="cover-logo"
+          src="../images/logos/CodeCore.png"
+          alt="CodeCore logo"
+        />
+        <div class="cover-text">
+          <h1>CodeCore <span>Chapter</span><br />Program Overview</h1>
+          <div class="cover-meta">
+            <span>📍 El Paso, Texas</span>
+            <span>🏫 Elementary &amp; Middle Schools · Grades 3–8</span>
+            <span>🎓 A UTEP CodeCore Initiative</span>
+            <span>📅 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 1. WHAT IS CODECORE CHAPTER ── -->
+      <div class="section">
+        <div class="section-title">1 — What Is CodeCore Chapter?</div>
+        <p>
+          <strong>CodeCore Chapter</strong> is the K–12 outreach program of
+          CodeCore at UTEP, bringing hands-on coding education directly to
+          elementary and middle schools across El Paso. The program is entirely
+          free for schools and students, staffed by trained UTEP Computer
+          Science volunteers, and supported through community sponsorships.
+        </p>
+        <p>
+          Each "chapter" is a school-based coding program that runs weekly
+          sessions during the school year. Sessions are led by a trained school
+          instructor (teacher or staff) and supported by UTEP student
+          volunteers. The program ends each semester with a school hackathon — a
+          celebration of everything students built, with prizes and public
+          recognition for winners.
+        </p>
+
+        <div class="callout">
+          "Empowering El Paso elementary and middle school students through
+          STEM, coding, and responsible AI education."
+        </div>
+      </div>
+
+      <!-- ── 2. MISSION & VISION ── -->
+      <div class="section">
+        <div class="section-title">2 — Mission &amp; Vision</div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>🎯 Mission</h3>
+            <p>
+              Close the digital opportunity gap in El Paso by bringing hands-on
+              coding education to local elementary and middle schools. Through
+              UTEP student volunteers and community partnerships, we make
+              computer science accessible, exciting, and relevant for every
+              grades 3–8 student — regardless of background, device, or prior
+              experience.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🌟 Vision</h3>
+            <p>
+              An El Paso where every child has the coding literacy to
+              participate in tomorrow's economy. CodeCore Chapter aims to grow
+              into a city-wide network of school chapters — a living bridge
+              between UTEP's CS talent and the community it serves — producing a
+              new generation of El Paso builders, problem-solvers, and
+              innovators.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 3. WHY STEM MATTERS ── -->
+      <div class="section">
+        <div class="section-title">3 — Why This Matters</div>
+        <p>
+          By 2030, an estimated 85 million jobs worldwide will go unfilled
+          because too few people have the technical skills to fill them. In El
+          Paso — a border community with immense potential — early exposure to
+          STEM can be the difference between economic inclusion and exclusion.
+        </p>
+        <p>
+          Research shows that students who engage with coding before high school
+          are significantly more likely to pursue STEM careers, persist through
+          challenging coursework, and develop computational thinking skills that
+          transfer across every discipline — from medicine to business to music.
+        </p>
+        <div class="stat-strip">
+          <div class="stat-cell">
+            <span class="stat-num">3×</span>
+            <div class="stat-label">more likely to pursue a STEM degree</div>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">↑40%</span>
+            <div class="stat-label">increase in problem-solving confidence</div>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">3–8</span>
+            <div class="stat-label">
+              the critical grade window for tech curiosity
+            </div>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">100%</span>
+            <div class="stat-label">free for all schools and students</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 4. CURRENT IMPACT ── -->
+      <div class="section">
+        <div class="section-title green">4 — Current Impact (2026)</div>
+        <div class="stat-strip">
+          <div class="stat-cell">
+            <span class="stat-num">150</span>
+            <div class="stat-label">Students Impacted</div>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">2</span>
+            <div class="stat-label">Schools Participating</div>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">2</span>
+            <div class="stat-label">Saturday Trainings Held</div>
+          </div>
+          <div class="stat-cell">
+            <span class="stat-num">20</span>
+            <div class="stat-label">Volunteers &amp; Mentors</div>
+          </div>
+        </div>
+
+        <h3>Active School Chapters</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>School</th>
+              <th>Level</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Guillen Middle School</strong></td>
+              <td>Middle School</td>
+              <td>El Paso, TX</td>
+            </tr>
+            <tr>
+              <td><strong>Henderson Middle School</strong></td>
+              <td>Middle School</td>
+              <td>El Paso, TX</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.82rem; color: var(--mid)">
+          Additional chapters are being onboarded each semester. Elementary
+          schools are a primary growth target for 2026–2027.
+        </p>
+      </div>
+
+      <hr />
+
+      <!-- ── 5. HOW IT WORKS ── -->
+      <div class="section">
+        <div class="section-title">5 — How a Chapter Is Started</div>
+        <p>
+          Getting a CodeCore Chapter at a school takes four steps. From first
+          contact to first class typically takes 4 weeks.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <strong>Apply</strong> — A school's principal or lead teacher
+              fills out our short interest form. No experience or equipment
+              required to apply.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <strong>Connect</strong> — Our outreach team responds within 48
+              hours to schedule a planning call. We match the school with the
+              right volunteers based on grade level and schedule.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <strong>Train</strong> — The school's designated faculty
+              point-of-contact attends a 6-hour onboarding session. They become
+              the primary instructor for the chapter. UTEP volunteers complete
+              their own Saturday training before visiting.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <strong>Launch</strong> — The chapter kicks off. We send 2–4 UTEP
+              volunteers for the first two weeks, then once a month. The trained
+              school instructor leads every session. The semester closes with a
+              school hackathon.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 6. SESSION STRUCTURE ── -->
+      <div class="section">
+        <div class="section-title">6 — Session Structure</div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Weekly Sessions</h3>
+            <ul>
+              <li>60–90 minutes per session</li>
+              <li>
+                Ideally on Fridays so UTEP volunteers can attend once a month
+              </li>
+              <li>Led by trained school instructor or chapter staff</li>
+              <li>
+                2–4 UTEP volunteers present for first 2 weeks, then monthly
+              </li>
+              <li>Consistent weekly slot for the full semester</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>End-of-Semester Hackathon</h3>
+            <ul>
+              <li>Hosted at each school at end of semester</li>
+              <li>Students showcase projects they built during the year</li>
+              <li>Prizes awarded to celebrate student achievements</li>
+              <li>Winners recognized publicly by name and school</li>
+              <li>Families, teachers, and community invited</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 7. CURRICULUM ── -->
+      <div class="section">
+        <div class="section-title">7 — Curriculum Tracks</div>
+        <p>
+          The curriculum is split into two age-appropriate tracks. Both tracks
+          are designed for complete beginners and include responsible AI
+          education as a core component.
+        </p>
+        <div class="grid-2" style="margin-top: 0.75rem">
+          <div class="track-card elem">
+            <span class="track-badge elem">Grades 3–5 · Elementary</span>
+            <h3>Elementary Track</h3>
+            <ul>
+              <li>Scratch animations &amp; games</li>
+              <li>Block-based visual programming</li>
+              <li>CS Unplugged activities (no screen required)</li>
+              <li>Intro to algorithms and sequencing</li>
+              <li>Creative computing and storytelling</li>
+              <li>Age-appropriate AI &amp; digital safety discussions</li>
+            </ul>
+          </div>
+          <div class="track-card mid">
+            <span class="track-badge mid">Grades 6–8 · Middle School</span>
+            <h3>Middle School Track</h3>
+            <ul>
+              <li>Python programming fundamentals</li>
+              <li>Web development (HTML, CSS)</li>
+              <li>Intro to data science concepts</li>
+              <li>Machine learning at a conceptual level</li>
+              <li>Robotics and physical computing</li>
+              <li>AI ethics, bias, and responsible use</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 8. AI EDUCATION ── -->
+      <div class="section">
+        <div class="section-title">8 — Responsible AI Education</div>
+        <p>
+          AI education is woven into every chapter — not as a separate unit, but
+          as part of every conversation about technology and its role in
+          society.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>🔍 Understanding AI</h3>
+            <p style="font-size: 0.88rem">
+              Students learn how machine learning works at a conceptual level —
+              from training data to model outputs — without black-box
+              mystification.
+            </p>
+          </div>
+          <div class="card">
+            <h3>⚖️ Ethics &amp; Bias</h3>
+            <p style="font-size: 0.88rem">
+              Age-appropriate discussions on fairness, privacy, and why the
+              humans behind AI systems bear responsibility for their outcomes.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🛡️ Safe Exploration</h3>
+            <p style="font-size: 0.88rem">
+              Students learn what to share and what not to share, and how to
+              evaluate AI-generated content critically before acting on it.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ── 9. VOLUNTEER & TRAINING MODEL ── -->
+      <div class="section">
+        <div class="section-title">9 — Volunteer &amp; Training Model</div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>🏫 School Faculty Onboarding</h3>
+            <p style="font-size: 0.88rem">
+              A 6-hour onboarding session for the school's designated
+              point-of-contact before the chapter launches. Covers:
+            </p>
+            <ul style="font-size: 0.88rem">
+              <li>How to lead and structure sessions</li>
+              <li>
+                How to manage logistics, attendance, and parent communication
+              </li>
+              <li>How to support student learning at every level</li>
+              <li>What to do if a student needs additional support</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📅 Saturday Volunteer Training</h3>
+            <p style="font-size: 0.88rem">
+              UTEP student volunteers complete Saturday training sessions before
+              visiting schools. Each session covers:
+            </p>
+            <ul style="font-size: 0.88rem">
+              <li>Lesson delivery and classroom management</li>
+              <li>Age-appropriate curriculum for grades 3–5 vs. 6–8</li>
+              <li>Responsible AI and digital safety for students</li>
+              <li>Peer feedback and continuous improvement</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="margin-top: 1rem">
+          UTEP volunteers visit schools — not the other way around. Volunteers
+          go to each partner school for the first two weeks of a chapter launch,
+          then once a month. The school instructor leads every session.
+        </div>
+      </div>
+
+      <!-- ── 10. WHAT SCHOOLS NEED ── -->
+      <div class="section">
+        <div class="section-title">10 — What Schools Need to Participate</div>
+        <p>We keep requirements minimal so more schools can join.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Grade levels</strong></td>
+              <td>
+                Open to grades 3–8 (elementary and middle schools in El Paso)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Faculty point-of-contact</strong></td>
+              <td>
+                One teacher or administrator to coordinate with our team and
+                lead sessions
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Classroom or lab access</strong></td>
+              <td>
+                At least one space with seating for up to 25 students (devices
+                helpful but not required)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Weekly time slot</strong></td>
+              <td>
+                60–90 minutes, ideally Fridays. We work around your schedule.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Parent awareness</strong></td>
+              <td>
+                Share a one-page info sheet with families at program start
+              </td>
+            </tr>
+            <tr>
+              <td><strong>End-of-semester hackathon</strong></td>
+              <td>
+                Host the closing hackathon at the school — we help organize and
+                provide prizes
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Feedback</strong></td>
+              <td>
+                One short feedback form per semester from the faculty contact
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Cost</strong></td>
+              <td style="color: #2e7d32; font-weight: 700">
+                Completely free — always
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr />
+
+      <!-- ── 11. EVENTS ── -->
+      <div class="section">
+        <div class="section-title">11 — Events &amp; Activities (2026)</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Saturday Faculty Training</td>
+              <td>June 7, 2026</td>
+              <td>UTEP College of Engineering, Rm 201</td>
+              <td>Training</td>
+            </tr>
+            <tr>
+              <td>Beall Elementary STEM Fair</td>
+              <td>June 14, 2026</td>
+              <td>Beall Elementary Gymnasium</td>
+              <td>STEM Fair</td>
+            </tr>
+            <tr>
+              <td>Middle School Coding Challenge</td>
+              <td>June 21, 2026</td>
+              <td>Guillen Middle School Computer Lab</td>
+              <td>Competition</td>
+            </tr>
+            <tr>
+              <td>AI Exploration Workshop</td>
+              <td>July 12, 2026</td>
+              <td>UTEP Library, Room 208</td>
+              <td>Workshop</td>
+            </tr>
+            <tr>
+              <td>Saturday Faculty Training</td>
+              <td>July 19, 2026</td>
+              <td>UTEP College of Engineering, Rm 201</td>
+              <td>Training</td>
+            </tr>
+            <tr>
+              <td>Fall 2026 Chapter Launch Day</td>
+              <td>August 22, 2026</td>
+              <td>Multiple El Paso Schools</td>
+              <td>Launch</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── 12. TEAM ── -->
+      <div class="section">
+        <div class="section-title">12 — Leadership &amp; Team</div>
+        <p>
+          CodeCore Chapter is led by UTEP Computer Science students and
+          supported by faculty. All volunteers receive structured training
+          before working with students.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Responsibilities</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Chapter Director</strong></td>
+              <td>
+                Oversees all chapter operations, school partnerships, and
+                volunteer coordination
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Curriculum Lead</strong></td>
+              <td>
+                Designs and updates lesson plans — from Scratch fundamentals to
+                AI discussions
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Outreach Lead</strong></td>
+              <td>
+                Builds and maintains relationships with school administrators,
+                teachers, and district partners
+              </td>
+            </tr>
+            <tr>
+              <td><strong>UTEP Student Volunteers</strong></td>
+              <td>
+                Deliver sessions at schools, complete Saturday training, support
+                school instructors
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Faculty Advisor</strong></td>
+              <td>
+                UTEP CS faculty providing academic oversight, professional
+                guidance, and resource support
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr />
+
+      <!-- ── 13. SPONSORS & SUPPORT ── -->
+      <div class="section">
+        <div class="section-title green">
+          13 — Sponsors &amp; Community Support
+        </div>
+        <p>
+          CodeCore Chapter is entirely funded through sponsorships and
+          donations. All programming is free for schools and students — sponsors
+          make that possible.
+        </p>
+
+        <h3>Current Sponsors</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Sponsor</th>
+              <th>Tier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>El Paso Electric</strong></td>
+              <td>Gold</td>
+            </tr>
+            <tr>
+              <td><strong>Chiquis Bakery</strong></td>
+              <td>Silver</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Donation Wishlist</h3>
+        <p style="font-size: 0.85rem; color: var(--mid)">
+          Partial donations are welcome — sponsors do not need to contribute
+          every item. No charges are processed on our website; a CodeCore
+          representative contacts donors to coordinate.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Category</th>
+              <th>Qty Needed</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chromebooks</td>
+              <td>Technology</td>
+              <td>60</td>
+              <td><span class="pill pill-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Wireless Mouse &amp; Keyboard Sets</td>
+              <td>Technology</td>
+              <td>30</td>
+              <td><span class="pill pill-high">High</span></td>
+            </tr>
+            <tr>
+              <td>Mobile Power Tower</td>
+              <td>Technology</td>
+              <td>4</td>
+              <td><span class="pill pill-medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>CS Unplugged Activity Cards</td>
+              <td>Student Support</td>
+              <td>20 sets</td>
+              <td><span class="pill pill-medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>CodeCore T-Shirts</td>
+              <td>Merchandise</td>
+              <td>200</td>
+              <td><span class="pill pill-high">High</span></td>
+            </tr>
+            <tr>
+              <td>CodeCore Sweatshirts &amp; Hoodies</td>
+              <td>Merchandise</td>
+              <td>100</td>
+              <td><span class="pill pill-medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>CodeCore Hats</td>
+              <td>Merchandise</td>
+              <td>100</td>
+              <td><span class="pill pill-medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>CodeCore Mugs</td>
+              <td>Merchandise</td>
+              <td>50</td>
+              <td><span class="pill pill-low">Low</span></td>
+            </tr>
+            <tr>
+              <td>CodeCore Bracelets</td>
+              <td>Merchandise</td>
+              <td>200</td>
+              <td><span class="pill pill-low">Low</span></td>
+            </tr>
+            <tr>
+              <td>CodeCore Notebooks &amp; Pens</td>
+              <td>Merchandise</td>
+              <td>200</td>
+              <td><span class="pill pill-medium">Medium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── 14. GOALS & PLANS ── -->
+      <div class="section">
+        <div class="section-title green">14 — Goals &amp; Future Plans</div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>📈 Growth Targets</h3>
+            <ul>
+              <li>Expand to 4+ active school chapters by end of 2026</li>
+              <li>
+                Add elementary school chapters (grades 3–5) as primary growth
+                target
+              </li>
+              <li>Grow volunteer base to 40+ trained UTEP students</li>
+              <li>
+                Host end-of-semester hackathon at every active chapter school
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌐 Long-Term Vision</h3>
+            <ul>
+              <li>
+                Build a city-wide network of CodeCore chapters across El Paso
+              </li>
+              <li>
+                Establish sustainable school-based instructor model so chapters
+                thrive independently
+              </li>
+              <li>
+                Secure recurring sponsorships to guarantee program continuity
+              </li>
+              <li>
+                Publish student hackathon winners publicly to celebrate
+                achievements
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 1.25rem">
+          <h3>📋 Immediate Priorities (Spring–Fall 2026)</h3>
+          <ul>
+            <li>
+              Complete Saturday volunteer training series (2 sessions completed,
+              more planned)
+            </li>
+            <li>
+              Launch Fall 2026 chapters at all partner schools (August 22, 2026)
+            </li>
+            <li>Onboard first elementary school chapter (grades 3–5)</li>
+            <li>
+              Finalize end-of-semester hackathon format and prize structure
+            </li>
+            <li>Expand sponsor base beyond current 2 sponsors</li>
+            <li>
+              Build out student resource library (downloadable projects, guides)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ── 15. GET INVOLVED ── -->
+      <div class="section">
+        <div class="section-title">15 — How to Get Involved</div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>🏫 Schools</h3>
+            <p style="font-size: 0.88rem">
+              Interested in bringing CodeCore Chapter to your school? Fill out
+              our interest form and we'll be in touch within 48 hours. No cost,
+              no experience required.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🤝 Sponsors</h3>
+            <p style="font-size: 0.88rem">
+              Support us financially, donate items from our wishlist, or sponsor
+              the end-of-semester hackathon prizes. Every contribution goes
+              directly to students.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🎓 Volunteers</h3>
+            <p style="font-size: 0.88rem">
+              UTEP CS students can join as chapter volunteers. Complete Saturday
+              training, visit partner schools, and help build the next
+              generation of El Paso coders.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 16. CONTACT ── -->
+      <div class="section">
+        <div class="section-title">16 — Contact &amp; Links</div>
+        <div class="contact-row">
+          <span
+            >📧 <a href="mailto:codecore@utep.edu">codecore@utep.edu</a></span
+          >
+          <span
+            >🌐
+            <a
+              href="https://enrique182004.github.io/CodeCore/chapter/"
+              target="_blank"
+              >enrique182004.github.io/CodeCore/chapter</a
+            ></span
+          >
+          <span
+            >📸
+            <a href="https://www.instagram.com/codecoreutep" target="_blank"
+              >@codecoreutep</a
+            ></span
+          >
+          <span
+            >💼
+            <a
+              href="https://www.linkedin.com/in/code-core-9a720138a"
+              target="_blank"
+              >LinkedIn: code-core</a
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+    <!-- /doc -->
+  </body>
+</html>
