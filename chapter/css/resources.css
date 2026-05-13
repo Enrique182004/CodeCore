@@ -1,0 +1,160 @@
+/* Learning path */
+.resources-path {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.path-step {
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+  padding: 2rem 1.75rem;
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  position: relative;
+  border-top: 4px solid transparent;
+}
+.path-step--beginner {
+  border-top-color: var(--green);
+}
+.path-step--intermediate {
+  border-top-color: var(--teal);
+}
+.path-step--advanced {
+  border-top-color: var(--navy);
+}
+.path-step-num {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
+  margin: 0 auto 1rem;
+}
+.path-step--beginner .path-step-num {
+  background: var(--green);
+}
+.path-step--intermediate .path-step-num {
+  background: var(--teal);
+}
+.path-step--advanced .path-step-num {
+  background: var(--navy);
+}
+.path-step h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.path-step p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+.path-arrow {
+  font-size: 2rem;
+  color: var(--green);
+  padding: 0 1rem;
+  align-self: center;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .resources-path {
+    flex-direction: column;
+    align-items: center;
+  }
+  .path-arrow {
+    transform: rotate(90deg);
+  }
+  .path-step {
+    max-width: 100%;
+  }
+}
+
+/* Filter bar */
+.resources-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--gray-100, #e8edf5);
+  border-radius: 30px;
+  background: white;
+  color: var(--text-mid);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-primary);
+}
+.filter-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.filter-btn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+/* Resource cards */
+.resource-card {
+  display: flex;
+  flex-direction: column;
+}
+.resource-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+.resource-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+.resource-card p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+.resource-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.res-level {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.res-level--beginner {
+  color: var(--green);
+}
+.res-level--intermediate {
+  color: var(--teal);
+}
+.res-level--advanced {
+  color: var(--navy);
+}
+
+/* Hidden state for filtered cards */
+.resource-card.hidden {
+  display: none;
+}
