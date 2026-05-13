@@ -1,33 +1,15 @@
 [
   {
-    "name": "UTEP College of Engineering",
-    "logo": "../images/sponsors/utep-engineering.png",
-    "url": "https://www.utep.edu/engineering/",
-    "tier": "Gold"
-  },
-  {
     "name": "El Paso Electric",
-    "logo": "../images/sponsors/elpaso-electric.png",
+    "logo": "../images/sponsors/EPEC_logo.png",
     "url": "https://www.epelectric.com/",
     "tier": "Gold"
   },
   {
-    "name": "Hunt Companies",
-    "logo": "../images/sponsors/hunt-companies.png",
-    "url": "https://www.huntcompanies.com/",
+    "name": "Chiquis Bakery",
+    "logo": "../images/sponsors/chiquisBakery_logo.webp",
+    "url": "https://www.chiquisbakery.com/",
     "tier": "Silver"
-  },
-  {
-    "name": "GECU",
-    "logo": "../images/sponsors/gecu.png",
-    "url": "https://www.gecu.com/",
-    "tier": "Silver"
-  },
-  {
-    "name": "Sun Metro",
-    "logo": "../images/sponsors/sun-metro.png",
-    "url": "https://www.elpasotexas.gov/sun-metro/",
-    "tier": "Community"
   },
   {
     "name": "Become a Sponsor",

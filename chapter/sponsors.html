@@ -39,9 +39,9 @@
             <div class="sp-how-card ch-card">
               <div class="sp-how-num">1</div>
               <div class="sp-how-icon">💬</div>
-              <h3>Choose Your Level</h3>
+              <h3>Choose How to Help</h3>
               <p>
-                Select the tier that fits your organization — or reach out to
+                Select what items you can support us with — or reach out to
                 discuss a custom arrangement like an in-kind equipment donation.
               </p>
             </div>
@@ -68,70 +68,18 @@
         </div>
       </section>
 
-      <!-- BENEFITS TABLE -->
+      <!-- SPONSOR SWAG -->
       <section class="ch-section ch-section--dark">
-        <div class="ch-section-inner">
-          <div class="ch-section-header">
-            <h2>Sponsorship Tiers &amp; Benefits</h2>
-          </div>
-          <div class="sp-table-wrap">
-            <table class="sp-table">
-              <thead>
-                <tr>
-                  <th>Benefit</th>
-                  <th><span class="sp-tier-badge sp-gold">Gold</span></th>
-                  <th><span class="sp-tier-badge sp-silver">Silver</span></th>
-                  <th>
-                    <span class="sp-tier-badge sp-community">Community</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Logo on chapter website</td>
-                  <td>✓ Large</td>
-                  <td>✓ Medium</td>
-                  <td>✓ Small</td>
-                </tr>
-                <tr>
-                  <td>Recognition at all events</td>
-                  <td>✓ Prominent</td>
-                  <td>✓ Standard</td>
-                  <td>✓ Listed</td>
-                </tr>
-                <tr>
-                  <td>Social media shoutout</td>
-                  <td>✓ Monthly</td>
-                  <td>✓ Quarterly</td>
-                  <td>✓ Annual</td>
-                </tr>
-                <tr>
-                  <td>Impact report</td>
-                  <td>✓ Full</td>
-                  <td>✓ Summary</td>
-                  <td>—</td>
-                </tr>
-                <tr>
-                  <td>Employee volunteer opportunities</td>
-                  <td>✓ Priority</td>
-                  <td>✓ Available</td>
-                  <td>—</td>
-                </tr>
-                <tr>
-                  <td>STEM Fair presenting opportunity</td>
-                  <td>✓</td>
-                  <td>—</td>
-                  <td>—</td>
-                </tr>
-                <tr>
-                  <td>Custom chapter naming rights</td>
-                  <td>✓ Optional</td>
-                  <td>—</td>
-                  <td>—</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="ch-section-inner" style="text-align: center">
+          <img
+            src="ideas/sponsorSwag.png"
+            alt="Sponsor swag and benefits overview"
+            style="
+              max-width: 100%;
+              border-radius: var(--radius-card);
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            "
+          />
         </div>
       </section>
 
@@ -175,6 +123,21 @@
               contribution goes directly to students.
             </p>
           </div>
+          <div class="sp-wish-notice ch-card">
+            <p>
+              <strong>Please note:</strong> You do not need to donate every item
+              on the list. Partial donations are greatly appreciated. Select the
+              quantity of each item you would like to donate and add them to
+              your cart. Once you submit your donation request, our team will
+              review it and contact you directly to coordinate the donation
+              process.
+            </p>
+            <p style="margin-top: 0.5rem; color: var(--teal); font-weight: 600">
+              No charges or payments will be processed through this page. A
+              CodeCore representative will contact you to finalize arrangements
+              and complete the donation.
+            </p>
+          </div>
           <div class="sp-wish-tabs" id="wishlist-tabs">
             <button class="sp-wish-tab active" data-cat="all">All</button>
             <button class="sp-wish-tab" data-cat="Technology">
@@ -189,6 +152,105 @@
           </div>
           <div class="ch-grid-3" id="wishlist-grid">
             <p class="ch-loading">Loading wishlist…</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DONATION CART -->
+      <section
+        class="ch-section ch-section--dark"
+        id="donation-cart"
+        style="display: none"
+      >
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Your Donation Cart</h2>
+            <p>
+              Review your selected items below, then submit your donation
+              request. We'll be in touch to coordinate everything.
+            </p>
+          </div>
+          <div class="sp-cart-wrap ch-card" style="background: white">
+            <div id="cart-items-list"></div>
+            <div class="sp-cart-note">
+              <label for="cart-notes">Cart notes / special instructions</label>
+              <textarea
+                id="cart-notes"
+                placeholder="Any questions or special instructions for your donation…"
+              ></textarea>
+            </div>
+            <div class="ch-form-group" style="margin-top: 1.25rem">
+              <label for="cart-name"
+                >Full Name <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="cart-name"
+                placeholder="Your name"
+                autocomplete="name"
+              />
+            </div>
+            <div class="ch-form-group">
+              <label for="cart-email"
+                >Email Address <span class="required">*</span></label
+              >
+              <input
+                type="email"
+                id="cart-email"
+                placeholder="your@email.com"
+                autocomplete="email"
+              />
+            </div>
+            <div class="ch-form-group">
+              <label for="cart-org">Organization (optional)</label>
+              <input
+                type="text"
+                id="cart-org"
+                placeholder="Company or organization"
+                autocomplete="organization"
+              />
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-top: 1.5rem;
+              "
+            >
+              <button
+                class="btn-primary"
+                id="cart-submit"
+                style="flex: 1; border: none; cursor: pointer"
+              >
+                Submit Donation Request
+              </button>
+              <button
+                class="btn-secondary"
+                id="cart-clear"
+                style="
+                  flex: 1;
+                  border: 2px solid var(--teal);
+                  background: transparent;
+                  color: var(--teal);
+                  cursor: pointer;
+                "
+              >
+                Clear Cart
+              </button>
+            </div>
+            <div class="ch-form-feedback" id="cart-feedback"></div>
+            <p
+              style="
+                font-size: 0.8rem;
+                color: var(--text-mid);
+                margin-top: 1rem;
+                text-align: center;
+              "
+            >
+              No charges or payments will be processed through this page. A
+              CodeCore representative will contact you to finalize arrangements.
+            </p>
           </div>
         </div>
       </section>

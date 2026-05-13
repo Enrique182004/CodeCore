@@ -261,3 +261,55 @@
   font-size: 4rem;
   margin-bottom: 1rem;
 }
+
+/* Grade track cards */
+.students-track-card {
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+.students-track-badge {
+  display: inline-block;
+  background: var(--teal);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.students-track-badge--mid {
+  background: var(--navy);
+}
+
+.students-track-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.students-track-card > p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.students-track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.students-track-list li {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}

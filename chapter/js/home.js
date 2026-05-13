@@ -1,41 +1,23 @@
 "use strict";
 
 const FALLBACK_STATS = {
-  students: 1200,
-  schools: 25,
-  trainings: 40,
-  volunteers: 100,
+  students: 150,
+  schools: 2,
+  trainings: 2,
+  volunteers: 20,
 };
 const FALLBACK_SPONSORS = [
   {
-    name: "UTEP College of Engineering",
-    logo: "../images/sponsors/utep-engineering.png",
-    url: "https://www.utep.edu/engineering/",
-    tier: "Gold",
-  },
-  {
     name: "El Paso Electric",
-    logo: "../images/sponsors/elpaso-electric.png",
+    logo: "../images/sponsors/EPEC_logo.png",
     url: "https://www.epelectric.com/",
     tier: "Gold",
   },
   {
-    name: "Hunt Companies",
-    logo: "../images/sponsors/hunt-companies.png",
-    url: "https://www.huntcompanies.com/",
+    name: "Chiquis Bakery",
+    logo: "../images/sponsors/chiquisBakery_logo.webp",
+    url: "https://www.chiquisbakery.com/",
     tier: "Silver",
-  },
-  {
-    name: "GECU",
-    logo: "../images/sponsors/gecu.png",
-    url: "https://www.gecu.com/",
-    tier: "Silver",
-  },
-  {
-    name: "Sun Metro",
-    logo: "../images/sponsors/sun-metro.png",
-    url: "https://www.elpasotexas.gov/sun-metro/",
-    tier: "Community",
   },
   {
     name: "Become a Sponsor",

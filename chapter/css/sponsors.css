@@ -246,3 +246,120 @@
   margin: 0 auto;
   background: white;
 }
+
+/* Wishlist notice */
+.sp-wish-notice {
+  margin-bottom: 2rem;
+  background: white;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+/* Quantity input + add to cart row */
+.sp-cart-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.sp-qty-input {
+  width: 70px;
+  padding: 0.5rem 0.5rem;
+  border: 2px solid #e8edf5;
+  border-radius: var(--radius-card);
+  font-size: 0.9rem;
+  font-family: var(--font-primary);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.sp-qty-input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.sp-add-btn {
+  flex: 1;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Cart section */
+.sp-cart-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sp-cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+}
+
+.sp-cart-table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid #e8edf5;
+  color: var(--text-mid);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sp-cart-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f4f8;
+  color: var(--text-dark);
+}
+
+.sp-cart-remove {
+  background: none;
+  border: none;
+  color: #e53935;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.sp-cart-remove:hover {
+  background: #ffeaea;
+}
+
+.sp-cart-note {
+  margin-bottom: 1.25rem;
+}
+
+.sp-cart-note label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.sp-cart-note textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid #e8edf5;
+  border-radius: var(--radius-card);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.sp-cart-note textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}

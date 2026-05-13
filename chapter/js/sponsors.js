@@ -2,34 +2,16 @@
 
 const FALLBACK_SPONSORS = [
   {
-    name: "UTEP College of Engineering",
-    logo: "../images/sponsors/utep-engineering.png",
-    url: "https://www.utep.edu/engineering/",
-    tier: "Gold",
-  },
-  {
     name: "El Paso Electric",
-    logo: "../images/sponsors/elpaso-electric.png",
+    logo: "../images/sponsors/EPEC_logo.png",
     url: "https://www.epelectric.com/",
     tier: "Gold",
   },
   {
-    name: "Hunt Companies",
-    logo: "../images/sponsors/hunt-companies.png",
-    url: "https://www.huntcompanies.com/",
+    name: "Chiquis Bakery",
+    logo: "../images/sponsors/chiquisBakery_logo.webp",
+    url: "https://www.chiquisbakery.com/",
     tier: "Silver",
-  },
-  {
-    name: "GECU",
-    logo: "../images/sponsors/gecu.png",
-    url: "https://www.gecu.com/",
-    tier: "Silver",
-  },
-  {
-    name: "Sun Metro",
-    logo: "../images/sponsors/sun-metro.png",
-    url: "",
-    tier: "Community",
   },
   {
     name: "Become a Sponsor",
@@ -43,62 +25,49 @@ const FALLBACK_WISHLIST = [
   {
     name: "Chromebooks",
     category: "Technology",
-    description: "Each Chromebook lets one more student participate hands-on.",
-    quantity: 12,
+    description:
+      "Each Chromebook lets one more student participate hands-on in every session.",
+    quantity: 60,
     priority: "High",
   },
   {
-    name: "Wireless Mice & Keyboards",
+    name: "Wireless Mouse & Keyboard Sets",
     category: "Technology",
     description:
       "Reliable input devices make a huge difference in how quickly students can practice.",
-    quantity: 20,
+    quantity: 30,
     priority: "High",
   },
   {
-    name: "USB-C Charging Hubs",
+    name: "Mobile Power Tower",
     category: "Technology",
-    description: "Keep all devices charged through a full 90-minute session.",
+    description:
+      "A rolling charging station that powers multiple devices at once — perfect for classroom sessions.",
     quantity: 4,
     priority: "Medium",
   },
   {
-    name: "Raspberry Pi Kits",
-    category: "Technology",
-    description:
-      "Tiny computers for physical projects — sensors, blinking lights, small robots.",
-    quantity: 10,
-    priority: "Medium",
-  },
-  {
-    name: "Printed Coding Workbooks",
-    category: "Student Support",
-    description:
-      "Take-home activity books for grades 3–8 to practice between sessions.",
-    quantity: 60,
-    priority: "Low",
-  },
-  {
     name: "CS Unplugged Activity Cards",
     category: "Student Support",
-    description: "Teach algorithms, binary, and logic without a screen.",
-    quantity: 6,
-    priority: "Low",
+    description:
+      "Teach algorithms, binary, and logic without a screen — great for every skill level.",
+    quantity: 20,
+    priority: "Medium",
   },
   {
     name: "CodeCore Chapter T-Shirts",
     category: "Merchandise",
     description:
       "Build community identity and pride in students' coding journey.",
-    quantity: 100,
+    quantity: 200,
     priority: "Medium",
   },
   {
-    name: "STEM Notebooks & Pens",
-    category: "Student Support",
+    name: "CodeCore Notebooks & Pens",
+    category: "Merchandise",
     description:
-      "Branded notebooks for sketching algorithms and tracking project ideas.",
-    quantity: 80,
+      "Branded notebooks for sketching algorithms, tracking project ideas, and taking notes.",
+    quantity: 200,
     priority: "Low",
   },
 ];
@@ -108,7 +77,9 @@ const PRIORITY_CLASS = {
   Medium: "badge-medium",
   Low: "badge-low",
 };
+
 let wishlistCards = [];
+let cart = {};
 
 document.addEventListener("DOMContentLoaded", async () => {
   const [sponsors, wishlist] = await Promise.all([
@@ -118,6 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderSponsors(sponsors);
   renderWishlist(wishlist);
   initWishlistTabs();
+  initCart();
   initForm();
 });
 
@@ -147,16 +119,15 @@ function renderSponsors(sponsors) {
     const img = document.createElement("img");
     img.src = s.logo;
     img.alt = s.name + " logo";
+    const logoPlaceholder = document.createElement("div");
+    logoPlaceholder.className = "sp-logo-placeholder";
+    logoPlaceholder.textContent = s.name;
+    logoPlaceholder.style.display = "none";
     img.addEventListener("error", () => {
       img.style.display = "none";
       logoPlaceholder.style.display = "flex";
     });
     card.appendChild(img);
-
-    const logoPlaceholder = document.createElement("div");
-    logoPlaceholder.className = "sp-logo-placeholder";
-    logoPlaceholder.textContent = s.name;
-    logoPlaceholder.style.display = "none";
     card.appendChild(logoPlaceholder);
 
     const name = document.createElement("span");
@@ -177,6 +148,7 @@ function renderWishlist(items) {
     const card = document.createElement("div");
     card.className = "ch-card sp-wish-card";
     card.dataset.category = item.category;
+    card.dataset.name = item.name;
 
     const top = document.createElement("div");
     top.className = "sp-wish-card-top";
@@ -203,22 +175,198 @@ function renderWishlist(items) {
       card.appendChild(qty);
     }
 
-    const btn = document.createElement("button");
-    btn.className = "btn-primary";
-    btn.style.cssText =
-      "font-size:0.88rem;padding:0.6rem 1.25rem;border:none;cursor:pointer;";
-    btn.textContent = "Donate This Item";
-    btn.addEventListener("click", () => {
-      const msg = document.getElementById("sp-message");
-      if (msg) msg.value = "I'd like to donate: " + item.name;
-      document
-        .getElementById("sponsor-form")
-        ?.scrollIntoView({ behavior: "smooth" });
-    });
-    card.appendChild(btn);
+    const cartRow = document.createElement("div");
+    cartRow.className = "sp-cart-row";
 
+    const qtyInput = document.createElement("input");
+    qtyInput.type = "number";
+    qtyInput.min = "1";
+    qtyInput.max = String(item.quantity || 999);
+    qtyInput.value = "1";
+    qtyInput.className = "sp-qty-input";
+    qtyInput.setAttribute("aria-label", "Quantity to donate");
+    cartRow.appendChild(qtyInput);
+
+    const btn = document.createElement("button");
+    btn.className = "btn-primary sp-add-btn";
+    btn.textContent = "Add to Cart";
+    btn.addEventListener("click", () => {
+      const qty = parseInt(qtyInput.value, 10);
+      if (!qty || qty < 1) return;
+      addToCart(item.name, qty, item.category);
+      btn.textContent = "✓ Added";
+      btn.style.background = "var(--green)";
+      setTimeout(() => {
+        btn.textContent = "Add to Cart";
+        btn.style.background = "";
+      }, 1500);
+    });
+    cartRow.appendChild(btn);
+
+    card.appendChild(cartRow);
     grid.appendChild(card);
     wishlistCards.push(card);
+  });
+}
+
+function addToCart(name, qty, category) {
+  if (cart[name]) {
+    cart[name].qty += qty;
+  } else {
+    cart[name] = { qty, category };
+  }
+  updateCartUI();
+}
+
+function makeEl(tag, opts = {}) {
+  const el = document.createElement(tag);
+  if (opts.className) el.className = opts.className;
+  if (opts.text) el.textContent = opts.text;
+  if (opts.style) el.style.cssText = opts.style;
+  return el;
+}
+
+function updateCartUI() {
+  const cartSection = document.getElementById("donation-cart");
+  const cartList = document.getElementById("cart-items-list");
+  if (!cartSection || !cartList) return;
+
+  const entries = Object.entries(cart);
+  if (entries.length === 0) {
+    cartSection.style.display = "none";
+    return;
+  }
+
+  cartSection.style.display = "";
+  cartList.textContent = "";
+
+  const table = makeEl("table", { className: "sp-cart-table" });
+
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+  ["Item", "Category", "Qty", ""].forEach((label) => {
+    const th = document.createElement("th");
+    th.textContent = label;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  entries.forEach(([itemName, { qty, category }]) => {
+    const tr = document.createElement("tr");
+
+    tr.appendChild(makeEl("td", { text: itemName }));
+
+    const tdCat = makeEl("td", {
+      text: category,
+      style: "color:var(--text-mid)",
+    });
+    tr.appendChild(tdCat);
+
+    tr.appendChild(
+      makeEl("td", { text: String(qty), style: "font-weight:700" }),
+    );
+
+    const tdRemove = document.createElement("td");
+    const removeBtn = makeEl("button", {
+      className: "sp-cart-remove",
+      text: "✕",
+    });
+    removeBtn.addEventListener("click", () => {
+      delete cart[itemName];
+      updateCartUI();
+    });
+    tdRemove.appendChild(removeBtn);
+    tr.appendChild(tdRemove);
+
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  cartList.appendChild(table);
+
+  cartSection.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function initCart() {
+  const clearBtn = document.getElementById("cart-clear");
+  const submitBtn = document.getElementById("cart-submit");
+
+  clearBtn?.addEventListener("click", () => {
+    cart = {};
+    updateCartUI();
+  });
+
+  submitBtn?.addEventListener("click", async () => {
+    const nameEl = document.getElementById("cart-name");
+    const emailEl = document.getElementById("cart-email");
+    const notesEl = document.getElementById("cart-notes");
+    const orgEl = document.getElementById("cart-org");
+    const feedback = document.getElementById("cart-feedback");
+
+    const name = nameEl?.value.trim() || "";
+    const email = emailEl?.value.trim() || "";
+    const notes = notesEl?.value.trim() || "";
+    const org = orgEl?.value.trim() || "";
+
+    if (!name || !email) {
+      feedback.className = "ch-form-feedback error";
+      feedback.textContent = "Please enter your name and email address.";
+      return;
+    }
+    if (!Object.keys(cart).length) {
+      feedback.className = "ch-form-feedback error";
+      feedback.textContent = "Your cart is empty. Add items before submitting.";
+      return;
+    }
+
+    const cartSummary = Object.entries(cart)
+      .map(([n, { qty }]) => n + " (x" + qty + ")")
+      .join(", ");
+
+    const formData = new FormData();
+    formData.append("form_type", "donation_cart");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("organization", org);
+    formData.append("cart", cartSummary);
+    formData.append("notes", notes);
+    formData.append(
+      "message",
+      "Donation cart request:\n" +
+        cartSummary +
+        "\n\nNotes: " +
+        (notes || "None"),
+    );
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting…";
+
+    try {
+      const res = await fetch("contact.php", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        feedback.className = "ch-form-feedback success";
+        feedback.textContent =
+          "Thank you! Our team will review your donation request and be in touch within 2 business days. No payment is required at this time.";
+        cart = {};
+        updateCartUI();
+      } else {
+        feedback.className = "ch-form-feedback error";
+        feedback.textContent =
+          data.error || "Something went wrong. Please try again.";
+      }
+    } catch {
+      feedback.className = "ch-form-feedback error";
+      feedback.textContent =
+        "Network error. Please email us at codecore@utep.edu.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Donation Request";
+    }
   });
 }
 
