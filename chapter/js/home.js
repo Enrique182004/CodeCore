@@ -19,12 +19,6 @@ const FALLBACK_SPONSORS = [
     url: "https://www.chiquisbakery.com/",
     tier: "Silver",
   },
-  {
-    name: "Become a Sponsor",
-    logo: "images/sponsors/placeholder.png",
-    url: "sponsors.html",
-    tier: "Community",
-  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -89,20 +83,20 @@ async function initSponsors() {
       el.rel = "noopener noreferrer";
     }
 
+    const namePlaceholder = document.createElement("div");
+    namePlaceholder.className = "sponsor-logo-placeholder";
+    namePlaceholder.textContent = s.name;
+    namePlaceholder.style.display = "none";
+
     const img = document.createElement("img");
     img.src = s.logo;
     img.alt = s.name + " logo";
     img.addEventListener("error", () => {
       img.style.display = "none";
-      placeholder.style.display = "flex";
+      namePlaceholder.style.display = "flex";
     });
     el.appendChild(img);
-
-    const placeholder = document.createElement("div");
-    placeholder.className = "sponsor-logo-placeholder";
-    placeholder.textContent = s.name;
-    placeholder.style.display = "none";
-    el.appendChild(placeholder);
+    el.appendChild(namePlaceholder);
 
     const name = document.createElement("span");
     name.textContent = s.name;

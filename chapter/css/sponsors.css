@@ -172,6 +172,31 @@
   padding: 1.25rem 1.5rem;
 }
 
+.sp-card--cta {
+  border: 2px dashed var(--border);
+  background: var(--light);
+  box-shadow: none;
+  color: var(--text-mid);
+}
+
+.sp-card--cta:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: white;
+}
+
+.sp-cta-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px dashed currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
 /* Wishlist */
 .sp-wish-tabs {
   display: flex;

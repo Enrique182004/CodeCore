@@ -13,12 +13,6 @@ const FALLBACK_SPONSORS = [
     url: "https://www.chiquisbakery.com/",
     tier: "Silver",
   },
-  {
-    name: "Become a Sponsor",
-    logo: "images/sponsors/placeholder.png",
-    url: "sponsors.html#sponsor-form",
-    tier: "Community",
-  },
 ];
 
 const FALLBACK_WISHLIST = [
