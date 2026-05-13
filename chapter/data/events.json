@@ -1,44 +1,58 @@
 [
   {
-    "title": "Saturday Faculty Training",
-    "date": "2026-06-07",
-    "location": "UTEP College of Engineering, Room 201",
-    "description": "Monthly training session for new and returning chapter volunteers. Covers Scratch, Python basics, and classroom management strategies.",
+    "title": "School Outreach — Reyes Elementary Follow-Up",
+    "date": "2026-06-15",
+    "location": "El Paso, TX",
+    "description": "Follow up with Reyes Elementary and begin formal conversations with additional El Paso elementary and middle schools about launching a CodeCore Chapter.",
+    "type": "Outreach"
+  },
+  {
+    "title": "Officer Recruitment Opens",
+    "date": "2026-06-15",
+    "location": "UTEP Campus",
+    "description": "Open applications for Chapter Officer roles (Outreach, Curriculum, Operations, Communications). No CS background required — all officers will be trained by the program.",
+    "type": "Recruitment"
+  },
+  {
+    "title": "Officer Selection & Onboarding",
+    "date": "2026-07-01",
+    "location": "UTEP Campus",
+    "description": "Select officers across key roles and begin internal training sessions. Officers learn program structure, curriculum basics, and school outreach strategies.",
     "type": "Training"
   },
   {
-    "title": "Beall Elementary STEM Fair",
-    "date": "2026-06-14",
-    "location": "Beall Elementary School Gymnasium",
-    "description": "End-of-semester showcase where students present their coding projects to parents, teachers, and the community.",
-    "type": "STEM Fair"
-  },
-  {
-    "title": "Middle School Coding Challenge",
-    "date": "2026-06-21",
-    "location": "Guillen Middle School Computer Lab",
-    "description": "Friendly competition between Guillen and Henderson Middle School chapters. Students solve coding puzzles and present a mini-project.",
-    "type": "Competition"
-  },
-  {
-    "title": "AI Exploration Workshop",
-    "date": "2026-07-12",
-    "location": "UTEP Library, Room 208",
-    "description": "A workshop introducing students to AI concepts, machine learning basics, and responsible AI use — no prior coding experience needed.",
-    "type": "Workshop"
-  },
-  {
-    "title": "Saturday Faculty Training",
-    "date": "2026-07-19",
-    "location": "UTEP College of Engineering, Room 201",
-    "description": "Summer session covering advanced topics: data science basics, robotics curriculum, and assessment strategies.",
+    "title": "Curriculum & Materials Prep",
+    "date": "2026-07-15",
+    "location": "UTEP Campus",
+    "description": "Finalize lesson plans for the grades 3–5 and 6–8 tracks. Prepare activity cards, volunteer guides, and parent information sheets.",
     "type": "Training"
   },
   {
-    "title": "Fall 2026 Chapter Launch Day",
-    "date": "2026-08-22",
-    "location": "Multiple El Paso Schools",
-    "description": "Kick-off day for all Fall 2026 chapters. CodeCore volunteers visit partner schools for a first-session icebreaker and intro to coding.",
-    "type": "Workshop"
+    "title": "School Partnership Agreements",
+    "date": "2026-08-01",
+    "location": "El Paso, TX",
+    "description": "Finalize partnership agreements with confirmed schools. Lock in weekly time slots and assign UTEP volunteers to each chapter.",
+    "type": "Outreach"
+  },
+  {
+    "title": "Faculty Onboarding Sessions",
+    "date": "2026-08-15",
+    "location": "UTEP Campus",
+    "description": "6-hour onboarding session for each school's designated faculty point-of-contact. Covers how to lead sessions, manage logistics, and support students.",
+    "type": "Training"
+  },
+  {
+    "title": "First Chapter Launch",
+    "date": "2026-09-01",
+    "location": "Partner School(s), El Paso TX",
+    "description": "First CodeCore Chapter sessions begin. UTEP volunteers present for the first two weeks, then once a month. School instructor leads every session.",
+    "type": "Launch"
+  },
+  {
+    "title": "End-of-Semester Hackathon",
+    "date": "2026-12-01",
+    "location": "Chapter School(s), El Paso TX",
+    "description": "Hackathon hosted at each chapter school. Students present projects, prizes awarded, and winners published by name and school to celebrate their achievements.",
+    "type": "Hackathon"
   }
 ]

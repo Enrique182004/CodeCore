@@ -1,30 +1,12 @@
 [
   {
-    "name": "Beall Elementary School",
+    "name": "Reyes Elementary School",
     "level": "Elementary",
-    "description": "Our flagship chapter — active since Spring 2026. 24 students meet every Thursday to learn Scratch and Python basics with UTEP CodeCore volunteers.",
-    "lat": 31.7562,
-    "lng": -106.485
-  },
-  {
-    "name": "Guillen Middle School",
-    "level": "Middle School",
-    "description": "Launched Fall 2025. 18 students explore web development, Python, and intro algorithms in bi-weekly sessions led by CodeCore members.",
-    "lat": 31.7689,
-    "lng": -106.4731
-  },
-  {
-    "name": "Zavala Elementary School",
-    "level": "Elementary",
-    "description": "Started Spring 2026. 15 third and fourth graders build games in Scratch and tackle unplugged coding puzzles each Friday afternoon.",
-    "lat": 31.782,
-    "lng": -106.5012
-  },
-  {
-    "name": "Henderson Middle School",
-    "level": "Middle School",
-    "description": "New chapter launching Fall 2026. Students will cover HTML/CSS, Python fundamentals, and finish the semester with a personal project showcase.",
-    "lat": 31.7511,
-    "lng": -106.4883
+    "status": "In Talks",
+    "address": "El Paso, TX",
+    "lat": 31.7619,
+    "lng": -106.485,
+    "description": "CodeCore supported their science fair and is in active discussions about launching a chapter for Fall 2026.",
+    "grades": "3–5"
   }
 ]
