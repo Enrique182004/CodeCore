@@ -16,8 +16,8 @@ function buildNav() {
   const links = [
     { href: "index.html", label: "Home" },
     { href: "about.html", label: "About" },
-    { href: "schools.html", label: "For Schools" },
-    { href: "students.html", label: "Student Hub" },
+    { href: "schools.html", label: "Schools" },
+    { href: "students.html", label: "Students" },
     { href: "resources.html", label: "Resources" },
     { href: "sponsors.html", label: "Sponsors" },
     { href: "events.html", label: "Events" },
@@ -36,14 +36,18 @@ function buildNav() {
   return `
 <header class="ch-header">
   <div class="ch-header-content">
-    <a href="index.html" class="ch-logo">
-      <img src="../images/logos/C.png" alt="CodeCore" />
-      <span>CodeCore <em>Chapter</em></span>
-    </a>
+    <div class="ch-logo-group">
+      <a href="../index.html" class="ch-back-link">&#8592; CodeCore Main Site</a>
+      <a href="index.html" class="ch-logo">
+        <img src="../images/logos/C.png" alt="CodeCore" />
+        <span>CodeCore <em>Chapter</em></span>
+      </a>
+    </div>
     <button class="ch-hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav class="ch-nav" id="ch-nav">
+      <a href="../index.html" class="ch-nav-back">&#8592; Back to CodeCore</a>
       <ul>${lis}</ul>
       <a href="contact.html" class="ch-nav-cta">Start a Chapter</a>
     </nav>
