@@ -1,0 +1,316 @@
+/* Event cards */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ev-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem 2rem;
+  transition: var(--transition);
+}
+
+.ev-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.ev-date-badge {
+  flex-shrink: 0;
+  width: 68px;
+  text-align: center;
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
+  padding: 0.6rem 0.5rem;
+}
+
+.ev-date-month {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+}
+
+.ev-date-day {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ev-card-body {
+  flex: 1;
+}
+
+.ev-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ev-type-chip {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ev-type-training {
+  background: rgba(43, 122, 158, 0.12);
+  color: var(--teal);
+}
+
+.ev-type-workshop {
+  background: rgba(124, 179, 66, 0.12);
+  color: #5a8a1a;
+}
+
+.ev-type-competition {
+  background: rgba(229, 62, 62, 0.1);
+  color: #c53030;
+}
+
+.ev-type-stem-fair {
+  background: rgba(221, 107, 32, 0.1);
+  color: #c05621;
+}
+
+.ev-card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.ev-location {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  margin-bottom: 0.5rem;
+}
+
+.ev-location::before {
+  content: "📍 ";
+}
+
+.ev-card-body p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .ev-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ev-date-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: auto;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+  }
+
+  .ev-date-day {
+    font-size: 1.4rem;
+  }
+}
+
+/* Saturday training cards */
+.ev-training-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-card);
+}
+
+.ev-training-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ev-training-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.ev-training-card p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+/* Calendar */
+.ev-calendar {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.ev-cal-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--navy);
+  color: white;
+}
+
+.ev-cal-header span {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ev-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.ev-cal-day {
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  border: 1px solid #f0f4f8;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.ev-cal-empty {
+  background: #fafbfd;
+}
+
+.ev-cal-event {
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.ev-cal-event:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ev-cal-legend {
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid #f0f4f8;
+}
+
+.ev-cal-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* Announcements */
+.ev-announcements {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ev-announce-item {
+  display: flex;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #e8edf5;
+}
+
+.ev-announce-item:last-child {
+  border-bottom: none;
+}
+
+.ev-announce-date {
+  flex-shrink: 0;
+  width: 90px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  padding-top: 0.2rem;
+}
+
+.ev-announce-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.ev-announce-body p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.ev-announce-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.ev-announce-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .ev-announce-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ev-announce-date {
+    width: auto;
+  }
+}
