@@ -3,19 +3,19 @@
 const FALLBACK_SPONSORS = [
   {
     name: "El Paso Electric",
-    logo: "../images/sponsors/EPEC_logo.png",
+    logo: "images/sponsors/EPEC_logo.png",
     url: "https://www.epelectric.com/",
     tier: "Gold",
   },
   {
     name: "Chiquis Bakery",
-    logo: "../images/sponsors/chiquisBakery_logo.webp",
+    logo: "images/sponsors/chiquisBakery_logo.webp",
     url: "https://www.chiquisbakery.com/",
     tier: "Silver",
   },
   {
     name: "Become a Sponsor",
-    logo: "../images/sponsors/placeholder.png",
+    logo: "images/sponsors/placeholder.png",
     url: "sponsors.html#sponsor-form",
     tier: "Community",
   },

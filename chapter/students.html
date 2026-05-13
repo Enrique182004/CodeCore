@@ -144,15 +144,64 @@
               it yourself!
             </p>
           </div>
-          <div class="ch-grid-3 students-videos">
-            <div class="video-placeholder">
-              <div class="video-thumb">
-                <div class="video-play-btn" aria-label="Play video">▶</div>
+
+          <!-- CC / Language notice -->
+          <div class="students-video-notice">
+            <span class="students-video-notice-icon">🌐</span>
+            <div>
+              <strong>Accessible for everyone.</strong> All videos below support
+              <strong>Closed Captions (CC)</strong> and can be watched in
+              <strong>multiple languages</strong>.
+              <button
+                class="students-cc-toggle"
+                aria-expanded="false"
+                id="cc-how-toggle"
+              >
+                How to turn on CC or change language ▾
+              </button>
+              <div class="students-cc-steps" id="cc-how-steps" hidden>
+                <ol>
+                  <li>
+                    Click the <strong>CC</strong> button at the bottom of the
+                    video to turn on closed captions.
+                  </li>
+                  <li>
+                    Click the <strong>⚙ Settings</strong> gear icon, then choose
+                    <strong>Subtitles/CC</strong> to pick a language.
+                  </li>
+                  <li>
+                    To auto-translate, go to
+                    <strong>Subtitles/CC → Auto-translate</strong> and select
+                    your language (e.g. Spanish, French, etc.).
+                  </li>
+                </ol>
               </div>
-              <h3>Intro to Scratch</h3>
+            </div>
+          </div>
+
+          <div class="ch-grid-3 students-videos">
+            <!-- Real embed: Scratch for Beginners -->
+            <div class="video-embed-card">
+              <div class="video-embed-wrap">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/D-nW4jvzRr8"
+                  title="Scratch for Beginners"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h3>Scratch for Beginners</h3>
               <p>
-                Build your first animation in 10 minutes — no coding experience
-                needed!
+                Build your first animation and game in Scratch — no coding
+                experience needed!
               </p>
             </div>
             <div class="video-placeholder">
@@ -287,5 +336,17 @@
     <script src="js/main.js"></script>
     <script src="js/students.js"></script>
     <script src="../js/analytics.js"></script>
+    <script>
+      const toggle = document.getElementById("cc-how-toggle");
+      const steps = document.getElementById("cc-how-steps");
+      toggle?.addEventListener("click", () => {
+        const open = !steps.hidden;
+        steps.hidden = open;
+        toggle.setAttribute("aria-expanded", String(!open));
+        toggle.textContent = open
+          ? "How to turn on CC or change language ▾"
+          : "How to turn on CC or change language ▴";
+      });
+    </script>
   </body>
 </html>
