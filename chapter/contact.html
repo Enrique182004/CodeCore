@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — CodeCore Chapter</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="icon" href="../images/logos/CodeCore.png" type="image/png" />
+  </head>
+  <body>
+    <div id="site-nav"></div>
+
+    <main>
+      <!-- HERO -->
+      <section class="ch-page-hero">
+        <div class="ch-page-hero-inner">
+          <h1>
+            Let's Build Something<br /><span class="accent">Together.</span>
+          </h1>
+          <p>
+            Whether you're a school ready to launch a chapter, a sponsor looking
+            to invest in El Paso's future, or a volunteer who wants to make a
+            difference — we want to hear from you.
+          </p>
+        </div>
+      </section>
+
+      <!-- TWO-TRACK FORMS -->
+      <section class="ch-section">
+        <div class="ch-section-inner">
+          <div class="contact-tracks">
+            <!-- SCHOOL FORM -->
+            <div class="contact-track">
+              <div class="contact-track-header">
+                <div class="contact-track-icon">🏫</div>
+                <h2>Start a Chapter at Your School</h2>
+                <p>
+                  Free, flexible, and fully supported by UTEP volunteers. Fill
+                  out the form and we'll be in touch within 48 hours.
+                </p>
+              </div>
+              <form class="contact-form ch-card" id="school-form" novalidate>
+                <input type="hidden" name="form_type" value="school" />
+                <div class="ch-form-group">
+                  <label for="sc-school"
+                    >School Name <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="sc-school"
+                    name="school_name"
+                    required
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label for="sc-contact"
+                    >Principal / Contact Name
+                    <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="sc-contact"
+                    name="contact_name"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label for="sc-email"
+                    >Email Address <span class="required">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="sc-email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label for="sc-phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="sc-phone"
+                    name="phone"
+                    autocomplete="tel"
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label>Grade Levels Served</label>
+                  <div class="contact-checkboxes">
+                    <label class="contact-check-label"
+                      ><input
+                        type="checkbox"
+                        name="grade_levels[]"
+                        value="K-2"
+                      />
+                      K–2</label
+                    >
+                    <label class="contact-check-label"
+                      ><input
+                        type="checkbox"
+                        name="grade_levels[]"
+                        value="3-5"
+                      />
+                      3–5</label
+                    >
+                    <label class="contact-check-label"
+                      ><input
+                        type="checkbox"
+                        name="grade_levels[]"
+                        value="6-8"
+                      />
+                      6–8</label
+                    >
+                  </div>
+                </div>
+                <div class="ch-form-group">
+                  <label for="sc-message"
+                    >Message <span class="required">*</span></label
+                  >
+                  <textarea
+                    id="sc-message"
+                    name="message"
+                    required
+                    placeholder="Tell us about your school and what you're hoping CodeCore Chapter can bring to your students."
+                  ></textarea>
+                </div>
+                <div class="ch-form-feedback" id="sc-feedback"></div>
+                <button
+                  type="submit"
+                  class="btn-primary"
+                  style="width: 100%"
+                  id="sc-submit"
+                >
+                  Submit School Interest
+                </button>
+              </form>
+            </div>
+
+            <!-- SPONSOR / VOLUNTEER FORM -->
+            <div class="contact-track">
+              <div class="contact-track-header">
+                <div class="contact-track-icon">🤝</div>
+                <h2>Sponsor or Volunteer</h2>
+                <p>
+                  Support CodeCore Chapter financially, in-kind, or as a
+                  volunteer mentor. Our team will reach out within 2 business
+                  days.
+                </p>
+              </div>
+              <form class="contact-form ch-card" id="sponsor-form" novalidate>
+                <input type="hidden" name="form_type" value="sponsor" />
+                <div class="ch-form-group">
+                  <label for="sp-name"
+                    >Full Name <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="sp-name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label for="sp-org">Organization</label>
+                  <input
+                    type="text"
+                    id="sp-org"
+                    name="organization"
+                    autocomplete="organization"
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label for="sp-email"
+                    >Email Address <span class="required">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="sp-email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="ch-form-group">
+                  <label for="sp-role"
+                    >I want to… <span class="required">*</span></label
+                  >
+                  <select id="sp-role" name="role" required>
+                    <option value="">Select…</option>
+                    <option value="Sponsor">Become a Financial Sponsor</option>
+                    <option value="Volunteer">Volunteer as a Mentor</option>
+                    <option value="General">Make an In-Kind Donation</option>
+                    <option value="Other">Other / General Inquiry</option>
+                  </select>
+                </div>
+                <div class="ch-form-group">
+                  <label for="sp-message"
+                    >Message <span class="required">*</span></label
+                  >
+                  <textarea
+                    id="sp-message"
+                    name="message"
+                    required
+                    placeholder="Tell us how you'd like to support CodeCore Chapter."
+                  ></textarea>
+                </div>
+                <div class="ch-form-feedback" id="sp-feedback"></div>
+                <button
+                  type="submit"
+                  class="btn-primary"
+                  style="width: 100%"
+                  id="sp-submit"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GENERAL CONTACT INFO -->
+      <section class="ch-section ch-section--light">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Other Ways to Reach Us</h2>
+          </div>
+          <div class="contact-info-grid ch-grid-3">
+            <div class="contact-info-card ch-card">
+              <div class="ci-icon">✉️</div>
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:codecore@utep.edu">codecore@utep.edu</a>
+              </p>
+              <p class="ci-note">We respond within 48 hours on weekdays.</p>
+            </div>
+            <div class="contact-info-card ch-card">
+              <div class="ci-icon">📍</div>
+              <h3>Based at UTEP</h3>
+              <p>The University of Texas at El Paso</p>
+              <p class="ci-note">500 W University Ave, El Paso, TX 79968</p>
+            </div>
+            <div class="contact-info-card ch-card">
+              <div class="ci-icon">📱</div>
+              <h3>Social Media</h3>
+              <div class="ci-social">
+                <a
+                  href="https://www.instagram.com/codecoreutep"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram</a
+                >
+                <a
+                  href="https://www.linkedin.com/in/code-core-9a720138a"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </div>
+              <p class="ci-note">Follow us for chapter updates and events.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="../js/analytics.js"></script>
+  </body>
+</html>
