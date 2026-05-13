@@ -9,33 +9,35 @@ Select "Script editor"
 Step 3: Paste This Code
 Delete any existing code and paste:
 javascriptfunction doGet(e) {
-  try {
-    var form = FormApp.getActiveForm();
-    var responses = form.getResponses();
-    var count = responses.length;
-    
+try {
+var form = FormApp.getActiveForm();
+var responses = form.getResponses();
+var count = responses.length;
+
     var result = {
       "count": count,
       "timestamp": new Date().toISOString(),
       "success": true
     };
-    
+
     return ContentService
       .createTextOutput(JSON.stringify(result))
       .setMimeType(ContentService.MimeType.JSON);
-      
-  } catch (error) {
-    var errorResult = {
-      "count": 0,
-      "error": error.toString(),
-      "success": false
-    };
-    
+
+} catch (error) {
+var errorResult = {
+"count": 0,
+"error": error.toString(),
+"success": false
+};
+
     return ContentService
       .createTextOutput(JSON.stringify(errorResult))
       .setMimeType(ContentService.MimeType.JSON);
-  }
+
 }
+}
+
 ```
 
 **💡 Note:** This code is IDENTICAL for every workshop form. Save it somewhere for easy copy/paste!
@@ -59,29 +61,32 @@ javascriptfunction doGet(e) {
 ### Step 6: Copy the Web App URL
 You'll get a URL like:
 ```
+
 https://script.google.com/macros/s/AKfycby.../exec
 📋 COPY THIS URL!
 Step 7: Update workshop-counter.js
 Open workshop-counter.js and find the WORKSHOP_CONFIG section:
 javascriptconst WORKSHOP_CONFIG = {
-    'recursion-seats': {
-        maxSeats: 35,
-        apiUrl: null  // ← Replace null with your URL
-    },
-    'datastructures-seats': {
-        maxSeats: 35,
-        apiUrl: null  // ← Add URL when ready
-    },
-    // ... more workshops
+'recursion-seats': {
+maxSeats: 35,
+apiUrl: null // ← Replace null with your URL
+},
+'datastructures-seats': {
+maxSeats: 35,
+apiUrl: null // ← Add URL when ready
+},
+// ... more workshops
 };
 Replace null with your copied URL in quotes:
 javascript'recursion-seats': {
-    maxSeats: 35,
-    apiUrl: 'https://script.google.com/macros/s/AKfycby.../exec'
+maxSeats: 35,
+apiUrl: 'https://script.google.com/macros/s/AKfycby.../exec'
 },
+
 ```
 
 ### Step 8: Re-upload workshop-counter.js
 Upload the updated file to `/js/workshop-counter.js`
 
 ---
+```

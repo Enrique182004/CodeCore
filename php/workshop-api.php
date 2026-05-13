@@ -46,17 +46,30 @@ $workshops = [
         'status' => 'past'
     ],
     [
-        'id' => 'cs2-review',
-        'icon' => '🔗',
-        'title' => 'CS2 Review',
-        'description' => 'Singly Linked Lists',
-        'date' => '2026-04-01',
-        'startTime' => '17:00',
-        'endTime' => '18:30',
+        'id' => 'cs2-final-review',
+        'icon' => '📝',
+        'title' => 'CS2 Final Review',
+        'description' => 'Mock Final Exam',
+        'date' => '2026-05-06',
+        'startTime' => '12:00',
+        'endTime' => '14:00',
         'location' => 'CCSB 1.0410',
         'formLink' => '',
         'status' => 'open',
-        'downloadFile' => '../files/SinglyLinkedList.java'
+        'directDownload' => '../codeProblems/CS2MockFinalStarter.java'
+    ],
+    [
+        'id' => 'cs2-review',
+        'icon' => '🔗',
+        'title' => 'CS2 Review',
+        'description' => 'Midterm Review',
+        'date' => '2026-04-27',
+        'startTime' => '12:00',
+        'endTime' => '14:00',
+        'location' => 'CCSB 1.0410',
+        'formLink' => '',
+        'status' => 'open',
+        'downloadFile' => '../codeProblems/CodeCoreCS2/practice/LinkedList.java'
     ],
     [
         'id' => 'cs1-fundamentals-refresh',

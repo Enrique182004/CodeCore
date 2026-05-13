@@ -87,6 +87,7 @@ Add a new block **before** the `// ARCHIVED WORKSHOPS` comment for upcoming even
 ```
 
 > **Status values:**
+>
 > - `open` → registration is open, shows green badge
 > - `closed` → registration closed, shows grey badge
 > - `past` → archived, auto-set by the server after end time
@@ -159,6 +160,7 @@ Place upcoming workshops in the **`// Upcoming Workshops (Open)`** section and p
 Find the workshop by its `id` in **all three files** and update the relevant fields. The `id` itself should never change — it's used as a key across the system.
 
 Common edits:
+
 - **Change the date/time** → update `date`, `startTime`, `endTime` in all 3 files
 - **Add a form link** → update `formLink` in all 3 files
 - **Change status to closed** → set `status: 'closed'` in all 3 files
@@ -191,24 +193,29 @@ Delete the entire block for that workshop from all three files. Make sure you de
 ## 5. Managing the Photo Gallery
 
 The gallery system has two parts:
+
 - `js/gallery-data.js` — the data file you edit
 - `images/gallery/<event-id>/` — where you put the actual photo files
 
 ### Adding photos to an existing event
 
 1. Copy your photo files (`.jpg`, `.png`, `.webp`) into:
+
    ```
    images/gallery/<event-id>/
    ```
+
    For example, for the Faculty Panel:
+
    ```
    images/gallery/explore-your-path/photo1.jpg
    images/gallery/explore-your-path/group.jpg
    ```
 
 2. Open `js/gallery-data.js` and find the matching event by its `id`. Add the filenames to the `photos` array:
+
    ```js
-   photos: ['photo1.jpg', 'group.jpg']
+   photos: ["photo1.jpg", "group.jpg"];
    ```
 
 3. The gallery card will automatically show the first photo as a cover thumbnail, display a photo count badge, and activate the "View Images" button.
@@ -233,6 +240,7 @@ The gallery system has two parts:
 ```
 
 2. Create the photo folder (even if empty for now):
+
    ```
    images/gallery/your-unique-id/
    ```
@@ -254,6 +262,7 @@ Delete its object from the `GALLERY_EVENTS` array in `js/gallery-data.js` and op
 The nav bar appears on every page and must be updated **manually** in each HTML file. There is no shared template.
 
 Files that contain the nav (all must be updated):
+
 - `index.html`
 - `html/about.html`
 - `html/officers.html`
@@ -277,6 +286,7 @@ In each file, find the `<nav>` block and add your new link:
 ```
 
 To highlight the active page, add `class="active"` to the link on its own page:
+
 ```html
 <li><a href="new-page.html" class="active">New Page</a></li>
 ```
@@ -310,4 +320,4 @@ git push origin main
 
 ---
 
-*Last updated: April 2026 — maintained by the CodeCore web team*
+_Last updated: April 2026 — maintained by the CodeCore web team_
