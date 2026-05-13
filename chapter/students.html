@@ -180,33 +180,30 @@
           </div>
 
           <div class="ch-grid-3 students-videos">
-            <!-- Real embed: Scratch for Beginners -->
-            <div class="video-embed-card">
-              <div class="video-embed-wrap">
-                <iframe
-                  src="https://www.youtube.com/embed/D-nW4jvzRr8"
-                  title="Scratch for Beginners"
-                  frameborder="0"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                  "
-                  allowfullscreen
-                ></iframe>
+            <!-- Scratch for Beginners — real video -->
+            <button
+              class="video-thumb-card"
+              data-video-id="D-nW4jvzRr8"
+              data-video-title="Scratch for Beginners"
+              aria-label="Play Scratch for Beginners video"
+            >
+              <div class="vtc-thumb">
+                <img
+                  src="https://img.youtube.com/vi/D-nW4jvzRr8/hqdefault.jpg"
+                  alt="Scratch for Beginners thumbnail"
+                />
+                <div class="vtc-play">▶</div>
               </div>
               <h3>Scratch for Beginners</h3>
               <p>
                 Build your first animation and game in Scratch — no coding
                 experience needed!
               </p>
-            </div>
+            </button>
+            <!-- Placeholder cards -->
             <div class="video-placeholder">
               <div class="video-thumb video-thumb--blue">
-                <div class="video-play-btn" aria-label="Play video">▶</div>
+                <div class="video-play-btn" aria-label="Coming soon">▶</div>
               </div>
               <h3>Build a Robot</h3>
               <p>
@@ -216,7 +213,7 @@
             </div>
             <div class="video-placeholder">
               <div class="video-thumb video-thumb--purple">
-                <div class="video-play-btn" aria-label="Play video">▶</div>
+                <div class="video-play-btn" aria-label="Coming soon">▶</div>
               </div>
               <h3>AI Exploration</h3>
               <p>
@@ -333,10 +330,45 @@
 
     <div id="site-footer"></div>
 
+    <!-- Video modal -->
+    <div
+      id="video-modal"
+      class="vmodal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video player"
+      hidden
+    >
+      <div class="vmodal-box">
+        <button class="vmodal-close" id="vmodal-close" aria-label="Close video">
+          ✕
+        </button>
+        <div class="vmodal-embed">
+          <iframe
+            id="vmodal-iframe"
+            src=""
+            title="Video"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p id="vmodal-title" class="vmodal-title"></p>
+      </div>
+    </div>
+
     <script src="js/main.js"></script>
     <script src="js/students.js"></script>
     <script src="../js/analytics.js"></script>
     <script>
+      // CC toggle
       const toggle = document.getElementById("cc-how-toggle");
       const steps = document.getElementById("cc-how-steps");
       toggle?.addEventListener("click", () => {
@@ -346,6 +378,46 @@
         toggle.textContent = open
           ? "How to turn on CC or change language ▾"
           : "How to turn on CC or change language ▴";
+      });
+
+      // Video modal
+      const modal = document.getElementById("video-modal");
+      const iframe = document.getElementById("vmodal-iframe");
+      const titleEl = document.getElementById("vmodal-title");
+
+      function openModal(videoId, title) {
+        iframe.src =
+          "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+        titleEl.textContent = title;
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+        document.getElementById("vmodal-close").focus();
+      }
+
+      function closeModal() {
+        modal.hidden = true;
+        iframe.src = "";
+        document.body.style.overflow = "";
+      }
+
+      document
+        .querySelectorAll(".video-thumb-card[data-video-id]")
+        .forEach((btn) => {
+          btn.addEventListener("click", () => {
+            openModal(btn.dataset.videoId, btn.dataset.videoTitle);
+          });
+        });
+
+      document
+        .getElementById("vmodal-close")
+        .addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal.hidden) closeModal();
       });
     </script>
   </body>

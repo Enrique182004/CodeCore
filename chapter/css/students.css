@@ -348,6 +348,151 @@
   border: none;
 }
 
+/* Video thumbnail card (clickable) */
+.video-thumb-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: none;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  font-family: var(--font-primary);
+}
+
+.video-thumb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.video-thumb-card:hover .vtc-play {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: var(--teal);
+}
+
+.vtc-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.vtc-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vtc-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.video-thumb-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0.9rem 1rem 0.35rem;
+}
+
+.video-thumb-card p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin: 0 1rem 1rem;
+}
+
+/* Video modal */
+.vmodal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.vmodal-backdrop[hidden] {
+  display: none;
+}
+
+.vmodal-box {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+}
+
+.vmodal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.vmodal-close:hover {
+  background: #e53935;
+}
+
+.vmodal-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.vmodal-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.vmodal-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  padding: 0.65rem 1rem;
+  margin: 0;
+  background: #111;
+}
+
 /* Competitions */
 .competitions-icon {
   font-size: 4rem;
