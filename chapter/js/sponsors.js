@@ -149,8 +149,15 @@ function renderSponsors(sponsors) {
     img.alt = s.name + " logo";
     img.addEventListener("error", () => {
       img.style.display = "none";
+      logoPlaceholder.style.display = "flex";
     });
     card.appendChild(img);
+
+    const logoPlaceholder = document.createElement("div");
+    logoPlaceholder.className = "sp-logo-placeholder";
+    logoPlaceholder.textContent = s.name;
+    logoPlaceholder.style.display = "none";
+    card.appendChild(logoPlaceholder);
 
     const name = document.createElement("span");
     name.textContent = s.name;

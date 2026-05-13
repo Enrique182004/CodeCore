@@ -6,6 +6,10 @@
     <title>For Schools — CodeCore Chapter</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/schools.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
     <link rel="icon" href="../images/logos/CodeCore.png" type="image/png" />
   </head>
   <body>
@@ -24,6 +28,33 @@
             <a href="contact.html" class="btn-primary">Apply Now</a>
             <a href="#faq" class="btn-secondary">Read the FAQ</a>
           </div>
+        </div>
+      </section>
+
+      <!-- ACTIVE SCHOOLS -->
+      <section class="ch-section ch-section--light">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Active Chapters</h2>
+            <p>
+              These schools are currently running CodeCore Chapter sessions, led
+              by UTEP student volunteers.
+            </p>
+          </div>
+          <div class="ch-grid-3" id="schools-grid">
+            <p class="ch-loading">Loading schools…</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section class="ch-section schools-map-section">
+        <div class="ch-section-inner">
+          <div class="ch-section-header">
+            <h2>Our Locations</h2>
+            <p>Find a CodeCore Chapter near you across El Paso.</p>
+          </div>
+          <div id="schools-map"></div>
         </div>
       </section>
 
@@ -414,6 +445,7 @@
 
     <div id="site-footer"></div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
     <script src="js/schools.js"></script>
     <script src="../js/analytics.js"></script>

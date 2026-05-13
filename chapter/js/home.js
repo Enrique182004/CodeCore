@@ -112,8 +112,15 @@ async function initSponsors() {
     img.alt = s.name + " logo";
     img.addEventListener("error", () => {
       img.style.display = "none";
+      placeholder.style.display = "flex";
     });
     el.appendChild(img);
+
+    const placeholder = document.createElement("div");
+    placeholder.className = "sponsor-logo-placeholder";
+    placeholder.textContent = s.name;
+    placeholder.style.display = "none";
+    el.appendChild(placeholder);
 
     const name = document.createElement("span");
     name.textContent = s.name;
