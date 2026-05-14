@@ -495,11 +495,13 @@ img {
   line-height: 1.7;
 }
 
-.ch-section--dark .ch-section-header h2 {
+.ch-section--dark .ch-section-header h2,
+.ch-section--navy-mid .ch-section-header h2 {
   color: white;
 }
 
-.ch-section--dark .ch-section-header p {
+.ch-section--dark .ch-section-header p,
+.ch-section--navy-mid .ch-section-header p {
   color: rgba(255, 255, 255, 0.72);
 }
 
