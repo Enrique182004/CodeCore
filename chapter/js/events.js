@@ -2,52 +2,60 @@
 
 const FALLBACK_EVENTS = [
   {
-    title: "Saturday Faculty Training",
-    date: "2026-06-07",
-    location: "UTEP College of Engineering, Room 201",
+    title: "School Outreach — Reyes Elementary Follow-Up",
+    date: "2026-06-15",
+    location: "El Paso, TX",
     description:
-      "Monthly training for new and returning volunteers. Covers Scratch, Python basics, and classroom management.",
+      "Follow up with Reyes Elementary and begin formal conversations with additional El Paso schools about launching a CodeCore Chapter.",
+    type: "Outreach",
+  },
+  {
+    title: "Officer Recruitment Opens",
+    date: "2026-06-15",
+    location: "UTEP Campus",
+    description:
+      "Open applications for Chapter Officer roles — Outreach, Curriculum, Operations, Communications. No CS background required.",
+    type: "Recruitment",
+  },
+  {
+    title: "Officer Selection & Onboarding",
+    date: "2026-07-01",
+    location: "UTEP Campus",
+    description:
+      "Select officers and begin internal training sessions covering program structure, curriculum basics, and school outreach.",
     type: "Training",
   },
   {
-    title: "Beall Elementary STEM Fair",
-    date: "2026-06-14",
-    location: "Beall Elementary School Gymnasium",
+    title: "Curriculum & Materials Prep",
+    date: "2026-07-15",
+    location: "UTEP Campus",
     description:
-      "End-of-semester showcase where students present their coding projects to parents and the community.",
-    type: "STEM Fair",
-  },
-  {
-    title: "Middle School Coding Challenge",
-    date: "2026-06-21",
-    location: "Guillen Middle School Computer Lab",
-    description:
-      "Friendly competition between Guillen and Henderson chapters. Students solve puzzles and present a mini-project.",
-    type: "Competition",
-  },
-  {
-    title: "AI Exploration Workshop",
-    date: "2026-07-12",
-    location: "UTEP Library, Room 208",
-    description:
-      "A workshop on AI concepts, machine learning basics, and responsible AI use — no prior experience needed.",
-    type: "Workshop",
-  },
-  {
-    title: "Saturday Faculty Training",
-    date: "2026-07-19",
-    location: "UTEP College of Engineering, Room 201",
-    description:
-      "Summer session covering data science basics, robotics curriculum, and assessment strategies.",
+      "Finalize lesson plans for grades 3–5 and 6–8 tracks. Prepare activity cards, volunteer guides, and parent info sheets.",
     type: "Training",
   },
   {
-    title: "Fall 2026 Chapter Launch Day",
-    date: "2026-08-22",
-    location: "Multiple El Paso Schools",
+    title: "Faculty Onboarding Sessions",
+    date: "2026-08-15",
+    location: "UTEP Campus",
     description:
-      "Kick-off day for all Fall 2026 chapters. CodeCore volunteers visit partner schools for a first-session icebreaker.",
-    type: "Workshop",
+      "6-hour onboarding for each school's faculty point-of-contact covering how to lead sessions and support students.",
+    type: "Training",
+  },
+  {
+    title: "First Chapter Launch",
+    date: "2026-09-01",
+    location: "Partner School(s), El Paso TX",
+    description:
+      "First CodeCore Chapter sessions begin. UTEP volunteers present for the first two weeks, then once a month.",
+    type: "Launch",
+  },
+  {
+    title: "End-of-Semester Hackathon",
+    date: "2026-12-01",
+    location: "Chapter School(s), El Paso TX",
+    description:
+      "Hackathon at each chapter school. Students present projects, prizes awarded, winners published by name and school.",
+    type: "Hackathon",
   },
 ];
 
@@ -56,6 +64,10 @@ const TYPE_CHIP = {
   Workshop: "ev-type-workshop",
   Competition: "ev-type-competition",
   "STEM Fair": "ev-type-stem-fair",
+  Outreach: "ev-type-outreach",
+  Recruitment: "ev-type-outreach",
+  Launch: "ev-type-launch",
+  Hackathon: "ev-type-competition",
 };
 
 const MONTHS = [

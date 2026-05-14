@@ -87,6 +87,16 @@
   color: #c05621;
 }
 
+.ev-type-outreach {
+  background: rgba(43, 122, 158, 0.1);
+  color: var(--teal);
+}
+
+.ev-type-launch {
+  background: rgba(124, 179, 66, 0.12);
+  color: #4a7c1a;
+}
+
 .ev-card-body h3 {
   font-size: 1.1rem;
   font-weight: 700;
