@@ -19,6 +19,12 @@ const FALLBACK_SPONSORS = [
     url: "https://www.chiquisbakery.com/",
     tier: "Silver",
   },
+  {
+    name: "UTEP",
+    logo: "images/sponsors/utep_logo.jpeg",
+    url: "https://www.utep.edu/",
+    tier: "Partner",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

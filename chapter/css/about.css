@@ -112,6 +112,18 @@
   margin-bottom: 0.5rem;
   line-height: 1;
 }
+.about-impact-logo {
+  margin-bottom: 0.75rem;
+}
+.about-impact-logo img {
+  height: 64px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
 .about-impact-card h3 {
   color: white;
   font-size: 1.2rem;

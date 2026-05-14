@@ -13,6 +13,12 @@ const FALLBACK_SPONSORS = [
     url: "https://www.chiquisbakery.com/",
     tier: "Silver",
   },
+  {
+    name: "UTEP",
+    logo: "images/sponsors/utep_logo.jpeg",
+    url: "https://www.utep.edu/",
+    tier: "Partner",
+  },
 ];
 
 const FALLBACK_WISHLIST = [
@@ -123,6 +129,7 @@ function renderSponsors(sponsors) {
   const containers = {
     Gold: document.getElementById("sponsors-gold"),
     Silver: document.getElementById("sponsors-silver"),
+    Partner: document.getElementById("sponsors-partner"),
     Community: document.getElementById("sponsors-community"),
   };
 
