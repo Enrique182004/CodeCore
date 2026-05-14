@@ -1,3 +1,4 @@
+/* about.css v2 */
 :root {
   --gray-100: #e8edf5;
 }
@@ -113,18 +114,25 @@
   line-height: 1;
 }
 .about-impact-logo {
+  display: flex;
+  justify-content: center;
   margin-bottom: 0.75rem;
 }
-.about-impact-logo img {
-  height: 72px;
-  width: auto;
-  max-width: 180px;
-  object-fit: contain;
-  margin: 0 auto;
-  display: block;
-  border-radius: 8px;
-  padding: 6px 10px;
+.about-impact-logo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: white;
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+.about-impact-logo-pill img {
+  height: 56px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
 }
 .about-impact-card h3 {
   color: white;
