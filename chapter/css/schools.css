@@ -387,7 +387,9 @@
 
 /* Centered single-card grid */
 .schools-grid-centered {
-  justify-items: center;
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .schools-grid-centered .school-card {
   width: 100%;
