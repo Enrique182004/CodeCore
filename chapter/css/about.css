@@ -166,3 +166,105 @@
 .about-cta {
   text-align: center;
 }
+
+/* UTEP orange stat */
+.about-impact-utep {
+  color: #e37011;
+}
+
+/* Team accordion */
+.about-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.about-acc-item {
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.about-acc-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 1.5rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  text-align: left;
+  transition: var(--transition);
+}
+
+.about-acc-btn:hover {
+  background: var(--off-white);
+}
+
+.about-acc-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  flex: 1;
+}
+
+.about-acc-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  background: var(--gray-100);
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+}
+
+.about-acc-arrow {
+  color: var(--text-mid);
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.about-acc-btn[aria-expanded="true"] .about-acc-arrow {
+  transform: rotate(180deg);
+}
+
+.about-acc-panel {
+  display: none;
+  padding: 0 1.5rem 1.25rem;
+  background: white;
+}
+
+.about-acc-panel.open {
+  display: block;
+}
+
+.about-acc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.about-acc-member {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  background: var(--off-white);
+}
+
+.about-acc-member strong {
+  font-size: 0.9rem;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.about-acc-member span {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+}

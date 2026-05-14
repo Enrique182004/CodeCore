@@ -2,36 +2,15 @@
 
 const FALLBACK_SCHOOLS = [
   {
-    name: "Beall Elementary School",
+    name: "Reyes Elementary School",
     level: "Elementary",
+    status: "In Talks",
+    pilot: true,
     description:
-      "Our flagship chapter — active since Spring 2026. 24 students meet every Thursday to learn Scratch and Python basics with UTEP CodeCore volunteers.",
-    lat: 31.7562,
+      "CodeCore supported their science fair and is in active discussions about launching a chapter for Fall 2026.",
+    lat: 31.7619,
     lng: -106.485,
-  },
-  {
-    name: "Guillen Middle School",
-    level: "Middle School",
-    description:
-      "Launched Fall 2025. 18 students explore web development, Python, and intro algorithms in bi-weekly sessions led by CodeCore members.",
-    lat: 31.7689,
-    lng: -106.4731,
-  },
-  {
-    name: "Zavala Elementary School",
-    level: "Elementary",
-    description:
-      "Started Spring 2026. 15 third and fourth graders build games in Scratch and tackle unplugged coding puzzles each Friday afternoon.",
-    lat: 31.782,
-    lng: -106.5012,
-  },
-  {
-    name: "Henderson Middle School",
-    level: "Middle School",
-    description:
-      "New chapter launching Fall 2026. Students will cover HTML/CSS, Python fundamentals, and finish the semester with a personal project showcase.",
-    lat: 31.7511,
-    lng: -106.4883,
+    grades: "3–5",
   },
 ];
 
@@ -47,6 +26,8 @@ function renderSchoolCards(schools) {
   const grid = document.getElementById("schools-grid");
   if (!grid) return;
   grid.textContent = "";
+
+  if (schools.length === 1) grid.classList.add("schools-grid-centered");
 
   schools.forEach((school, i) => {
     const card = document.createElement("div");
@@ -67,6 +48,13 @@ function renderSchoolCards(schools) {
     const p = document.createElement("p");
     p.textContent = school.description;
     card.appendChild(p);
+
+    if (school.pilot) {
+      const pilotBadge = document.createElement("span");
+      pilotBadge.className = "school-pilot-badge";
+      pilotBadge.textContent = "⭐ Pilot Project";
+      card.appendChild(pilotBadge);
+    }
 
     grid.appendChild(card);
   });

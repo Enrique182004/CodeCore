@@ -550,3 +550,39 @@
   color: var(--text-dark);
   line-height: 1.5;
 }
+
+/* Beyond-the-classroom cards */
+.students-beyond-grid {
+  margin-top: 1.5rem;
+}
+
+.students-beyond-card {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.students-beyond-icon {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.students-beyond-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.students-beyond-card p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.students-beyond-card--finals {
+  border-top: 4px solid var(--green);
+}
+
+.students-beyond-card--national {
+  border-top: 4px solid #e37011;
+}

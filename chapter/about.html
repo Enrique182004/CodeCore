@@ -189,12 +189,11 @@
               </p>
             </div>
             <div class="about-impact-card">
-              <div class="about-impact-num">UTEP</div>
-              <h3>University Partnership</h3>
+              <div class="about-impact-num about-impact-utep">UTEP</div>
+              <h3>UTEP Students</h3>
               <p>
-                Every chapter is staffed by UTEP Computer Science students —
-                giving them real teaching experience while serving their
-                community.
+                Every chapter is powered by UTEP students — giving them real
+                teaching experience while serving their community.
               </p>
             </div>
             <div class="about-impact-card">
@@ -209,56 +208,116 @@
         </div>
       </section>
 
-      <!-- LEADERSHIP TEAM -->
+      <!-- TEAM ACCORDION -->
       <section class="ch-section">
         <div class="ch-section-inner">
           <div class="ch-section-header">
             <h2>Our Team</h2>
             <p>
-              CodeCore Chapter is led by passionate UTEP students and supported
-              by faculty advisors who believe in the mission.
+              CodeCore Chapter is driven by the same people behind CodeCore at
+              UTEP. Want to get involved or have questions?
+              <a href="contact.html" style="color: var(--teal)"
+                >Contact us directly.</a
+              >
             </p>
           </div>
-          <div class="ch-grid-4 about-team-grid">
-            <div class="about-team-card ch-card">
-              <div class="about-team-avatar">👤</div>
-              <h3>Chapter Director</h3>
-              <p class="about-team-role">Program Lead</p>
-              <p class="about-team-bio">
-                UTEP Computer Science student overseeing all chapter operations,
-                school partnerships, and volunteer coordination.
-              </p>
+
+          <div class="about-accordion">
+            <!-- CodeCore Team -->
+            <div class="about-acc-item">
+              <button
+                class="about-acc-btn"
+                aria-expanded="true"
+                data-acc="team"
+              >
+                <span class="about-acc-label">CodeCore Team</span>
+                <span class="about-acc-count">10 members</span>
+                <span class="about-acc-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="about-acc-panel open" id="acc-team">
+                <div class="about-acc-grid">
+                  <div class="about-acc-member">
+                    <strong>Alejandra Acevedo</strong>
+                    <span>President &amp; Founder</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Johana Hermosillo</strong>
+                    <span>Vice President &amp; Founder</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Enrique Calleros</strong>
+                    <span>Webmaster &amp; Founder</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Miguel De Santiago</strong>
+                    <span>Treasurer</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Alexa Ramirez</strong>
+                    <span>Secretary &amp; Social Media</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Diego Guerrero</strong>
+                    <span>Historian</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Yara Velarde</strong>
+                    <span>Graphic Designer</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Santiago Chacon</strong>
+                    <span>Graphic Designer</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Fernando Vargas</strong>
+                    <span>Outreach Officer</span>
+                  </div>
+                  <div class="about-acc-member">
+                    <strong>Elian Pena</strong>
+                    <span>Technical Officer</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="about-team-card ch-card">
-              <div class="about-team-avatar">👤</div>
-              <h3>Curriculum Lead</h3>
-              <p class="about-team-role">Lesson Design</p>
-              <p class="about-team-bio">
-                Designs and updates the CodeCore Chapter curriculum — from
-                Scratch fundamentals to responsible AI discussions.
-              </p>
+
+            <!-- Faculty Advisors -->
+            <div class="about-acc-item">
+              <button
+                class="about-acc-btn"
+                aria-expanded="false"
+                data-acc="advisors"
+              >
+                <span class="about-acc-label">Faculty Advisors</span>
+                <span class="about-acc-count">1 advisor</span>
+                <span class="about-acc-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="about-acc-panel" id="acc-advisors">
+                <div class="about-acc-grid">
+                  <div class="about-acc-member">
+                    <strong>Dr. Monika Akbar</strong>
+                    <span>Faculty Advisor · UTEP CS Department</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="about-team-card ch-card">
-              <div class="about-team-avatar">👤</div>
-              <h3>Outreach Lead</h3>
-              <p class="about-team-role">School Relations</p>
-              <p class="about-team-bio">
-                Builds and maintains relationships with school administrators,
-                teachers, and district partners across El Paso.
-              </p>
-            </div>
-            <div class="about-team-card ch-card">
-              <div class="about-team-avatar">👤</div>
-              <h3>Faculty Advisor</h3>
-              <p class="about-team-role">UTEP CS Department</p>
-              <p class="about-team-bio">
-                UTEP faculty member providing academic oversight, professional
-                guidance, and university resource support.
-              </p>
-            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2.5rem">
+            <a href="contact.html" class="btn-primary">Contact Our Team</a>
           </div>
         </div>
       </section>
+
+      <script>
+        document.querySelectorAll(".about-acc-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const open = btn.getAttribute("aria-expanded") === "true";
+            const panel = btn.nextElementSibling;
+            btn.setAttribute("aria-expanded", String(!open));
+            panel.classList.toggle("open", !open);
+          });
+        });
+      </script>
 
       <!-- CTA BANNER -->
       <section class="ch-section ch-section--dark about-cta">

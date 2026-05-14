@@ -384,3 +384,58 @@
   color: var(--text-mid);
   line-height: 1.8;
 }
+
+/* Centered single-card grid */
+.schools-grid-centered {
+  justify-items: center;
+}
+.schools-grid-centered .school-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Pilot project badge */
+.school-pilot-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #e37011 0%, #f59e0b 100%);
+  color: white;
+}
+
+/* Flex note below How It Works */
+.schools-flex-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding: 1.1rem 1.5rem;
+  background: white;
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--gray-100);
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.schools-flex-note > span {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.schools-flex-note a {
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.schools-flex-note a:hover {
+  text-decoration: underline;
+}

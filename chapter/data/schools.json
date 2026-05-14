@@ -3,6 +3,7 @@
     "name": "Reyes Elementary School",
     "level": "Elementary",
     "status": "In Talks",
+    "pilot": true,
     "address": "El Paso, TX",
     "lat": 31.7619,
     "lng": -106.485,
