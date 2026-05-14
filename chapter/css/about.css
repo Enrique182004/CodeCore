@@ -116,13 +116,15 @@
   margin-bottom: 0.75rem;
 }
 .about-impact-logo img {
-  height: 64px;
+  height: 72px;
   width: auto;
-  max-width: 160px;
+  max-width: 180px;
   object-fit: contain;
   margin: 0 auto;
   display: block;
-  filter: brightness(0) invert(1);
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: white;
 }
 .about-impact-card h3 {
   color: white;
