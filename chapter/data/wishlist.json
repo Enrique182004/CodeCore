@@ -2,71 +2,71 @@
   {
     "name": "Chromebooks",
     "category": "Technology",
+    "price": 350,
     "description": "Many students at our chapter schools don't have personal devices. Each Chromebook lets one more student participate hands-on instead of sharing.",
-    "quantity": 60,
-    "priority": "High"
+    "quantity": 60
   },
   {
     "name": "Wireless Mouse & Keyboard Sets",
     "category": "Technology",
+    "price": 30,
     "description": "Reliable input devices make a huge difference in how quickly students can practice. One set per student keeps sessions running smoothly.",
-    "quantity": 30,
-    "priority": "High"
+    "quantity": 30
   },
   {
     "name": "Mobile Power Tower",
     "category": "Technology",
+    "price": 200,
     "description": "A rolling charging station that powers multiple devices at once — perfect for classrooms with limited outlets during 60–90 minute sessions.",
-    "quantity": 4,
-    "priority": "Medium"
+    "quantity": 4
   },
   {
     "name": "CS Unplugged Activity Cards",
     "category": "Student Support",
+    "price": 25,
     "description": "Card sets for teaching algorithms, binary, and logic without a screen. Great for ice-breakers and for days when technology is unavailable.",
-    "quantity": 20,
-    "priority": "Medium"
+    "quantity": 20
   },
   {
     "name": "CodeCore T-Shirts",
     "category": "Merchandise",
+    "price": 15,
     "description": "Students who wear the CodeCore shirt feel part of something bigger. T-shirts build community identity and pride in their coding journey.",
-    "quantity": 200,
-    "priority": "High"
+    "quantity": 200
   },
   {
     "name": "CodeCore Sweatshirts & Hoodies",
     "category": "Merchandise",
+    "price": 35,
     "description": "Cozy CodeCore hoodies for students and volunteers — perfect for early morning sessions and school events.",
-    "quantity": 100,
-    "priority": "Medium"
+    "quantity": 100
   },
   {
     "name": "CodeCore Hats",
     "category": "Merchandise",
-    "description": "Branded caps that students can wear with pride at school, hackathons, and STEM fairs across El Paso.",
-    "quantity": 100,
-    "priority": "Medium"
+    "price": 20,
+    "description": "Branded caps that students can wear with pride at school, hackathons, and school-wide challenges across El Paso.",
+    "quantity": 100
   },
   {
     "name": "CodeCore Mugs",
     "category": "Merchandise",
+    "price": 12,
     "description": "A great thank-you gift for teachers, faculty points-of-contact, and volunteer mentors who make each chapter possible.",
-    "quantity": 50,
-    "priority": "Low"
+    "quantity": 50
   },
   {
     "name": "CodeCore Bracelets",
     "category": "Merchandise",
+    "price": 5,
     "description": "Fun wearable reminders that students are part of a coding community. Great as rewards and milestone gifts.",
-    "quantity": 200,
-    "priority": "Low"
+    "quantity": 200
   },
   {
     "name": "CodeCore Notebooks & Pens",
     "category": "Merchandise",
-    "description": "Branded notebooks for students to sketch algorithms, write pseudocode, and track their project ideas — low-tech but surprisingly impactful.",
-    "quantity": 200,
-    "priority": "Medium"
+    "price": 8,
+    "description": "Branded notebooks for students to sketch algorithms, write pseudocode, and track their project ideas.",
+    "quantity": 200
   }
 ]

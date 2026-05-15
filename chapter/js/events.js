@@ -63,7 +63,7 @@ const TYPE_CHIP = {
   Training: "ev-type-training",
   Workshop: "ev-type-workshop",
   Competition: "ev-type-competition",
-  "STEM Fair": "ev-type-stem-fair",
+  "School Wide Challenges": "ev-type-stem-fair",
   Outreach: "ev-type-outreach",
   Recruitment: "ev-type-outreach",
   Launch: "ev-type-launch",

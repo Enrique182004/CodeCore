@@ -5,19 +5,11 @@ const FALLBACK_SPONSORS = [
     name: "El Paso Electric",
     logo: "images/sponsors/EPEC_logo.png",
     url: "https://www.epelectric.com/",
-    tier: "Gold",
   },
   {
     name: "Chiquis Bakery",
     logo: "images/sponsors/chiquisBakery_logo.webp",
     url: "https://www.chiquisbakery.com/",
-    tier: "Silver",
-  },
-  {
-    name: "UTEP",
-    logo: "images/sponsors/utep_logo.jpeg",
-    url: "https://www.utep.edu/",
-    tier: "Partner",
   },
 ];
 
@@ -25,90 +17,84 @@ const FALLBACK_WISHLIST = [
   {
     name: "Chromebooks",
     category: "Technology",
+    price: 350,
     description:
       "Many students at our chapter schools don't have personal devices. Each Chromebook lets one more student participate hands-on instead of sharing.",
     quantity: 60,
-    priority: "High",
   },
   {
     name: "Wireless Mouse & Keyboard Sets",
     category: "Technology",
+    price: 30,
     description:
       "Reliable input devices make a huge difference in how quickly students can practice. One set per student keeps sessions running smoothly.",
     quantity: 30,
-    priority: "High",
   },
   {
     name: "Mobile Power Tower",
     category: "Technology",
+    price: 200,
     description:
       "A rolling charging station that powers multiple devices at once — perfect for classrooms with limited outlets during 60–90 minute sessions.",
     quantity: 4,
-    priority: "Medium",
   },
   {
     name: "CS Unplugged Activity Cards",
     category: "Student Support",
+    price: 25,
     description:
       "Card sets for teaching algorithms, binary, and logic without a screen. Great for ice-breakers and for days when technology is unavailable.",
     quantity: 20,
-    priority: "Medium",
   },
   {
     name: "CodeCore T-Shirts",
     category: "Merchandise",
+    price: 15,
     description:
       "Students who wear the CodeCore shirt feel part of something bigger. T-shirts build community identity and pride in their coding journey.",
     quantity: 200,
-    priority: "High",
   },
   {
     name: "CodeCore Sweatshirts & Hoodies",
     category: "Merchandise",
+    price: 35,
     description:
       "Cozy CodeCore hoodies for students and volunteers — perfect for early morning sessions and school events.",
     quantity: 100,
-    priority: "Medium",
   },
   {
     name: "CodeCore Hats",
     category: "Merchandise",
+    price: 20,
     description:
-      "Branded caps that students can wear with pride at school, hackathons, and STEM fairs across El Paso.",
+      "Branded caps that students can wear with pride at school, hackathons, and school-wide challenges across El Paso.",
     quantity: 100,
-    priority: "Medium",
   },
   {
     name: "CodeCore Mugs",
     category: "Merchandise",
+    price: 12,
     description:
       "A great thank-you gift for teachers, faculty points-of-contact, and volunteer mentors who make each chapter possible.",
     quantity: 50,
-    priority: "Low",
   },
   {
     name: "CodeCore Bracelets",
     category: "Merchandise",
+    price: 5,
     description:
       "Fun wearable reminders that students are part of a coding community. Great as rewards and milestone gifts.",
     quantity: 200,
-    priority: "Low",
   },
   {
     name: "CodeCore Notebooks & Pens",
     category: "Merchandise",
+    price: 8,
     description:
       "Branded notebooks for sketching algorithms, tracking project ideas, and taking notes.",
     quantity: 200,
-    priority: "Medium",
   },
 ];
-
-const PRIORITY_CLASS = {
-  High: "badge-high",
-  Medium: "badge-medium",
-  Low: "badge-low",
-};
 
 let wishlistCards = [];
 let cart = {};
@@ -126,21 +112,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function renderSponsors(sponsors) {
-  const containers = {
-    Gold: document.getElementById("sponsors-gold"),
-    Silver: document.getElementById("sponsors-silver"),
-    Partner: document.getElementById("sponsors-partner"),
-    Community: document.getElementById("sponsors-community"),
-  };
-
-  Object.values(containers).forEach((el) => {
-    if (el) el.textContent = "";
-  });
+  const container = document.getElementById("sponsors-all");
+  if (!container) return;
+  container.textContent = "";
 
   sponsors.forEach((s) => {
-    const container = containers[s.tier] || containers.Community;
-    if (!container) return;
-
     const card = document.createElement(s.url ? "a" : "div");
     card.className = "sp-card";
     if (s.url) {
@@ -190,16 +166,20 @@ function renderWishlist(items) {
     h3.textContent = item.name;
     top.appendChild(h3);
 
-    const badge = document.createElement("span");
-    badge.className = PRIORITY_CLASS[item.priority] || "";
-    badge.textContent = item.priority;
-    top.appendChild(badge);
-
     card.appendChild(top);
 
     const desc = document.createElement("p");
     desc.textContent = item.description;
     card.appendChild(desc);
+
+    if (item.price) {
+      const priceEl = document.createElement("p");
+      priceEl.className = "sp-wish-price";
+      priceEl.textContent = "$" + item.price.toFixed(2) + " per unit";
+      priceEl.style.cssText =
+        "font-weight:700; color:var(--teal); margin:0.5rem 0 0.25rem;";
+      card.appendChild(priceEl);
+    }
 
     if (item.quantity) {
       const qty = document.createElement("p");
@@ -226,7 +206,7 @@ function renderWishlist(items) {
     btn.addEventListener("click", () => {
       const qty = parseInt(qtyInput.value, 10);
       if (!qty || qty < 1) return;
-      addToCart(item.name, qty, item.category);
+      addToCart(item.name, qty, item.category, item.price || 0);
       btn.textContent = "✓ Added";
       btn.style.background = "var(--green)";
       setTimeout(() => {
@@ -242,11 +222,11 @@ function renderWishlist(items) {
   });
 }
 
-function addToCart(name, qty, category) {
+function addToCart(name, qty, category, price) {
   if (cart[name]) {
     cart[name].qty += qty;
   } else {
-    cart[name] = { qty, category };
+    cart[name] = { qty, category, price };
   }
   updateCartUI();
 }
@@ -277,7 +257,7 @@ function updateCartUI() {
 
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
-  ["Item", "Category", "Qty", ""].forEach((label) => {
+  ["Item", "Category", "Price/unit", "Qty", "Subtotal", ""].forEach((label) => {
     const th = document.createElement("th");
     th.textContent = label;
     headerRow.appendChild(th);
@@ -286,19 +266,31 @@ function updateCartUI() {
   table.appendChild(thead);
 
   const tbody = document.createElement("tbody");
-  entries.forEach(([itemName, { qty, category }]) => {
+  let grandTotal = 0;
+
+  entries.forEach(([itemName, { qty, category, price }]) => {
+    const subtotal = price * qty;
+    grandTotal += subtotal;
     const tr = document.createElement("tr");
 
     tr.appendChild(makeEl("td", { text: itemName }));
-
-    const tdCat = makeEl("td", {
-      text: category,
-      style: "color:var(--text-mid)",
-    });
-    tr.appendChild(tdCat);
-
+    tr.appendChild(
+      makeEl("td", { text: category, style: "color:var(--text-mid)" }),
+    );
+    tr.appendChild(
+      makeEl("td", {
+        text: price ? "$" + price.toFixed(2) : "—",
+        style: "color:var(--teal)",
+      }),
+    );
     tr.appendChild(
       makeEl("td", { text: String(qty), style: "font-weight:700" }),
+    );
+    tr.appendChild(
+      makeEl("td", {
+        text: price ? "$" + subtotal.toFixed(2) : "—",
+        style: "font-weight:700",
+      }),
     );
 
     const tdRemove = document.createElement("td");
@@ -316,6 +308,24 @@ function updateCartUI() {
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
+
+  const tfoot = document.createElement("tfoot");
+  const totalRow = document.createElement("tr");
+  const totalLabelCell = document.createElement("td");
+  totalLabelCell.colSpan = 4;
+  totalLabelCell.textContent = "Estimated Total";
+  totalLabelCell.style.cssText =
+    "text-align:right; font-weight:700; padding-top:0.75rem;";
+  const totalValueCell = document.createElement("td");
+  totalValueCell.colSpan = 2;
+  totalValueCell.textContent = "$" + grandTotal.toFixed(2);
+  totalValueCell.style.cssText =
+    "font-weight:700; color:var(--teal); font-size:1.1em; padding-top:0.75rem;";
+  totalRow.appendChild(totalLabelCell);
+  totalRow.appendChild(totalValueCell);
+  tfoot.appendChild(totalRow);
+  table.appendChild(tfoot);
+
   cartList.appendChild(table);
 
   cartSection.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -353,8 +363,16 @@ function initCart() {
       return;
     }
 
+    const grandTotal = Object.values(cart).reduce(
+      (sum, { qty, price }) => sum + price * qty,
+      0,
+    );
+
     const cartSummary = Object.entries(cart)
-      .map(([n, { qty }]) => n + " (x" + qty + ")")
+      .map(
+        ([n, { qty, price }]) =>
+          n + " (x" + qty + " @ $" + price.toFixed(2) + ")",
+      )
       .join(", ");
 
     const formData = new FormData();
@@ -368,6 +386,8 @@ function initCart() {
       "message",
       "Donation cart request:\n" +
         cartSummary +
+        "\nEstimated Total: $" +
+        grandTotal.toFixed(2) +
         "\n\nNotes: " +
         (notes || "None"),
     );
