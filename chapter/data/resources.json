@@ -106,5 +106,266 @@
     "url": "#",
     "level": "Advanced",
     "audience": "both"
+  },
+  {
+    "title": "CodeCombat",
+    "category": "Games",
+    "type": "Link",
+    "description": "Medieval-style online game where you control characters by typing real code. Great for young people and beginner adults.",
+    "url": "https://codecombat.com/",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Learn Code with Python — boot.dev",
+    "category": "Games",
+    "type": "Link",
+    "description": "Interactive, game-like Python course that teaches coding through hands-on challenges and projects.",
+    "url": "https://www.boot.dev/courses/learn-code-python",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Codedex",
+    "category": "Games",
+    "type": "Link",
+    "description": "Fun and beginner-friendly platform to learn how to code through gamified lessons and quests.",
+    "url": "https://www.codedex.io/",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Coding for Kids — Python Courses",
+    "category": "Games",
+    "type": "Link",
+    "description": "Kid-friendly Python courses designed to introduce programming concepts through guided exercises.",
+    "url": "https://codingforkids.io/en",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Flexbox Froggy",
+    "category": "Games",
+    "type": "Link",
+    "description": "Interactive puzzle game that teaches CSS Flexbox by guiding frogs to lily pads.",
+    "url": "https://flexboxfroggy.com/",
+    "level": "Intermediate",
+    "audience": "student"
+  },
+  {
+    "title": "CSS Grid Garden",
+    "category": "Games",
+    "type": "Link",
+    "description": "Learn CSS Grid Layout fundamentals through fun, visual gardening challenges.",
+    "url": "https://cssgridgarden.com/",
+    "level": "Intermediate",
+    "audience": "student"
+  },
+  {
+    "title": "Learn Git Branching",
+    "category": "Games",
+    "type": "Link",
+    "description": "Interactive visual game that teaches Git branching, merging, rebasing, and version control concepts.",
+    "url": "https://learngitbranching.js.org/?locale=es_EN",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "Minecraft Adventurer — Code.org",
+    "category": "Games",
+    "type": "Link",
+    "description": "Teaches core CS concepts — commands, repeat loops, and if statements — through a Minecraft-themed coding workspace.",
+    "url": "https://studio.code.org/s/mc/lessons/1/levels/1",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Scratch — Imagine, Program, Share",
+    "category": "Games",
+    "type": "Link",
+    "description": "Free block-coding website where students can create games, animations, and interactive stories.",
+    "url": "https://scratch.mit.edu/",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Blockly Games: Maze",
+    "category": "Games",
+    "type": "Link",
+    "description": "Maze game that teaches sequencing, loops, and conditionals through visual block coding.",
+    "url": "https://blockly.games/maze",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Blockly Games",
+    "category": "Games",
+    "type": "Link",
+    "description": "Collection of puzzle-style coding games that teach programming logic using drag-and-drop blocks.",
+    "url": "https://blockly.games/",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Code.org Sprite Lab",
+    "category": "Games",
+    "type": "Link",
+    "description": "Students create their own games and animations using drag-and-drop coding blocks. Great for grades 3–5.",
+    "url": "https://code.org/en-US/tools/sprite-lab",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Start Coding with Java in 10 Minutes",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Short, beginner-friendly Java tutorial that covers core concepts like variables, loops, and methods.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Understanding Data Types in Programming",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Clear explanation of data types — integers, strings, booleans, and more — for absolute beginners.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "Intro to Programming: A Beginner's Guide",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Overview of fundamental programming concepts for anyone just starting their coding journey.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "Coding for Kids Explained — What & Why",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Kid-friendly breakdown of what coding is, why it matters, and how it impacts everyday life.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Introduction to Coding for Young Kids",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Age-appropriate introduction to coding concepts designed for elementary-age learners.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "student"
+  },
+  {
+    "title": "Programming Games with Solar 2D",
+    "category": "Videos",
+    "type": "Video",
+    "description": "YouTube series showing how to build games using the Solar 2D game engine and Lua scripting.",
+    "url": "https://www.youtube.com/watch?v=zjxJDW6LSEU&list=PLpyspNLjzwBlgvpGJYOZIFdqB2Dcebxp_",
+    "level": "Intermediate",
+    "audience": "student"
+  },
+  {
+    "title": "Programming Games with Lua",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Video guide to building games using Lua, the scripting language behind Solar 2D and Roblox.",
+    "url": "https://www.youtube.com/watch?v=Nsfuj8hFrVU",
+    "level": "Intermediate",
+    "audience": "student"
+  },
+  {
+    "title": "Real-Life Algorithms: Paper Airplanes",
+    "category": "Videos",
+    "type": "Video",
+    "description": "Code.org unplugged activity that explains algorithms using paper airplanes — no screen required.",
+    "url": "#",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "SQLBolt — Learn SQL",
+    "category": "Tutorials",
+    "type": "Link",
+    "description": "Free interactive introduction to SQL — covers SELECT, filtering, joins, and more through hands-on exercises.",
+    "url": "https://sqlbolt.com",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "The Odin Project — Foundations",
+    "category": "Tutorials",
+    "type": "Link",
+    "description": "Hands-on introduction to all the essential tools needed to build real, working websites — HTML, CSS, JavaScript, Git.",
+    "url": "https://www.theodinproject.com/paths/foundations/courses/foundations",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "The Odin Project — Full Stack JavaScript",
+    "category": "Tutorials",
+    "type": "Link",
+    "description": "In-depth introduction to JavaScript and full-stack web development, building on the Foundations path.",
+    "url": "https://www.theodinproject.com/paths/full-stack-javascript",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "GeeksForGeeks",
+    "category": "Tutorials",
+    "type": "Link",
+    "description": "Comprehensive library of tutorials, coding problems, and explanations across all major computer science topics.",
+    "url": "https://www.geeksforgeeks.org/",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "Android Developers — Get Started",
+    "category": "Tutorials",
+    "type": "Link",
+    "description": "Official Android development guides and video tutorials for building your first Android app.",
+    "url": "https://developer.android.com/get-started/overview?hl=es-419",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "Visual Studio Code",
+    "category": "Tools",
+    "type": "Link",
+    "description": "Free, lightweight code editor from Microsoft — the most popular editor for web and Python development.",
+    "url": "https://code.visualstudio.com/download",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "Git — Windows Installer",
+    "category": "Tools",
+    "type": "Link",
+    "description": "Official Git installer for Windows. Required for version control and working with GitHub repositories.",
+    "url": "https://git-scm.com/install/windows",
+    "level": "Beginner",
+    "audience": "both"
+  },
+  {
+    "title": "Android Studio",
+    "category": "Tools",
+    "type": "Link",
+    "description": "Official IDE for Android development. Includes an emulator, debugger, and Kotlin/Java toolchain.",
+    "url": "https://developer.android.com/get-started/overview?hl=es-419",
+    "level": "Intermediate",
+    "audience": "both"
+  },
+  {
+    "title": "Solar2D — 2D Game Engine",
+    "category": "Tools",
+    "type": "Link",
+    "description": "Free, open-source 2D game engine using the Lua scripting language. Great for building mobile games.",
+    "url": "https://solar2d.com/",
+    "level": "Intermediate",
+    "audience": "student"
   }
 ]
