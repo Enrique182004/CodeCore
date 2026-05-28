@@ -93,16 +93,6 @@ const FALLBACK_RESOURCES = [
     audience: "student",
   },
   {
-    title: "Blockly Games: Maze",
-    category: "Games",
-    type: "Link",
-    description:
-      "Maze game that teaches sequencing, loops, and conditionals through visual block coding.",
-    url: "https://blockly.games/maze",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
     title: "Blockly Games",
     category: "Games",
     type: "Link",
@@ -453,7 +443,7 @@ const FALLBACK_RESOURCES = [
     type: "Link",
     description:
       "Official IDE for Android development. Includes an emulator, debugger, and Kotlin/Java toolchain.",
-    url: "https://developer.android.com/get-started/overview?hl=es-419",
+    url: "https://developer.android.com/studio",
     level: "Intermediate",
     audience: "both",
   },
