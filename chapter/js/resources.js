@@ -413,6 +413,130 @@ const FALLBACK_RESOURCES = [
     level: "Intermediate",
     audience: "student",
   },
+  // NEW GAMES
+  {
+    title: "Code.org Hour of Code",
+    category: "Games",
+    type: "Link",
+    description:
+      "Self-paced coding activities from beginner to intermediate, including Minecraft, Star Wars, and Frozen-themed projects. Great for any session opener.",
+    url: "https://code.org/learn",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Lightbot",
+    category: "Games",
+    type: "Link",
+    description:
+      "Puzzle game teaching sequencing, loops, and procedures with no syntax required. Lightbot Jr. is ideal for grades 3–4.",
+    url: "https://lightbot.com",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Code.org CS Fundamentals",
+    category: "Games",
+    type: "Link",
+    description:
+      "Full structured curriculum for grades 3–8 covering sequences, loops, events, conditionals, and functions. Each lesson includes an unplugged warm-up and a coding activity.",
+    url: "https://studio.code.org",
+    level: "Beginner",
+    audience: "both",
+  },
+  // UNPLUGGED
+  {
+    title: "CS Unplugged",
+    category: "Unplugged",
+    type: "Link",
+    description:
+      "Classroom activities teaching CS concepts through games and puzzles — binary numbers, algorithms, sorting, encryption. No devices required.",
+    url: "https://csunplugged.org",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Code.org Unplugged Lessons",
+    category: "Unplugged",
+    type: "Link",
+    description:
+      "Printable lesson plans for teaching loops, conditionals, functions, and debugging through physical activities. Includes the classic Exact Instructions Challenge.",
+    url: "https://code.org/curriculum/unplugged",
+    level: "Beginner",
+    audience: "both",
+  },
+  // NEW VIDEOS
+  {
+    title: "Scratch Team — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Official tutorials, tips, and project walkthroughs from the MIT Scratch team. Best starting point for creative coding project ideas.",
+    url: "https://www.youtube.com/@ScratchTeam",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Griffpatch — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Builds real games in Scratch — platformers, scrollers, and physics engines. Great for students who want to go further after the basics.",
+    url: "https://www.youtube.com/@griffpatch",
+    level: "Intermediate",
+    audience: "student",
+  },
+  {
+    title: "Google CS First",
+    category: "Videos",
+    type: "Link",
+    description:
+      "Free videos and curriculum covering storytelling, game design, and creative coding. Short episode format with friendly, diverse presenters.",
+    url: "https://csfirst.withgoogle.com",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Crash Course Computer Science",
+    category: "Videos",
+    type: "Video",
+    description:
+      "40-episode series explaining how computers and CS work — binary, logic gates, algorithms, and the internet. Best for grades 6–8.",
+    url: "https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo",
+    level: "Intermediate",
+    audience: "both",
+  },
+  {
+    title: "Micro:bit Foundation — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Official tutorial videos for every Micro:bit project, from the LED display to radio communication and sensors.",
+    url: "https://www.youtube.com/@microbitfoundation",
+    level: "Intermediate",
+    audience: "both",
+  },
+  // NEW TOOLS
+  {
+    title: "Microsoft MakeCode",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Free block and text coding environment used for Micro:bit and robotics. Includes free guided lesson plans at makecode.com/teach.",
+    url: "https://makecode.com",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Minecraft Education Edition",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Free lesson library (license required for the game). Hundreds of educator-made lessons including Python coding. Directly relevant to robotics and coding modules.",
+    url: "https://education.minecraft.net",
+    level: "Beginner",
+    audience: "both",
+  },
 ];
 
 const TYPE_CLASS = { PDF: "type-pdf", Video: "type-video", Link: "type-link" };
