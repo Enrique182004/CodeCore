@@ -1,131 +1,13 @@
 "use strict";
 
 const FALLBACK_RESOURCES = [
-  {
-    title: "Scratch Basics for Beginners",
-    category: "Lesson Plans",
-    type: "PDF",
-    description:
-      "Step-by-step guide to building your first Scratch project — sprites, loops, and simple animations.",
-    url: "#",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Python Fundamentals Handbook",
-    category: "Training",
-    type: "PDF",
-    description: "Core Python concepts for CodeCore volunteer instructors.",
-    url: "#",
-    level: "Beginner",
-    audience: "faculty",
-  },
-  {
-    title: "Web Development Intro",
-    category: "Lesson Plans",
-    type: "PDF",
-    description:
-      "HTML & CSS basics — build your first webpage in a single session.",
-    url: "#",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Algorithm Thinking Workshop",
-    category: "Training",
-    type: "Video",
-    description:
-      "Recording of the Fall 2025 Saturday training session on sorting and searching.",
-    url: "#",
-    level: "Intermediate",
-    audience: "faculty",
-  },
-  {
-    title: "Robotics Activity Pack",
-    category: "Downloads",
-    type: "PDF",
-    description:
-      "Printable sheets for Raspberry Pi and LEGO robotics sessions.",
-    url: "#",
-    level: "Intermediate",
-    audience: "both",
-  },
-  {
-    title: "AI Ethics Discussion Guide",
-    category: "Safety & AI",
-    type: "PDF",
-    description:
-      "Classroom discussion prompts on bias, privacy, and responsible AI for grades 5–8.",
-    url: "#",
-    level: "Intermediate",
-    audience: "both",
-  },
-  {
-    title: "CS Unplugged Activities",
-    category: "Downloads",
-    type: "PDF",
-    description:
-      "Screen-free card activities for binary numbers, sorting, and logic puzzles.",
-    url: "#",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Chapter Facilitator Handbook",
-    category: "Training",
-    type: "PDF",
-    description: "Everything a new volunteer needs to run their first session.",
-    url: "#",
-    level: "Beginner",
-    audience: "faculty",
-  },
-  {
-    title: "Scratch Game Design Challenge",
-    category: "Lesson Plans",
-    type: "Link",
-    description:
-      "Four-week project guide: design and share a fully playable Scratch game.",
-    url: "#",
-    level: "Intermediate",
-    audience: "student",
-  },
-  {
-    title: "Intro to Data Science",
-    category: "Lesson Plans",
-    type: "PDF",
-    description:
-      "Using Python and simple datasets to spot real-world patterns.",
-    url: "#",
-    level: "Advanced",
-    audience: "student",
-  },
-  {
-    title: "Parent & School Safety Guide",
-    category: "Safety & AI",
-    type: "PDF",
-    description:
-      "Overview of CodeCore's digital safety policies — suitable for parents and administrators.",
-    url: "#",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Coding Competition Prep",
-    category: "Training",
-    type: "Video",
-    description:
-      "Practice problems and strategies for upcoming STEM fair competitions.",
-    url: "#",
-    level: "Advanced",
-    audience: "both",
-  },
   // GAMES
   {
     title: "CodeCombat",
     category: "Games",
     type: "Link",
     description:
-      "Medieval-style online game where you control characters by typing real code. Great for young people and beginner adults.",
+      "Medieval-style online game where you control characters by typing real Python or JavaScript code. One of the best transitions to text coding for grades 5 and up.",
     url: "https://codecombat.com/",
     level: "Beginner",
     audience: "student",
@@ -205,7 +87,7 @@ const FALLBACK_RESOURCES = [
     category: "Games",
     type: "Link",
     description:
-      "Free block-coding website where students can create games, animations, and interactive stories.",
+      "Free drag-and-drop block coding from MIT. Students build games, animations, and interactive stories. Core tool for creative coding modules.",
     url: "https://scratch.mit.edu/",
     level: "Beginner",
     audience: "student",
@@ -225,7 +107,7 @@ const FALLBACK_RESOURCES = [
     category: "Games",
     type: "Link",
     description:
-      "Collection of puzzle-style coding games that teach programming logic using drag-and-drop blocks.",
+      "Collection of puzzle-style coding games by Google that teach programming logic step by step — maze, bird, turtle, and more.",
     url: "https://blockly.games/",
     level: "Beginner",
     audience: "student",
@@ -240,57 +122,129 @@ const FALLBACK_RESOURCES = [
     level: "Beginner",
     audience: "student",
   },
+  {
+    title: "Code.org Hour of Code",
+    category: "Games",
+    type: "Link",
+    description:
+      "Self-paced coding activities from beginner to intermediate, including Minecraft, Star Wars, and Frozen-themed projects. Great for any session opener.",
+    url: "https://code.org/learn",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Lightbot",
+    category: "Games",
+    type: "Link",
+    description:
+      "Puzzle game teaching sequencing, loops, and procedures with no syntax required. Lightbot Jr. is ideal for grades 3–4.",
+    url: "https://lightbot.com",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Code.org CS Fundamentals",
+    category: "Games",
+    type: "Link",
+    description:
+      "Full structured curriculum for grades 3–8 covering sequences, loops, events, conditionals, and functions. Each lesson includes an unplugged warm-up and a coding activity.",
+    url: "https://studio.code.org",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Code Club World",
+    category: "Games",
+    type: "Link",
+    description:
+      "MIT-backed platform with guided projects in Scratch, Python, and HTML. Students follow structured paths and build real projects at their own pace.",
+    url: "https://codeclubworld.org",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "CodeMonkey",
+    category: "Games",
+    type: "Link",
+    description:
+      "Students write real CoffeeScript and Python commands to guide a monkey through levels. Bridges the gap between block coding and text coding.",
+    url: "https://codemonkey.com",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Gamestar Mechanic",
+    category: "Games",
+    type: "Link",
+    description:
+      "Students learn game design by building and playing their own video games. Covers design thinking, logic, and systems in a game-based environment.",
+    url: "https://gamestarmechanic.com",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Code for Life — Rapid Router",
+    category: "Games",
+    type: "Link",
+    description:
+      "Non-profit platform where students use Blockly to guide a delivery van through routes, then transition to Python. Includes full lesson plans for teachers.",
+    url: "https://codeforlife.education",
+    level: "Beginner",
+    audience: "both",
+  },
+  // UNPLUGGED
+  {
+    title: "CS Unplugged",
+    category: "Unplugged",
+    type: "Link",
+    description:
+      "Classroom activities teaching CS concepts through games and puzzles — binary numbers, algorithms, sorting, encryption. No devices required.",
+    url: "https://csunplugged.org",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Code.org Unplugged Lessons",
+    category: "Unplugged",
+    type: "Link",
+    description:
+      "Printable lesson plans for teaching loops, conditionals, functions, and debugging through physical activities. Includes the classic Exact Instructions Challenge.",
+    url: "https://code.org/curriculum/unplugged",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Bebras Challenge",
+    category: "Unplugged",
+    type: "Link",
+    description:
+      "International computational thinking competition for grades 3–12 with printable problem sets. Great as warm-up challenges or session openers. No coding required.",
+    url: "https://bebras.org",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Hello Ruby",
+    category: "Unplugged",
+    type: "Link",
+    description:
+      "Storybook character that teaches computational thinking through activities, puzzles, and adventures. Specifically designed for younger learners in grades 3–5.",
+    url: "https://helloruby.com/play",
+    level: "Beginner",
+    audience: "student",
+  },
+  // SAFETY & AI
+  {
+    title: "Common Sense Media — Digital Citizenship",
+    category: "Safety & AI",
+    type: "Link",
+    description:
+      "Lesson plans and activities teaching digital citizenship, online safety, and how the internet works. Useful as a session topic when devices or materials aren't available.",
+    url: "https://commonsense.org/education/digital-citizenship",
+    level: "Beginner",
+    audience: "both",
+  },
   // VIDEOS
-  {
-    title: "Start Coding with Java in 10 Minutes",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Short, beginner-friendly Java tutorial that covers core concepts like variables, loops, and methods.",
-    url: "#",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Understanding Data Types in Programming",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Clear explanation of data types — integers, strings, booleans, and more — for absolute beginners.",
-    url: "#",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Intro to Programming: A Beginner's Guide",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Overview of fundamental programming concepts for anyone just starting their coding journey.",
-    url: "#",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Coding for Kids Explained — What & Why",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Kid-friendly breakdown of what coding is, why it matters, and how it impacts everyday life.",
-    url: "#",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Introduction to Coding for Young Kids",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Age-appropriate introduction to coding concepts designed for elementary-age learners.",
-    url: "#",
-    level: "Beginner",
-    audience: "student",
-  },
   {
     title: "Programming Games with Solar 2D",
     category: "Videos",
@@ -312,14 +266,94 @@ const FALLBACK_RESOURCES = [
     audience: "student",
   },
   {
-    title: "Real-Life Algorithms: Paper Airplanes",
+    title: "Scratch Team — YouTube",
     category: "Videos",
     type: "Video",
     description:
-      "Code.org unplugged activity that explains algorithms using paper airplanes — no screen required.",
-    url: "#",
+      "Official tutorials, tips, and project walkthroughs from the MIT Scratch team. Best starting point for creative coding project ideas.",
+    url: "https://www.youtube.com/@ScratchTeam",
     level: "Beginner",
     audience: "both",
+  },
+  {
+    title: "Griffpatch — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Builds real games in Scratch — platformers, scrollers, and physics engines. Great for students who want to go further after the basics.",
+    url: "https://www.youtube.com/@griffpatch",
+    level: "Intermediate",
+    audience: "student",
+  },
+  {
+    title: "Google CS First",
+    category: "Videos",
+    type: "Link",
+    description:
+      "Free videos and curriculum covering storytelling, game design, and creative coding. Short episode format with friendly, diverse presenters.",
+    url: "https://csfirst.withgoogle.com",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Crash Course Computer Science",
+    category: "Videos",
+    type: "Video",
+    description:
+      "40-episode series explaining how computers and CS work — binary, logic gates, algorithms, and the internet. Best for grades 6–8.",
+    url: "https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo",
+    level: "Intermediate",
+    audience: "both",
+  },
+  {
+    title: "Micro:bit Foundation — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Official tutorial videos for every Micro:bit project, from the LED display to radio communication and sensors.",
+    url: "https://www.youtube.com/@microbitfoundation",
+    level: "Intermediate",
+    audience: "both",
+  },
+  {
+    title: "CS Dojo — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Beginner-friendly Python tutorials in short, clear videos. One of the best starting points for grades 6–8 students learning Python independently.",
+    url: "https://www.youtube.com/@csdojo",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "STEMpedia — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Tutorials covering Scratch projects, physical computing, and robotics using common materials. Connects directly to hardware modules.",
+    url: "https://www.youtube.com/@STEMpedia",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "freeCodeCamp — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Long-form beginner tutorials on Python, web development, and CS concepts. Better suited for volunteers looking to build their own background knowledge.",
+    url: "https://www.youtube.com/@freecodecamp",
+    level: "Intermediate",
+    audience: "faculty",
+  },
+  {
+    title: "Coding with Kids — YouTube",
+    category: "Videos",
+    type: "Video",
+    description:
+      "Short, friendly coding videos made specifically for elementary and middle school students. Good for students to watch independently between sessions.",
+    url: "https://www.youtube.com/@CodingWithKids",
+    level: "Beginner",
+    audience: "student",
   },
   // TUTORIALS
   {
@@ -372,6 +406,26 @@ const FALLBACK_RESOURCES = [
     level: "Intermediate",
     audience: "both",
   },
+  {
+    title: "Khan Academy — Computing",
+    category: "Tutorials",
+    type: "Link",
+    description:
+      "Video lessons and interactive exercises covering programming fundamentals, JavaScript, and HTML/CSS. Structured and self-paced with instant feedback.",
+    url: "https://khanacademy.org/computing",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "CS Field Guide",
+    category: "Tutorials",
+    type: "Link",
+    description:
+      "Interactive online textbook covering algorithms, data, programming languages, and AI with built-in activities. Best for grades 7–8 or volunteer prep.",
+    url: "https://csfieldguide.org.nz",
+    level: "Advanced",
+    audience: "both",
+  },
   // TOOLS
   {
     title: "Visual Studio Code",
@@ -413,110 +467,6 @@ const FALLBACK_RESOURCES = [
     level: "Intermediate",
     audience: "student",
   },
-  // NEW GAMES
-  {
-    title: "Code.org Hour of Code",
-    category: "Games",
-    type: "Link",
-    description:
-      "Self-paced coding activities from beginner to intermediate, including Minecraft, Star Wars, and Frozen-themed projects. Great for any session opener.",
-    url: "https://code.org/learn",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Lightbot",
-    category: "Games",
-    type: "Link",
-    description:
-      "Puzzle game teaching sequencing, loops, and procedures with no syntax required. Lightbot Jr. is ideal for grades 3–4.",
-    url: "https://lightbot.com",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Code.org CS Fundamentals",
-    category: "Games",
-    type: "Link",
-    description:
-      "Full structured curriculum for grades 3–8 covering sequences, loops, events, conditionals, and functions. Each lesson includes an unplugged warm-up and a coding activity.",
-    url: "https://studio.code.org",
-    level: "Beginner",
-    audience: "both",
-  },
-  // UNPLUGGED
-  {
-    title: "CS Unplugged",
-    category: "Unplugged",
-    type: "Link",
-    description:
-      "Classroom activities teaching CS concepts through games and puzzles — binary numbers, algorithms, sorting, encryption. No devices required.",
-    url: "https://csunplugged.org",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Code.org Unplugged Lessons",
-    category: "Unplugged",
-    type: "Link",
-    description:
-      "Printable lesson plans for teaching loops, conditionals, functions, and debugging through physical activities. Includes the classic Exact Instructions Challenge.",
-    url: "https://code.org/curriculum/unplugged",
-    level: "Beginner",
-    audience: "both",
-  },
-  // NEW VIDEOS
-  {
-    title: "Scratch Team — YouTube",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Official tutorials, tips, and project walkthroughs from the MIT Scratch team. Best starting point for creative coding project ideas.",
-    url: "https://www.youtube.com/@ScratchTeam",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Griffpatch — YouTube",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Builds real games in Scratch — platformers, scrollers, and physics engines. Great for students who want to go further after the basics.",
-    url: "https://www.youtube.com/@griffpatch",
-    level: "Intermediate",
-    audience: "student",
-  },
-  {
-    title: "Google CS First",
-    category: "Videos",
-    type: "Link",
-    description:
-      "Free videos and curriculum covering storytelling, game design, and creative coding. Short episode format with friendly, diverse presenters.",
-    url: "https://csfirst.withgoogle.com",
-    level: "Beginner",
-    audience: "both",
-  },
-  {
-    title: "Crash Course Computer Science",
-    category: "Videos",
-    type: "Video",
-    description:
-      "40-episode series explaining how computers and CS work — binary, logic gates, algorithms, and the internet. Best for grades 6–8.",
-    url: "https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo",
-    level: "Intermediate",
-    audience: "both",
-  },
-  {
-    title: "Micro:bit Foundation — YouTube",
-    category: "Videos",
-    type: "Video",
-    description:
-      "Official tutorial videos for every Micro:bit project, from the LED display to radio communication and sensors.",
-    url: "https://www.youtube.com/@microbitfoundation",
-    level: "Intermediate",
-    audience: "both",
-  },
-  // NEW TOOLS
   {
     title: "Microsoft MakeCode",
     category: "Tools",
@@ -536,6 +486,56 @@ const FALLBACK_RESOURCES = [
     url: "https://education.minecraft.net",
     level: "Beginner",
     audience: "both",
+  },
+  {
+    title: "Replit",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Browser-based code editor where students can write and run real Python, JavaScript, and more with nothing to install. Great for older students in grades 6–8.",
+    url: "https://replit.com",
+    level: "Intermediate",
+    audience: "student",
+  },
+  {
+    title: "Swift Playgrounds",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Apple's iPad and Mac app that teaches coding through interactive puzzles using Swift. Highly visual, self-paced, and well-designed for grades 5–8.",
+    url: "https://apple.com/swift/playgrounds",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Trinket",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Browser-based Python and block coding environment with no setup. Great for practicing Python or writing and sharing code between sessions.",
+    url: "https://trinket.io",
+    level: "Intermediate",
+    audience: "both",
+  },
+  {
+    title: "Google Teachable Machine",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Train a simple AI model using your webcam or microphone in minutes. A great one-session introduction to how machine learning works for grades 5–8.",
+    url: "https://teachablemachine.withgoogle.com",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
+    title: "Typing.com",
+    category: "Tools",
+    type: "Link",
+    description:
+      "Teaches touch typing through games and lessons. Highly practical for grades 3–5 who struggle to type fast enough to keep up with text coding.",
+    url: "https://typing.com",
+    level: "Beginner",
+    audience: "student",
   },
 ];
 
