@@ -1,0 +1,81 @@
+<svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interdisciplinary team collaborating around laptops">
+  <!-- ground shadow -->
+  <ellipse cx="280" cy="360" rx="230" ry="22" fill="#e8edf5"/>
+
+  <!-- idea lightbulb -->
+  <g transform="translate(258 18)">
+    <line x1="22" y1="-6" x2="22" y2="-14" stroke="#e8b93c" stroke-width="4" stroke-linecap="round" transform="translate(0 14)"/>
+    <line x1="-8" y1="8" x2="-14" y2="2" stroke="#e8b93c" stroke-width="4" stroke-linecap="round" transform="translate(8 8)"/>
+    <line x1="52" y1="8" x2="58" y2="2" stroke="#e8b93c" stroke-width="4" stroke-linecap="round" transform="translate(-8 8)"/>
+    <circle cx="22" cy="30" r="20" fill="#e8b93c"/>
+    <path d="M14 46 h16 v8 a8 8 0 0 1 -16 0 Z" fill="#c99a28"/>
+  </g>
+
+  <!-- speech bubbles -->
+  <g transform="translate(60 70)">
+    <rect width="86" height="46" rx="12" fill="#2b7a9e"/>
+    <path d="M20 46 L28 62 L38 46 Z" fill="#2b7a9e"/>
+    <text x="43" y="31" text-anchor="middle" font-family="monospace" font-size="22" font-weight="900" fill="#ffffff">&lt;/&gt;</text>
+  </g>
+  <g transform="translate(410 76)">
+    <rect width="86" height="46" rx="12" fill="#7cb342"/>
+    <path d="M60 46 L54 62 L44 46 Z" fill="#7cb342"/>
+    <text x="43" y="32" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#ffffff">Aa 💡</text>
+  </g>
+
+  <!-- person 1 (left, teal shirt) -->
+  <g transform="translate(80 160)">
+    <circle cx="40" cy="26" r="26" fill="#b07b4f"/>
+    <path d="M14 26 a26 26 0 0 1 52 0 q0 -34 -26 -34 q-26 0 -26 34 Z" fill="#1a2e4a"/>
+    <path d="M6 118 Q6 62 40 62 Q74 62 74 118 Z" fill="#2b7a9e"/>
+    <path d="M18 84 Q30 100 52 92" fill="none" stroke="#256a8a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- person 2 (center, navy hoodie) -->
+  <g transform="translate(226 138)">
+    <circle cx="42" cy="28" r="28" fill="#f0c8a0"/>
+    <path d="M14 28 a28 28 0 0 1 56 0 q0 -36 -28 -36 q-28 0 -28 36 Z" fill="#3b2a1e"/>
+    <path d="M6 128 Q6 66 42 66 Q78 66 78 128 Z" fill="#1a2e4a"/>
+    <!-- hoodie strings -->
+    <line x1="34" y1="70" x2="34" y2="88" stroke="#f4f8ff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="50" y1="70" x2="50" y2="88" stroke="#f4f8ff" stroke-width="3" stroke-linecap="round"/>
+    <!-- logo chip -->
+    <rect x="32" y="94" width="20" height="20" rx="5" fill="#7cb342"/>
+  </g>
+
+  <!-- person 3 (right, green shirt) -->
+  <g transform="translate(376 160)">
+    <circle cx="40" cy="26" r="26" fill="#8a5a3b"/>
+    <path d="M14 26 a26 26 0 0 1 52 0 q2 -30 -12 -32 q-6 -8 -22 -4 q-20 4 -18 36 Z" fill="#10131a"/>
+    <path d="M6 118 Q6 62 40 62 Q74 62 74 118 Z" fill="#7cb342"/>
+    <path d="M26 86 Q40 98 58 88" fill="none" stroke="#689f38" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- table -->
+  <rect x="42" y="276" width="476" height="18" rx="9" fill="#dbe4f0"/>
+  <rect x="70" y="294" width="16" height="66" rx="6" fill="#c3d0e4"/>
+  <rect x="474" y="294" width="16" height="66" rx="6" fill="#c3d0e4"/>
+
+  <!-- laptops on table -->
+  <g transform="translate(96 232)">
+    <rect x="8" y="0" width="76" height="42" rx="5" fill="#1a2e4a"/>
+    <rect x="14" y="6" width="64" height="30" rx="3" fill="#2b7a9e"/>
+    <rect x="0" y="42" width="92" height="7" rx="3.5" fill="#0f1e31"/>
+  </g>
+  <g transform="translate(240 226)">
+    <rect x="8" y="0" width="80" height="46" rx="5" fill="#0f1e31"/>
+    <rect x="14" y="6" width="68" height="34" rx="3" fill="#152a45"/>
+    <rect x="20" y="12" width="34" height="5" rx="2.5" fill="#7cb342"/>
+    <rect x="20" y="21" width="50" height="5" rx="2.5" fill="#2b7a9e"/>
+    <rect x="20" y="30" width="26" height="5" rx="2.5" fill="#f4f8ff" opacity="0.6"/>
+    <rect x="0" y="46" width="96" height="7" rx="3.5" fill="#0f1e31"/>
+  </g>
+  <!-- notebook + pen for the non-CS teammate -->
+  <g transform="translate(398 244)">
+    <rect x="0" y="0" width="66" height="30" rx="4" fill="#f4f8ff" stroke="#c3d0e4" stroke-width="2"/>
+    <line x1="10" y1="9" x2="52" y2="9" stroke="#a0aec0" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="17" x2="44" y2="17" stroke="#a0aec0" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="25" x2="48" y2="25" stroke="#c3d0e4" stroke-width="3" stroke-linecap="round"/>
+    <rect x="70" y="4" width="26" height="6" rx="3" fill="#7cb342" transform="rotate(30 70 4)"/>
+  </g>
+</svg>
