@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events — CodeCore Chapter</title>
+    <meta name="description" content="Upcoming CodeCore Chapter events, coding days, trainings, and hackathons across El Paso schools." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CodeCore Chapter" />
+    <meta property="og:title" content="Events — CodeCore Chapter" />
+    <meta property="og:description" content="Upcoming CodeCore Chapter events, coding days, trainings, and hackathons across El Paso schools." />
+    <meta property="og:url" content="https://enrique182004.github.io/CodeCore/chapter/events.html" />
+    <meta property="og:image" content="https://enrique182004.github.io/CodeCore/chapter/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/events.css" />
     <link rel="icon" href="../images/logos/CodeCore.png" type="image/png" />
@@ -85,11 +95,11 @@
         </div>
       </section>
 
-      <!-- CALENDAR PLACEHOLDER -->
+      <!-- CALENDAR (built from the event list by js/events.js) -->
       <section class="ch-section ch-section--light">
         <div class="ch-section-inner">
           <div class="ch-section-header">
-            <h2>November 2026</h2>
+            <h2 id="ev-cal-title">This Month</h2>
             <p>A snapshot of this month's chapter activity across El Paso.</p>
           </div>
           <div class="ev-calendar">
@@ -97,38 +107,7 @@
               <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
               <span>Thu</span><span>Fri</span><span>Sat</span>
             </div>
-            <div class="ev-cal-grid">
-              <div class="ev-cal-day">1</div>
-              <div class="ev-cal-day">2</div>
-              <div class="ev-cal-day">3</div>
-              <div class="ev-cal-day">4</div>
-              <div class="ev-cal-day">5</div>
-              <div class="ev-cal-day">6</div>
-              <div class="ev-cal-day">7</div>
-              <div class="ev-cal-day">8</div>
-              <div class="ev-cal-day">9</div>
-              <div class="ev-cal-day">10</div>
-              <div class="ev-cal-day">11</div>
-              <div class="ev-cal-day ev-cal-event" title="Coding Day at Scotsdale Elementary — CodeCombat">12</div>
-              <div class="ev-cal-day">13</div>
-              <div class="ev-cal-day">14</div>
-              <div class="ev-cal-day">15</div>
-              <div class="ev-cal-day">16</div>
-              <div class="ev-cal-day">17</div>
-              <div class="ev-cal-day">18</div>
-              <div class="ev-cal-day">19</div>
-              <div class="ev-cal-day">20</div>
-              <div class="ev-cal-day">21</div>
-              <div class="ev-cal-day">22</div>
-              <div class="ev-cal-day">23</div>
-              <div class="ev-cal-day">24</div>
-              <div class="ev-cal-day">25</div>
-              <div class="ev-cal-day">26</div>
-              <div class="ev-cal-day">27</div>
-              <div class="ev-cal-day">28</div>
-              <div class="ev-cal-day">29</div>
-              <div class="ev-cal-day">30</div>
-            </div>
+            <div class="ev-cal-grid" id="ev-cal-grid"></div>
             <div class="ev-cal-legend">
               <span class="ev-cal-dot"></span> Event day
             </div>
