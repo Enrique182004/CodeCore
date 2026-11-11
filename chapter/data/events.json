@@ -1,9 +1,9 @@
 [
   {
-    "title": "School Outreach — Reyes Elementary Follow-Up",
+    "title": "School Outreach — Scotsdale Elementary Follow-Up",
     "date": "2026-06-15",
     "location": "El Paso, TX",
-    "description": "Follow up with Reyes Elementary and begin formal conversations with additional El Paso elementary and middle schools about launching a CodeCore Chapter.",
+    "description": "Follow up with Scotsdale Elementary and begin formal conversations with additional El Paso elementary and middle schools about launching a CodeCore Chapter.",
     "type": "Outreach"
   },
   {
@@ -47,6 +47,13 @@
     "location": "Partner School(s), El Paso TX",
     "description": "First CodeCore Chapter sessions begin. UTEP volunteers present for the first two weeks, then once a month. School instructor leads every session.",
     "type": "Launch"
+  },
+  {
+    "title": "Coding Day at Scotsdale Elementary — CodeCombat",
+    "date": "2026-11-12",
+    "location": "Scotsdale Elementary School, El Paso TX",
+    "description": "Students play CodeCombat's Dungeons of Kithgard, writing real code to move their hero, collect gems, and escape the dungeon.",
+    "type": "Workshop"
   },
   {
     "title": "End-of-Semester Hackathon",

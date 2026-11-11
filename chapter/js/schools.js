@@ -2,14 +2,14 @@
 
 const FALLBACK_SCHOOLS = [
   {
-    name: "Reyes Elementary School",
+    name: "Scotsdale Elementary School",
     level: "Elementary",
-    status: "In Talks",
+    status: "Active",
     pilot: true,
-    description:
-      "CodeCore supported their science fair and is in active discussions about launching a chapter for Fall 2026.",
-    lat: 31.7619,
-    lng: -106.485,
+    address: "2901 McRae Blvd, El Paso, TX 79925",
+    lat: 31.7824,
+    lng: -106.358,
+    description: "Our partner elementary school in El Paso. Students start their CodeCore sessions with CodeCombat's Dungeons of Kithgard — writing real code to guide a hero through the dungeon.",
     grades: "3–5",
   },
 ];
@@ -65,7 +65,13 @@ function initMap(schools) {
   const mapEl = document.getElementById("schools-map");
   if (!mapEl || typeof L === "undefined") return;
 
-  const map = L.map("schools-map").setView([31.762, -106.485], 12);
+  const first = schools.find(
+    (s) => typeof s.lat === "number" && typeof s.lng === "number",
+  );
+  const map = L.map("schools-map").setView(
+    first ? [first.lat, first.lng] : [31.762, -106.485],
+    first ? 13 : 12,
+  );
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:

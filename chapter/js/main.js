@@ -11,6 +11,51 @@ async function loadJSON(url, fallback) {
   }
 }
 
+/* ── Form delivery ──
+   GitHub Pages can't run PHP, so forms are delivered by FormSubmit
+   (https://formsubmit.co), which emails each submission to the org inbox. */
+const ORG_EMAIL = "codecore@utep.edu";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/" + ORG_EMAIL;
+
+function humanizeKey(key) {
+  return key
+    .replace(/\[\]$/, "")
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formToFields(form) {
+  const data = new FormData(form);
+  const fields = {};
+  for (const key of new Set(data.keys())) {
+    if (key === "form_type") continue;
+    const value = data
+      .getAll(key)
+      .map((v) => String(v).trim())
+      .filter(Boolean)
+      .join(", ");
+    fields[humanizeKey(key)] = value || "—";
+  }
+  return fields;
+}
+
+async function sendToOrgEmail(subject, fields, replyTo) {
+  const res = await fetch(FORM_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      ...fields,
+      _subject: subject,
+      _replyto: replyTo || "",
+      _template: "table",
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || String(data.success) !== "true") {
+    throw new Error(data.message || "Form could not be sent.");
+  }
+}
+
 /* ── Navbar HTML ── */
 function buildNav() {
   const links = [

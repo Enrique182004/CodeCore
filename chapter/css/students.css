@@ -586,3 +586,17 @@
 .students-beyond-card--national {
   border-top: 4px solid #e37011;
 }
+
+.abig-play {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent, var(--green));
+  text-decoration: none;
+}
+
+.abig-play:hover,
+.abig-play:focus-visible {
+  text-decoration: underline;
+}
