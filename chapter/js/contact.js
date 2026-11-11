@@ -1,11 +1,26 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  initForm("school-form", "sc-feedback", "sc-submit");
-  initForm("sponsor-form", "sp-feedback", "sp-submit");
+  initForm({
+    formId: "school-form",
+    feedbackId: "sc-feedback",
+    submitId: "sc-submit",
+    label: "Submit School Interest",
+    subject: (f) => "New School Chapter Interest — " + (f["School Name"] || ""),
+    success: "Thank you! We'll be in touch within 48 hours.",
+  });
+  initForm({
+    formId: "sponsor-form",
+    feedbackId: "sp-feedback",
+    submitId: "sp-submit",
+    label: "Send Message",
+    subject: (f) =>
+      "New Sponsor Inquiry — " + (f["Organization"] || f["Name"] || ""),
+    success: "Thank you! Our team will respond within 2 business days.",
+  });
 });
 
-function initForm(formId, feedbackId, submitId) {
+function initForm({ formId, feedbackId, submitId, label, subject, success }) {
   const form = document.getElementById(formId);
   const feedback = document.getElementById(feedbackId);
   const submit = document.getElementById(submitId);
@@ -15,35 +30,26 @@ function initForm(formId, feedbackId, submitId) {
     e.preventDefault();
     feedback.className = "ch-form-feedback";
     feedback.textContent = "";
+    if (!form.reportValidity()) return;
+
     submit.disabled = true;
     submit.textContent = "Sending…";
 
     try {
-      const res = await fetch("contact.php", {
-        method: "POST",
-        body: new FormData(form),
-      });
-      const data = await res.json();
-      if (data.success) {
-        feedback.className = "ch-form-feedback success";
-        feedback.textContent =
-          formId === "school-form"
-            ? "Thank you! We'll be in touch within 48 hours."
-            : "Thank you! Our team will respond within 2 business days.";
-        form.reset();
-      } else {
-        feedback.className = "ch-form-feedback error";
-        feedback.textContent =
-          data.error || "Something went wrong. Please try again.";
-      }
+      const fields = formToFields(form);
+      await sendToOrgEmail(subject(fields), fields, form.elements.email?.value);
+      feedback.className = "ch-form-feedback success";
+      feedback.textContent = success;
+      form.reset();
     } catch {
       feedback.className = "ch-form-feedback error";
       feedback.textContent =
-        "Network error. Please email us at codecore@utep.edu.";
+        "Sorry, your message couldn't be sent. Please email us at " +
+        ORG_EMAIL +
+        ".";
     } finally {
       submit.disabled = false;
-      submit.textContent =
-        formId === "school-form" ? "Submit School Interest" : "Send Message";
+      submit.textContent = label;
     }
   });
 }

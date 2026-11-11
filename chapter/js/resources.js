@@ -3,6 +3,16 @@
 const FALLBACK_RESOURCES = [
   // GAMES
   {
+    title: "CodeCombat — Dungeons of Kithgard",
+    category: "Games",
+    type: "Link",
+    description:
+      "Start here! The first CodeCombat level: type real code to move your hero, grab the gem, and escape the dungeon. Free to play right in the browser.",
+    url: "https://codecombat.com/play/level/dungeons-of-kithgard?&fromCampaign=dungeon",
+    level: "Beginner",
+    audience: "both",
+  },
+  {
     title: "CodeCombat",
     category: "Games",
     type: "Link",
@@ -163,16 +173,6 @@ const FALLBACK_RESOURCES = [
     audience: "student",
   },
   {
-    title: "Gamestar Mechanic",
-    category: "Games",
-    type: "Link",
-    description:
-      "Students learn game design by building and playing their own video games. Covers design thinking, logic, and systems in a game-based environment.",
-    url: "https://gamestarmechanic.com",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
     title: "Code for Life — Rapid Router",
     category: "Games",
     type: "Link",
@@ -219,7 +219,7 @@ const FALLBACK_RESOURCES = [
     type: "Link",
     description:
       "Storybook character that teaches computational thinking through activities, puzzles, and adventures. Specifically designed for younger learners in grades 3–5.",
-    url: "https://helloruby.com/play",
+    url: "https://www.helloruby.com/play",
     level: "Beginner",
     audience: "student",
   },
@@ -301,7 +301,7 @@ const FALLBACK_RESOURCES = [
     type: "Video",
     description:
       "Official tutorial videos for every Micro:bit project, from the LED display to radio communication and sensors.",
-    url: "https://www.youtube.com/@microbitfoundation",
+    url: "https://www.youtube.com/@microbit_edu",
     level: "Intermediate",
     audience: "both",
   },

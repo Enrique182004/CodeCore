@@ -2,7 +2,7 @@
 
 const FALLBACK_STATS = {
   students: 150,
-  schools: 2,
+  schools: 1,
   trainings: 2,
   volunteers: 20,
 };

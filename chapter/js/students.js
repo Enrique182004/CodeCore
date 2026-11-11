@@ -2,62 +2,62 @@
 
 const FALLBACK_RESOURCES = [
   {
-    title: "Scratch Basics for Beginners",
-    category: "Lesson Plans",
-    type: "PDF",
-    description:
-      "Build your first Scratch project — sprites, loops, and simple animations.",
-    url: "#",
-    level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Scratch Game Design Challenge",
-    category: "Lesson Plans",
+    title: "CodeCombat — Dungeons of Kithgard",
+    category: "Games",
     type: "Link",
     description:
-      "Four-week project: design and share a fully playable Scratch game.",
-    url: "#",
-    level: "Intermediate",
-    audience: "student",
-  },
-  {
-    title: "Web Development Intro",
-    category: "Lesson Plans",
-    type: "PDF",
-    description:
-      "HTML & CSS basics — build your first webpage in a single session.",
-    url: "#",
+      "Start here! The first CodeCombat level: type real code to move your hero, grab the gem, and escape the dungeon. Free to play right in the browser.",
+    url: "https://codecombat.com/play/level/dungeons-of-kithgard?&fromCampaign=dungeon",
     level: "Beginner",
-    audience: "student",
-  },
-  {
-    title: "Intro to Data Science",
-    category: "Lesson Plans",
-    type: "PDF",
-    description:
-      "Use Python and El Paso weather data to spot real-world patterns.",
-    url: "#",
-    level: "Advanced",
-    audience: "student",
-  },
-  {
-    title: "Robotics Activity Pack",
-    category: "Downloads",
-    type: "PDF",
-    description:
-      "Printable activity sheets for Raspberry Pi and LEGO robotics sessions.",
-    url: "#",
-    level: "Intermediate",
     audience: "both",
   },
   {
-    title: "CS Unplugged Activities",
-    category: "Downloads",
-    type: "PDF",
+    title: "Scratch — Imagine, Program, Share",
+    category: "Games",
+    type: "Link",
     description:
-      "Screen-free card activities for binary numbers, sorting, and logic puzzles.",
-    url: "#",
+      "Free drag-and-drop block coding from MIT. Students build games, animations, and interactive stories. Core tool for creative coding modules.",
+    url: "https://scratch.mit.edu/",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Blockly Games",
+    category: "Games",
+    type: "Link",
+    description:
+      "Collection of puzzle-style coding games by Google that teach programming logic step by step — maze, bird, turtle, and more.",
+    url: "https://blockly.games/",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Code.org Sprite Lab",
+    category: "Games",
+    type: "Link",
+    description:
+      "Students create their own games and animations using drag-and-drop coding blocks. Great for grades 3–5.",
+    url: "https://code.org/en-US/tools/sprite-lab",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Code.org Hour of Code",
+    category: "Games",
+    type: "Link",
+    description:
+      "Self-paced coding activities from beginner to intermediate, including Minecraft, Star Wars, and Frozen-themed projects. Great for any session opener.",
+    url: "https://code.org/learn",
+    level: "Beginner",
+    audience: "student",
+  },
+  {
+    title: "Code.org CS Fundamentals",
+    category: "Games",
+    type: "Link",
+    description:
+      "Full structured curriculum for grades 3–8 covering sequences, loops, events, conditionals, and functions. Each lesson includes an unplugged warm-up and a coding activity.",
+    url: "https://studio.code.org",
     level: "Beginner",
     audience: "both",
   },

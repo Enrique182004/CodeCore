@@ -2,11 +2,11 @@
 
 const FALLBACK_EVENTS = [
   {
-    title: "School Outreach — Reyes Elementary Follow-Up",
+    title: "School Outreach — Scotsdale Elementary Follow-Up",
     date: "2026-06-15",
     location: "El Paso, TX",
     description:
-      "Follow up with Reyes Elementary and begin formal conversations with additional El Paso schools about launching a CodeCore Chapter.",
+      "Follow up with Scotsdale Elementary and begin formal conversations with additional El Paso schools about launching a CodeCore Chapter.",
     type: "Outreach",
   },
   {
@@ -50,6 +50,14 @@ const FALLBACK_EVENTS = [
     type: "Launch",
   },
   {
+    title: "Coding Day at Scotsdale Elementary — CodeCombat",
+    date: "2026-11-12",
+    location: "Scotsdale Elementary School, El Paso TX",
+    description:
+      "Students play CodeCombat's Dungeons of Kithgard, writing real code to move their hero, collect gems, and escape the dungeon.",
+    type: "Workshop",
+  },
+  {
     title: "End-of-Semester Hackathon",
     date: "2026-12-01",
     location: "Chapter School(s), El Paso TX",
@@ -90,10 +98,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderEvents(events);
 });
 
-function renderEvents(events) {
+function renderEvents(allEvents) {
   const list = document.getElementById("events-list");
   if (!list) return;
   list.textContent = "";
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const events = allEvents
+    .filter((ev) => new Date(ev.date + "T00:00:00") >= today)
+    .sort((a, b) => a.date.localeCompare(b.date));
 
   if (!events.length) {
     const p = document.createElement("p");

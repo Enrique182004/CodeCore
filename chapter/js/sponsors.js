@@ -375,47 +375,33 @@ function initCart() {
       )
       .join(", ");
 
-    const formData = new FormData();
-    formData.append("form_type", "donation_cart");
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("organization", org);
-    formData.append("cart", cartSummary);
-    formData.append("notes", notes);
-    formData.append(
-      "message",
-      "Donation cart request:\n" +
-        cartSummary +
-        "\nEstimated Total: $" +
-        grandTotal.toFixed(2) +
-        "\n\nNotes: " +
-        (notes || "None"),
-    );
-
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting…";
 
     try {
-      const res = await fetch("contact.php", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-      if (data.success) {
-        feedback.className = "ch-form-feedback success";
-        feedback.textContent =
-          "Thank you! Our team will review your donation request and be in touch within 2 business days. No payment is required at this time.";
-        cart = {};
-        updateCartUI();
-      } else {
-        feedback.className = "ch-form-feedback error";
-        feedback.textContent =
-          data.error || "Something went wrong. Please try again.";
-      }
+      await sendToOrgEmail(
+        "New Donation Request — " + (org || name),
+        {
+          Name: name,
+          Email: email,
+          Organization: org || "—",
+          Items: cartSummary,
+          "Estimated Total": "$" + grandTotal.toFixed(2),
+          Notes: notes || "None",
+        },
+        email,
+      );
+      feedback.className = "ch-form-feedback success";
+      feedback.textContent =
+        "Thank you! Our team will review your donation request and be in touch within 2 business days. No payment is required at this time.";
+      cart = {};
+      updateCartUI();
     } catch {
       feedback.className = "ch-form-feedback error";
       feedback.textContent =
-        "Network error. Please email us at codecore@utep.edu.";
+        "Sorry, your request couldn't be sent. Please email us at " +
+        ORG_EMAIL +
+        ".";
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Submit Donation Request";
@@ -453,29 +439,28 @@ function initForm() {
     e.preventDefault();
     feedback.className = "ch-form-feedback";
     feedback.textContent = "";
+    if (!form.reportValidity()) return;
+
     submit.disabled = true;
     submit.textContent = "Sending…";
 
     try {
-      const res = await fetch("contact.php", {
-        method: "POST",
-        body: new FormData(form),
-      });
-      const data = await res.json();
-      if (data.success) {
-        feedback.className = "ch-form-feedback success";
-        feedback.textContent =
-          "Thank you! Our partnerships team will be in touch within 2 business days.";
-        form.reset();
-      } else {
-        feedback.className = "ch-form-feedback error";
-        feedback.textContent =
-          data.error || "Something went wrong. Please try again.";
-      }
+      const fields = formToFields(form);
+      await sendToOrgEmail(
+        "New Sponsor Inquiry — " + (fields["Organization"] || fields["Name"]),
+        fields,
+        form.elements.email?.value,
+      );
+      feedback.className = "ch-form-feedback success";
+      feedback.textContent =
+        "Thank you! Our partnerships team will be in touch within 2 business days.";
+      form.reset();
     } catch {
       feedback.className = "ch-form-feedback error";
       feedback.textContent =
-        "Network error. Please email us at codecore@utep.edu.";
+        "Sorry, your message couldn't be sent. Please email us at " +
+        ORG_EMAIL +
+        ".";
     } finally {
       submit.disabled = false;
       submit.textContent = "Send Message";
