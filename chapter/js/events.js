@@ -96,7 +96,54 @@ const MONTHS = [
 document.addEventListener("DOMContentLoaded", async () => {
   const events = await loadJSON("data/events.json", FALLBACK_EVENTS);
   renderEvents(events);
+  renderCalendar(events);
 });
+
+/* ── Month calendar: current month, event days highlighted ── */
+function renderCalendar(events) {
+  const grid = document.getElementById("ev-cal-grid");
+  const title = document.getElementById("ev-cal-title");
+  if (!grid) return;
+  grid.textContent = "";
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const leadingBlanks = new Date(year, month, 1).getDay(); // Sun = 0
+
+  if (title) {
+    title.textContent = now.toLocaleString("en-US", {
+      month: "long",
+      year: "numeric",
+    });
+  }
+
+  const byDay = {};
+  events.forEach((ev) => {
+    const d = new Date(ev.date + "T00:00:00");
+    if (d.getFullYear() === year && d.getMonth() === month) {
+      (byDay[d.getDate()] = byDay[d.getDate()] || []).push(ev.title);
+    }
+  });
+
+  for (let i = 0; i < leadingBlanks; i++) {
+    const blank = document.createElement("div");
+    blank.className = "ev-cal-day ev-cal-empty";
+    grid.appendChild(blank);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const cell = document.createElement("div");
+    cell.className = "ev-cal-day";
+    cell.textContent = day;
+    if (byDay[day]) {
+      cell.classList.add("ev-cal-event");
+      cell.title = byDay[day].join(" · ");
+    }
+    grid.appendChild(cell);
+  }
+}
 
 function renderEvents(allEvents) {
   const list = document.getElementById("events-list");
