@@ -9,7 +9,7 @@ const FALLBACK_SCHOOLS = [
     address: "2901 McRae Blvd, El Paso, TX 79925",
     lat: 31.7824,
     lng: -106.358,
-    description: "Our partner elementary school in El Paso. Students start their CodeCore sessions with CodeCombat's Dungeons of Kithgard — writing real code to guide a hero through the dungeon.",
+    description: "Our partner elementary school in El Paso. Students start their CodeCore sessions with a browser coding game — writing real code to guide a hero through a dungeon.",
     grades: "3–5",
   },
 ];

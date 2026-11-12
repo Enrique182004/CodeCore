@@ -801,7 +801,9 @@ body :is(
     .step-icon,
     .training-icon,
     .ev-training-icon,
-    .contact-track-icon
+    .contact-track-icon,
+    .ci-icon,
+    .req-icon
   ) {
   display: inline-flex;
   align-items: center;
