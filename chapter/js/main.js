@@ -82,7 +82,6 @@ function buildNav() {
 <header class="ch-header">
   <div class="ch-header-content">
     <div class="ch-logo-group">
-      <a href="../index.html" class="ch-back-link">&#8592; CodeCore Main Site</a>
       <a href="index.html" class="ch-logo">
         <img src="../images/logos/C.png" alt="CodeCore" />
         <span>CodeCore <em>Chapter</em></span>

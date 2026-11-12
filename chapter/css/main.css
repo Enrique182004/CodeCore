@@ -19,9 +19,10 @@
   --text-h3: 1.4rem;
   --text-body: 1.05rem;
   --text-sm: 0.9rem;
-  --radius-card: 16px;
-  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.09);
-  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.14);
+  --radius-card: 14px;
+  --border-card: 1px solid rgba(26, 46, 74, 0.08);
+  --shadow-card: 0 1px 2px rgba(15, 30, 49, 0.04), 0 6px 18px rgba(15, 30, 49, 0.06);
+  --shadow-hover: 0 2px 4px rgba(15, 30, 49, 0.05), 0 14px 32px rgba(15, 30, 49, 0.1);
   --transition: 0.25s ease;
 }
 
@@ -56,9 +57,10 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+  /* Solid white, no backdrop-filter: a filter here would become the containing
+     block for the fixed mobile drawer and cause sideways scroll on phones. */
+  background: var(--white);
+  border-bottom: 1px solid rgba(26, 46, 74, 0.08);
   padding: 0 1.5rem;
 }
 
@@ -67,8 +69,8 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  max-width: 1400px;
-  height: 70px;
+  max-width: 1200px;
+  height: 68px;
   margin: 0 auto;
 }
 
@@ -142,9 +144,9 @@ img {
 
 .ch-nav ul a {
   display: block;
-  padding: 0.4rem 0.55rem;
-  color: var(--text-dark);
-  font-size: 0.82rem;
+  padding: 0.45rem 0.7rem;
+  color: var(--text-mid);
+  font-size: 0.9rem;
   font-weight: 500;
   border-radius: 6px;
   text-decoration: none;
@@ -164,11 +166,11 @@ img {
   background: var(--green);
   color: white !important;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   border-radius: 8px;
   text-decoration: none;
   transition: var(--transition);
-  margin-left: 0.75rem;
+  margin-left: 1rem;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -296,8 +298,7 @@ img {
 .ch-footer {
   background: var(--navy-dark);
   color: white;
-  padding: 4rem 2rem;
-  margin-top: 5rem;
+  padding: 3.5rem 1.5rem 2rem;
 }
 
 .ch-footer-inner {
@@ -425,7 +426,8 @@ img {
 .ch-page-hero h1 {
   font-size: var(--text-h1);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin-bottom: 1rem;
 }
 
@@ -443,7 +445,7 @@ img {
 
 /* ── Sections ── */
 .ch-section {
-  padding: 5rem 2rem;
+  padding: clamp(3.5rem, 7vw, 5rem) 1.5rem;
 }
 
 .ch-section-inner {
@@ -467,31 +469,23 @@ img {
 
 .ch-section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
 }
 
 .ch-section-header h2 {
   font-size: var(--text-h2);
   font-weight: 800;
   color: var(--text-dark);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
   margin-bottom: 0.5rem;
-}
-
-.ch-section-header h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--green), var(--teal));
-  border-radius: 2px;
-  margin: 0.75rem auto 0;
 }
 
 .ch-section-header p {
   font-size: var(--text-body);
   color: var(--text-mid);
-  max-width: 650px;
-  margin: 0.75rem auto 0;
+  max-width: 620px;
+  margin: 0.5rem auto 0;
   line-height: 1.7;
 }
 
@@ -578,13 +572,14 @@ img {
 .ch-card {
   background: white;
   border-radius: var(--radius-card);
+  border: var(--border-card);
   box-shadow: var(--shadow-card);
   padding: 2rem;
   transition: var(--transition);
 }
 
 .ch-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -792,4 +787,31 @@ body.menu-open {
   text-align: center;
   padding: 0.25rem 0.5rem;
   line-height: 1.3;
+}
+
+/* ── Icon tiles ── one consistent size/shape for every emoji card icon ── */
+body :is(
+    .activity-icon,
+    .pillar-icon,
+    .abig-icon,
+    .students-beyond-icon,
+    .about-mv-icon,
+    .about-ai-icon,
+    .sp-how-icon,
+    .step-icon,
+    .training-icon,
+    .ev-training-icon,
+    .contact-track-icon
+  ) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 12px;
+  background: rgba(124, 179, 66, 0.13);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
 }

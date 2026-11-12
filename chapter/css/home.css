@@ -162,10 +162,6 @@
   color: white;
 }
 
-.home-stats .ch-section-header h2::after {
-  background: linear-gradient(90deg, var(--green), rgba(255, 255, 255, 0.4));
-}
-
 @media (max-width: 600px) {
   .home-stats-grid {
     grid-template-columns: 1fr 1fr;
@@ -227,7 +223,7 @@ a.activity-card--link {
 
 a.activity-card--link:hover,
 a.activity-card--link:focus-visible {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -368,7 +364,7 @@ a.activity-card--link:focus-visible {
 }
 
 .sponsor-logo-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 

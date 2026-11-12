@@ -73,12 +73,12 @@
   box-shadow: var(--shadow-card);
   padding: 2rem 1.5rem;
   text-align: center;
-  border-top: 4px solid var(--accent);
+  border: var(--border-card);
   transition: var(--transition);
 }
 
 .activity-big-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -365,7 +365,7 @@
 }
 
 .video-thumb-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -577,14 +577,6 @@
   font-size: 0.9rem;
   color: var(--text-mid);
   line-height: 1.7;
-}
-
-.students-beyond-card--finals {
-  border-top: 4px solid var(--green);
-}
-
-.students-beyond-card--national {
-  border-top: 4px solid #e37011;
 }
 
 .abig-play {
