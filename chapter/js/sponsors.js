@@ -145,6 +145,10 @@ function renderSponsors(sponsors) {
 
     container.appendChild(card);
   });
+
+  // The "Your logo here" card always closes the row of sponsor logos.
+  const cta = document.getElementById("sp-logo-cta");
+  if (cta) container.appendChild(cta.content.cloneNode(true));
 }
 
 function renderWishlist(items) {

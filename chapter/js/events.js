@@ -50,11 +50,11 @@ const FALLBACK_EVENTS = [
     type: "Launch",
   },
   {
-    title: "Coding Day at Scotsdale Elementary — CodeCombat",
+    title: "Coding Day at Scotsdale Elementary",
     date: "2026-11-12",
     location: "Scotsdale Elementary School, El Paso TX",
     description:
-      "Students play CodeCombat's Dungeons of Kithgard, writing real code to move their hero, collect gems, and escape the dungeon.",
+      "Students write real code in a browser coding game to guide their hero, collect gems, and escape the dungeon.",
     type: "Workshop",
   },
   {

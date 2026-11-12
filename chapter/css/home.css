@@ -162,10 +162,6 @@
   color: white;
 }
 
-.home-stats .ch-section-header h2::after {
-  background: linear-gradient(90deg, var(--green), rgba(255, 255, 255, 0.4));
-}
-
 @media (max-width: 600px) {
   .home-stats-grid {
     grid-template-columns: 1fr 1fr;
@@ -209,81 +205,23 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
   .activities-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
-}
 
-/* Clickable activity card */
-a.activity-card--link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-}
+  .activity-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    text-align: left;
+    padding: 1.1rem 1.25rem;
+  }
 
-a.activity-card--link:hover,
-a.activity-card--link:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* Featured game banner */
-.featured-game {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-  padding: 1.75rem 2rem;
-  border-radius: var(--radius-card);
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-  color: var(--white);
-  box-shadow: var(--shadow-card);
-}
-
-.featured-game-icon {
-  font-size: 2.6rem;
-  flex-shrink: 0;
-}
-
-.featured-game-text {
-  flex: 1;
-}
-
-.featured-game-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--green-bright);
-  margin-bottom: 0.35rem;
-}
-
-.featured-game h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.35rem;
-  color: var(--white);
-}
-
-.featured-game p {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.featured-game .btn-primary {
-  flex-shrink: 0;
-}
-
-@media (max-width: 700px) {
-  .featured-game {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
+  body .activity-icon {
+    grid-row: span 2;
+    margin-bottom: 0;
   }
 }
 
@@ -368,7 +306,7 @@ a.activity-card--link:focus-visible {
 }
 
 .sponsor-logo-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
