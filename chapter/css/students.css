@@ -563,9 +563,17 @@
 }
 
 .students-track-list li {
+  display: flex;
+  gap: 0.6rem;
   font-size: 0.9rem;
   color: var(--text-dark);
   line-height: 1.5;
+}
+
+.students-track-list li span {
+  flex-shrink: 0;
+  width: 1.4em;
+  text-align: center;
 }
 
 /* Beyond-the-classroom cards */
