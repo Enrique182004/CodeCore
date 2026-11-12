@@ -111,7 +111,8 @@
 }
 
 .ev-location::before {
-  content: "📍 ";
+  content: "📍";
+  margin-right: 0.35rem;
 }
 
 .ev-card-body p {
@@ -179,13 +180,13 @@
 
 .ev-cal-header {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   background: var(--navy);
   color: white;
 }
 
 .ev-cal-header span {
-  padding: 0.75rem;
+  padding: 0.75rem 0;
   text-align: center;
   font-size: 0.78rem;
   font-weight: 700;
@@ -195,7 +196,7 @@
 
 .ev-cal-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .ev-cal-day {
@@ -322,5 +323,12 @@
 
   .ev-announce-date {
     width: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .ev-cal-header span {
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
   }
 }

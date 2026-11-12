@@ -817,3 +817,36 @@ body :is(
   line-height: 1;
   margin-bottom: 1rem;
 }
+
+/* ── Keyboard focus ── a clear ring for anyone tabbing through the site ── */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ── Phones: CTA buttons stack full-width so pairs are the same size ── */
+@media (max-width: 600px) {
+  :is(.ch-page-hero, .home-hero-btns, .home-join-btns, .ch-section--dark, .ch-section--navy-mid)
+    :is(.btn-primary, .btn-secondary, .btn-outline-dark) {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 0.75rem;
+  }
+}
+
+/* ── Respect "reduce motion" settings ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
