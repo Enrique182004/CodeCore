@@ -407,23 +407,58 @@ body .req-item--free .req-icon {
 }
 .schools-grid-centered .school-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 560px;
 }
 
-/* Pilot project badge */
+/* Badge row: level · status · pilot */
+.school-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.school-status,
 .school-pilot-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-top: 0.75rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.2rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: linear-gradient(135deg, #e37011 0%, #f59e0b 100%);
-  color: white;
+  letter-spacing: 0.04em;
+}
+
+.school-status {
+  background: var(--gray-100);
+  color: var(--text-mid);
+}
+
+.school-status.is-active {
+  background: rgba(124, 179, 66, 0.12);
+  color: #4d7a17;
+  border: 1px solid rgba(124, 179, 66, 0.3);
+}
+
+.school-status.is-active::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.school-pilot-badge {
+  background: rgba(227, 112, 17, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(227, 112, 17, 0.25);
+}
+
+.school-meta {
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  color: var(--teal) !important;
+  flex-grow: 0 !important;
 }
 
 /* Flex note below How It Works */

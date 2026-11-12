@@ -173,8 +173,9 @@
 }
 
 .sp-card--cta {
-  border: 2px dashed var(--border);
-  background: var(--light);
+  justify-content: center;
+  border: 2px dashed rgba(26, 46, 74, 0.18);
+  background: transparent;
   box-shadow: none;
   color: var(--text-mid);
 }

@@ -69,9 +69,11 @@ document.addEventListener("DOMContentLoaded", initStudentResources);
 
 async function initStudentResources() {
   const all = await loadJSON("data/resources.json", FALLBACK_RESOURCES);
-  const items = all.filter(
+  const STUDENT_PICKS = 6;
+  const matching = all.filter(
     (r) => r.audience === "student" || r.audience === "both",
   );
+  const items = matching.slice(0, STUDENT_PICKS);
   const container = document.getElementById("student-resources");
   if (!container) return;
 
@@ -114,10 +116,9 @@ async function initStudentResources() {
 
     const link = document.createElement("a");
     link.href = item.url || "#";
-    link.className = "btn-primary";
-    link.style.fontSize = "0.88rem";
-    link.style.padding = "0.6rem 1.25rem";
-    link.textContent = item.type === "Video" ? "Watch Now" : "Download";
+    link.className = "btn-primary src-btn";
+    link.textContent =
+      item.type === "Video" ? "Watch" : item.type === "PDF" ? "Download" : "Open";
     if (item.url && item.url !== "#") {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
@@ -126,4 +127,11 @@ async function initStudentResources() {
 
     container.appendChild(card);
   });
+
+  const more = document.getElementById("student-resources-more");
+  if (more && matching.length > items.length) {
+    more.querySelector("a").textContent =
+      "Browse all " + matching.length + " resources →";
+    more.hidden = false;
+  }
 }

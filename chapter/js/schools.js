@@ -34,27 +34,50 @@ function renderSchoolCards(schools) {
     card.className = "ch-card school-card";
     card.style.animationDelay = i * 0.12 + "s";
 
+    const badges = document.createElement("div");
+    badges.className = "school-badges";
+
     const badge = document.createElement("span");
     badge.className =
       "school-level-badge " +
       (school.level === "Elementary" ? "elementary" : "middle-school");
     badge.textContent = school.level;
-    card.appendChild(badge);
+    badges.appendChild(badge);
+
+    if (school.status) {
+      const status = document.createElement("span");
+      status.className =
+        "school-status" + (school.status === "Active" ? " is-active" : "");
+      status.textContent = school.status;
+      badges.appendChild(status);
+    }
+
+    if (school.pilot) {
+      const pilotBadge = document.createElement("span");
+      pilotBadge.className = "school-pilot-badge";
+      pilotBadge.textContent = "Pilot school";
+      badges.appendChild(pilotBadge);
+    }
+    card.appendChild(badges);
 
     const h3 = document.createElement("h3");
     h3.textContent = school.name;
     card.appendChild(h3);
 
+    const metaParts = [
+      school.grades ? "Grades " + school.grades : "",
+      school.address || "",
+    ].filter(Boolean);
+    if (metaParts.length) {
+      const meta = document.createElement("p");
+      meta.className = "school-meta";
+      meta.textContent = metaParts.join(" · ");
+      card.appendChild(meta);
+    }
+
     const p = document.createElement("p");
     p.textContent = school.description;
     card.appendChild(p);
-
-    if (school.pilot) {
-      const pilotBadge = document.createElement("span");
-      pilotBadge.className = "school-pilot-badge";
-      pilotBadge.textContent = "⭐ Pilot Project";
-      card.appendChild(pilotBadge);
-    }
 
     grid.appendChild(card);
   });

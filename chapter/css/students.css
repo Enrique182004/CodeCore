@@ -170,9 +170,26 @@
   line-height: 1.5;
 }
 
-/* Resource cards */
+/* Resource cards — button pinned to the bottom so rows line up */
 .student-resource-card {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-resource-card p {
+  flex-grow: 1;
+}
+
+.src-btn {
+  align-self: flex-start;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.25rem;
+}
+
+.src-more {
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 .src-type-row {
